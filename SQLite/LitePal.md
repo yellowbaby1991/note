@@ -137,4 +137,17 @@ public class Book extends DataSupport {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
  [1]: https://github.com/LitePalFramework/LitePal
