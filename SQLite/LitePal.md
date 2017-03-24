@@ -55,5 +55,29 @@ dependencies {
 
  1. 创建一个Bean对象，如Book.java
  
+``` java
+package yellow.com.litepal;
+
+import org.litepal.crud.DataSupport;
+
+public class Book extends DataSupport {
+
+    private int id;
+
+    private String author;
+
+    private double price;
+
+    private int pages;
+
+    private String name;
+
+    private String press;
+
+    //get && set
+}
+
+```
+
  2. 在litepal.xml中添加一个mapping
 
