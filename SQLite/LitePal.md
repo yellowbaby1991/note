@@ -163,15 +163,30 @@ public class Book extends DataSupport {
  2. 创建Bean对象后调用save方法
 
 ``` java
-    Book book = new Book();
-	book.setName("The Da Vinci Code");
-	book.setAuthor("Dan Brown");
-	book.setPages(454);
-	book.setPrice(16.96);
-	book.setPress("Unknow");
-	book.save();
+Book book = new Book();
+book.setName("The Da Vinci Code");
+book.setAuthor("Dan Brown");
+book.setPages(454);
+book.setPrice(16.96);
+book.setPress("Unknow");
+book.save();
 ```
 
 #### 更新数据
 
  1. 常规修改：设置需要修改的值，调用updateAll添加查询条件
+
+``` java
+/**
+ * 等价于 update table set price = 14.95,press = 'Anchor' where name = 'The Lost Symbol' and author = 'Dan Brown'
+ */
+Book book = new Book();
+//设置需要修改的值
+book.setPrice(14.95);
+book.setPress("Anchor");
+//设置查询条件
+book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
+```
+
+
+ 2. 1
