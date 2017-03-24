@@ -174,4 +174,4 @@ public class Book extends DataSupport {
 
 #### 更新数据
 
- 1. List item
+ 1. 常规修改：设置需要修改的值，调用updateAll添加查询条件
