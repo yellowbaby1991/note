@@ -151,3 +151,8 @@ public class Book extends DataSupport {
 
 
  [1]: https://github.com/LitePalFramework/LitePal
+#### 添加数据
+
+ 1. 让Bean类继承DataSupport类
+ 
+ 2. 创建Bean对象后调用save方法
