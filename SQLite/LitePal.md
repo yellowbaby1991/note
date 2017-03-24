@@ -49,7 +49,7 @@ dependencies {
  
  
  
- [1]: https://github.com/LitePalFramework/LitePal
+
  
 #### 创建数据库
 
@@ -134,5 +134,10 @@ public class Book extends DataSupport {
 
 ```
 
+ 2. 当然记得同时更新
 
- 2. 1
+
+
+
+
+ [1]: https://github.com/LitePalFramework/LitePal
