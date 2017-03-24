@@ -92,6 +92,17 @@ public class Book extends DataSupport {
 </litepal>
 ```
 
-3. 在litepal.xml中添加一个mapping
+3. 调用getDatabase方法
+
+``` java
+Button createDatabase = (Button) findViewById(R.id.create_database);
+        createDatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Connector.getDatabase();
+            }
+        });
+```
+
 
 
