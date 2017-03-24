@@ -110,4 +110,29 @@ Button createDatabase = (Button) findViewById(R.id.create_database);
 
 #### 更新数据库
 
- 1. List item
+ 1. 传统方式想更新数据库如何保存数据是一个大问题，但是LitePal帮我们统统都解决了，想添加字段，就在bean对象中添加一个新属性，想添加表格就添加一个新的bean
+ 
+``` java
+package yellow.com.litepal;
+
+import org.litepal.crud.DataSupport;
+
+public class Book extends DataSupport {
+
+    ...
+    private String press;
+
+    public String getPress() {
+        return press;
+    }
+
+    public void setPress(String press) {
+        this.press = press;
+    }
+	...
+}
+
+```
+
+
+ 2. 1
