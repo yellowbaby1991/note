@@ -36,21 +36,6 @@ dependencies {
 </manifest>
 ```
 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
 #### 创建数据库
 
  1. 创建一个Bean对象，如Book.java
@@ -107,7 +92,6 @@ Button createDatabase = (Button) findViewById(R.id.create_database);
 
 
 
-
 #### 更新数据库
 
  1. 传统方式想更新数据库如何保存数据是一个大问题，但是LitePal帮我们统统都解决了，想添加字段，就在bean对象中添加一个新属性，想添加表格就添加一个新的bean
@@ -132,9 +116,22 @@ public class Book extends DataSupport {
 	...
 }
 
+
+
+ 2. 当然记得同时更新litepal.xml，并且将版本号+1
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="BookStore" />
+    <version value="2" />
+    <list>
+        <mapping class="yellow.com.litepal.Book"></mapping>
+        <mapping class="yellow.com.litepal.Category"></mapping>
+    </list>
+</litepal>
 ```
 
- 2. 当然记得同时更新
 
 
 
