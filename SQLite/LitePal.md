@@ -74,10 +74,22 @@ public class Book extends DataSupport {
 
     private String press;
 
-    //get && set
+    //getter && setter
 }
 
 ```
 
  2. 在litepal.xml中添加一个mapping
+ 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="BookStore" />
+    <version value="2" />
+    <list>
+        <mapping class="yellow.com.litepal.Book"></mapping>
+    </list>
+</litepal>
+```
+
 
