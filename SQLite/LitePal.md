@@ -163,5 +163,11 @@ public class Book extends DataSupport {
  2. 创建Bean对象后调用save方法
 
 ``` java
-enter code here
+    Book book = new Book();
+	book.setName("The Da Vinci Code");
+	book.setAuthor("Dan Brown");
+	book.setPages(454);
+	book.setPrice(16.96);
+	book.setPress("Unknow");
+	book.save();
 ```
