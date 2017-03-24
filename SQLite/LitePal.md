@@ -92,4 +92,6 @@ public class Book extends DataSupport {
 </litepal>
 ```
 
+3. 在litepal.xml中添加一个mapping
+
 
