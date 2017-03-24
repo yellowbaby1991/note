@@ -50,3 +50,6 @@ dependencies {
  
  
  [1]: https://github.com/LitePalFramework/LitePal
+ 
+#### 创建数据库
+
