@@ -53,3 +53,7 @@ dependencies {
  
 #### 创建数据库
 
+ 1. 创建一个Bean对象，如Book.java
+ 
+ 2. 在litepal.xml中添加一个mapping
+
