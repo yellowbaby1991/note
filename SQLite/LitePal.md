@@ -160,5 +160,4 @@ public class Book extends DataSupport {
 	...
 }
 ```
-
  2. 创建Bean对象后调用save方法
