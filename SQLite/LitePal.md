@@ -189,3 +189,10 @@ book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
 ```
 
  2. 将某个属性设置为默认值，需要调用setToDefault方法
+
+``` java
+Book book = new Book();
+ book.setToDefault("press");
+//设置查询条件
+book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
+```
