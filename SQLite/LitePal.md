@@ -201,4 +201,4 @@ book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
 #### 删除数据
 
  1. 调用过save方法或者使用查询API得到的对象可以直接调用delete()方法删除
- 2. 
+ 2. 和updateAll类似，
