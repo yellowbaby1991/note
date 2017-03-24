@@ -154,9 +154,14 @@ public class Book extends DataSupport {
 #### 添加数据
 
  1. 让Bean类继承DataSupport类
+
 ``` java
 public class Book extends DataSupport {
 	...
 }
 ```
  2. 创建Bean对象后调用save方法
+
+``` java
+enter code here
+```
