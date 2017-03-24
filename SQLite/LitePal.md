@@ -192,7 +192,7 @@ book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
 
 ``` java
 Book book = new Book();
- book.setToDefault("press");
+book.setToDefault("press");
 //设置查询条件
 book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
 ```
