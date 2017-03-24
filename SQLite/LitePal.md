@@ -188,5 +188,4 @@ book.setPress("Anchor");
 book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
 ```
 
-
  2. 1
