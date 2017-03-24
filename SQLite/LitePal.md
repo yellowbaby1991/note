@@ -196,3 +196,6 @@ book.setToDefault("press");
 //设置查询条件
 book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
 ```
+
+
+#### 删除数据
