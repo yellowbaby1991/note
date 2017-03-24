@@ -115,7 +115,7 @@ public class Book extends DataSupport {
     }
 	...
 }
-
+```
 
 
  2. 当然记得同时更新litepal.xml，并且将版本号+1
