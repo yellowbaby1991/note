@@ -12,7 +12,7 @@
 
 #### 细节
 
- 1. 下载任务DownloadTask一共具有四种状态
+ 1. 下载任务DownloadTask一共具有四种状态。下载成功，下载失败，下载暂停，下载取消
  
 ``` java
 public class DownloadTask extends AsyncTask<String, Integer, Integer> {
@@ -35,7 +35,6 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 	...
 }
 ```
-
 
  2. 在DownloadTask的doInBackground中根据任务的状态
 
