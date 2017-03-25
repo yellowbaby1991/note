@@ -4,6 +4,7 @@
 
 #### 配置方法
 
+app\build.gradle中添加依赖
 
 
 
