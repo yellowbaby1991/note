@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, DownloadService.class);
         startService(intent);
         bindService(intent, connection, BIND_AUTO_CREATE);//绑定服务
- 
+
     }
 	
     @Override
