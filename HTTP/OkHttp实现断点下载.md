@@ -263,3 +263,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
   [1]: ./images/download.gif "download"
+
+#### 完整代码
+##### DownloadTask.java
