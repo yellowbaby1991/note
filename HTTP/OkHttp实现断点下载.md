@@ -117,8 +117,53 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
 ``` java
 public class DownloadService extends Service {
+
 	private DownloadTask downloadTask;
 	
+	private DownloadBinder mBinder = new DownloadBinder();
+	
+	@Override
+    public IBinder onBind(Intent intent) {
+        return mBinder;
+    }
+	class DownloadBinder extends Binder {
+
+        public void startDownload(String url) {
+            if (downloadTask == null) {
+                downloadUrl = url;
+                downloadTask = new DownloadTask(listener);
+                downloadTask.execute(downloadUrl);
+                startForeground(1, getNotification("Downloading...", 0));
+                Toast.makeText(DownloadService.this, "Downloading...", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        public void pauseDownload() {
+            if (downloadTask != null) {
+                downloadTask.pauseDownload();
+            }
+        }
+
+        public void cancelDownload() {
+            if (downloadTask != null) {
+                downloadTask.cancelDownload();
+            } else {
+                if (downloadUrl != null) {
+                    String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));
+                    String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+                    File file = new File(directory + fileName);
+                    if (file.exists()) {
+                        file.delete();
+                    }
+                    getNotificationManager().cancel(1);
+                    stopForeground(true);
+                    Toast.makeText(DownloadService.this, "Cancled", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }
+
+    }
 }
 ```
 
