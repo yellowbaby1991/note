@@ -83,7 +83,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
                     } else {
                         total += len;
                     }
-                    savedFile.write(b, 0, len);
+                    savedFile.write(b, 0, len);//如果没有取消，没有暂停就继续下载
                     int progress = (int) ((total + downloadedLength) * 100 / contentLength);
                     publishProgress(progress);
                 }
