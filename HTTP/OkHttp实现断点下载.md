@@ -128,7 +128,7 @@ public class DownloadService extends Service {
     }
 	//传给Activity使用的Binder对象
 	class DownloadBinder extends Binder {
-
+        //执行下载任务
         public void startDownload(String url) {
             if (downloadTask == null) {
                 downloadUrl = url;
