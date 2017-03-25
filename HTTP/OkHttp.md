@@ -65,7 +65,9 @@ Request request = new Request.Builder().url("https://github.com/square/okhttp").
   
 #### 集合Gson解析JSON数据
 
- 1. 添加依赖
+ 1. 服务器待解析的JSON数据
+
+ 2. 添加依赖
  
 ``` gradle
 dependencies {
@@ -120,4 +122,3 @@ public class App {
 }
 ```
 
- 3. 1
