@@ -21,31 +21,23 @@ dependencies {
 
 ``` java
 OkHttpClient mOkHttpClient = new OkHttpClient();
-        Request request = new Request.Builder().url("https://github.com/square/okhttp").build();
-        Call call = mOkHttpClient.newCall(request);
+Request request = new Request.Builder().url("https://github.com/square/okhttp").build();
+Call call = mOkHttpClient.newCall(request);
+//异步请求
+call.enqueue(new Callback() {
+	@Override
+	public void onFailure(Request request, IOException e) {
+	}
 
-        try {
-            Response response = call.execute();
-            String htmlStr = response.body().string();
-            Log.i(TAG, "onResponse: " + htmlStr);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        //异步请求
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Request request, IOException e) {
-            }
-
-            @Override
-            public void onResponse(Response response) throws IOException {
-                String htmlStr = response.body().string();
-                Log.i(TAG, "onResponse: " + htmlStr);
-            }
-        });
+	@Override
+	public void onResponse(Response response) throws IOException {
+		String htmlStr = response.body().string();
+		Log.i(TAG, "onResponse: " + htmlStr);
+	}
+});
 ```
 
+ 2. 同步请求
 
 
 
