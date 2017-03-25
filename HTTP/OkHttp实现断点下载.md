@@ -169,7 +169,7 @@ public class DownloadService extends Service {
 }
 ```
 
-
+4. 在DownloadService中创造Binder对象，使用DownloadTask来执行下载任务
 
 
  
