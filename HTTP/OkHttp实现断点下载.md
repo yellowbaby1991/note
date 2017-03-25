@@ -117,7 +117,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
 ``` java
 public class DownloadService extends Service {
-
+	...
 	private DownloadTask downloadTask;
 	
 	private DownloadBinder mBinder = new DownloadBinder();
@@ -164,6 +164,7 @@ public class DownloadService extends Service {
         }
 
     }
+	...
 }
 ```
 
