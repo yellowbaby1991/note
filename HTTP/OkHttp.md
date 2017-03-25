@@ -67,6 +67,12 @@ Request request = new Request.Builder().url("https://github.com/square/okhttp").
 
  1. 服务器待解析的JSON数据
 
+``` json
+[{"id":"5","version":"5.5","name":"Clash of Clans"},
+ {"id":"6","version":"7.0","name":"Bom Beach"},
+ {"id":"7","version":"3.5","name":"Clash Royale"}]
+```
+
  2. 添加依赖
  
 ``` gradle
