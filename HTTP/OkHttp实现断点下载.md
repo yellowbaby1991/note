@@ -169,7 +169,7 @@ public class DownloadService extends Service {
 }
 ```
 
-4. 在DownloadService中创造Binder对象，使用DownloadTask来执行下载任务
+4. 在MainActivity中绑定服务，得到服务传过来的binder对象后进行调用
 
 
  
