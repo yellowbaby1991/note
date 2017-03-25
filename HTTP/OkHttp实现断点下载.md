@@ -202,6 +202,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (downloadBinder == null){
             return;
         }
+		//调用binder对象执行下载任务
         switch (v.getId()){
             case R.id.start_download:
                 String url = "http://192.168.87.2/2.pdf";
