@@ -128,7 +128,7 @@ public class DownloadService extends Service {
     }
 	//传给Activity使用的Binder对象
 	class DownloadBinder extends Binder {
-        //执行下载任务
+        //执行开始下载任务
         public void startDownload(String url) {
             if (downloadTask == null) {
                 downloadUrl = url;
@@ -138,13 +138,13 @@ public class DownloadService extends Service {
                 Toast.makeText(DownloadService.this, "Downloading...", Toast.LENGTH_SHORT).show();
             }
         }
-
+        //执行暂停下载任务
         public void pauseDownload() {
             if (downloadTask != null) {
                 downloadTask.pauseDownload();
             }
         }
-
+        //执行取消下载任务
         public void cancelDownload() {
             if (downloadTask != null) {
                 downloadTask.cancelDownload();
