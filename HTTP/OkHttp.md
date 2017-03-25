@@ -40,7 +40,12 @@ call.enqueue(new Callback() {
  2. 同步请求
 
 ``` java
-enter code here
+OkHttpClient mOkHttpClient = new OkHttpClient();
+Request request = new Request.Builder().url("https://github.com/square/okhttp").build();
+Call call = mOkHttpClient.newCall(request);
+Response response = call.execute();
+String htmlStr = response.body().string();
+Log.i(TAG, "onResponse: " + htmlStr);
 ```
 
 
