@@ -224,7 +224,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 ``` java
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+	...
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ...
+		//判断是否有权限
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);//运行时申请权限
+        }
+    }
 }
 ```
 
