@@ -39,7 +39,78 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
  2. 在DownloadTask的doInBackground中根据任务的状态来判断是下载，暂停，还是取消
 
 ``` java
-enter code here
+public class DownloadTask extends AsyncTask<String, Integer, Integer> {
+     ...
+    @Override
+    protected Integer doInBackground(String... params) {
+        InputStream is = null;
+        RandomAccessFile savedFile = null;
+        File file = null;
+        try {
+            long downloadedLength = 0;//记录已下载的文件长度
+            String downloadUrl = params[0];//下载链接
+            String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));//截取得到文件名
+            String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();//得到本机存储目录
+            file = new File(directory + fileName);//得到File的绝对路径
+            if (file.exists()) {
+                downloadedLength = file.length();
+            }
+            long contentLength = getContentLength(downloadUrl);
+            if (contentLength == 0) {
+                return TYPE_FAILED;
+            } else if (contentLength == downloadedLength) {
+                return TYPE_SUCCESS;
+            }
+            //使用OkHttp断点下载
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder().
+                    addHeader("RANGE", "bytes=" + downloadedLength + "-").
+                    url(downloadUrl).
+                    build();
+            Response response = client.newCall(request).execute();
+            if (response != null) {
+                is = response.body().byteStream();
+                savedFile = new RandomAccessFile(file, "rw");
+                savedFile.seek(downloadedLength);//找到已经下载的长度
+                byte[] b = new byte[1024];
+                int total = 0;
+                int len;
+                while ((len = is.read(b)) != -1) {
+                    if (isCanceled) {//取消下载
+                        return TYPE_CANCELED;
+                    } else if (isPaused) {//暂停下载
+                        return TYPE_PAUSED;
+                    } else {
+                        total += len;
+                    }
+                    savedFile.write(b, 0, len);
+                    int progress = (int) ((total + downloadedLength) * 100 / contentLength);
+                    publishProgress(progress);
+                }
+            }
+            response.close();
+            return TYPE_SUCCESS;//下载成功
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (is != null) {
+                    is.close();
+                }
+                if (savedFile != null) {
+                    savedFile.close();
+                }
+                if (isCanceled && file != null) {
+                    file.delete();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return TYPE_FAILED;
+    }
+}
 ```
 
 
