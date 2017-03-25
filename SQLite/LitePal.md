@@ -206,3 +206,8 @@ book.updateAll("name = ? and author = ?", "The Lost Symbol", "Dan Brown");
 ``` java
 DataSupport.deleteAll(Book.class, "price < ?", "15");
 ```
+
+#### 查询数据
+
+ 1. List item
+
