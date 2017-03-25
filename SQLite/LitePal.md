@@ -216,5 +216,10 @@ DataSupport.deleteAll(Book.class, "price < ?", "15");
  List<Book> books = DataSupport.select("name", "author", "pages").where("pages > ?", "400").order("pages").limit(0).offset(10).find(Book.class);
 ```
 
- 2. 1
+ 2. 支持原生的SQL查询得到Cursor
+
+``` java
+Cuscor c = DataSupport.findBySQL("select * from Book where pages >? and price < ?","400","20"); 
+```
+
 
