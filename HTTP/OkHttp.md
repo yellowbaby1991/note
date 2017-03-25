@@ -10,7 +10,7 @@ app\build.gradle中添加依赖
 ``` xml
 dependencies {
     ...
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
     ...
 }
 ```
