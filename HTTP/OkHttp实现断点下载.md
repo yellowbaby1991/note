@@ -174,6 +174,8 @@ public class DownloadService extends Service {
 ``` java
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+		private DownloadService.DownloadBinder downloadBinder;
+		
 }
 ```
 
