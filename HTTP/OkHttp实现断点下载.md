@@ -8,7 +8,7 @@
 
  1. 网络请求使用OkHttp来实现，OkHttp很好的支持了断点下载
  2. 使用AsyncTask进行后台下载
- 3. 
+ 3. 使用Service服务启动Task防止任务被杀死
 
 
 
