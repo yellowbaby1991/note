@@ -117,7 +117,8 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
 ``` java
 public class DownloadService extends Service {
-
+	private DownloadTask downloadTask;
+	
 }
 ```
 
