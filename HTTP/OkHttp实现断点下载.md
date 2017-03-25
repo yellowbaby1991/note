@@ -37,7 +37,11 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 ```
 
  2. 在DownloadTask的doInBackground中根据任务的状态来判断是下载，暂停，还是取消
- 3. 
+
+``` java
+enter code here
+```
+
 
 
 
