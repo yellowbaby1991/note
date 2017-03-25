@@ -73,7 +73,7 @@ Request request = new Request.Builder().url("https://github.com/square/okhttp").
  {"id":"7","version":"3.5","name":"Clash Royale"}]
 ```
 
- 2. 添加依赖
+ 2. 添加GSON依赖
  
 ``` gradle
 dependencies {
@@ -82,7 +82,7 @@ dependencies {
     ...
 }
 ```
- 2. 创建对应的JAVABean对象
+ 3. 创建对应的JAVABean对象
 
 ``` java
 public class App {
@@ -128,3 +128,33 @@ public class App {
 }
 ```
 
+ 4. 创建Gson对象调用fromJson方法
+
+``` java
+    private void HttpGet() {
+        Request request = new Request.Builder().url("http://192.168.87.2/get_data.json").build();
+        Call call = mOkHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String responseData = response.body().string();
+                Log.d(TAG, responseData);
+                parseJSONWithGSON(responseData);
+            }
+        });
+    }
+
+    private void parseJSONWithGSON(String jsonData) {
+        Gson gson = new Gson();
+        List<App> appList = gson.fromJson(jsonData, new TypeToken<List<App>>() {
+        }.getType());
+        for (App app : appList) {
+            Log.d(TAG, app.toString());
+        }
+    }
+```
