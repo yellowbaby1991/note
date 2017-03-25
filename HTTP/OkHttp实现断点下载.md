@@ -126,6 +126,7 @@ public class DownloadService extends Service {
     public IBinder onBind(Intent intent) {
         return mBinder;
     }
+	//传给Activity使用的Binder对象
 	class DownloadBinder extends Binder {
 
         public void startDownload(String url) {
