@@ -15,7 +15,25 @@
  1. 下载任务DownloadTask一共具有四种状态
  
 ``` java
-enter code here
+public class DownloadTask extends AsyncTask<String, Integer, Integer> {
+    /**
+     * 下载成功
+     */
+    public static final int TYPE_SUCCESS = 0;
+    /**
+     * 下载失败
+     */
+    public static final int TYPE_FAILED = 1;
+    /**
+     * 下载暂停
+     */
+    public static final int TYPE_PAUSED = 2;
+    /**
+     * 下载取消
+     */
+    public static final int TYPE_CANCELED = 3;
+	...
+}
 ```
 
 
