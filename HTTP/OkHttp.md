@@ -48,7 +48,7 @@ String htmlStr = response.body().string();
 Log.i(TAG, "onResponse: " + htmlStr);
 ```
 
-  
+
 #### HttpPost请求
 　　和get相比多了Request多了一个RequestBody
 ``` java
