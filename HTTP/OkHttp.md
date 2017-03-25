@@ -82,5 +82,5 @@ RequestBody requestBody = new FormBody.Builder()
                 .add("password", "123456")
                 .build();
 Request request = new Request.Builder().url("https://github.com/square/okhttp").post(requestBody).build();
-// 同步or异步
+//.... 同步or异步
 ```
