@@ -186,6 +186,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void onServiceDisconnected(ComponentName name) {
         }
     };
+	    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+		...
+        Intent intent = new Intent(this, DownloadService.class);
+        startService(intent);
+        bindService(intent, connection, BIND_AUTO_CREATE);//绑定服务
+ 
+    }
+	
+	
+    @Override
+    public void onClick(View v) {
+        if (downloadBinder == null){
+            return;
+        }
+        switch (v.getId()){
+            case R.id.start_download:
+                String url = "http://192.168.87.2/2.pdf";
+                downloadBinder.startDownload(url);
+                break;
+            case R.id.pause_download:
+                downloadBinder.pauseDownload();
+                break;
+            case R.id.cancel_download:
+                downloadBinder.cancelDownload();
+                break;
+            default:
+        }
+    }
 }
 ```
 
