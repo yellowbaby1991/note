@@ -20,7 +20,30 @@ dependencies {
  1. 异步请求
 
 ``` java
-enter code here
+OkHttpClient mOkHttpClient = new OkHttpClient();
+        Request request = new Request.Builder().url("https://github.com/square/okhttp").build();
+        Call call = mOkHttpClient.newCall(request);
+
+        try {
+            Response response = call.execute();
+            String htmlStr = response.body().string();
+            Log.i(TAG, "onResponse: " + htmlStr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        //异步请求
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+                String htmlStr = response.body().string();
+                Log.i(TAG, "onResponse: " + htmlStr);
+            }
+        });
 ```
 
 
