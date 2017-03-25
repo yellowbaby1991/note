@@ -216,6 +216,5 @@ DataSupport.deleteAll(Book.class, "price < ?", "15");
  List<Book> books = DataSupport.select("name", "author", "pages").where("pages > ?", "400").order("pages").limit(0).offset(10).find(Book.class);
 ```
 
-
  2. 1
 
