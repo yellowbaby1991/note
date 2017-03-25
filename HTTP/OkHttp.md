@@ -39,6 +39,11 @@ call.enqueue(new Callback() {
 
  2. 同步请求
 
+``` java
+enter code here
+```
+
+
 
 
 
