@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 }
 ```
 
-
+5. 在MainActivity中动态判断是否具有权限，如果没有就动态申请
  
 
 
