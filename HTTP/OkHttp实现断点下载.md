@@ -10,18 +10,8 @@
  2. 使用AsyncTask进行后台下载
  3. 使用Service服务启动Task防止任务被杀死
 
+#### 细节
 
-
-
-
-
-
-
-
-
-
-
-
-
+ 1. List item
 
   [1]: ./images/download.gif "download"
