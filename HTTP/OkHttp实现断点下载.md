@@ -660,4 +660,72 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 ##### DownloadListener.java
 
+``` java
+package yellow.com.servicebestpractice;
+
+public interface DownloadListener {
+
+    /**
+     * 通知当前下载的进度
+     */
+    void onProgress(int progress);
+
+    /**
+     * 通知下载成功
+     */
+    void onSuccess();
+
+    /**
+     * 通知下载失败
+     */
+    void onFailed();
+
+    /**
+     * 通知当前下载暂停
+     */
+    void onPaused();
+
+    /**
+     * 通知下载取消
+     */
+    void onCanceled();
+
+}
+
+```
+
+
 ##### activity.main.xml
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="yellow.com.servicebestpractice.MainActivity">
+
+    <Button
+        android:id="@+id/start_download"
+        android:layout_width="match_parent"
+        android:text="开始下载"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/pause_download"
+        android:layout_width="match_parent"
+        android:text="暂停下载"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/cancel_download"
+        android:layout_width="match_parent"
+        android:text="取消下载"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+```
