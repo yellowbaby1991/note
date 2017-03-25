@@ -172,7 +172,9 @@ public class DownloadService extends Service {
 4. 在MainActivity中绑定服务，得到服务传过来的binder对象后进行调用
 
 ``` java
-enter code here
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+}
 ```
 
 
