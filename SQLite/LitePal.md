@@ -141,25 +141,6 @@ public class Book extends DataSupport {
 </litepal>
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- [1]: https://github.com/LitePalFramework/LitePal
 #### 添加数据
 
  1. 让Bean类继承DataSupport类
@@ -238,3 +219,22 @@ Cuscor c = DataSupport.findBySQL("select * from Book where pages >? and price < 
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ [1]: https://github.com/LitePalFramework/LitePal
