@@ -12,7 +12,14 @@
 
 #### 细节
 
- 1. List item
+ 1. 下载任务DownloadTask一共具有四种状态
+ 
+``` stylus
+enter code here
+```
+
+
+ 2. 在DownloadTask的doInBackground中根据任务的状态
 
 
 
