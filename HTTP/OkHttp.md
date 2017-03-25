@@ -75,3 +75,12 @@ Log.i(TAG, "onResponse: " + htmlStr);
   [1]: https://github.com/square/okhttp
   
 #### HttpPost请求
+　　和get相比多了Request多了一个RequestBody
+``` java
+RequestBody requestBody = new FormBody.Builder()
+                .add("username", "admin")
+                .add("password", "123456")
+                .build();
+Request request = new Request.Builder().url("https://github.com/square/okhttp").post(requestBody).build();
+// 同步or异步
+```
