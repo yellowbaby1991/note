@@ -213,7 +213,13 @@ DataSupport.deleteAll(Book.class, "price < ?", "15");
  
 ``` java
 //查询Book表中第11-20页并且满足页数大于400这个条件的name，author，pages这3列数据
- List<Book> books = DataSupport.select("name", "author", "pages").where("pages > ?", "400").order("pages").limit(0).offset(10).find(Book.class);
+ List<Book> books = DataSupport.
+ select("name", "author", "pages").
+ where("pages > ?", "400").
+ order("pages").
+ limit(0).
+ offset(10).
+ find(Book.class);
 ```
 
  2. 支持原生的SQL查询得到Cursor
