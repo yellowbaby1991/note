@@ -657,6 +657,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);
     }
+	
     private void initFruits() {
         fruitList.clear();
         for (int i = 0; i < 50; i++) {
