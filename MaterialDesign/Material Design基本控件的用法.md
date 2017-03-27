@@ -497,7 +497,7 @@ dependencies {
     ...
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.android.support:cardview-v7:24.2.1'
-	compile 'com.github.bumptech.glide:glide:3.7.0'
+	compile 'com.github.bumptech.glide:glide:3.7.0' //图片加载框架
 }
 ```
 
