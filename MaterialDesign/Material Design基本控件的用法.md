@@ -492,8 +492,19 @@ dependencies {
 
  1. 使用CardView可以做出很漂亮的卡片布局效果，首先添加依赖
 
-``` java
-enter code here
+``` xml
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.android.support:cardview-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+}
 ```
 
 
