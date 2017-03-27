@@ -631,6 +631,12 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
 
 ```
 
+5. 给RecyclerView设置数据源，布局管理器等
+
+``` java
+enter code here
+```
+
 
 
 #### CoordinatorLayout
