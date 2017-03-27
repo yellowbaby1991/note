@@ -111,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
 ##### 给Toolbar添加按钮
 
  1. 创建menu/toobar.xml文件，除了设置背景图和文字外，还可以指定showAsAction属性，showAsAction属性含义如下：
-　　1）always：表示永远显示在屏幕
-　　2）ifRoom：表示屏幕空间足够就显示，不够就在菜单中
-　　3）never：表示永远在菜单中
+	- always：表示永远显示在屏幕
+	- ifRoom：表示屏幕空间足够就显示，不够就在菜单中
+	- never：表示永远在菜单中
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
