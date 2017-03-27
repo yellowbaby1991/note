@@ -504,7 +504,7 @@ dependencies {
  2. 把RecycleView加入内容布局
 
 ``` xml
-enter code here
+
 ```
 
 
