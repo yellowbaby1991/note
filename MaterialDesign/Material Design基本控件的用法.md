@@ -329,5 +329,37 @@ dependencies {
  3. 使用CircleImageView定义有圆形头像的菜单头部
 
 ``` xml
-enter code here
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="?attr/colorPrimary"
+    android:padding="10dp">
+     <!--圆形头像-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/icon_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/nav_icon" />
+    //邮箱
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="306790935@qq.com"
+        android:textColor="#FFF"
+        android:textSize="14sp" />
+   
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/username"
+        android:text="Yellow Baby"
+        android:textColor="#FFF"
+        android:textSize="14sp" />
+
+</RelativeLayout>
 ```
