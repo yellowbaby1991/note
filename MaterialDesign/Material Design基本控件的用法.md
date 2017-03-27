@@ -197,6 +197,11 @@ public class MainActivity extends AppCompatActivity {
 }
 
 ```
+ 2. 在onOptionsItemSelected中处理点击事件
+
+``` java
+enter code here
+```
 
 
 #### DrawerLayout
