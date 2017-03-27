@@ -430,7 +430,7 @@ dependencies {
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:elevation="8dp"
+            android:elevation="8dp" 
             android:src="@drawable/ic_done" />
     </FrameLayout>
 	
@@ -440,4 +440,14 @@ dependencies {
 
 ```
 
- 2. 1
+ 2. 添加监听事件，和Button类似
+
+``` stylus
+FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+fab.setOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View view) {
+		 Toast.makeText(MainActivity.this, "Data restored", Toast.LENGTH_SHORT).show();
+	}
+});
+```
