@@ -390,8 +390,8 @@ dependencies {
     <android.support.design.widget.NavigationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:menu="@menu/nav_menu"
-        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"  //关联菜单栏
+        app:headerLayout="@layout/nav_header" //关联菜单头
         android:layout_gravity="start">
     </android.support.design.widget.NavigationView>
 
