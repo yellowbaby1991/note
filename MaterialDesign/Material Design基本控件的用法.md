@@ -494,6 +494,12 @@ dependencies {
 #### CardView
 
  1. 使用CardView可以做出很漂亮的卡片布局效果，首先添加依赖
+
+``` java
+enter code here
+```
+
+
  2. 
 
 #### CoordinatorLayout
