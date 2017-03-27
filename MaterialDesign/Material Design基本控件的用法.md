@@ -200,7 +200,16 @@ public class MainActivity extends AppCompatActivity {
  2. 在onOptionsItemSelected中处理点击事件
 
 ``` java
-enter code here
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                break;
+            ...
+        }
+        return true;
+    }
 ```
 
 
