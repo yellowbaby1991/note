@@ -402,3 +402,5 @@ dependencies {
 
 
 ##### FloatingActionButton
+
+ 1. 使用FloatingActionButton添加悬浮按钮
