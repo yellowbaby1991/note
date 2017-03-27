@@ -467,16 +467,9 @@ dependencies {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT).setAction("撤销", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "Data restored", Toast.LENGTH_SHORT).show();
-                    }
-                }).show();
+                Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT).show();
             }
         });
 	}
 ```
 
-
- 2.  
