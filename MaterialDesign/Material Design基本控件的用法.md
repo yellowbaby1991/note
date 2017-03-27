@@ -288,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
 
  1. 添加NavigationView需要的design依赖和实现圆形图片的CircleImageView依赖
 
-``` stylus
+``` xml
 enter code here
 ```
 
