@@ -545,7 +545,8 @@ dependencies {
 
 ```
 
-
+ 3. 使用CardView创建RecyclerView需要的item布局
+ 4. 
 
 
 #### CoordinatorLayout
