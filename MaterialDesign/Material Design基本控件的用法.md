@@ -178,7 +178,24 @@ public class MainActivity extends AppCompatActivity {
 ##### 给Toolbar添加导航按钮
  1. 在MainActivity中打开导航属性
 ``` java
-enter code here
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        ActionBar actionBar = getSupportActionBar();//得到Toolbar
+        if (actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true);//打开开关
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);//设置图片
+        }
+
+    }
+}
+
 ```
 
 
