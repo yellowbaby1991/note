@@ -237,4 +237,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-##### 使用navigationView菜单栏
+##### 使用NavigationView打造菜单栏
