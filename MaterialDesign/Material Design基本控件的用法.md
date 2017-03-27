@@ -495,4 +495,7 @@ dependencies {
 ##### 基本作用
  1. 作为顶层布局
  2. 调度协调布局
+##### CoordinatorLayout与FloatingActionButton
+ 1. 使用CoordinatorLayout让FloatingActionButton不会被Snackbar遮挡
+ 2. 
 
