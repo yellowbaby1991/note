@@ -488,7 +488,7 @@ dependencies {
 	}
 ```
 
-#### CardView
+#### CardView+RecyclerView
 
  1. 使用CardView+RecyclerView可以做出很漂亮的卡片布局效果，首先添加依赖
 
