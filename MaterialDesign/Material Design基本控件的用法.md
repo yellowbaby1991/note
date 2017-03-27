@@ -443,11 +443,13 @@ dependencies {
  2. 添加监听事件，和Button类似
 
 ``` stylus
-FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-fab.setOnClickListener(new View.OnClickListener() {
-	@Override
-	public void onClick(View view) {
-		 Toast.makeText(MainActivity.this, "Data restored", Toast.LENGTH_SHORT).show();
+    protected void onCreate(Bundle savedInstanceState) {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 Toast.makeText(MainActivity.this, "Data restored", Toast.LENGTH_SHORT).show();
+            }
+        });
 	}
-});
 ```
