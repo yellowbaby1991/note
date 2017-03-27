@@ -442,7 +442,7 @@ dependencies {
 
  2. 添加监听事件，和Button类似
 
-``` stylus
+``` java
     protected void onCreate(Bundle savedInstanceState) {
 		...
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -456,3 +456,24 @@ dependencies {
 ```
 
 
+##### Snackbar
+
+ 1.  Snackbars是一种比Toast更先进的提示工具，特点是加入了一个可以交互的按钮，比如删除的时候，可以提供一个撤回按钮，用法和Toast类似
+ 
+``` stylus
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT).setAction("撤销", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MainActivity.this, "Data restored", Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+            }
+        });
+```
+
+
+ 2.  
