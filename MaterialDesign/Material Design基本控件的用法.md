@@ -627,8 +627,6 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
     public int getItemCount() {
         return mFruitList.size();
     }
-
-
 }
 
 ```
