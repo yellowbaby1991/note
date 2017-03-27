@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
 	...
 }
 ```
-##### 给
+##### 给Toolbar添加
 
 #### DrawerLayout
 ----------
