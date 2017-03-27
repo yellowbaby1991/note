@@ -296,4 +296,6 @@ dependencies {
 }
 ```
 
- 2. 1
+ 2. NavigationView由两个部分组成，菜单栏和菜单头组成，先定义菜单
+ 
+ 3. 
