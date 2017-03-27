@@ -178,4 +178,7 @@ public class MainActivity extends AppCompatActivity {
 
 #### DrawerLayout
 ----------
-#### 基本用法
+##### 基本用法
+
+ 1. DrawerLayout是一个xianx布局，允许放入两个直接子控件，第一个是内容，第二个是滑动菜单，因此布局如下
+
