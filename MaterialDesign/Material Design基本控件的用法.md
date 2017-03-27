@@ -326,4 +326,5 @@ dependencies {
 </menu>
 ```
 
- 3. 
+ 3. 使用CircleImageView定义有圆形头像的菜单头部
+ 4. 
