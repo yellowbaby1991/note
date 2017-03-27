@@ -182,3 +182,33 @@ public class MainActivity extends AppCompatActivity {
 
  1. DrawerLayout是一个布局，允许放入两个直接子控件，第一个是内容，第二个是滑动菜单，因此布局如下
 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    //内容
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </FrameLayout>
+
+	//菜单
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="菜单栏" />
+
+</android.support.v4.widget.DrawerLayout>
+
+```
