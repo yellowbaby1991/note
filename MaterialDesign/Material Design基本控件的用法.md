@@ -638,7 +638,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FruitAdapter adapter;
 	
-	 private List<Fruit> fruitList = new ArrayList<>();
+	private List<Fruit> fruitList = new ArrayList<>();
 	
     private Fruit[] fruits = {new Fruit("Apple", R.drawable.apple), new Fruit("Banana", R.drawable.banana),
             new Fruit("Orange", R.drawable.orange), new Fruit("Watermelon", R.drawable.watermelon),
