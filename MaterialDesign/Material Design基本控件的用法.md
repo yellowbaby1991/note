@@ -342,7 +342,7 @@ dependencies {
         android:layout_height="70dp"
         android:layout_centerInParent="true"
         android:src="@drawable/nav_icon" />
-    //邮箱
+     <!--邮箱-->
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
@@ -351,7 +351,7 @@ dependencies {
         android:text="306790935@qq.com"
         android:textColor="#FFF"
         android:textSize="14sp" />
-   
+     <!--昵称-->
     <TextView
         android:id="@+id/mail"
         android:layout_width="wrap_content"
