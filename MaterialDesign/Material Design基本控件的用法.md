@@ -213,5 +213,26 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
- 2. 给菜单栏设置layout_gravity属性，left表示菜单在左，right表示菜单在右，start表示
+ 2. 给菜单栏设置layout_gravity属性，left表示菜单在左，right表示菜单在右，start根据系统语言自行判断
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    ...
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:text="菜单栏"
+        android:textSize="30sp"
+        android:background="#FFF"/>
+
+</android.support.v4.widget.DrawerLayout>
+```
+
 
