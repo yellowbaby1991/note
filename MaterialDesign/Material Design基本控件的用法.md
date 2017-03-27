@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 	...
 }
 ```
- 3. 重写onOptionsItemSelected处理点击事件
+ 1. 重写onOptionsItemSelected处理点击事件
 ``` stylus
 public class MainActivity extends AppCompatActivity {
     ...
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 ##### 给Toolbar添加导航按钮
-
+ 1. 在MainActivity中打开导航属性
 ``` java
 enter code here
 ```
