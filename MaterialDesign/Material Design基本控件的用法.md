@@ -213,4 +213,5 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
+ 2. 给菜单栏设置layout_gravity属性，left表示菜单在左，right表示菜单在右，start表示
 
