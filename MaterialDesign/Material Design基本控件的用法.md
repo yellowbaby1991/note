@@ -460,7 +460,9 @@ dependencies {
 
  1.  Snackbars是一种比Toast更先进的提示工具，特点是加入了一个可以交互的按钮，比如删除的时候，可以提供一个撤回按钮，用法和Toast类似
  
-``` stylus
+``` java
+    protected void onCreate(Bundle savedInstanceState) {
+		...
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -473,6 +475,7 @@ dependencies {
                 }).show();
             }
         });
+	}
 ```
 
 
