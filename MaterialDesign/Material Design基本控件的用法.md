@@ -496,6 +496,10 @@ dependencies {
  1. 作为顶层布局
  2. 调度协调布局
 ##### CoordinatorLayout与FloatingActionButton
- 1. 使用CoordinatorLayout让FloatingActionButton不会被Snackbar遮挡
- 2. 
+ 1. 使用CoordinatorLayout让FloatingActionButton不会被Snackbar遮挡，将之前的FrameLayout替换即可
+
+``` xml
+enter code here
+```
+
 
