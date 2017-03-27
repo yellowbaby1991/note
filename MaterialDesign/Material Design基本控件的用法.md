@@ -501,7 +501,12 @@ dependencies {
 }
 ```
 
- 2. 
+ 2. 把RecycleView加入内容布局
+
+``` xml
+enter code here
+```
+
 
 #### CoordinatorLayout
 ##### 基本作用
