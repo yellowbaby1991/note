@@ -501,7 +501,6 @@ dependencies {
 }
 ```
 
-
  2. 
 
 #### CoordinatorLayout
