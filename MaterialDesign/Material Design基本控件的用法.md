@@ -200,6 +200,17 @@ public class MainActivity extends AppCompatActivity {
  2. 在onOptionsItemSelected中处理点击事件
 
 ``` java
+public class MainActivity extends AppCompatActivity {
+
+    private DrawerLayout mDrawerLayout;
+	
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+		...
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		...
+    }
+	
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
