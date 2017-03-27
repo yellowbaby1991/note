@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 	...
 }
 ```
- 1. 重写onOptionsItemSelected处理点击事件
+ 3. 重写onOptionsItemSelected处理点击事件
 ``` stylus
 public class MainActivity extends AppCompatActivity {
     ...
