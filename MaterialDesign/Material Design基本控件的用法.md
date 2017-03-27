@@ -2,6 +2,7 @@
 　　Material design 是一种达到可视化，交互性，动效以及多屏幕适应的全面设计，Google为了方便开发者推出了兼容5.0前后的Material design支持库，下面是一些常用的控件
   
 #### Toolbar
+----------
 #####  基本用法
 
  1. Toolbar的出现是为了取代原有的ActionBar，所以想使用Toolbar首先需要将原有的ActionBar隐藏，将style改成NoActionBar
@@ -223,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 #### DrawerLayout
+----------
 ##### 基本用法
 
  1. DrawerLayout是一个布局，允许放入两个直接子控件，第一个是内容，第二个是滑动菜单，因此布局如下
@@ -454,6 +456,7 @@ dependencies {
 ```
 
 
+----------
 
 #### Snackbar
 
@@ -490,3 +493,9 @@ dependencies {
         });
 	}
 ```
+
+
+----------
+
+
+
