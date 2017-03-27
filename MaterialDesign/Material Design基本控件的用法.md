@@ -363,3 +363,6 @@ dependencies {
 
 </RelativeLayout>
 ```
+
+4. 使用NavigationView关联菜单栏和菜单头取代之前简易的TextView
+
