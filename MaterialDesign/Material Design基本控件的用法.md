@@ -4,8 +4,9 @@
 #### Toolbar
 ----------
 
-##### 1.1 基本用法
-- [ ] ​Toolbar的出现是为了取代原有的ActionBar，所以想使用Toolbar首先需要将原有的ActionBar隐藏，将style改成NoActionBar
+#####  基本用法
+
+ 1. Toolbar的出现是为了取代原有的ActionBar，所以想使用Toolbar首先需要将原有的ActionBar隐藏，将style改成NoActionBar
     　
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -31,4 +32,146 @@
 </resources>
 ```
 
+ 2. 将Toolbar放入布局文件中
+ 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" //背景
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" //弹出的背景色 />
+    </FrameLayout>
+    
+</RelativeLayout>
+
+```
+
+ 3. Activity中设置一下
+
+``` java
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);//这样toolbar就可以正常使用了
+	}
+```
+
+
+
+##### Toolbar添加文字
+
+ 1. 在activity中设置title和subtitle
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("主标题");
+        toolbar.setSubtitle("副标题");
+        setSupportActionBar(toolbar);
+    }
+}
+```
+
+
+ 2. 在AndroidManifest.xml中设置label属性
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="yellow.com.materialdesigndemo">
+    ...
+    <application
+        android:label="Fruit"
+        android:theme="@style/AppTheme">
+		...
+    </application>
+
+</manifest>
+```
+
+##### 给Toolbar添加按钮
+
+ 1. 创建menu/toobar.xml文件，除了设置背景图和文字外，还可以指定showAsAction属性，showAsAction属性含义如下：
+　　1）always：表示永远显示在屏幕
+　　2）ifRoom：表示屏幕空间足够就显示，不够就在菜单中
+　　3）never：表示永远在菜单中
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/backup"
+        android:icon="@drawable/ic_backup"
+        android:title="Backup"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_delete"
+        android:title="Backup"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"
+        app:showAsAction="never"></item>
+</menu>
+```
+
+
+ 2. 在onCreateOptionsMenu中添加菜单
+
+``` stylus
+public class MainActivity extends AppCompatActivity {
+    ...
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);//加载菜单
+        return true;
+    }
+	...
+}
+```
+ 3. 重写onOptionsItemSelected处理点击事件
+``` stylus
+public class MainActivity extends AppCompatActivity {
+    ...
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                break;
+            case R.id.backup:
+                Toast.makeText(this, "backup", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.delete:
+                Toast.makeText(this, "delete", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.settings:
+                Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
+    }
+	...
+}
+```
