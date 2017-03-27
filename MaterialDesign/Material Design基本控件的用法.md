@@ -474,3 +474,15 @@ dependencies {
 ```
 
  2.  添加交互按钮监听
+ ``` java
+    protected void onCreate(Bundle savedInstanceState) {
+		...
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT).show();
+            }
+        });
+	}
+```
