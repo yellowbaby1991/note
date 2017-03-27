@@ -579,7 +579,7 @@ dependencies {
 </android.support.v7.widget.CardView>
 ```
 
-
+ 4. 使用CardView创建RecyclerView需要的item布局
 
 
 
