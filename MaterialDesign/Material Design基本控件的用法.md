@@ -579,7 +579,59 @@ dependencies {
 </android.support.v7.widget.CardView>
 ```
 
- 4. 使用CardView创建RecyclerView需要的item布局
+ 4. 创建需要的RecyclerView.Adapter
+
+``` java
+public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> {
+
+    private Context mContext;
+
+    private List<Fruit> mFruitList;
+
+    public FruitAdapter(List<Fruit> fruitList) {
+        mFruitList = fruitList;
+    }
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        CardView cardView;
+        ImageView fruitImage;
+        TextView fruitName;
+
+        public ViewHolder(View view) {
+            super(view);
+            cardView = (CardView) itemView;
+            fruitImage = (ImageView) view.findViewById(R.id.fruit_image);
+            fruitName = (TextView) view.findViewById(R.id.fruit_name);
+        }
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (mContext == null) {
+            mContext = parent.getContext();
+        }
+        View view = LayoutInflater.from(mContext).inflate(R.layout.fruit_item, parent, false);
+        final ViewHolder holder = new ViewHolder(view);
+        return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Fruit fruit = mFruitList.get(position);
+        holder.fruitName.setText(fruit.getName());
+		//使用Glide加载高精度的图片，防止卡死
+        Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);
+    }
+
+    @Override
+    public int getItemCount() {
+        return mFruitList.size();
+    }
+
+
+}
+
+```
 
 
 
