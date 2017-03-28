@@ -76,6 +76,20 @@ public class County extends DataSupport {
 }	
 ```
 
- 3. 1
+ 3. 配置litepal.xml
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="cool_weather" />
+    <version value="1" />
+    <list>
+        <mapping class="com.coolweather.android.db.Province" />
+        <mapping class="com.coolweather.android.db.City" />
+        <mapping class="com.coolweather.android.db.County" />
+    </list>
+</litepal>
+```
+
 
   [1]: https://github.com/yellowbaby1991/coolweather
