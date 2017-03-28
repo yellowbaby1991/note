@@ -44,7 +44,7 @@ public class City extends DataSupport {
     private int provinceId;
 	
 	//getter and setter
-	}	
+}	
 ```
 
 ``` java
@@ -59,7 +59,7 @@ public class County extends DataSupport {
     private int cityId;
 	
 	//getter and setter
-	}	
+}	
 ```
 
  3. 1
