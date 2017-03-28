@@ -1,5 +1,5 @@
 #### 将项目托管到GitHub上
-
+##### 初次提交
  1. 在GitHub上创建名称为coolweather的 [Repository][1]
  2. 在本地创建一个项目名为CoolWeather的Project
  3. 在本地的CoolWeather里面打开Git Bush，输入下面代码把远程版本克隆到本地
