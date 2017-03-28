@@ -32,6 +32,22 @@ dependencies {
 
  2. 数据库设计，三张表，对应三个实体类Province，City，County
 
+``` java
+public class City extends DataSupport {
+
+    private int id;
+
+    private String cityName;
+
+    private int cityCode;
+
+    private int provinceId;
+	
+	//getter and setter
+	}	
+```
+
+
  3. 1
 
   [1]: https://github.com/yellowbaby1991/coolweather
