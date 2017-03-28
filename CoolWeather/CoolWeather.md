@@ -170,7 +170,7 @@ public class County extends DataSupport {
 </LinearLayout>
 ```
 
- 2. 为了使当前布局可以共用，使用一个全局变量记录当前的层
+ 2. 为了使当前布局可以共用，使用一个全局变量记录当前的层，根据选择的层来分布加载数据
  
 ``` java
 public class ChooseAreaFragment extends Fragment {
