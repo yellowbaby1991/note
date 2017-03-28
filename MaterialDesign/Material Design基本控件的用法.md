@@ -1021,5 +1021,17 @@ public class FruitActivity extends AppCompatActivity {
  2. 添加错误提示在下方
 
 ``` java
-enter code here
+public class LoginActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.login);
+
+        TextInputLayout usename = (TextInputLayout) findViewById(R.id.et_username);
+        usename.setErrorEnabled(true);
+        usename.setError("账号错啦");
+
+    }
+}
 ```
