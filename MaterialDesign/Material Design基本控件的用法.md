@@ -817,4 +817,40 @@ public class MainActivity extends AppCompatActivity {
 
  1. 使用SwipeRefreshLayout实现下拉刷新效果，先把RecyclerView包裹起来
 
- 2. 1
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+         ... <!--标题栏-->
+ 
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    ... <!--浮动按钮-->
+    </android.support.design.widget.CoordinatorLayout>
+
+  
+    ... <!--菜单栏-->
+
+</android.support.v4.widget.DrawerLayout>
+
+```
+
+
+ 2. MainActivity中处理下拉事件
