@@ -30,6 +30,6 @@ dependencies {
 }
 ```
 
- 2. 
+ 2. 数据库设计，三张表，Province，City，County
 
   [1]: https://github.com/yellowbaby1991/coolweather
