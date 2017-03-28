@@ -901,3 +901,5 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 ##### CoordinatorLayout与CollapsingToolbarLayout
+
+ 1. CollapsingToolbarLayout可以实现可折叠式标题栏
