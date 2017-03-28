@@ -17,6 +17,7 @@
 	-  [CoordinatorLayout与AppBarLayout](#coordinatorlayout与appbarlayout)
 	- [CoordinatorLayout与CollapsingToolbarLayout](#coordinatorlayout与collapsingtoolbarlayout)
 9. [TextInputLayout](#textinputlayout)
+10. [TabLayout](#tablayout)
 
 #### 概述
 　　Material design 是一种达到可视化，交互性，动效以及多屏幕适应的全面设计，Google为了方便开发者推出了兼容5.0前后的Material design支持库，下面是一些常用的控件
@@ -1041,3 +1042,53 @@ public class LoginActivity extends Activity {
 #### TabLayout
 
  1. 开发用的比较多的是TabLayout和ViewPager的联动效果，自己去实现简直麻烦，先定义布局
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/sliding_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
+```
+
+
+ 2. Activity里面设置属性
+
+``` java
+public class LoginActivity extends FragmentActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.login);
+
+        ViewPager pager = (ViewPager)findViewById(R.id.viewPager);
+        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(),this));
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        tabLayout.addTab(tabLayout.newTab().setText("Tab One"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab Two"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab Three"));
+        tabLayout.setTabMode(TabLayout.MODE_FIXED );
+        //tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE );
+        tabLayout.setupWithViewPager(pager);
+
+    }
+}
+```
