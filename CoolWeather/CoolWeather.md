@@ -127,4 +127,11 @@ public class County extends DataSupport {
  2. 省，市，县都公用的一个布局，根据当前级别来分布读取数据列表（省，市，县），为了方便显示数据，使用简单的ListView
 #### 细节
 
- 1. List item
+ 1. 布局是简单的垂直线性布局，包含头部文字+返回按钮+ListView列表
+
+``` xml
+enter code here
+```
+
+
+ 2. 
