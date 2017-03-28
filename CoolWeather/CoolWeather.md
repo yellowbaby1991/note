@@ -18,7 +18,8 @@ git push origin master
 
 #### 后续提交
 
- 1. 命令如下
+
+ - 命令如下
 
 ``` git
 git add .
