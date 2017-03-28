@@ -990,7 +990,7 @@ public class FruitActivity extends AppCompatActivity {
 
 
 
-##### TextInputLayout
+#### TextInputLayout
 
  1. TextInputLayout输入的时候会自动将隐藏栏推到左上角，用法很简单，只要嵌套一个EditText就可以了
 
