@@ -16,7 +16,18 @@ git commit -m "First commit."
 git push origin master
 ```
 
-#### 环境配置
+#### 后续提交
+
+ 1. 命令如下
+
+``` git
+git add .
+git commit -m "commit"
+git push origin master
+```
+
+
+### 环境配置
 
  1. 加载依赖库，litepal操作数据库，OKhttp网络，GSON解析JSON数据，Glide加载图片
  
