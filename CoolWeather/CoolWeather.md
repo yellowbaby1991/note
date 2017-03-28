@@ -33,6 +33,20 @@ dependencies {
  2. 数据库设计，三张表，对应三个实体类Province，City，County
 
 ``` java
+public class Province extends DataSupport {
+
+    private int id;
+
+    private String provinceName;
+
+    private int provinceCode;
+	
+	//getter and setter	
+}	
+```
+
+
+``` java
 public class City extends DataSupport {
 
     private int id;
