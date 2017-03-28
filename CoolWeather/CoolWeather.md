@@ -199,7 +199,7 @@ public class ChooseAreaFragment extends Fragment {
             }
         });
 		...
-        queryProvinces();
+        queryProvinces();//第一次加载加载省
     }
 
 }
