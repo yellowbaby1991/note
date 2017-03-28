@@ -252,32 +252,7 @@ public class ChooseAreaFragment extends Fragment {
 
  4. 从服务端加载的逻辑，调用封装好的OkHttp工具类，将得到的JSON数据解析为对象，利用LitePal存入本地数据库，最后切回主线程刷新
 
-``` java
-public class Utility {
-    /**
-     * 解析和处理服务器返回的省级数据
-     */
-    public static boolean handleProvinceResponse(String response) {
-        if (!TextUtils.isEmpty(response)) {
-            try {
-                JSONArray allProvinces = new JSONArray(response);
-                for (int i = 0; i < allProvinces.length(); i++) {
-                    JSONObject provinceObject = allProvinces.getJSONObject(i);
-                    Province province = new Province();
-                    province.setProvinceName(provinceObject.getString("name"));
-                    province.setProvinceCode(provinceObject.getInt("id"));
-                    province.save();//使用LitePal存入本地数据库
-                }
-                return true;
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        return false;
-    }
-	....
-}
-```
+
 
 
 ``` java
@@ -322,5 +297,32 @@ public class ChooseAreaFragment extends Fragment {
             }
         });
     }
+}
+```
+
+``` java
+public class Utility {
+    /**
+     * 解析和处理服务器返回的省级数据
+     */
+    public static boolean handleProvinceResponse(String response) {
+        if (!TextUtils.isEmpty(response)) {
+            try {
+                JSONArray allProvinces = new JSONArray(response);
+                for (int i = 0; i < allProvinces.length(); i++) {
+                    JSONObject provinceObject = allProvinces.getJSONObject(i);
+                    Province province = new Province();
+                    province.setProvinceName(provinceObject.getString("name"));
+                    province.setProvinceCode(provinceObject.getInt("id"));
+                    province.save();//使用LitePal存入本地数据库
+                }
+                return true;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+	....
 }
 ```
