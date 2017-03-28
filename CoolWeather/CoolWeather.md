@@ -21,9 +21,14 @@ git push origin master
  1. 加载依赖库，litepal操作数据库，OKhttp网络，GSON解析JSON数据，Glide加载图片
  
 ``` xml
-enter code here
+dependencies {
+    ...
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'org.litepal.android:core:1.3.2'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.google.code.gson:gson:2.7'
+}
 ```
-
 
  2. 
 
