@@ -91,5 +91,24 @@ public class County extends DataSupport {
 </litepal>
 ```
 
+4. 配置litepal.xml
+
+``` xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.coolweather.com.coolweather">
+    
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+    </application>
+
+</manifest>
+
+```
+
 
   [1]: https://github.com/yellowbaby1991/coolweather
