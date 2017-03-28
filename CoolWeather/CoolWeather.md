@@ -217,6 +217,16 @@ public class ChooseAreaFragment extends Fragment {
      * ListView需要的数据源
      */
     private List<String> dataList = new ArrayList<>();
+	
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.choose_area, container, false);
+		....
+        listView = (ListView) view.findViewById(R.id.list_view);
+        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, dataList);
+        listView.setAdapter(adapter);
+        return view;
+    }
 
     private void queryProvinces() {
         titleText.setText("中国");
