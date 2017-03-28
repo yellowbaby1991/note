@@ -15,7 +15,6 @@ git clone https://github.com/yellowbaby1991/coolweather.git
 git add .
 git commit -m "First commit."
 git push origin master
-
 ```
 
 
