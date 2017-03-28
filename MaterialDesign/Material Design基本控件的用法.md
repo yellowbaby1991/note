@@ -759,6 +759,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 
+
 #### CoordinatorLayout
 ##### 基本作用
  1. 作为顶层布局
@@ -899,4 +900,4 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
-
+##### CoordinatorLayout与CollapsingToolbarLayout
