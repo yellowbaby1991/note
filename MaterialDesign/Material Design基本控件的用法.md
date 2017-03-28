@@ -1019,4 +1019,5 @@ public class FruitActivity extends AppCompatActivity {
 ```
 
 
- 2. 1
+ 2. 添加错误提示在下方
+ 3. 
