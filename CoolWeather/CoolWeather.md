@@ -10,7 +10,6 @@ git clone https://github.com/yellowbaby1991/coolweather.git
 
  4. 进入本地目录将coolweather子文件夹中的.git隐藏文件和readme拷贝到上一层目录，然后删除coolweather子文件夹
  5. 将现有的项目提交到GitHub上
-
 ``` git
 git add .
 git commit -m "First commit."
