@@ -47,6 +47,20 @@ public class City extends DataSupport {
 	}	
 ```
 
+``` java
+public class County extends DataSupport {
+
+    private int id;
+
+    private String countyName;
+
+    private String weatherId;
+
+    private int cityId;
+	
+	//getter and setter
+	}	
+```
 
  3. 1
 
