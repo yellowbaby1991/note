@@ -19,36 +19,6 @@ git push origin master
 
 #### 环境配置
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 1. List item
 
   [1]: https://github.com/yellowbaby1991/coolweather
