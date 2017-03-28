@@ -99,13 +99,9 @@ public class County extends DataSupport {
     
     <application
         android:name="org.litepal.LitePalApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        ...>
     </application>
-
+    ...
 </manifest>
 
 ```
