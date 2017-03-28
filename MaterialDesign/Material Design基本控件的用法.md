@@ -1036,3 +1036,8 @@ public class LoginActivity extends Activity {
     }
 }
 ```
+
+
+#### TabLayout
+
+ 1. 开发用的比较多的是TabLayout和ViewPager的联动效果，自己去实现简直麻烦，先定义布局
