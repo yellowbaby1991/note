@@ -994,4 +994,29 @@ public class FruitActivity extends AppCompatActivity {
 
  1. TextInputLayout输入的时候会自动将隐藏栏推到左上角，用法很简单，只要嵌套一个EditText就可以了
 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_username"
+        android:layout_centerInParent="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户名"
+            android:inputType="textPersonName" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>
+```
+
+
  2. 1
