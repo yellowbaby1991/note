@@ -250,4 +250,4 @@ public class ChooseAreaFragment extends Fragment {
 ```
 
 
- 4. 
+ 4. 从服务端加载的逻辑，调用封装好的OkHttp工具类，将得到的JSON数据解析为对象，利用litepal存入本地数据库
