@@ -209,4 +209,5 @@ public class ChooseAreaFragment extends Fragment {
 
 
  3. 查询方法的逻辑，首先读取数据库，如果有数据，就更新dataList，如果没有就去服务器加载到数据库后再查询一次
+
  4. 
