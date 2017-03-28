@@ -854,3 +854,11 @@ public class MainActivity extends AppCompatActivity {
 
 
  2. MainActivity中处理下拉事件
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private SwipeRefreshLayout swipeRefresh;
+	
+}
+```
