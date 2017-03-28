@@ -121,3 +121,7 @@ public class County extends DataSupport {
 
   [1]: https://github.com/yellowbaby1991/coolweather
 ### 遍历全国市县数据
+#### 分析
+
+ 1. 第一次读取会从服务器读取解析Json数据存入本地数据库，随后再读取就不需要再访问服务器
+ 2. 
