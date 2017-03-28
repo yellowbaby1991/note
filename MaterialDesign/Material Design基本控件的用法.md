@@ -791,6 +791,7 @@ public class MainActivity extends AppCompatActivity {
                 app:layout_scrollFlags="scroll|enterAlways|snap"
 				//srcoll表示上滚的时候标题会被隐藏
 				//enterAlways表示当下滚的时候标题会重新显示
+				//snap表示当标题还没有完全隐藏的时候会根据当前的距离自动隐藏
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
         </android.support.design.widget.AppBarLayout>
 
