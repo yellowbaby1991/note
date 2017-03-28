@@ -951,3 +951,21 @@ public class MainActivity extends AppCompatActivity {
 
 
  2. 在Activity中设置标题和图片
+
+``` java
+public class FruitActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fruit);
+        ...
+        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);
+        collapsingToolbar.setTitle(fruitName);
+        Glide.with(this).load(fruitImageId).into(fruitImageView);
+ 
+    }
+}
+```
+
