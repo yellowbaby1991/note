@@ -175,6 +175,13 @@ public class County extends DataSupport {
 ``` java
 public class ChooseAreaFragment extends Fragment {
 
+    /**
+     * 当前选中的级别
+     */
+    private int currentLevel;
+    public static final int LEVEL_PROVINCE = 0;
+    public static final int LEVEL_CITY = 1;
+    public static final int LEVEL_COUNTY = 2;
 
 }
 ```
