@@ -91,7 +91,7 @@ public class County extends DataSupport {
 </litepal>
 ```
 
-4. 配置litepal.xml
+4. 修改AndroidManifest.xml配置LitePalApplication
 
 ``` xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
