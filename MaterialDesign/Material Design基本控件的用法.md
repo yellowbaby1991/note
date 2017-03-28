@@ -765,3 +765,48 @@ public class MainActivity extends AppCompatActivity {
 
 
  2. 设置Toolbar的layout_scrollFlags属性来实现联动效果
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+				//srcoll表示上滚的时候标题会被隐藏
+				//enterAlways表示当下滚的时候标题会重新显示
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_height="match_parent" />
+
+        ...
+		  <!--浮动按钮-->
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!--菜单栏-->
+    ...
+
+</android.support.v4.widget.DrawerLayout>
+
+```
