@@ -720,3 +720,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 ##### CoordinatorLayout与AppBarLayout
+
+ 1. 使用AppBarLayout可以防止CoordinatorLayout内标题和内容重叠
