@@ -170,4 +170,14 @@ public class County extends DataSupport {
 </LinearLayout>
 ```
 
- 2. 
+ 2. 为了使当前布局可以共用，使用一个全局变量记录当前的层
+ 
+``` java
+public class ChooseAreaFragment extends Fragment {
+
+
+}
+```
+
+
+ 3. 1
