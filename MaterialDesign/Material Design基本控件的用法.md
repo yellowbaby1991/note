@@ -811,3 +811,10 @@ public class MainActivity extends AppCompatActivity {
 </android.support.v4.widget.DrawerLayout>
 
 ```
+
+
+#### SwipeRefreshLayout
+
+ 1. 使用SwipeRefreshLayout实现下拉刷新效果，先把RecyclerView包裹起来
+
+ 2. 1
