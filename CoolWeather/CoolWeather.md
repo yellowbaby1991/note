@@ -213,6 +213,11 @@ public class ChooseAreaFragment extends Fragment {
 ``` java
 public class ChooseAreaFragment extends Fragment {
 
+    /**
+     * ListView需要的数据源
+     */
+    private List<String> dataList = new ArrayList<>();
+
     private void queryProvinces() {
         titleText.setText("中国");
         backButton.setVisibility(View.GONE);
