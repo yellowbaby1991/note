@@ -253,5 +253,7 @@ public class ChooseAreaFragment extends Fragment {
  4. 从服务端加载的逻辑，调用封装好的OkHttp工具类，将得到的JSON数据解析为对象，利用LitePal存入本地数据库，最后切回主线程刷新
 
 ``` java
-enter code here
+public class ChooseAreaFragment extends Fragment {
+
+}
 ```
