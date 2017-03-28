@@ -213,6 +213,23 @@ public class ChooseAreaFragment extends Fragment {
 ``` java
 public class ChooseAreaFragment extends Fragment {
 
+    private void queryProvinces() {
+        titleText.setText("中国");
+        backButton.setVisibility(View.GONE);
+        provinceList = DataSupport.findAll(Province.class);
+        if (provinceList.size() > 0) {
+            dataList.clear();
+            for (Province province : provinceList) {
+                dataList.add(province.getProvinceName());
+            }
+            adapter.notifyDataSetChanged();
+            listView.setSelection(0);
+            currentLevel = LEVEL_PROVINCE;
+        } else {
+            String address = "http://guolin.tech/api/china";
+            queryFromServer(address, "province");
+        }
+    }
 }
 ```
 
