@@ -722,3 +722,46 @@ public class MainActivity extends AppCompatActivity {
 ##### CoordinatorLayout与AppBarLayout
 
  1. 使用AppBarLayout可以防止CoordinatorLayout内标题和内容重叠
+ 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout //使用AppBarLayout包裹
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" //设置表现形式
+            android:layout_height="match_parent" />
+	...
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!--菜单栏-->
+    ...
+
+</android.support.v4.widget.DrawerLayout>
+
+```
+
+
+ 2. 设置Toolbar的layout_scrollFlags属性来实现联动效果
