@@ -19,6 +19,7 @@ git push origin master
 
 #### 环境配置
 
- 1. 依赖库，litepal操作数据库，OKhttp网络，GSON解析JSON数据，Glide加载图片
+ 1. 加载依赖库，litepal操作数据库，OKhttp网络，GSON解析JSON数据，Glide加载图片
+ 2. 
 
   [1]: https://github.com/yellowbaby1991/coolweather
