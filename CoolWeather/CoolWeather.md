@@ -275,7 +275,7 @@ public class ChooseAreaFragment extends Fragment {
                     result = Utility.handleCountyResponse(responseText, selectedCity.getId());
                 }
 
-                if (result) {
+                if (result) {//如果下载成功就切回主线程刷新查询一次
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
