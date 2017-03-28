@@ -4,7 +4,7 @@
  2. 在本地创建一个项目名为CoolWeather的Project
  3. 在本地的CoolWeather里面打开Git Bush，输入下面代码把远程版本克隆到本地
  
-``` git
+``` xml
 git clone https://github.com/yellowbaby1991/coolweather.git
 ```
 
