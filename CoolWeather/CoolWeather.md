@@ -497,17 +497,17 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_weather);
-	    ...//控件初始化
+        ...//控件初始化
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather", null);
 
         if (weatherString != null) {
-            //有缓存时直接解析天气数据
+           //有缓存时直接解析天气数据
             Weather weather = Utility.handlerWeatherResponse(weatherString);
             showWeatherInfo(weather);
         } else {
-			//无缓存时服务器拉取
+           //无缓存时服务器拉取
             String weatherId = getIntent().getStringExtra("weather_id");
             weatherLayout.setVisibility(View.INVISIBLE);
             requestWeather(weatherId);
@@ -528,7 +528,7 @@ public class WeatherActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-						//拉取成功后把数据存入本地
+                        //拉取成功后把数据存入本地
                         if (weather != null && "ok".equals(weather.status)) {
                             SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this).edit();
                             editor.putString("weather", responseText);
@@ -543,7 +543,7 @@ public class WeatherActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call call, IOException e) {
-                //...拉取失败
+               //...拉取失败
             }
         });
         loadBingPic();
@@ -604,10 +604,10 @@ public class WeatherActivity extends AppCompatActivity {
         android:scaleType="centerCrop" />
 
     <android.support.v4.widget.DrawerLayout
-		<!--天气界面-->
+    <!--天气界面-->
 
-		<!--侧滑菜单-->
-	</android.support.v4.widget.SwipeRefreshLayout>
+    <!--侧滑菜单-->
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
 </FrameLayout>
