@@ -703,4 +703,4 @@ public class WeatherActivity extends AppCompatActivity {
 
 ```
 
- 5. 每日一图，从必应拉取图片显示为背景图
+6. 去掉状态栏，是背景图全屏显示
