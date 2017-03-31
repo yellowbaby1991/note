@@ -497,8 +497,7 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_weather);
-
-		...//控件初始化
+	    ...//控件初始化
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather", null);
