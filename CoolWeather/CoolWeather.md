@@ -320,7 +320,7 @@ public class Utility {
 
 #### 细节
 
- 1. 解析复杂的Json文件使用Gson，使用方法很简单，只需要建立好对应的JAVA类即可
+ 1. 带解析的json文件格式如下，所以需要对应5个实体类+一个Weather类
 
 ``` json
 {
