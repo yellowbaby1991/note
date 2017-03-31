@@ -399,7 +399,7 @@ public class Basic {
     public String cityName;
 
     @SerializedName("id")
-    private String weatherId;
+    public String weatherId;
 
     public Update update;
 
