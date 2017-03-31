@@ -646,7 +646,7 @@ import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
 
-	...
+    ...
     private ImageView bingPicImg;
 
     @Override
