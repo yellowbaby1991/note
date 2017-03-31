@@ -683,7 +683,7 @@ public class WeatherActivity extends AppCompatActivity {
         HttpUtil.sendOkHttpRequest(requestBingPic, new Callback() {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-				//从服务器得到每日一图的URL，然后切回主线程使用Glide加载
+                //从服务器得到每日一图的URL，然后切回主线程使用Glide加载
                 final String bingPic = response.body().string();
                 SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this).edit();
                 editor.putString("bing_pic", bingPic);
