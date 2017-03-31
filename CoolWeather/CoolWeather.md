@@ -357,11 +357,11 @@ public class Weather {
   "HeWeather": [
 	{
       "status": "ok",
-	  "basic":{}
-	  "aqi":{}
-	  "now":{}
-	  "suggestion":{}
-	  "daily_forecast":{}
+	  "basic": {}
+	  "aqi": {}
+	  "now": {}
+	  "suggestion": {}
+	  "daily_forecast": {}
 	}
   ]
 }
