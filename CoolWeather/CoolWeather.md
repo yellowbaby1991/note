@@ -818,9 +818,14 @@ public class WeatherActivity extends AppCompatActivity {
     private Button navButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-       super.onCreate(savedInstanceState);
-      navButton = (Button) findViewById(R.id.nav_button);		
-		
+        super.onCreate(savedInstanceState);
+        navButton = (Button) findViewById(R.id.nav_button);		
+        navButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });		
 ```
 
 
