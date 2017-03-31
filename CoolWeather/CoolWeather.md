@@ -832,4 +832,4 @@ public class WeatherActivity extends AppCompatActivity {
 ```
 
 
- 3.1
+ 3.点击县列表的时候根据当前Activity的类型来判断是第一次打开还是重复选择刷新
