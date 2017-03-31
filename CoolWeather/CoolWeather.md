@@ -363,7 +363,7 @@ public class Basic {
         "id": "CN101190401",	  
         "update": {
           "loc": "2017-03-31 09:52",	
-		  }
+		 }
 }
 ```
 
