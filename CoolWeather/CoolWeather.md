@@ -387,4 +387,68 @@ public class Basic {
 }
 ```
 
- 3. 布局文件比较长，所以分解成了四个子布局
+ 3. 天气布局文件比较长，所以分解成了四个子布局
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/weather_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:overScrollMode="never">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="true">
+
+                    <include layout="@layout/title" />
+
+                    <include layout="@layout/now" />
+
+                    <include layout="@layout/forecast" />
+
+                    <include layout="@layout/aqi" />
+
+                    <include layout="@layout/suggestion" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <fragment
+            android:id="@+id/choose_area_fragment"
+            android:name="com.coolweather.android.fragment.ChooseAreaFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            />
+
+    </android.support.v4.widget.DrawerLayout>
+
+</FrameLayout>
+
+```
+
+
+ 4. 1
