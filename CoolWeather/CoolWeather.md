@@ -865,3 +865,12 @@ public class ChooseAreaFragment extends Fragment {
 
 }
 ```
+
+
+### 后台自动更新天气
+### 分析
+
+ 1. 创建一个长期在后台运行的定时服务来实现每8小时来更新一次
+ 2. 刷新天气数据：根据本地存储的weather json数据解析得到的weatherId再去网上拉取新的json数据存在本地即可
+ 3. 刷新 
+
