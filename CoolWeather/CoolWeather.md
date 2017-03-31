@@ -359,8 +359,10 @@ public class Basic {
 
 ``` json
 "basic": {
-      "city": "苏州",
-      "id": "CN101190401",	  
+        "city": "苏州",
+        "id": "CN101190401",	  
+        "update": {
+          "loc": "2017-03-31 09:52",	  
 }
 ```
 
