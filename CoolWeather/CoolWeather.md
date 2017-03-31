@@ -704,3 +704,53 @@ public class WeatherActivity extends AppCompatActivity {
 ```
 
 6. 去掉状态栏，是背景图全屏显示
+
+``` java
+public class WeatherActivity extends AppCompatActivity {
+
+    private Button navButton;
+
+    public DrawerLayout drawerLayout;
+
+    public SwipeRefreshLayout swipeRefresh;
+
+    private ScrollView weatherLayout;
+
+    private TextView titleCity;
+
+    private TextView titleUpdateTime;
+
+    private TextView degreeText;
+
+    private TextView weatherInfoText;
+
+    private LinearLayout forecastLayout;
+
+    private TextView aqiText;
+
+    private TextView pm25Text;
+
+    private TextView comfortText;
+
+    private TextView carWashText;
+
+    private TextView sportText;
+
+    private ImageView bingPicImg;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ...
+        //取消标题
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //取消状态栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setContentView(R.layout.activity_weather);
+		
+		}
+		...
+}
+```
