@@ -726,3 +726,4 @@ public class WeatherActivity extends AppCompatActivity {
 ```
 
 
+### 手动切换天气和城市
