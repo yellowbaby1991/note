@@ -960,7 +960,9 @@ public class AutoUpdateService extends Service {
  2. 在Activity中开启服务
  
 ``` java
-enter code here
+		//开启定时更新服务
+		Intent intent = new Intent(this, AutoUpdateService.class);
+		startService(intent);
 ```
 
 
