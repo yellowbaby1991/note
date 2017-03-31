@@ -876,7 +876,7 @@ public class ChooseAreaFragment extends Fragment {
 
 #### 细节
 
- 1. 创建定时服务类
+ 1. 创建定时服务类，每8小时更新一次天气和图片
  
 ``` java
 public class AutoUpdateService extends Service {
