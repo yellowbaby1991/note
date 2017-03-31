@@ -322,8 +322,22 @@ public class Utility {
 
  1. 带解析的json文件格式如下，所以需要对应5个实体类+一个Weather类
 
-``` javascript
-enter code here
+``` java
+public class Weather {
+
+    public String status;
+
+    public Basic basic;
+
+    public AQI aqi;
+
+    public Now now;
+
+    public Suggestion suggestion;
+
+    @SerializedName("daily_forecast")
+    public List<Forecast> forecastList;
+}
 ```
 
 ``` json
