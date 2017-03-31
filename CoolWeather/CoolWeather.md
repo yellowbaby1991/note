@@ -729,6 +729,8 @@ public class WeatherActivity extends AppCompatActivity {
 ### 手动切换天气和城市
 #### 分析
 
- 1. 使用SwipeRefreshLayout来实现下拉刷新效果
- 2. 使用DrawerLayout来实现侧滑选择城市，并且加入顶部导航按钮
+ 1. 使用DrawerLayout来实现侧滑选择城市，并且加入顶部导航按钮
+ 2. 使用SwipeRefreshLayout来实现下拉刷新效果
+
 #### 细节
+ 1. 
