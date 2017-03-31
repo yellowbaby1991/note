@@ -816,6 +816,11 @@ public class WeatherActivity extends AppCompatActivity {
 public class WeatherActivity extends AppCompatActivity {
 
     private Button navButton;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+      navButton = (Button) findViewById(R.id.nav_button);		
+		
 ```
 
 
