@@ -321,3 +321,21 @@ public class Utility {
 #### 细节
 
  1. 解析复杂的Json文件使用Gson，使用方法很简单，只需要建立好对应的JAVA类即可
+
+``` json
+{
+  "HeWeather": [
+	{
+      "status": "ok",
+	  "basic":{}
+	  "aqi":{}
+	  "now":{}
+	  "suggestion":{}
+	  "daily_forecast":{}
+	}
+  ]
+}
+```
+
+
+ 2. 1
