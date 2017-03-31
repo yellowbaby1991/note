@@ -810,3 +810,13 @@ public class WeatherActivity extends AppCompatActivity {
 
 
  2.添加顶部菜单按钮提醒用户有个侧滑菜单
+ 
+
+``` java
+public class WeatherActivity extends AppCompatActivity {
+
+    private Button navButton;
+```
+
+
+ 3.1
