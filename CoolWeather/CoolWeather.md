@@ -354,7 +354,28 @@ public class Weather {
 	}
   ]
 }
+
 ```
+
+``` javascript
+public class Utility {
+
+    /**
+     * 将返回的JSON数据解析成Weather实体类
+     */
+    public static Weather handlerWeatherResponse(String response) {
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent, Weather.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+```
+
 
  2. 有些字段不适合做JAVA类的属性名称，需要使用@SerializedName来指定别名，如Basic类
 
