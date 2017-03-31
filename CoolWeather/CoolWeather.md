@@ -435,7 +435,8 @@ public class Basic {
             </ScrollView>
 
         </android.support.v4.widget.SwipeRefreshLayout>
-
+		
+        <!--侧滑菜单-->
         <fragment
             android:id="@+id/choose_area_fragment"
             android:name="com.coolweather.android.fragment.ChooseAreaFragment"
