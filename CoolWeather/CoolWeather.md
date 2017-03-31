@@ -357,5 +357,11 @@ public class Basic {
 }
 ```
 
+``` json
+"basic": {
+
+}
+```
+
 
  3. 1
