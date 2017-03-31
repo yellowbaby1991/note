@@ -702,3 +702,5 @@ public class WeatherActivity extends AppCompatActivity {
 }
 
 ```
+
+ 5. 每日一图，从必应拉取图片显示为背景图
