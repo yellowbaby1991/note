@@ -317,3 +317,4 @@ public class Utility {
  1. 从根据weather_id从服务器下载对应的json文件解析成实体类Weather展示在布局中
  2. 加载的天气解析文件存在SharedPreferences中缓存，下次加载时优先查询本地，本地没有再从网上拉取
  3. 背景图的更换采取拉取必应的每日一图，拉取地址也存在本地缓存，下次加载时候使用Glide直接加载
+#### 细节
