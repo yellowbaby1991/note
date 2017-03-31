@@ -708,36 +708,6 @@ public class WeatherActivity extends AppCompatActivity {
 ``` java
 public class WeatherActivity extends AppCompatActivity {
 
-    private Button navButton;
-
-    public DrawerLayout drawerLayout;
-
-    public SwipeRefreshLayout swipeRefresh;
-
-    private ScrollView weatherLayout;
-
-    private TextView titleCity;
-
-    private TextView titleUpdateTime;
-
-    private TextView degreeText;
-
-    private TextView weatherInfoText;
-
-    private LinearLayout forecastLayout;
-
-    private TextView aqiText;
-
-    private TextView pm25Text;
-
-    private TextView comfortText;
-
-    private TextView carWashText;
-
-    private TextView sportText;
-
-    private ImageView bingPicImg;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
