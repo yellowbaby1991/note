@@ -884,6 +884,7 @@ public class AutoUpdateService extends Service {
     public AutoUpdateService() {
     }
 
+    //定时循环服务
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         updateWeather();
