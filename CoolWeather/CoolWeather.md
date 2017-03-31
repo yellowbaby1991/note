@@ -815,14 +815,17 @@ public class WeatherActivity extends AppCompatActivity {
 ``` java
 public class WeatherActivity extends AppCompatActivity {
 
+    ...
     private Button navButton;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		...
         navButton = (Button) findViewById(R.id.nav_button);		
         navButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {//点击后显示菜单
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });		
