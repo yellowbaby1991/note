@@ -314,4 +314,5 @@ public class Utility {
 ### 显示天气信息
 #### 分析
 
- 1. 从根据weather_id从服务器下载对应的gson文件
+ 1. 从根据weather_id从服务器下载对应的json文件解析成实体类Weather展示在布局中
+ 2. 
