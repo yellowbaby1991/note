@@ -957,11 +957,9 @@ public class AutoUpdateService extends Service {
 }
 ```
 
-
  2. 在Activity中开启服务
  
-
-``` stylus
+``` java
 enter code here
 ```
 
