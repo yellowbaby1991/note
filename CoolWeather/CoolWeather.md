@@ -842,32 +842,24 @@ public class ChooseAreaFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			    ...
-                if (currentLevel == LEVEL_COUNTY) {
-                    String weatherId = countyList.get(position).getWeatherId();
-                    if (getActivity() instanceof MainActivity) {
-                        Intent intent = new Intent(getActivity(), WeatherActivity.class);
-                        intent.putExtra("weather_id", weatherId);
-                        startActivity(intent);
-                        getActivity().finish();
-                    } else if (getActivity() instanceof WeatherActivity) {
-                        WeatherActivity activity = (WeatherActivity) getActivity();
-                        activity.drawerLayout.closeDrawers();
-                        activity.swipeRefresh.setRefreshing(true);
-                        activity.requestWeather(weatherId);
-                    }
+			...
+			if (currentLevel == LEVEL_COUNTY) {
+				String weatherId = countyList.get(position).getWeatherId();
+				if (getActivity() instanceof MainActivity) {
+					Intent intent = new Intent(getActivity(), WeatherActivity.class);
+					intent.putExtra("weather_id", weatherId);
+					startActivity(intent);
+					getActivity().finish();
+				} else if (getActivity() instanceof WeatherActivity) {
+					WeatherActivity activity = (WeatherActivity) getActivity();
+					activity.drawerLayout.closeDrawers();
+					activity.swipeRefresh.setRefreshing(true);
+					activity.requestWeather(weatherId);
+				}
                 }
             }
         });
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (currentLevel == LEVEL_COUNTY) {
-                    queryCities();
-                } else if (currentLevel == LEVEL_CITY) {
-                    queryProvinces();
-                }
-            }
+        ...
         });
         queryProvinces();
     }
