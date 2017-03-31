@@ -734,7 +734,7 @@ public class WeatherActivity extends AppCompatActivity {
 
 #### 细节
 
- 1.到现在为止，整个天气界面的布局如下
+ 1.到现在为止，整个天气界面的布局如下，整体为FrameLayout，ImageView作为背景图，然后一个DrawerLayout侧滑菜单包含了一个刷新下拉列表SwipeRefreshLayout
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
