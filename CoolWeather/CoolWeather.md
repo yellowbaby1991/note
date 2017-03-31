@@ -338,3 +338,24 @@ public class Utility {
 ```
 
  2. 有些字段不适合做JAVA类的属性名称，需要使用@SerializedName来指定别名，如Basic类
+
+``` java
+public class Basic {
+
+    @SerializedName("city")
+    public String cityName;
+
+    @SerializedName("id")
+    private String weatherId;
+
+    public Update update;
+
+    public class Update {
+        @SerializedName("loc")
+        public String updateTime;
+    }
+}
+```
+
+
+ 3. 1
