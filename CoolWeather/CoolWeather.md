@@ -733,4 +733,5 @@ public class WeatherActivity extends AppCompatActivity {
  2. 使用SwipeRefreshLayout来实现下拉刷新效果
 
 #### 细节
- 1. 
+
+ 1.到现在为止，整个天气界面的布局如下
