@@ -360,7 +360,7 @@ public class Basic {
 ``` json
 "basic": {
       "city": "苏州",
-       "id": "CN101190401",	  
+      "id": "CN101190401",	  
 }
 ```
 
