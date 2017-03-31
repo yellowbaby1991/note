@@ -337,4 +337,4 @@ public class Utility {
 }
 ```
 
- 2. 有些字段不适合做JAVA类的属性名称，需要使用@SerializedName来指定别名
+ 2. 有些字段不适合做JAVA类的属性名称，需要使用@SerializedName来指定别名，如Basic
