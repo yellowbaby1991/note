@@ -577,3 +577,29 @@ public class WeatherActivity extends AppCompatActivity {
 ```
 
  5. 每日一图，从必应拉取图片显示为背景图
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <!--使用的是一个ImageView和FrameLayout配合实现背景-->
+    <ImageView
+        android:id="@+id/bing_pic_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <android.support.v4.widget.DrawerLayout
+		<!--天气界面-->
+
+		<!--侧滑菜单-->
+	</android.support.v4.widget.SwipeRefreshLayout>
+
+
+</FrameLayout>
+
+```
