@@ -106,8 +106,7 @@ public class MyApplication extends Application{
 
  3. 使用DisplayImageOptions定制加载图片
  
-
-``` stylus
+``` java
 enter code here
 ```
 
