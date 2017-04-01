@@ -211,7 +211,8 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 ``` java
 listView.setOnScrollListener(new PauseOnScrollListener(imageLoader, pauseOnScroll, pauseOnFling));  
 ```
-
+2. GirdView用法类似
+3. 
 
  
 
