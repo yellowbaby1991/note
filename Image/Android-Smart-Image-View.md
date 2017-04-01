@@ -22,7 +22,7 @@
 
 ### 图片加载
 
- 1. 使用取代imageview
+ 1. 使用SmartImageView取代imageview
  
 
 ``` xml
