@@ -56,3 +56,5 @@ public class MyApplication extends Application{
 
 </manifest>
 ```
+
+ ### 配置方法
