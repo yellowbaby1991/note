@@ -180,7 +180,13 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
 ```
 
- 2. 1
+ 2. 加载时候显示进度条
+ 
+
+``` stylus
+enter code here
+```
+
 
  
 
