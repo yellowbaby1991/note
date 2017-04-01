@@ -188,7 +188,7 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
 ```
 
- 1. 加载时候显示进度条
+ 2. 加载时候显示进度条
  
 ``` java
     public void displayImageByDisplayImageOption() {
