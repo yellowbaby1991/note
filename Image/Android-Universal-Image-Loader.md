@@ -19,4 +19,4 @@ dependencies
 }
 ```
 
-2. 1
+2. 创建全局的ImageLoader配置参数并且初始化
