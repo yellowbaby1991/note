@@ -57,5 +57,5 @@ public class MyApplication extends Application{
 </manifest>
 ```
 
- ### 加载图片
+ ### 图片加载
  
