@@ -41,7 +41,14 @@
 ```
 
 
- 2. 1
+ 2. 初始化之后直接设置链接
+ 
+
+``` java
+        SmartImageView myImage = (SmartImageView) this.findViewById(R.id.my_image);
+        myImage.setImageUrl("http://192.168.87.2:8080//img/a.png");
+```
+
 
   [1]: https://github.com/loopj/android-smart-image-view
   [2]: http://loopj.com/android-smart-image-view/
