@@ -62,7 +62,7 @@ public class MyApplication extends Application{
  1. 带完整监听的加载方法
  
 ``` java
-    private void loadImageByListener() {
+    public void loadImageByListener() {
         final ImageView mImageView = (ImageView) findViewById(R.id.image);
         String imageUrl = "https://www.baidu.com/img/bd_logo1.png";
         ImageLoader.getInstance().loadImage(imageUrl, new ImageLoadingListener() {
