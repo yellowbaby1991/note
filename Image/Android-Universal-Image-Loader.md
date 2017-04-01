@@ -87,7 +87,6 @@ public class MyApplication extends Application{
     }
 ```
 
-
  2. 
 
  
