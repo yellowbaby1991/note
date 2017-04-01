@@ -41,8 +41,7 @@ public class MyApplication extends Application{
 3. 修改AndroidManifest.xml
 
 ``` xml
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="android.com.android_universal_image_loader_demo">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Include following permission if you load images from Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
