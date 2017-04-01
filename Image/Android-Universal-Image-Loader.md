@@ -156,7 +156,7 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
         .build();
 ```
 
-####  displayImage
+####  displayImage方法加载
 
 
 
