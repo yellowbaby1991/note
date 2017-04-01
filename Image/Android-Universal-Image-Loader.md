@@ -89,7 +89,7 @@ public class MyApplication extends Application{
 
  2. 带监听适配器的加载方法
  
-``` stylus
+``` java
 enter code here
 ```
 
