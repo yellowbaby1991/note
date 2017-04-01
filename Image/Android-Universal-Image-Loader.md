@@ -87,6 +87,6 @@ public class MyApplication extends Application{
     }
 ```
 
- 2. 
+ 2. 带监听适配器的加载方法
 
  
