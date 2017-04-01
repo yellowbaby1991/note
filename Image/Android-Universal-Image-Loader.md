@@ -107,6 +107,9 @@ public class MyApplication extends Application{
  3. 使用DisplayImageOptions定制加载图片
  
 ``` java
+/**
+*
+*/
 DisplayImageOptions options = new DisplayImageOptions.Builder()
         .showImageOnLoading(R.drawable.ic_stub) // resource or drawable
         .showImageForEmptyUri(R.drawable.ic_empty) // resource or drawable
