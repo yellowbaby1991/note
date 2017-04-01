@@ -42,7 +42,6 @@
 
 
  2. 初始化之后直接设置链接
- 
 
 ``` java
         SmartImageView myImage = (SmartImageView) this.findViewById(R.id.my_image);
