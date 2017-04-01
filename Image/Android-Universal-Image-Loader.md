@@ -1,5 +1,6 @@
 ### 简介
 　　[Android-Universal-Image-Loader][1]是一个流传已久著名的图片加载框架
+    [1]: https://github.com/nostra13/Android-Universal-Image-Loader
 ### 特性
  1. 多线程下载图片，图片可以来源于网络，文件系统，项目文件夹assets中以及drawable中等
  2. 支持随意的配置ImageLoader，例如线程池，图片下载器，内存缓存策略，硬盘缓存策略，图片显示选项以及其他的一些配置
@@ -160,4 +161,3 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
  
 
 
-  [1]: https://github.com/nostra13/Android-Universal-Image-Loader
