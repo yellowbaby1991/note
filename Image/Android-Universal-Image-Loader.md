@@ -210,7 +210,6 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
 ``` java
 listView.setOnScrollListener(new PauseOnScrollListener(imageLoader, pauseOnScroll, pauseOnFling));  
-gridView.setOnScrollListener(new PauseOnScrollListener(imageLoader, pauseOnScroll, pauseOnFling));  
 ```
 
 
