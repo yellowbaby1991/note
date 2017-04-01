@@ -182,9 +182,26 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
  2. 加载时候显示进度条
  
+``` java
+    public void displayImageByDisplayImageOption() {
+        final ImageView mImageView = (ImageView) findViewById(R.id.image);
+        String imageUrl = "https://www.baidu.com/img/bd_logo1.png";
 
-``` stylus
-enter code here
+        //显示图片的配置
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .build();
+
+        ImageLoader.getInstance().displayImage(imageUrl, mImageView, options, new SimpleImageLoadingListener(), new ImageLoadingProgressListener() {
+            @Override
+            public void onProgressUpdate(String imageUri, View view, int current,
+                                         int total) {
+
+            }
+        });
+    }
 ```
 
 
