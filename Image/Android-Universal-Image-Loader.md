@@ -89,7 +89,6 @@ public class MyApplication extends Application{
 
  2. 带监听适配器的加载方法
  
-
 ``` stylus
 enter code here
 ```
