@@ -7,7 +7,10 @@
  3. 异步加载图片
  4. 图片被缓存在内存，以便下次快速加载显示；
 
-### 使用方法
+### 配置方法
+
+ 1. 由于年代久远，只支持加入jar包，[jar包下载地址][2]
 
 
   [1]: https://github.com/loopj/android-smart-image-view
+  [2]: http://loopj.com/android-smart-image-view/
