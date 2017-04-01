@@ -38,4 +38,20 @@ public class MyApplication extends Application{
 }
 ```
 
-3. 1
+3. 修改AndroidManifest.xml
+
+``` xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.com.android_universal_image_loader_demo">
+
+    <!-- Include following permission if you load images from Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Include following permission if you want to cache images on SD card -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".MyApplication"
+    </application>
+
+</manifest>
+```
