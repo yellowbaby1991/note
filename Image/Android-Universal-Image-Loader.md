@@ -51,6 +51,7 @@ public class MyApplication extends Application{
 
     <application
         android:name=".MyApplication"
+		...
     </application>
 
 </manifest>
