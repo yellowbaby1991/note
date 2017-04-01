@@ -159,7 +159,7 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
 ####  displayImage方法加载
 
- 1. displayImages方法不需要添加监听，可以理解成如果不需要监听加载就使用该方法
+ 1. displayImages方法不需要添加监听，尽量使用该方法来加载
 
 ``` java
     public void displayImageByDisplayImageOption() {
