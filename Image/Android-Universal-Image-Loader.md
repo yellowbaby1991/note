@@ -10,4 +10,4 @@
  
  ### 配置方法
  
- 8. List item
+1. List item
