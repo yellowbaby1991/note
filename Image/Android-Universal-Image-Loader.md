@@ -179,7 +179,6 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
 ```
 
-
  2. 1
 
  
