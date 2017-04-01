@@ -107,7 +107,24 @@ public class MyApplication extends Application{
  3. 使用DisplayImageOptions定制加载图片
  
 ``` java
-enter code here
+DisplayImageOptions options = new DisplayImageOptions.Builder()
+        .showImageOnLoading(R.drawable.ic_stub) // resource or drawable
+        .showImageForEmptyUri(R.drawable.ic_empty) // resource or drawable
+        .showImageOnFail(R.drawable.ic_error) // resource or drawable
+        .resetViewBeforeLoading(false)  // default
+        .delayBeforeLoading(1000)
+        .cacheInMemory(false) // default
+        .cacheOnDisk(false) // default
+        .preProcessor(...)
+        .postProcessor(...)
+        .extraForDownloader(...)
+        .considerExifParams(false) // default
+        .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2) // default
+        .bitmapConfig(Bitmap.Config.ARGB_8888) // default
+        .decodingOptions(...)
+        .displayer(new SimpleBitmapDisplayer()) // default
+        .handler(new Handler()) // default
+        .build();
 ```
 
 
