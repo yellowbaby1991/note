@@ -90,7 +90,18 @@ public class MyApplication extends Application{
  2. 带监听适配器的加载方法
  
 ``` java
-enter code here
+    public void loadImageByListenerAdapter() {
+        final ImageView mImageView = (ImageView) findViewById(R.id.image);
+        String imageUrl = "https://www.baidu.com/img/bd_logo1.png";
+        ImageLoader.getInstance().loadImage(imageUrl, new SimpleImageLoadingListener() {
+            @Override
+            public void onLoadingComplete(String imageUri, View view,
+                                          Bitmap loadedImage) {
+                super.onLoadingComplete(imageUri, view, loadedImage);
+                mImageView.setImageBitmap(loadedImage);
+            }
+        });
+    }
 ```
 
 
