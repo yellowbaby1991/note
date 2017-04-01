@@ -158,7 +158,29 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
 ####  displayImage方法加载
 
+ 1. displayImages方法不需要添加监听，可以理解成如果不需要监听加载就使用该方法
 
+``` java
+    public void displayImageByDisplayImageOption() {
+        final ImageView mImageView = (ImageView) findViewById(R.id.image);
+        String imageUrl = "https://www.baidu.com/img/bd_logo1.png";
+        
+        //显示图片的配置
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.ic_stub)
+                .showImageOnFail(R.drawable.ic_error)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .build();
+
+        ImageLoader.getInstance().displayImage(imageUrl, mImageView, options);
+    }
+
+```
+
+
+ 2. 1
 
  
 
