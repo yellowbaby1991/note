@@ -67,7 +67,7 @@ Request request = new Request.Builder().url("https://github.com/square/okhttp").
 ```
 
 
-  [1]: https://github.com/square/okhttp
+
 #### 集合Gson解析JSON数据
 
  1. 服务器待解析的JSON数据
@@ -163,3 +163,5 @@ public class App {
         }
     }
 ```
+
+  [1]: https://github.com/square/okhttp
