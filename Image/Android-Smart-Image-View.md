@@ -12,7 +12,7 @@
  1. 由于年代久远，只支持加入jar包，[jar包下载地址][2]
  2. 添加网络权限即可
  
-``` xml
+``` xml?linenums
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="android.com.smartimageview">
 
@@ -20,7 +20,9 @@
 </manifest>	
 ```
 
+### 图片加载
 
+ 1. List item
 
   [1]: https://github.com/loopj/android-smart-image-view
   [2]: http://loopj.com/android-smart-image-view/
