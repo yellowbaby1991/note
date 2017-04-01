@@ -20,3 +20,22 @@ dependencies
 ```
 
 2. 创建全局的ImageLoader配置参数并且初始化
+
+``` java
+public class MyApplication extends Application{
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        //创建默认的ImageLoader配置参数
+        ImageLoaderConfiguration configuration = ImageLoaderConfiguration
+                .createDefault(this);
+
+        //Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(configuration);
+    }
+}
+```
+
+3. 1
