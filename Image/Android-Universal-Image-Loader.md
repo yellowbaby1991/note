@@ -60,5 +60,34 @@ public class MyApplication extends Application{
  ### 图片加载
  
  1. 带完整监听的加载方法
+ 
+``` java
+    private void loadImageByListener() {
+        final ImageView mImageView = (ImageView) findViewById(R.id.image);
+        String imageUrl = "https://www.baidu.com/img/bd_logo1.png";
+        ImageLoader.getInstance().loadImage(imageUrl, new ImageLoadingListener() {
+            @Override
+            public void onLoadingStarted(String imageUri, View view) {
+            }
+
+            @Override
+            public void onLoadingFailed(String imageUri, View view,
+                                        FailReason failReason) {
+            }
+
+            @Override
+            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                mImageView.setImageBitmap(loadedImage);
+            }
+
+            @Override
+            public void onLoadingCancelled(String imageUri, View view) {
+            }
+        });
+    }
+```
+
+
+ 2. 
 
  
