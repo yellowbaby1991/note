@@ -22,7 +22,26 @@
 
 ### 图片加载
 
- 1. List item
+ 1. 使用取代imageview
+ 
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.loopj.android.image.SmartImageView
+        android:id="@+id/my_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+```
+
+
+ 2. 1
 
   [1]: https://github.com/loopj/android-smart-image-view
   [2]: http://loopj.com/android-smart-image-view/
