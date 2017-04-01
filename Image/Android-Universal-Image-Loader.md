@@ -206,7 +206,13 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
  ####  GirdView,ListView加载图片
  
-1. List item
+1. 当ListView快速滑动或者猛地滑动的时候我们希望停止图片的加载
+
+``` java
+listView.setOnScrollListener(new PauseOnScrollListener(imageLoader, pauseOnScroll, pauseOnFling));  
+gridView.setOnScrollListener(new PauseOnScrollListener(imageLoader, pauseOnScroll, pauseOnFling));  
+```
+
 
  
 
