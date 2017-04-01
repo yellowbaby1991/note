@@ -108,7 +108,7 @@ public class MyApplication extends Application{
  
 ``` java
 /**
-*
+*  DisplayImageOptions的全部属性
 */
 DisplayImageOptions options = new DisplayImageOptions.Builder()
         .showImageOnLoading(R.drawable.ic_stub) // resource or drawable
