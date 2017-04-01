@@ -106,6 +106,29 @@ public class MyApplication extends Application{
 
  3. 使用DisplayImageOptions定制加载图片
 
+``` java
+    public void loadImageByDisplayImageOptions() {
+        final ImageView mImageView = (ImageView) findViewById(R.id.image);
+        String imageUrl = "https://www.baidu.com/img/bd_logo1.png";
+
+        ImageSize mImageSize = new ImageSize(100, 100);//指定图片大小
+
+        //显示图片的配置
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .build();
+
+        ImageLoader.getInstance().loadImage(imageUrl, mImageSize, options, new SimpleImageLoadingListener() {
+            @Override
+            public void onLoadingComplete(String imageUri, View view,
+                                          Bitmap loadedImage) {
+                super.onLoadingComplete(imageUri, view, loadedImage);
+                mImageView.setImageBitmap(loadedImage);
+            }
+        });
+```
 
  
 ``` java
