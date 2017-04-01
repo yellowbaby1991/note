@@ -180,7 +180,7 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
 ```
 
- 2. 加载时候显示进度条
+ 1. 加载时候显示进度条
  
 ``` java
     public void displayImageByDisplayImageOption() {
@@ -206,6 +206,8 @@ DisplayImageOptions options = new DisplayImageOptions.Builder()
 
  ####  GirdView,ListView加载图片
  
+1. List item
+
  
 
 
