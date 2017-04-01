@@ -59,8 +59,8 @@ public class MyApplication extends Application{
 ```
 
  ### 图片加载
- 
- 1. 带完整监听的加载方法
+ ####  loadImage方法加载
+  1. 带完整监听的加载方法
  
 ``` java
     public void loadImageByListener() {
