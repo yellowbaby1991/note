@@ -11,3 +11,13 @@
  ### 配置方法
  
 1. 添加依赖
+
+``` xml
+dependencies {
+    ...
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+}
+```
+
+
+2. 1
