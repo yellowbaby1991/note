@@ -183,5 +183,12 @@ intent.putExtra("student", student);
 startActivity(intent);
 ```
 
- 1. List item
+2. 获取方式
+
+``` java
+Intent intent = getIntent();
+Student student = (Student)intent.getExtra("student");
+```
+
+#### 使用Bundle传参
 
