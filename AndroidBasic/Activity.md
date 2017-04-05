@@ -192,4 +192,4 @@ Student student = (Student) intent.getSerializableExtra("student");
 
 #### 使用Bundle传参
 
- 1. Bundle通常用来IPC通信
+ 1. Bundle可以用来IPC通信，也经常用于四大组件的传参
