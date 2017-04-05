@@ -246,5 +246,4 @@ public class IconActivity extends Activity{
 }
 ```
 
-
  3. 1
