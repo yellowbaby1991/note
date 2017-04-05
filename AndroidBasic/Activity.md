@@ -217,7 +217,7 @@ int age = bundleExtra.getInt("age");
 ### 获取新界面的返回值
 
  1. 启动Activity时候使用startActivityForResult取代startActivity
- 2. 
+ 
  public class MainActivity extends Activity {
  
  	private static final int CHOOSE_SEX=0x002;
