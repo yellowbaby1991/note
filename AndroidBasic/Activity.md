@@ -125,7 +125,7 @@
 
 ### Activity启动方式
 
- 1. 显示启动
+#### 显示启动
 
 ``` java
 Intent intent=new Intent(MainActivity.this, SecondActivity.class); 
