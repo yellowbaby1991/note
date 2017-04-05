@@ -221,7 +221,8 @@ int age = bundleExtra.getInt("age");
 ``` java
  public class MainActivity extends Activity {
  
- 	private static final int CHOOSE_SEX=0x002;
+	private static final int CHOOSE_ICON=0x001;
+	private static final int CHOOSE_SEX=0x002;
     ...
 	
 	public void chooseGender(View v){
