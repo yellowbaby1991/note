@@ -138,6 +138,7 @@ startActivity(intent);
 ``` java
 //匹配规则如下
 //action：在Intent中只可以设置一个action的值，如果manifest中配置了Activity的action，那么在Intent中这个值久必须要有，如果manifest中有多个action的值，在Intent中任意配置一个就可以
+//category：Intent中可以包含多个category，但每个category必须和manifest中的其中一个category相同，即：Intent中包含的category必须是manifest中的category的子集
 ```
 
 
