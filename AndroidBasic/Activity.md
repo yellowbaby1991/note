@@ -245,14 +245,14 @@ int age = bundleExtra.getInt("age");
  2. 在新的activity中返回值
 
 ``` java
-public class IconActivity extends Activity{
-	...
-	private void returnData(int res){
-		Intent data=new Intent();
-		data.putExtra("icon",res);
-		setResult(0, data);//第一个参数为resultCode
-		finish();
-	}
+public class IconActivity extends Activity {
+    ...
+    private void returnData(int res) {
+        Intent data = new Intent();
+        data.putExtra("icon", res);
+        setResult(0, data);//第一个参数为resultCode
+        finish();
+    }
 }
 ```
 
