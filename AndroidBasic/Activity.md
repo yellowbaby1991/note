@@ -86,7 +86,21 @@
  2. 在layout中引用样式
  
 ``` xml
-enter code here
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"   >
+    ...
+    <TextView
+        style="@style/tv_style"   
+        android:text="装逼模式" />
+    
+    <TextView 
+        style="@style/simple_tv_style"
+        android:text="其他设置" />
+    
+</LinearLayout>
 ```
 
 
