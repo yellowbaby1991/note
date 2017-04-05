@@ -236,7 +236,7 @@ int age = bundleExtra.getInt("age");
 
 ``` java
 public class IconActivity extends Activity{
-
+    ...
 	private void returnData(int res){
 		Intent data=new Intent();
 		data.putExtra("icon",res);
