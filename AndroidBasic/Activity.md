@@ -235,9 +235,9 @@ int age = bundleExtra.getInt("age");
     private static final int CHOOSE_ICON=0x001;
     ...
 	
-public void chooseIcon(View v){
-Intent intent=new Intent(this,IconActivity.class);
-startActivityForResult(intent,CHOOSE_ICON);
+    public void chooseIcon(View v){
+         Intent intent=new Intent(this,IconActivity.class);
+         startActivityForResult(intent,CHOOSE_ICON);
 	}
  }
 ```
