@@ -122,3 +122,15 @@
 
 </manifest>
 ```
+
+### Activity的启动
+
+ 1. 显示启动
+
+``` java
+Intent intent=new Intent(MainActivity.this, SecondActivity.class); 
+startActivity(intent);
+```
+
+
+ 2. 隐式启动
