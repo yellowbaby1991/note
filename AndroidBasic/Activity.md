@@ -41,4 +41,53 @@
 
  1. 在values/styles.xml中创建样式
  
- 2. 1
+``` xml
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+
+    </style>
+    
+    <style name="simple_tv_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="tv_style" parent="@style/simple_tv_style">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#0F0</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="page_style">
+        <item name="android:background">#F00</item>
+    </style>
+    
+    
+</resources>
+```
+
+
+ 2. 在layout中引用样式
+ 
+``` xml
+enter code here
+```
+
+
+ 3. 在ManifAndroidManifest.xml中引用主题
