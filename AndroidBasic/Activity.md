@@ -192,3 +192,4 @@ Student student = (Student) intent.getSerializableExtra("student");
 
 #### 使用Bundle传参
 
+ 1. Bundle通常用来IPC通信
