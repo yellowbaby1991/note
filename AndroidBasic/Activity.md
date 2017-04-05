@@ -137,7 +137,7 @@ startActivity(intent);
  
 ``` java
 //匹配规则如下
-//Action：在Intent中只可以设置一个action的值，如果manifest中配置了Activity的action，那么在Intent中这个值久必须要有，如果manifest中有多个action的值，在Intent中任意配置一个就可以
+//action：在Intent中只可以设置一个action的值，如果manifest中配置了Activity的action，那么在Intent中这个值久必须要有，如果manifest中有多个action的值，在Intent中任意配置一个就可以
 ```
 
 
