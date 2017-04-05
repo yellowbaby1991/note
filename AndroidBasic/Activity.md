@@ -218,6 +218,7 @@ int age = bundleExtra.getInt("age");
 
  1. 启动Activity时候使用startActivityForResult取代startActivity
  
+``` java
  public class MainActivity extends Activity {
  
  	private static final int CHOOSE_SEX=0x002;
@@ -227,4 +228,8 @@ int age = bundleExtra.getInt("age");
 		startActivityForResult(intent,CHOOSE_ICON);
 	}
  }
+```
+
+
+
  2. 1
