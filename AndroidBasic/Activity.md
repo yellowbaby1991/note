@@ -37,3 +37,7 @@
 </resources>
 ```
 
+### 样式和主题
+
+ 1. 在values/styles.xml中创建样式
+ 2. 
