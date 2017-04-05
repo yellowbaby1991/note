@@ -230,6 +230,4 @@ int age = bundleExtra.getInt("age");
  }
 ```
 
-
-
  2. 1
