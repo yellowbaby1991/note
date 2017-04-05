@@ -173,6 +173,8 @@ startActivity(intent);
 ### 数据传递
 #### Intent传参
 
+ 1. 使用putExtra把参数压入intent
+
 ``` java
 Intent intent=new Intent(this, ThirdActivity.class);
 //需要将对象传给新的页面
@@ -181,4 +183,5 @@ intent.putExtra("student", student);
 startActivity(intent);
 ```
 
+ 1. List item
 
