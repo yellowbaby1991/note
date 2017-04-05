@@ -218,6 +218,8 @@ int age = bundleExtra.getInt("age");
 
  1. 启动Activity时候使用startActivityForResult取代startActivity
  public class MainActivity extends Activity {
+ 
+ 	private static final int CHOOSE_SEX=0x002;
    ...
  	public void chooseIcon(View v){
 		Intent intent=new Intent(this,IconActivity.class);
