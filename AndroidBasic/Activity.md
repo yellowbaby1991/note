@@ -193,6 +193,7 @@ Student student = (Student) intent.getSerializableExtra("student");
 #### 使用Bundle传参
 
  1. Bundle可以用来IPC通信，也经常用于四大组件的传参，当数据较多的时候可以选择使用Bundle一次性封装传递过去，如果更复杂的话就自己封装一个对象，当然也要可以被序列化的
+ 
  2. 使用Bundle封装数据
 
 ``` java
