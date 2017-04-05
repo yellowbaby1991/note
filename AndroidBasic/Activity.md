@@ -249,5 +249,8 @@ public class IconActivity extends Activity{
  3. 在原来的activity的onActivityResult中处理返回结果
  
 ``` java
-enter code here
+public class MainActivity extends Activity {
+
+
+}
 ```
