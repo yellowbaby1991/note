@@ -250,7 +250,7 @@ public class IconActivity extends Activity{
  
 ``` java
 public class MainActivity extends Activity {
-
+    ...
 	//获取新页面的结果
 	//请求码requestCode： 用来判断到底是哪个页面返回的数据
 	//结果码resultCode：一个新的页面可能有多种返回值的情况 原来的页面会根据不同的情况作出不同的处理
