@@ -20,4 +20,12 @@
 ```
 
  2. values和values-en文件夹下建立对应的string.xml
- 3. 
+
+``` xml
+<resources>
+    <string name="app_name">活动</string>
+    <string name="text">你好</string>
+</resources>
+```
+
+
