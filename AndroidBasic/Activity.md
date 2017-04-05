@@ -187,7 +187,7 @@ startActivity(intent);
 
 ``` java
 Intent intent = getIntent();
-Student student = (Student)intent.getExtra("student");
+Student student = (Student) intent.getSerializableExtra("student");
 ```
 
 #### 使用Bundle传参
