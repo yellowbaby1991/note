@@ -240,9 +240,7 @@ public class IconActivity extends Activity{
 	private void returnData(int res){
 		Intent data=new Intent();
 		data.putExtra("icon",res);
-		//新的界面有数据了 并且返回了
-		setResult(0, data);
-		//关闭当前的页面
+		setResult(0, data);//第一个参数为resultCode
 		finish();
 	}
 }
