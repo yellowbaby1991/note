@@ -173,3 +173,12 @@ startActivity(intent);
 ### 数据传递
 #### Intent传参
 
+``` java
+Intent intent=new Intent(this, ThirdActivity.class);
+//需要将对象传给新的页面
+Student student = new Student("lisi", 20);
+intent.putExtra("student", student);
+startActivity(intent);
+```
+
+
