@@ -261,11 +261,8 @@ public class MainActivity extends Activity {
 				//可以取到头像
 				int resId = data.getIntExtra("icon", 0);
 				mIconIv.setImageResource(resId);
-			}else if (requestCode==CHOOSE_SEX) {
-				//可以取到性别
-				String sex = data.getStringExtra("sex");
-				mSexTv.setText(sex);
 			}
+			....
 		}
 		super.onActivityResult(requestCode, resultCode, data);
 	}
