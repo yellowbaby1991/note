@@ -28,4 +28,10 @@
 </resources>
 ```
 
+``` xml
+<resources>
+    <string name="app_name">活动</string>
+    <string name="text">你好</string>
+</resources>
+```
 
