@@ -229,6 +229,7 @@ int age = bundleExtra.getInt("age");
 		Intent intent=new Intent(this,SexActivity.class);
 		startActivityForResult(intent,CHOOSE_SEX);
 	}	
+	
  	public void chooseIcon(View v){
 		Intent intent=new Intent(this,IconActivity.class);
 		startActivityForResult(intent,CHOOSE_ICON);
