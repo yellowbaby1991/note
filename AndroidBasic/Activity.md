@@ -135,3 +135,10 @@ startActivity(intent);
 
  2. 隐式启动
  
+``` java
+//匹配规则如下
+//action：
+```
+
+
+ 
