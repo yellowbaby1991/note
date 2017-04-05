@@ -103,5 +103,22 @@
 </LinearLayout>
 ```
 
-
  3. 在ManifAndroidManifest.xml中引用主题
+ 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.m520it.style"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        ...
+    </application>
+
+</manifest>
+```
