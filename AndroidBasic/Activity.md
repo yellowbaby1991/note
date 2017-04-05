@@ -217,5 +217,11 @@ int age = bundleExtra.getInt("age");
 ### 获取新界面的返回值
 
  1. 启动Activity时候使用startActivityForResult取代startActivity
- 
+ public class MainActivity extends Activity {
+   ...
+ 	public void chooseIcon(View v){
+		Intent intent=new Intent(this,IconActivity.class);
+		startActivityForResult(intent,CHOOSE_ICON);
+	}
+ }
  2. 1
