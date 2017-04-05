@@ -251,6 +251,23 @@ public class IconActivity extends Activity{
 ``` java
 public class MainActivity extends Activity {
 
-
+	//获取新页面的结果
+	//请求码requestCode： 用来判断到底是哪个页面返回的数据
+	//结果码resultCode：一个新的页面可能有多种返回值的情况 原来的页面会根据不同的情况作出不同的处理
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (data!=null) {
+			if (requestCode==CHOOSE_ICON) {
+				//可以取到头像
+				int resId = data.getIntExtra("icon", 0);
+				mIconIv.setImageResource(resId);
+			}else if (requestCode==CHOOSE_SEX) {
+				//可以取到性别
+				String sex = data.getStringExtra("sex");
+				mSexTv.setText(sex);
+			}
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
 }
 ```
