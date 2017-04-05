@@ -179,7 +179,7 @@ startActivity(intent);
 Intent intent=new Intent(this, ThirdActivity.class);
 //需要将对象传给新的页面
 Student student = new Student("lisi", 20);
-intent.putExtra("student", student);
+intent.putExtra("student", student);//该对象必须可被序列化
 startActivity(intent);
 ```
 
