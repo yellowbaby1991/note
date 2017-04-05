@@ -22,6 +22,7 @@
  2. values和values-en文件夹下建立对应的string.xml
 
 ``` xml
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">活动</string>
     <string name="text">你好</string>
@@ -29,9 +30,10 @@
 ```
 
 ``` xml
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">活动</string>
-    <string name="text">你好</string>
+    <string name="app_name">activity</string>
+    <string name="text">hello</string>
 </resources>
 ```
 
