@@ -123,7 +123,7 @@
 </manifest>
 ```
 
-### Activity的启动
+### Activity启动方式
 
  1. 显示启动
 
@@ -134,3 +134,4 @@ startActivity(intent);
 
 
  2. 隐式启动
+ 
