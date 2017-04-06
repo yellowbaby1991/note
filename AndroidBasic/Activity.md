@@ -237,8 +237,12 @@ startActivity(intent);
 ```
 
 
+ 2. 获取方式
  
- 2. 1
+``` java
+homeBeans = (List<HomeBean>) getIntent().getSerializableExtra("homeBeans");
+```
+
 
 ### 获取新界面的返回值
 
