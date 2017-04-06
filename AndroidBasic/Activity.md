@@ -224,6 +224,22 @@ String name = bundleExtra.getString("name");
 int age = bundleExtra.getInt("age");
 ```
 
+#### 传递list
+
+ 1. 利用bundle传值
+
+``` java
+Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+Bundle bundle = new Bundle();
+bundle.putSerializable("homeBeans", (Serializable) homeBeans);
+intent.putExtras(bundle);
+startActivity(intent);
+```
+
+
+ 
+ 2. 1
+
 ### 获取新界面的返回值
 
  1. 启动Activity时候使用startActivityForResult取代startActivity
