@@ -305,6 +305,13 @@ public class MainActivity extends AppCompatActivity {
 
 ##### 添加Home键拖出menu
 
+``` java
+        final ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
+        mDrawerLayout.setDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+```
+
+
 ##### 使用NavigationView打造菜单栏
 
  1. 添加NavigationView需要的design依赖和实现圆形图片的CircleImageView依赖
