@@ -224,7 +224,7 @@ String name = bundleExtra.getString("name");
 int age = bundleExtra.getInt("age");
 ```
 
-#### 传递list
+#### 传List
 
  1. 利用bundle传值
 
