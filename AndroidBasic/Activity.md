@@ -325,6 +325,11 @@ public class MainActivity extends Activity {
     - 当Activity被系统回收后再次打开，回调过程：和1一样，但是只是生命周期方法一样，有过程不一样
 
  4. 从整个生命周期来看
+    - onCreate和onDestory是对称的，标志Activity的创建和销毁
+   - onStart和onStop是对称的，代表程序是否可见
+   - onResume和onPause是对称的，标志程序的是否在前台
+   - onStart和onResume，onPause和onStop的区别：前者只是在可见，而后者代表是否在前台，如对话框
+   - 开启新的Activity，旧的onPause和新的onResume谁先执行：从源码角度来看，旧的onPause先执行
 
 
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
