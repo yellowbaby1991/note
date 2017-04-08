@@ -20,7 +20,7 @@ StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
 		new Response.Listener<String>() {
 			@Override
 			public void onResponse(String response) {
-			   //得到结果
+			   //得到结果，自动切回主线程
 			}
 		}, 
 		new Response.ErrorListener() {
@@ -30,6 +30,11 @@ StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
 });
 ```
 
- 3. 1
+ 3. 将request压入队列中即可
+ 
+``` java
+mQueue.add(stringRequest); 
+```
+
 
   [1]: http://download.csdn.net/detail/sinyu890807/7152015
