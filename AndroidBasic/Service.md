@@ -147,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
 
  1. 新建一个Server项目作为服务端，在main下建立一个文件夹aidl，然后建立一个IMyAidlInterface.aidl文件
  
-
 ``` java
 package app.yellow.myaidldemoserver;
 
@@ -158,4 +157,5 @@ interface IMyAidlInterface {
 ```
 
 
- 2. 1
+ 2. 点击编译按钮，app/build/generated/source/aidl/debug目录下会生成一个与IMyAidlInterface.aidl文件同样包名的一个文件
+ 3. 
