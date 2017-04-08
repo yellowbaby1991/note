@@ -4,16 +4,18 @@
 ### 服务的基本用法
 #### 创建和销毁服务
 
- 1. 创建一个Service的子类
+ 1. 创建一个Service的子类，重写下面几个方法
  
 ``` java
 public class MyService extends Service {
 
+    //只会在服务第一次创建的时候调用
     @Override
     public void onCreate() {
         super.onCreate();
     }
-
+	
+    //每次启动服务都会调用
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         return super.onStartCommand(intent, flags, startId);
