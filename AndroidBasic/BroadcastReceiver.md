@@ -141,5 +141,4 @@ public class DynamicReceiver extends BroadcastReceiver {
 }
 ```
 
-
  2. 1
