@@ -77,3 +77,6 @@ public class SmsReceiver extends BroadcastReceiver {
 ``` xml
 <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 ```
+
+
+### 自定义广播
