@@ -9,7 +9,7 @@
  1. 得到RequestQueue对象，Volley所有的请求都是通过这个请求队列发起的
 
 ``` java
-enter code here
+RequestQueue mQueue = Volley.newRequestQueue(context);  
 ```
 
 
