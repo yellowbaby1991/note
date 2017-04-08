@@ -38,4 +38,7 @@ public class SDCardReceiver extends BroadcastReceiver {
 ```
 
 
- 3. 1
+
+#### 短信拦截器
+
+ 1. 创建广播接收器
