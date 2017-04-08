@@ -36,5 +36,27 @@ StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
 mQueue.add(stringRequest); 
 ```
 
+### 请求json数据
+
+ 1. 得到RequestQueue对象，和上面一样
+ 2. 创建JsonObjectRequest 
+ 
+``` java
+JsonObjectRequest jsonObjectRequest = new JsonObjectRequest("http://m.weather.com.cn/data/101010100.html", null,  
+        new Response.Listener<JSONObject>() {  
+            @Override  
+            public void onResponse(JSONObject response) {  
+                Log.d("TAG", response.toString());  
+            }  
+        }, 
+		new Response.ErrorListener() {  
+            @Override  
+            public void onErrorResponse(VolleyError error) {  
+                Log.e("TAG", error.getMessage(), error);  
+            }  
+        });  
+```
+
+ 3. 将request压入队列中，和上面一样
 
   [1]: http://download.csdn.net/detail/sinyu890807/7152015
