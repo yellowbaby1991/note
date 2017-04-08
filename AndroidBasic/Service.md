@@ -145,4 +145,17 @@ public class MainActivity extends AppCompatActivity {
 　　AIDL是Android的一种IPC（跨进程通信）的方式，内部原理是Binder
 #### Android Studio下使用AIDL  
 
- 1. List item
+ 1. 新建一个Server项目作为服务端，在main下建立一个文件夹aidl，然后建立一个IMyAidlInterface.aidl文件
+ 
+
+``` java
+package app.yellow.myaidldemoserver;
+
+interface IMyAidlInterface {
+    int add(int arg1, int arg2);
+}
+
+```
+
+
+ 2. 1
