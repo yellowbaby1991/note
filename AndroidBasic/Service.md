@@ -124,3 +124,8 @@ public class MainActivity extends AppCompatActivity {
 	- 多次调用startService，onStartCommand会多次调用，但是多次执行bindService时，onBind方法并不会被多次调用
 	
  2. 生命周期图对比
+ 
+ ![enter description here][1]
+
+
+  [1]: ./images/Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE.jpg "Service生命周期图"
