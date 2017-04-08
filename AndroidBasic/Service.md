@@ -183,7 +183,7 @@ public class MyServer extends Service {
 }
 ```
 
- 4.将该服务配置成remote，意思是可以多进程
+ 4. 将该服务配置成remote，意思是可以多进程
  
 ``` xml
 <service
@@ -195,9 +195,9 @@ public class MyServer extends Service {
 </service>
 ```
 
- 5.再建一个Client工程作为客户端
- 6.把aidl文件夹的内容完全拷贝过去，包名也一致
- 7.客户端的activity如下
+ 5. 再建一个Client工程作为客户端
+ 6. 把aidl文件夹的内容完全拷贝过去，包名也一致
+ 7. 客户端的activity如下
  
 ``` java
 public class MainActivity extends AppCompatActivity {
