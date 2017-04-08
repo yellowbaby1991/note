@@ -314,4 +314,6 @@ public class MainActivity extends Activity {
 - onStop：表示Activity即将停止，可以稍微做点重量级的回收工作，同样不能太耗时
 - onDestrroy：表示Activity即将被销毁，这是生命周期最后一个回调
 
- 2. 1
+ 2. 生命周期图
+ 
+ 3. 1
