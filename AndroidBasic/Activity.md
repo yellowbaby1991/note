@@ -319,6 +319,7 @@ public class MainActivity extends Activity {
 ![enter description here][1]
  
  3. 几种具体的情况
+
 - 针对一个特点的Activity，第一次启动，回调如下 ：onCreate->onStart->onResume
 - 当用户打开新的Activity或者切换桌面的时候，回调如下：onPause->onStop
 - 当用户再次返回原Activity，回调如下：onRestart->onStart-onResume
