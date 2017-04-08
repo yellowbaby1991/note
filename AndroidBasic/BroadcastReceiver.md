@@ -231,4 +231,22 @@ public class MyReceiver02 extends BroadcastReceiver {
 ```
 
 
- 3. 1
+ 3. 发送方式也是一样的
+ 
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void sendDynamic(View view) {
+        Intent intent = new Intent();
+        intent.setAction("MyReceiver");
+        intent.putExtra("name", "黄贝");
+        sendBroadcast(intent);
+    }
+}
+```
