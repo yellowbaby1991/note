@@ -142,5 +142,23 @@ public class DynamicReceiver extends BroadcastReceiver {
 ```
 
  2. AndroidManifest.xml中配置
- 
+
+``` xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.yellow.broadcastreceiver">
+
+    <application>
+       ...
+
+        <receiver android:name=".DynamicReceiver">
+            <intent-filter>
+                <action android:name="DynamicReceiver"></action>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
+```
+
+
  3. 1
