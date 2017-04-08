@@ -119,4 +119,4 @@ public class MainActivity extends AppCompatActivity {
 #### startService和bindService的区别
 
  1. startService方法启动的服务是长期在后台运行的，和原来的组件没什么关系了，bindService会随着绑定组件的销毁而销毁
- 2. 
+ 2. 所以当只是想要一个长期在后台的服务使用startService
