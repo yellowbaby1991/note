@@ -118,6 +118,6 @@ public class MainActivity extends AppCompatActivity {
 
 #### startService和bindService的区别
  
- 1.生命周期的区别
+ 1. 生命周期的区别
 - 执行startService方法，service会经历onCreate->onStartCommand，而执行bindService方法onCreate之后执行的是onBind方法
 - startService方法启动的服务是长期在后台运行的，和原来的组件没什么关系了，bindService会随着绑定组件的销毁而销毁
