@@ -38,5 +38,19 @@ public class MyService extends Service {
  2. Activity中调用startActivity和stopActivity来开启或者销毁服务
  
 ``` java
-enter code here
+public class MainActivity extends AppCompatActivity {
+    ...
+	//启动服务
+    public void startService(View view) {
+        Intent startIntent = new Intent(this, MyService.class);
+        startService(startIntent);
+    }
+
+    //停止服务
+    public void stopService(View view) {
+        Intent stopIntent = new Intent(this, MyService.class);
+        stopService(stopIntent);
+    }
+
+}
 ```
