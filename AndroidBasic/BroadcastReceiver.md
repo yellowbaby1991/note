@@ -340,7 +340,6 @@ public class MainActivity extends AppCompatActivity {
  3. 其他广播无法发送到我们程序内部，所以不需要担心有安全漏洞
  4. 发送本地广播将更加高效
 
-
 ``` java
 public class MainActivity extends AppCompatActivity {
 
