@@ -25,3 +25,17 @@ public class SDCardReceiver extends BroadcastReceiver {
 ```
 
  2. 在AndroidManifest.xml中配置该广播接收器
+ 
+``` java
+        <receiver android:name="com.yellow.SDCardReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+                <!-- 广播类型 -->
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver>			
+```
+
+
+ 3. 1
