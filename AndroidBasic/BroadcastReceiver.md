@@ -186,7 +186,13 @@ public class MainActivity extends AppCompatActivity {
 #### 动态注册接收器接受有序广播
 
 ``` java
-enter code here
+public class MyReceiver01 extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Toast.makeText(context, "动态广播：" + intent.getStringExtra("name"), Toast.LENGTH_SHORT).show();
+    }
+
+}
 ```
 
 
