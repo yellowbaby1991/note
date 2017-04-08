@@ -141,7 +141,7 @@ public class DynamicReceiver extends BroadcastReceiver {
 }
 ```
 
- 2. AndroidManifest.xml中配置
+ 2. AndroidManifest.xml中静态注册
 
 ``` xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
