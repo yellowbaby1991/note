@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
  
 ``` java
 //自定义动态广播接收器
-public class DynamicReceiver extends BroadcastReceiver {
+public class StaticReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Toast.makeText(context, "动态广播：" + intent.getStringExtra("name"), Toast.LENGTH_SHORT).show();
