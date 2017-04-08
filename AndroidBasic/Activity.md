@@ -399,8 +399,8 @@ public class MainActivity extends AppCompatActivity {
 
  1. 什么是任务栈
 	 - Android使用任务栈来管理Activity，一个任务就是一组存在栈里活动Activity的集合
-		 - 当我们启动一个新活动，会在任务栈中压入并且处于栈顶的位置
-		 - 当我们按下back或者调用finish方法的时候，栈顶的Activity就会出栈
+	- 当我们启动一个新活动，会在任务栈中压入并且处于栈顶的位置
+	- 当我们按下back或者调用finish方法的时候，栈顶的Activity就会出栈
 		 
  2. 任务栈的四种启动模式
 	 - standard：默认的活动启动模式，系统不会在乎这个活动是否已经在返回栈中存在，每次启动都会创建一个新的活动实例
