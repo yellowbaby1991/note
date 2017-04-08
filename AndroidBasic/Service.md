@@ -3,6 +3,9 @@
 * [活动和服务通信](#活动和服务通信)
 * [startService和bindService的区别](#startservice和bindservice的区别)
 * [使用Service+okhttp实现后台断点下载](#使用serviceokhttp实现后台断点下载)
+* [AIDL](#aidl)
+	* [AIDL是什么？](#aidl是什么)
+	* [Android Studio下使用AIDL](#android-studio下使用aidl)
 
 ### 服务是什么
 　　服务是Android中实现程序后台运行的解决方案，非常适合去执行那些不需要和用户交互并且还要求长期运行的任务
