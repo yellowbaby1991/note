@@ -82,3 +82,36 @@ public class MyService extends Service {
 
 
  2. Activity中创建一个Connection来获得代理
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private MyService.DownloadBinder downloadBinder;
+
+    private ServiceConnection connection = new ServiceConnection() {
+        @Override
+        //第二个参数就是service传来的代理
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            downloadBinder = (MyService.DownloadBinder) service;
+            downloadBinder.startDownload();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+    ...
+	
+    public void startService(View view) {
+        Intent startIntent = new Intent(this, MyService.class);
+        bindService(startIntent, connection, BIND_AUTO_CREATE);//绑定服务
+    }
+
+    public void stopService(View view) {
+        Intent stopIntent = new Intent(this, MyService.class);
+        unbindService(connection);   //停止服务
+    }
+
+}
+```
