@@ -205,6 +205,50 @@ public class MyReceiver02 extends BroadcastReceiver {
 }
 ```
 
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private MyReceiver01 myReceiver01;
+    private MyReceiver02 myReceiver02;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //创建拦截器
+        IntentFilter filter1 = new IntentFilter();
+        filter1.addAction("MyReceiver");
+        filter1.setPriority(5);
+
+        IntentFilter filter2 = new IntentFilter();
+        filter2.addAction("MyReceiver");
+        filter2.setPriority(4);
+
+        myReceiver01 = new MyReceiver01();
+        myReceiver02 = new MyReceiver02();
+
+        registerReceiver(myReceiver01, filter1);
+        registerReceiver(myReceiver02, filter2);
+
+    }
+
+    public void sendDynamic(View view) {
+        Intent intent = new Intent();
+        intent.setAction("MyReceiver");
+        intent.putExtra("name", "黄贝");
+        sendOrderedBroadcast(intent,null);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(myReceiver01);
+        unregisterReceiver(myReceiver02);
+    }
+}
+```
+
 #### 静态注册接收器接受有序广播
 
  1. 创建两个广播接收器
