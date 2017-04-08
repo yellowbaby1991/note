@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction("MyReceiver");
         intent.putExtra("name", "黄贝");
-        sendBroadcast(intent);
+        sendOrderedBroadcast(intent);
     }
 }
 ```
