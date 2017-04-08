@@ -340,7 +340,7 @@ public class MainActivity extends Activity {
  1. 资源相关的系统配置发生改变导致Activity被杀死并重新创建，经典例子就是横屏，重建过程如下：
     - 当系统配置发生变化，Activity会被销毁，其onPause，onStop，onDestory均被调用
     -  同时因为Activity是被意外终止的，所以系统会调用onSaveInstanceState方法保存当前Activity的状态，正常情况系统不会调用这个方法
-3. 当Activity被重新创建后，系统调用onRestoreInstanceState，并且把onSaveInstanceState方法所保存的Bundle对象作为参数传递给onRestoreInstanceState和onCreate方法
-4. 因此可以通过onRestoreInstanceState和OnCreate方法判断Activity是否被重建了，然后取出数据恢复，时序上来说，onRestoreInstanceState在onStart后
+    -  当Activity被重新创建后，系统调用onRestoreInstanceState，并且把onSaveInstanceState方法所保存的Bundle对象作为参数传递给onRestoreInstanceState和onCreate方法
+    -  因此可以通过onRestoreInstanceState和OnCreate方法判断Activity是否被重建了，然后取出数据恢复，时序上来说，onRestoreInstanceState在onStart后
 
  2. 1
