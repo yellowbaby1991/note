@@ -13,7 +13,7 @@ RequestQueue mQueue = Volley.newRequestQueue(context);
 ```
 
 
- 2. 创建一个StringRequest
+ 2. 创建一个StringRequest，指定请求方式，URL，和监听
 
 ``` java
 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -29,7 +29,6 @@ StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
 		}
 });
 ```
-
 
  3. 1
 
