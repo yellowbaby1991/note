@@ -24,5 +24,4 @@ public class SDCardReceiver extends BroadcastReceiver {
 }
 ```
 
-
- 2. 1
+ 2. 在AndroidManifest.xml中配置该广播接收器
