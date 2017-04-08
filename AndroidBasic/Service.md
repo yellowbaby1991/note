@@ -59,4 +59,26 @@ public class MainActivity extends AppCompatActivity {
 
  1. 在service中定义一个提供给Activity的代理（Binder）
 
+``` java
+public class MyService extends Service {
+
+    private DownloadBinder mBinder = new DownloadBinder();
+
+    //提供给Activity的小秘书
+    class DownloadBinder extends Binder {
+        public void startDownload() {
+            //下载逻辑
+        }
+    }
+
+    //将小秘书返回给Activity
+    @Override
+    public IBinder onBind(Intent intent) {
+        return mBinder;
+    }
+    ...
+}
+```
+
+
  2. 1
