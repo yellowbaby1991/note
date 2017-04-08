@@ -59,4 +59,29 @@ JsonObjectRequest jsonObjectRequest = new JsonObjectRequest("http://m.weather.co
 
  3. 将request压入队列中，和上面一样
 
+
+### 请求图片数据
+
+ 1. 得到RequestQueue对象
+ 2. 创建ImageRequest
+ 
+``` java
+ImageRequest imageRequest = new ImageRequest(
+                url,
+                new Response.Listener<Bitmap>() {
+                    @Override
+                    public void onResponse(Bitmap response) {
+                        imageView.setImageBitmap(response);
+                    }
+                }, 0, 0, Bitmap.Config.RGB_565, 
+				new Response.ErrorListener() {
+					@Override
+					public void onErrorResponse(VolleyError error) {
+         	    }
+        });
+```
+
+
+ 3. 将request压入队列中
+
   [1]: http://download.csdn.net/detail/sinyu890807/7152015
