@@ -193,3 +193,45 @@ public class MyServer extends Service {
  5.再建一个Client工程作为客户端
  6.把aidl文件夹的内容完全拷贝过去，包名也一致
  7.客户端的activity如下
+ 
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    IMyAidlInterface mStub;
+
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mStub = IMyAidlInterface.Stub.asInterface(service);
+            try {
+                int value = mStub.add(1, 8);
+                Toast.makeText(MainActivity.this, value + "", Toast.LENGTH_SHORT).show();
+                Log.i("TAG", value + "");
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Intent intent = new Intent();
+        intent.setAction("com.yellow.MyServer");
+        bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(serviceConnection);
+    }
+}
+```
+ 8.然后先启动服务端，再启动客户端就可以实现远程调用了
