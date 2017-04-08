@@ -173,8 +173,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //发送名字为DynamicReceiver的无序广播，系统会根据配置的IntentFilter找接收器
-    public void sendDynamic(View view) {
+    public void sendStatic(View view) {
         Intent intent = new Intent();
         intent.setAction("StaticReceiver");
         intent.putExtra("name", "黄贝");
