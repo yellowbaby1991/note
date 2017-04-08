@@ -206,4 +206,4 @@ public class MyReceiver02 extends BroadcastReceiver {
 }
 ```
 
- 2. 1
+ 2. xml中注册，设置优先级，优先级数字越大优先级越高
