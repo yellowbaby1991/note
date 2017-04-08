@@ -4,5 +4,15 @@
 ### 配置方法
 　　将 [jar包 ][1]导入工程即可
 
+### 请求String类型数据
+
+ 1. 得到RequestQueue对象，Volley所有的请求都是通过这个请求队列发起的
+
+``` java
+enter code here
+```
+
+
+ 2. 1
 
   [1]: http://download.csdn.net/detail/sinyu890807/7152015
