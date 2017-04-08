@@ -308,10 +308,10 @@ public class MainActivity extends Activity {
     -  onCreate：在活动第一次被创建的时候调用，应该在这个方法里面完成活动的初始化操作，比如加载布局，绑定事件等
     -  onRestart：Activity被重新启动的时候调用，如用户按Home开启其他活动然后再回到这个Activity的时候调用
     - onStart：表示当前Activity正在启动，但还没有出现在前台
-   - onResume：表示Activity已经可见了，并且开始出现在前台
-   - onPause：表示Activity正在停止，正常情况下，紧接着onStop马上就会调用，通常在这个方法里面释放一些系统资源，但是不能太耗时
-   - onStop：表示Activity即将停止，可以稍微做点重量级的回收工作，同样不能太耗时
-   - onDestrroy：表示Activity即将被销毁，这是生命周期最后一个回调
+    - onResume：表示Activity已经可见了，并且开始出现在前台
+    - onPause：表示Activity正在停止，正常情况下，紧接着onStop马上就会调用，通常在这个方法里面释放一些系统资源，但是不能太耗时
+    - onStop：表示Activity即将停止，可以稍微做点重量级的回收工作，同样不能太耗时
+    - onDestrroy：表示Activity即将被销毁，这是生命周期最后一个回调
 
  2. 生命周期图
 
