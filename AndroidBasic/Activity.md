@@ -301,3 +301,5 @@ public class MainActivity extends Activity {
 }
 ```
 
+
+### Activity的生命周期
