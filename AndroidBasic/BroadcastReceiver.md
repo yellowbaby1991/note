@@ -60,3 +60,17 @@ public class SmsReceiver extends BroadcastReceiver {
     }
 }
 ```
+
+ 2. 在AndroidManifest.xml中配置该广播接收器
+ 
+``` xml
+        <receiver android:name="com.yellow.SmsReceiver">
+            <!-- 设置优先级 -->
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+```
+
+
+ 3. 1
