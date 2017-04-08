@@ -73,7 +73,7 @@ public class SmsReceiver extends BroadcastReceiver {
 ```
 
  3. 放开去读短信的权限
- 
+
 
 ``` xml
 <uses-permission android:name="android.permission.RECEIVE_SMS"/>
