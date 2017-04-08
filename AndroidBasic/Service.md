@@ -191,4 +191,5 @@ public class MyServer extends Service {
 ```
 
  5.再建一个Client工程作为客户端
- 6.
+ 6.把aidl文件夹的内容完全拷贝过去，包名也一致
+ 7.
