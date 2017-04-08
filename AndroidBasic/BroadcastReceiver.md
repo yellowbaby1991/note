@@ -322,4 +322,4 @@ public class MainActivity extends AppCompatActivity {
 
 ### 动态注册和静态注册的区别
 
- 1. 动态注册广播不是常驻型广播
+ 1. 动态注册广播不是常驻型广播，也就是会随着activity的生命周期被注销移除，静态型
