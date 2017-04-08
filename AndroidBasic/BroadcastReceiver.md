@@ -232,7 +232,7 @@ public class MyReceiver02 extends BroadcastReceiver {
 ```
 
 
- 3. 发送方式也是一样的
+ 3. 使用sendOrderedBroadcast发送
  
 ``` java
 public class MainActivity extends AppCompatActivity {
