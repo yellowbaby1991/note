@@ -387,6 +387,12 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+ 4. 如果不想Activity被横屏重建，可以设置configChanges属性
+ 
+
+``` xml
+ <activity android:name=".MainActivity" android:configChanges="orientation" >
+```
 
 
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
