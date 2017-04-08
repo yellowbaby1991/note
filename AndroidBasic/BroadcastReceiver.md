@@ -338,7 +338,7 @@ public class MainActivity extends AppCompatActivity {
  1. 本地广播是只在程序内部进行传递的广播，发送和接收都只在本程序有效
  2. 不用担心数据泄密，因为广播不会被其他程序获得
  3. 其他广播无法发送到我们程序内部，所以不需要担心有安全漏洞
- 4. 发送本地广播将更加高效
+ 4. 发送本地广播将更加高效，只能动态注册
 
 ``` java
 public class MainActivity extends AppCompatActivity {
