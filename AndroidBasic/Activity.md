@@ -337,4 +337,4 @@ public class MainActivity extends Activity {
   
 ### 异常情况Activity的生命周期
 
- 1. List item
+ 1. 资源相关的系统配置发生改变导致Activity被杀死并重新创建，经典例子就是横屏，重建过程如下：
