@@ -315,5 +315,8 @@ public class MainActivity extends Activity {
 - onDestrroy：表示Activity即将被销毁，这是生命周期最后一个回调
 
  2. 生命周期图
- 
+ ![enter description here][1]
  3. 1
+
+
+  [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
