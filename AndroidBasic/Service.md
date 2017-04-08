@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### startService和bindService的区别
+#### startService和bindService的区别
  
  1. 生命周期的区别
 	- 执行startService方法，service会经历onCreate->onStartCommand，而执行bindService方法onCreate之后执行的是onBind方法
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
  ![enter description here][1]
 
 
-### 使用Service+okhttp实现后台断点下载 
+#### 使用Service+okhttp实现后台断点下载 
 
 　　[Service+okhttp实现后台断点下载][2]
 
