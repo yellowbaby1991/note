@@ -239,4 +239,4 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
- 8.然后先启动服务端，再启动客户端就可以实现远程调用了
+8. 然后先启动服务端，再启动客户端就可以实现远程调用了
