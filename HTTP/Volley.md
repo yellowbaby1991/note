@@ -22,7 +22,8 @@ RequestQueue mQueue = Volley.newRequestQueue(context);
                     public void onResponse(String response) {
                        //得到结果
                     }
-                }, new Response.ErrorListener() {
+                }, 
+				new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
             }
