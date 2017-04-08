@@ -178,4 +178,17 @@ public class MyServer extends Service {
 }
 ```
 
- 4.1
+ 4.将该服务配置成remote，意思是可以多进程
+ 
+``` xml
+<service
+	android:name=".MyServer"
+	android:process=":remote">
+	<intent-filter>
+		<action android:name="com.yellow.MyServer"></action>
+	</intent-filter>
+</service>
+```
+
+
+ 5.1
