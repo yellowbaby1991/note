@@ -405,7 +405,7 @@ public class MainActivity extends AppCompatActivity {
  2. 任务栈的四种启动模式
 	 - standard：默认的活动启动模式，系统不会在乎这个活动是否已经在返回栈中存在，每次启动都会创建一个新的活动实例
 	 - singleTop：当启动活动的时候发现返回栈的栈顶已经是该活动，则认为可以直接使用它，不会再创建新的活动实例，需要注意的是，这个Activity的不会调用onCreate和onStart，会调用onNewIntent，如果活动不在栈顶，还是会创建新实例
-	 - singleTask：TaskAffinity和singeTask配合，activity默认的任务栈是包名，可以通过TaskAffinity属性指定包名，这种模式会clearTop，比如，任务栈1有A，任务栈2有BCD，B为singleTask，从A启动B，会把CD都弹出去，把B压入任务栈1
+	 - singleTask：每次启动活动时，系统会在返回栈中检查是否有该活动的实例存在，如果有就直接拿出来用，如果没有就创建一个
 
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
   [2]: ./images/%E9%87%8D%E5%BB%BA%E6%B5%81%E7%A8%8B%E5%9B%BE.png "重建流程图"
