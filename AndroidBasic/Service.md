@@ -37,6 +37,6 @@ public class MyService extends Service {
 
  2. Activity中调用startActivity和stopActivity来开启或者销毁服务
  
-``` stylus
+``` java
 enter code here
 ```
