@@ -164,6 +164,23 @@ public class DynamicReceiver extends BroadcastReceiver {
  3. sendBroadcast发送广播
  
 
-``` stylus
-enter code here
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private DynamicReceiver dynamicReceiver;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    //发送名字为DynamicReceiver的无序广播，系统会根据配置的IntentFilter找接收器
+    public void sendDynamic(View view) {
+        Intent intent = new Intent();
+        intent.setAction("DynamicReceiver");
+        intent.putExtra("name", "黄贝");
+        sendBroadcast(intent);
+    }
+}
 ```
