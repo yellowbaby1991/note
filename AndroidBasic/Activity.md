@@ -303,3 +303,5 @@ public class MainActivity extends Activity {
 
 
 ### Activity的生命周期
+
+ 1. 七大回调方法
