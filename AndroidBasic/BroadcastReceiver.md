@@ -167,8 +167,6 @@ public class StaticReceiver extends BroadcastReceiver {
 ``` java
 public class MainActivity extends AppCompatActivity {
 
-    private DynamicReceiver dynamicReceiver;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
