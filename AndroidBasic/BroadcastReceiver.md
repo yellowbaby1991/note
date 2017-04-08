@@ -82,4 +82,48 @@ public class SmsReceiver extends BroadcastReceiver {
 ### 自定义广播
 #### 动态发送无序广播
 
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private DynamicReceiver dynamicReceiver;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //创建拦截器
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("DynamicReceiver");
+        dynamicReceiver = new DynamicReceiver();
+
+        //注册接收器
+        registerReceiver(dynamicReceiver, filter);
+    }
+
+    //发送名字为DynamicReceiver的无序广播，系统会根据配置的IntentFilter找接收器
+    public void sendDynamic(View view) {
+        Intent intent = new Intent();
+        intent.setAction("DynamicReceiver");
+        intent.putExtra("name", "黄贝");
+        sendBroadcast(intent);
+    }
+
+    //注销接收器
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(dynamicReceiver);
+    }
+
+    //自定义动态广播接收器
+    class DynamicReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(context, "动态广播：" + intent.getStringExtra("name"), Toast.LENGTH_SHORT).show();
+        }
+    }
+}
+```
+
 
