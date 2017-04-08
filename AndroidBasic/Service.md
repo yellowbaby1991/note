@@ -158,4 +158,24 @@ interface IMyAidlInterface {
 
 
  2. 点击编译按钮，app/build/generated/source/aidl/debug目录下会生成一个与IMyAidlInterface.aidl文件同样包名的一个文件
- 3. 
+ 
+ 3. 建立一个service
+
+``` java
+public class MyServer extends Service {
+
+    IMyAidlInterface.Stub mStub = new IMyAidlInterface.Stub() {
+        @Override
+        public int add(int arg1, int arg2) throws RemoteException {
+            return arg1 + arg2;
+        }
+    };
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return mStub;
+    }
+}
+```
+
+ 4.1
