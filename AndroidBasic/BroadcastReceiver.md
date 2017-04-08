@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void sendDynamic(View view) {
+    public void sendStatic(View view) {
         Intent intent = new Intent();
         intent.setAction("MyReceiver");
         intent.putExtra("name", "黄贝");
