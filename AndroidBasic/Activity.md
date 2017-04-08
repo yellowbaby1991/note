@@ -343,6 +343,7 @@ public class MainActivity extends Activity {
     -  因此可以通过onRestoreInstanceState和OnCreate方法判断Activity是否被重建了，然后取出数据恢复，时序上来说，onRestoreInstanceState在onStart后
 
  2. 重建流程图
+ 
  ![enter description here][2]
  
  
