@@ -404,6 +404,7 @@ public class MainActivity extends AppCompatActivity {
 		 
  2. 任务栈的四种启动模式
 	 - standard：默认的活动启动模式，系统不会在乎这个活动是否已经在返回栈中存在，每次启动都会创建一个新的活动实例
+	 - 
 
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
   [2]: ./images/%E9%87%8D%E5%BB%BA%E6%B5%81%E7%A8%8B%E5%9B%BE.png "重建流程图"
