@@ -190,4 +190,5 @@ public class MyServer extends Service {
 </service>
 ```
 
- 5.1
+ 5.再建一个Client工程作为客户端
+ 6.
