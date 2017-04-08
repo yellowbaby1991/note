@@ -334,3 +334,4 @@ public class MainActivity extends Activity {
 
 
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
+### 异常情况Activity的生命周期
