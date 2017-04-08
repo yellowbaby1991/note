@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
 #### 使用Service+okhttp实现后台断点下载 
 
-[enter description here][2]
+　　[enter description here][2]
 
 
   [1]: ./images/Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE.jpg "Service生命周期图"
