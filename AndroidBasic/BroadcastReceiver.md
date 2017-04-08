@@ -150,9 +150,9 @@ public class StaticReceiver extends BroadcastReceiver {
     <application>
        ...
 
-        <receiver android:name=".DynamicReceiver">
+        <receiver android:name=".StaticReceiver">
             <intent-filter>
-                <action android:name="DynamicReceiver"></action>
+                <action android:name="StaticReceiver"></action>
             </intent-filter>
         </receiver>
     </application>
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
     //发送名字为DynamicReceiver的无序广播，系统会根据配置的IntentFilter找接收器
     public void sendDynamic(View view) {
         Intent intent = new Intent();
-        intent.setAction("DynamicReceiver");
+        intent.setAction("StaticReceiver");
         intent.putExtra("name", "黄贝");
         sendBroadcast(intent);
     }
