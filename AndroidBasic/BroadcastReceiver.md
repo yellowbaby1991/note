@@ -183,3 +183,5 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+
+#### 静态注册接收器接受有序广播
