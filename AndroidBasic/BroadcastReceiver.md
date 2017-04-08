@@ -185,3 +185,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 #### 静态注册接收器接受有序广播
+
+ 1. 创建两个广播接收器
