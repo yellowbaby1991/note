@@ -318,14 +318,14 @@ public class MainActivity extends Activity {
 
 ![enter description here][1]
  
- 3. 几种具体的情况
+ 1. 几种具体的情况
 	-  针对一个特点的Activity，第一次启动，回调如下 ：onCreate->onStart->onResume
 	- 当用户打开新的Activity或者切换桌面的时候，回调如下：onPause->onStop
 	- 当用户再次返回原Activity，回调如下：onRestart->onStart-onResume
 	- 当用户按back键返回的时候，回调如下：onPause->onStop->onDestroy
 	- 当Activity被系统回收后再次打开，回调过程：和1一样，但是只是生命周期方法一样，有过程不一样
 
- 4. 从整个生命周期来看
+ 2. 从整个生命周期来看
     - onCreate和onDestory是对称的，标志Activity的创建和销毁
     - onStart和onStop是对称的，代表程序是否可见
     - onResume和onPause是对称的，标志程序的是否在前台
@@ -336,3 +336,5 @@ public class MainActivity extends Activity {
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
   
 ### 异常情况Activity的生命周期
+
+ 1. List item
