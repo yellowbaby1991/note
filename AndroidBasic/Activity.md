@@ -347,7 +347,46 @@ public class MainActivity extends Activity {
  ![enter description here][2]
  
  
- 3. 1
+ 3. 示例代码如下
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (null != savedInstanceState) {//如果在oncreate中恢复数据需要判断savedInstanceState是否为null
+            int IntTest = savedInstanceState.getInt("IntTest");
+            String StrTest = savedInstanceState.getString("StrTest");
+        }
+        setContentView(R.layout.activity_main);
+
+    }
+
+    /**
+     * 在横屏的时候调用该方法存储数据
+     */
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("IntTest", 1);
+        savedInstanceState.putString("StrTest", "savedInstanceState test");
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    /**
+     * 在重新创建Activity后执行，在onCreate之后
+     */
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        int mCount = savedInstanceState.getInt("IntTest");
+        String StrTest = savedInstanceState.getString("StrTest");
+    }
+
+}
+```
+
 
 
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
