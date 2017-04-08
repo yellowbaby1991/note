@@ -187,5 +187,16 @@ public class MainActivity extends AppCompatActivity {
 #### 静态注册接收器接受有序广播
 
  1. 创建两个广播接收器
- 
+
+``` java
+public class MyReceiver01 extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Toast.makeText(context, "动态广播：" + intent.getStringExtra("name"), Toast.LENGTH_SHORT).show();
+    }
+
+}
+```
+
+
  2. 1
