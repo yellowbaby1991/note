@@ -55,4 +55,8 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-#### 
+#### 活动和服务通信
+
+ 1. 在service中定义一个提供给Activity的小秘书（Binder）
+
+ 2. 1
