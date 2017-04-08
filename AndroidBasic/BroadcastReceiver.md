@@ -42,3 +42,21 @@ public class SDCardReceiver extends BroadcastReceiver {
 #### 短信拦截器
 
  1. 创建广播接收器
+
+``` java
+public class SmsReceiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Bundle bundle = intent.getExtras();
+        Object[] pdus = (Object[]) bundle.get("pdus");
+        for (Object pdu : pdus) {
+            SmsMessage sms = SmsMessage.createFromPdu((byte[]) pdu);
+            String address = sms.getDisplayOriginatingAddress();//发信人
+            String smsBody = sms.getMessageBody();//短信内容
+            if (smsBody.equals("nihao!")) {
+                abortBroadcast();//拦截短信
+            }
+        }
+    }
+}
+```
