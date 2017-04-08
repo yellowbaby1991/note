@@ -209,7 +209,11 @@ public class MyReceiver02 extends BroadcastReceiver {
  2. xml中注册，设置优先级，优先级数字越大优先级越高
  
 ``` xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.yellow.broadcastreceiver">
 
+    <application>
+       ...
         <receiver android:name=".MyReceiver01">
             <intent-filter android:priority="5">
                 <action android:name="MyReceiver"></action>
@@ -220,6 +224,10 @@ public class MyReceiver02 extends BroadcastReceiver {
                 <action android:name="MyReceiver"></action>
             </intent-filter>
         </receiver>
+    </application>
+
+</manifest>
+
 ```
 
 
