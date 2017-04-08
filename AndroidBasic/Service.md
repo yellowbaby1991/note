@@ -81,4 +81,4 @@ public class MyService extends Service {
 ```
 
 
- 2. 1
+ 2. Activity中创建一个Connection来获得代理
