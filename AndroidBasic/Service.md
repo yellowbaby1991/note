@@ -123,3 +123,4 @@ public class MainActivity extends AppCompatActivity {
 	- startService方法启动的服务是长期在后台运行的，和原来的组件没什么关系了，bindService会随着绑定组件的销毁而销毁
 	- 多次调用startService，onStartCommand会多次调用，但是多次执行bindService时，onBind方法并不会被多次调用
 	
+ 2. 生命周期图对比
