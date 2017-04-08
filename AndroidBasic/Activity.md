@@ -333,7 +333,6 @@ public class MainActivity extends Activity {
     - 开启新的Activity，旧的onPause和新的onResume谁先执行：从源码角度来看，旧的onPause先执行
 
 
-  [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
   
 ### 异常情况Activity的生命周期
 
@@ -344,3 +343,11 @@ public class MainActivity extends Activity {
     -  因此可以通过onRestoreInstanceState和OnCreate方法判断Activity是否被重建了，然后取出数据恢复，时序上来说，onRestoreInstanceState在onStart后
 
  2. 重建流程图
+ ![enter description here][2]
+ 
+ 
+ 3. 1
+
+
+  [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
+  [2]: ./images/%E9%87%8D%E5%BB%BA%E6%B5%81%E7%A8%8B%E5%9B%BE.png "重建流程图"
