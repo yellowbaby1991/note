@@ -8,6 +8,8 @@
 	* [使用Bundle传参](#使用bundle传参)
 	* [传List](#传list)
 * [获取新界面的返回值](#获取新界面的返回值)
+* [正常情况Activity的生命周期](#正常情况activity的生命周期)
+* [异常情况Activity的生命周期](#异常情况activity的生命周期)
 
 ### 应用程序的国际化
 
