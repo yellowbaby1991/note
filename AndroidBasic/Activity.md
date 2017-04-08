@@ -302,7 +302,7 @@ public class MainActivity extends Activity {
 ```
 
 
-### Activity的生命周期
+### 正常情况Activity的生命周期
 
  1. 七大回调方法
     -  onCreate：在活动第一次被创建的时候调用，应该在这个方法里面完成活动的初始化操作，比如加载布局，绑定事件等
