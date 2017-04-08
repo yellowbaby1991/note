@@ -207,3 +207,20 @@ public class MyReceiver02 extends BroadcastReceiver {
 ```
 
  2. xml中注册，设置优先级，优先级数字越大优先级越高
+ 
+``` xml
+
+        <receiver android:name=".MyReceiver01">
+            <intent-filter android:priority="5">
+                <action android:name="MyReceiver"></action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".MyReceiver02">
+            <intent-filter android:priority="4">
+                <action android:name="MyReceiver"></action>
+            </intent-filter>
+        </receiver>
+```
+
+
+ 3. 1
