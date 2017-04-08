@@ -334,3 +334,52 @@ public class MainActivity extends AppCompatActivity {
 　　动态注册广播不是常驻型广播，也就是会随着Ａctivity的生命周期被注销移除，静态注册是常驻型，也就是说当应用程序关闭后，有信息广播来，程序也会被自动运行
 
 ### 本地广播
+
+ 1. 本地广播是只在程序内部进行传递的广播，发送和接收都只在本程序有效
+
+　
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private IntentFilter intentFilter;
+    private LocalReceiver localReceiver;
+    private LocalBroadcastManager localBroadcastManager;//本地广播管理器
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //创建本地广播接受者并且注册
+        localBroadcastManager = LocalBroadcastManager.getInstance(this);
+        intentFilter = new IntentFilter();
+        intentFilter.addAction("MyReceiver");
+        localReceiver = new LocalReceiver();
+        localBroadcastManager.registerReceiver(localReceiver, intentFilter);
+
+
+    }
+
+    public void sendDynamic(View view) {
+        Intent intent = new Intent();
+        intent.setAction("MyReceiver");
+        intent.putExtra("name", "黄贝");
+        localBroadcastManager.sendBroadcast(intent);//使用管理器发送广播
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        localBroadcastManager.unregisterReceiver(localReceiver);//注销广播管理器
+    }
+
+    class LocalReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(context, "这是本地广播接收器", Toast.LENGTH_SHORT).show();
+        }
+    }
+}
+
+```
