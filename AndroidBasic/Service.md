@@ -1,16 +1,10 @@
-* [服务是什么](#服务是什么)
-* [创建和销毁服务](#创建和销毁服务)
-* [活动和服务通信](#活动和服务通信)
-* [startService和bindService的区别](#startservice和bindservice的区别)
-* [使用Service+okhttp实现后台断点下载](#使用serviceokhttp实现后台断点下载)
-* [AIDL](#aidl)
-	* [AIDL是什么？](#aidl是什么)
-	* [Android Studio下使用AIDL](#android-studio下使用aidl)
+
 
 ### 服务是什么
 　　服务是Android中实现程序后台运行的解决方案，非常适合去执行那些不需要和用户交互并且还要求长期运行的任务
   
-### 创建和销毁服务
+### 服务的基本用法 
+#### 创建和销毁服务
 
  1. 创建一个Service的子类，重写下面几个方法
  
@@ -63,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### 活动和服务通信
+#### 活动和服务通信
 
  1. 在service中定义一个提供给Activity的代理（Binder）
 
