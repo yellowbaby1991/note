@@ -395,6 +395,14 @@ public class MainActivity extends AppCompatActivity {
  <activity android:name=".MainActivity" android:configChanges="orientation" >
 ```
 
+### 任务栈
+
+ 1. 什么是任务栈
+		 - Android使用任务栈来管理Activity，一个任务就是一组存在栈里活动Activity的集合
+		 - 当我们启动一个新活动，会在任务栈中压入并且处于栈顶的位置
+		 - 当我们按下back或者调用finish方法的时候，栈顶的Activity就会出栈
+		 
+ 2. 1
 
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
   [2]: ./images/%E9%87%8D%E5%BB%BA%E6%B5%81%E7%A8%8B%E5%9B%BE.png "重建流程图"
