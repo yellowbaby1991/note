@@ -406,6 +406,7 @@ public class MainActivity extends AppCompatActivity {
 	 - standard：默认的活动启动模式，系统不会在乎这个活动是否已经在返回栈中存在，每次启动都会创建一个新的活动实例
 	 - singleTop：当启动活动的时候发现返回栈的栈顶已经是该活动，则认为可以直接使用它，不会再创建新的活动实例，需要注意的是，这个Activity的不会调用onCreate和onStart，会调用onNewIntent，如果活动不在栈顶，还是会创建新实例
 	 - singleTask：每次启动活动时，先判断该Activity是否在栈内，如果不存在则创建，如果存在，就判断该Activity上面是否有其他Activity，如果有，则关闭其他的Activity，也就是cleartop，应用场景：应用的首页
+	 - singleInstance：会有一个单独的返回栈来管理这个活动，不管哪个应用程序来访问这个活动，都公用的同一个返回栈
 
   [1]: ./images/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png "Activity生命周期"
   [2]: ./images/%E9%87%8D%E5%BB%BA%E6%B5%81%E7%A8%8B%E5%9B%BE.png "重建流程图"
