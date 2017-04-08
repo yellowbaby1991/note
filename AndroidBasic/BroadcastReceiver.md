@@ -161,4 +161,9 @@ public class DynamicReceiver extends BroadcastReceiver {
 ```
 
 
- 3. 1
+ 3. sendBroadcast发送广播
+ 
+
+``` stylus
+enter code here
+```
