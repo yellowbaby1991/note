@@ -143,4 +143,6 @@ public class MainActivity extends AppCompatActivity {
 ### AIDL
 #### AIDL是什么？
 　　AIDL是Android的一种IPC（跨进程通信）的方式，内部原理是Binder
-#### Android studio下使用AIDL  
+#### Android Studio下使用AIDL  
+
+ 1. List item
