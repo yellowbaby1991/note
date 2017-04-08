@@ -2,12 +2,14 @@
 * [接受常用的系统广播](#接受常用的系统广播)
 	* [SD卡状态监听](#sd卡状态监听)
 	* [短信拦截器](#短信拦截器)
-* [自定义广播](#自定义广播)
-	* [动态注册接收器接受无序广播](#动态注册接收器接受无序广播)
-	* [静态注册接收器接受无序广播](#静态注册接收器接受无序广播)
-	* [动态注册接收器接受有序广播](#动态注册接收器接受有序广播)
-	* [静态注册接收器接受有序广播](#静态注册接收器接受有序广播)
+* [自定义无序广播](#自定义无序广播)
+	* [动态注册无序广播](#动态注册无序广播)
+	* [静态注册无序广播](#静态注册无序广播)
+* [自定义有序广播](#自定义有序广播)
+	* [动态注册有序广播](#动态注册有序广播)
+	* [静态注册有序广播](#静态注册有序广播)
 * [动态注册和静态注册的区别](#动态注册和静态注册的区别)
+* [本地广播](#本地广播)
 
 ### 广播的概念
 
@@ -90,8 +92,8 @@ public class SmsReceiver extends BroadcastReceiver {
 ```
 
 
-### 自定义广播
-#### 动态注册接收器接受无序广播
+### 自定义无序广播
+#### 动态注册无序广播
 
 ``` java
 public class MainActivity extends AppCompatActivity {
@@ -137,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-#### 静态注册接收器接受无序广播
+#### 静态注册无序广播
 
  1. 创建接收器
  
@@ -194,7 +196,8 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 
-#### 动态注册接收器接受有序广播
+### 自定义有序广播
+#### 动态注册有序广播
 
 ``` java
 public class MyReceiver01 extends BroadcastReceiver {
@@ -260,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-#### 静态注册接收器接受有序广播
+#### 静态注册有序广播
 
  1. 创建两个广播接收器
 
