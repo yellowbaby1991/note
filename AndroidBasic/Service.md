@@ -5,3 +5,32 @@
 #### 创建和销毁服务
 
  1. 创建一个Service的子类
+ 
+``` java
+public class MyService extends Service {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+}
+```
+
+
+ 2. 1
