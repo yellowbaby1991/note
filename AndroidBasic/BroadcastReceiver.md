@@ -8,4 +8,21 @@
 
  1. 创建广播接收器
  
+``` java
+public class SDCardReceiver extends BroadcastReceiver {
+
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		String action = intent.getAction();
+		if (action.equals(Intent.ACTION_MEDIA_MOUNTED)) {
+			//安装处理			
+		}else if (action.equals(Intent.ACTION_MEDIA_UNMOUNTED)) {
+			//卸载处理
+		}
+	}
+
+}
+```
+
+
  2. 1
