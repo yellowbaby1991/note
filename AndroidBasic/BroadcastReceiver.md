@@ -198,10 +198,11 @@ public class MyReceiver01 extends BroadcastReceiver {
 ```
 
 ``` java
-public class MyReceiver01 extends BroadcastReceiver {
+public class MyReceiver02 extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Toast.makeText(context, "动态广播：" + intent.getStringExtra("name"), Toast.LENGTH_SHORT).show();
+        abortBroadcast(); //中断广播，不会再响比它有优先级低得广播再传播下去了
     }
 }
 ```
