@@ -80,7 +80,7 @@ public class SmsReceiver extends BroadcastReceiver {
 
 
 ### 自定义广播
-#### 动态发送无序广播
+#### 动态注册接收器接受无序广播
 
 ``` java
 public class MainActivity extends AppCompatActivity {
