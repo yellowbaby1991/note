@@ -336,6 +336,7 @@ public class MainActivity extends AppCompatActivity {
 ### 本地广播
 
  1. 本地广播是只在程序内部进行传递的广播，发送和接收都只在本程序有效
+ 2. 不用担心数据泄密，因为广播不会被其他程序获得
 
 　
 
