@@ -151,6 +151,23 @@ public class MainActivity extends AppCompatActivity {
  1. 将待播放的音乐导入Genymotion模拟器的mnt/shell/emulated/0/目录下
  2. 读取该目录下所有MP3格式的文件名显示在ListView上
  
+``` java
+public class MainActivity extends AppCompatActivity {
+    private ListView mMusicLv;
+    private List<String> mMusicPaths = new ArrayList<>();
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        readMusicFromSD();
+        initMusicLv();
+    }
+	
+}
+```
+
+
  3. 1
 
 ### AIDL
