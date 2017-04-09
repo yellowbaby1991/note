@@ -411,4 +411,35 @@ public interface IMyAidlInterface extends android.os.IInterface {
   
  1. 服务端Service
  
+``` java
+public class MyServer extends Service {
+
+    private static final String DESCRIPTOR = "CalcPlusService";
+
+    private class MyBinder extends Binder {
+        @Override
+        protected boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+            data.enforceInterface(DESCRIPTOR);
+            int _arg0;
+            _arg0 = data.readInt();
+            int _arg1;
+            _arg1 = data.readInt();
+            int _result = _arg0 + _arg1;
+            reply.writeNoException();
+            reply.writeInt(_result);
+            return true;
+        }
+    }
+
+    public MyServer() {
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return new MyBinder();
+    }
+}
+```
+
+
  2. 1
