@@ -337,12 +337,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.all_loop:
                 editor.putInt("playMode", 3);
                 break;
-            case R.id.logout_app:
-                mMusicService.callStopPlay();
-                unbindService(mConn);
-                Intent intent = new Intent(this,MusicService.class);
-                startService(intent);
-                finish();
         }
         editor.commit();
         return true;
