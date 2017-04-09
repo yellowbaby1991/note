@@ -183,6 +183,23 @@ public class MainActivity extends AppCompatActivity {
         mMusicLv.setAdapter(adapter);// 给ListView设置适配器
     }	
 }
+
+```
+
+``` java
+public class BaseUtils {
+
+    //判断是否有SD卡
+    public static boolean isSDCardHere() {
+        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+    }
+
+    //得到SD卡的根目录
+    public static File getSDFile() {
+        return Environment.getExternalStorageDirectory();
+    }
+
+}
 ```
 
 
