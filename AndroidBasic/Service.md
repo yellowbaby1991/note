@@ -427,11 +427,7 @@ public interface IMusicService {
 public class MusicService extends Service {
     ...
     private class MusicAgent extends Binder implements IMusicService {
-        @Override
-        public void callPlayMusic(List<String> filePaths, int postion) {
-            playMusic(filePaths, postion);
-        }
-
+        ...
         @Override
         public void callStopPlay() {
             stopPlay();
