@@ -9,6 +9,7 @@
 	* [Android Studio下使用AIDL](#android-studio下使用aidl)
 	* [AIDL调用流程](#aidl调用流程)
 	* [不依赖AIDL实现IPC](#不依赖aidl实现ipc)
+	* [模拟远程支付业务](#模拟远程支付业务)
 
 ### 服务是什么
 　　服务是Android中实现程序后台运行的解决方案，非常适合去执行那些不需要和用户交互并且还要求长期运行的任务
@@ -564,4 +565,56 @@ public class AlipayService extends Service {
 ```
 
  4. 客户端同样拷贝aidl文件到相同位置
- 5. 
+ 5. 绑定连接后远程调用
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private IAlipayService iAlipayService;
+
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            iAlipayService = IAlipayService.Stub.asInterface(service);
+            mockPay();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void pay(View view) {
+        Intent service = new Intent("com.yellow.ALIPAY");
+        bindService(service, serviceConnection, BIND_AUTO_CREATE);
+    }
+
+    protected void mockPay() {
+        try {
+            int result = iAlipayService.callSafePay("zhangsan", "123", 20, System.currentTimeMillis());
+            switch (result) {
+                case 200:
+                    Toast.makeText(MainActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
+                    break;
+                case 404:
+                    Toast.makeText(MainActivity.this, "账号密码错误", Toast.LENGTH_SHORT).show();
+                    break;
+                case 500:
+                    Toast.makeText(MainActivity.this, "余额不足", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+```
