@@ -382,8 +382,8 @@ public class MusicService extends Service {
 
     private void playMusic(final List<String> filePaths, int postion) {
           notification(filePaths.get(postion));	
-		  ...
-		  //播放操作
+          ...
+          //播放操作
 	}
 	
     //安卓16之后显示通知建议采用builder
