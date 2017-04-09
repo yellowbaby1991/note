@@ -442,7 +442,6 @@ public class MusicService extends Service {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
-        
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.cancelAll();
     }	
