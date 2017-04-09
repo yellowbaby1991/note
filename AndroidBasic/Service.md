@@ -163,7 +163,18 @@ public class MainActivity extends AppCompatActivity {
         readMusicFromSD();
         initMusicLv();
     }
-	
+	//读取SD卡目录下的所有文件并且筛选出后缀为MP3的
+    private void readMusicFromSD() {
+        if (BaseUtils.isSDCardHere()) {
+            File[] files = BaseUtils.getSDFile().listFiles();
+            for (File file : files) {
+                String absolutePath = file.getAbsolutePath();
+                if (absolutePath.endsWith(".mp3")) {
+                    mMusicPaths.add(absolutePath);
+                }
+            }
+        }
+    }	
 }
 ```
 
