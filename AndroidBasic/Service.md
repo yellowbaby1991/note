@@ -555,4 +555,13 @@ public class AlipayService extends Service {
 
  3. 给AlipayService配置IntentFilter
  
+``` xml
+<service android:name=".AlipayService">
+	<intent-filter>
+		<action android:name="com.yellow.ALIPAY"></action>
+	</intent-filter>
+</service>
+```
+
+
  4. 1
