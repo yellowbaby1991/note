@@ -376,8 +376,10 @@ public class MusicService extends Service {
  7. 添加播放时候展示的通知栏
  
 
-``` stylus
-enter code here
+``` java
+public class MusicService extends Service {
+
+}
 ```
 
 
