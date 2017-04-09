@@ -250,24 +250,13 @@ public interface IMyAidlInterface extends android.os.IInterface {
 
     //服务端端实际上拿到的对象
     public static abstract class Stub extends android.os.Binder implements app.yellow.myaidldemoserver.IMyAidlInterface {
-
+        ...
         //客户端调用这个方法得到Proxy对象
         public static app.yellow.myaidldemoserver.IMyAidlInterface asInterface(android.os.IBinder obj) {
-            if ((obj == null)) {
-                return null;
-            }
-            android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-            if (((iin != null) && (iin instanceof app.yellow.myaidldemoserver.IMyAidlInterface))) {
-                return ((app.yellow.myaidldemoserver.IMyAidlInterface) iin);
-            }
+            ...
             return new app.yellow.myaidldemoserver.IMyAidlInterface.Stub.Proxy(obj);
         }
-
-        @Override
-        public android.os.IBinder asBinder() {
-            return this;
-        }
-
+        //
         @Override
         public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException {
             switch (code) {
