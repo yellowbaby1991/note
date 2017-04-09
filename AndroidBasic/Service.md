@@ -404,4 +404,5 @@ public interface IMyAidlInterface extends android.os.IInterface {
 ```
 
 
- 5. 1
+ 5. 总体来说就是，客户端调用Proxy的add方法发送请求，服务端调用onTransact接受请求调用服务端真正的add方法处理结果后发回客户端
+
