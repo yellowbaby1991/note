@@ -309,7 +309,7 @@ public interface IMyAidlInterface extends android.os.IInterface {
 ```
 
 
- 2. 客户端实际拿到的对象起始是Proxy
+ 2. 客户端实际拿到的对象其实是Proxy
  
 ``` java
 public class MainActivity extends AppCompatActivity {
