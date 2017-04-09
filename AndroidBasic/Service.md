@@ -317,6 +317,13 @@ public class MainActivity extends AppCompatActivity {
 public class MainActivity extends AppCompatActivity {
     ...
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main, menu);
+        return true;
+    }
+	
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         SharedPreferences sp = getSharedPreferences("music", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
