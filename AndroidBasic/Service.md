@@ -506,3 +506,8 @@ public class MainActivity extends AppCompatActivity {
   [1]: ./images/Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE.jpg "Service生命周期图"
   [2]: https://github.com/yellowbaby1991/note/blob/master/HTTP/OkHttp%E5%AE%9E%E7%8E%B0%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD.md
   [3]: ./images/Binder%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png "Binder工作流程图"
+#### 模拟远程支付业务
+
+ 1. 服务端main/aidl/文件夹下创建IAlipayService.aidl接口文件
+ 
+ 2. 1
