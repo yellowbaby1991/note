@@ -373,7 +373,15 @@ public class MusicService extends Service {
 }
 ```
  
- 7. 
+ 7. 添加播放时候展示的通知栏
+ 
+
+``` stylus
+enter code here
+```
+
+
+ 8. 1
 
 ### AIDL
 #### AIDL是什么？
