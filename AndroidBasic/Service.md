@@ -174,6 +174,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+	
+	//给ListView配置数据
+    private void initMusicLv() {
+        mMusicLv = (ListView) findViewById(R.id.music_lv);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mMusicPaths);//根据数据源获得适配器
+        mMusicLv.setAdapter(adapter);// 给ListView设置适配器
     }	
 }
 ```
