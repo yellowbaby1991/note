@@ -246,7 +246,7 @@ public interface IMusicService {
 }
 ```
 
- 4. Activity开启服务后绑定，然后点击后调用服务的play方法
+ 4. Activity开启服务后绑定
  
 ``` java
 public class MainActivity extends AppCompatActivity {
