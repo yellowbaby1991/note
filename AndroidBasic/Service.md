@@ -145,8 +145,6 @@ public class MainActivity extends AppCompatActivity {
 　　[Service+okhttp实现后台断点下载][2]
 
 
-  [1]: ./images/Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE.jpg "Service生命周期图"
-  [2]: https://github.com/yellowbaby1991/note/blob/master/HTTP/OkHttp%E5%AE%9E%E7%8E%B0%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD.md
 ### AIDL
 #### AIDL是什么？
 　　AIDL是Android的一种IPC（跨进程通信）的方式，内部原理是Binder
@@ -406,7 +404,7 @@ public interface IMyAidlInterface extends android.os.IInterface {
 
  5. 所以AIDL实际上本质就是Binder的跨进程通信，工作流程图如下
 
-
+![enter description here][3]
 
 #### 不依赖AIDL实现IPC
 
@@ -504,3 +502,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+
+  [1]: ./images/Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE.jpg "Service生命周期图"
+  [2]: https://github.com/yellowbaby1991/note/blob/master/HTTP/OkHttp%E5%AE%9E%E7%8E%B0%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD.md
+  [3]: ./images/Binder%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png "Binder工作流程图"
