@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
- 6. 1
+ 6. 实现三种播放模式
 
 ### AIDL
 #### AIDL是什么？
