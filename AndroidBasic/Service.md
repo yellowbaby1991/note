@@ -331,7 +331,11 @@ public class MainActivity extends AppCompatActivity {
 
 ``` java
 public interface IMyAidlInterface extends android.os.IInterface {
-
+        ...
+        public static app.yellow.myaidldemoserver.IMyAidlInterface asInterface(android.os.IBinder obj) {
+            ...
+            return new app.yellow.myaidldemoserver.IMyAidlInterface.Stub.Proxy(obj);
+        }
 }
 ```
 
