@@ -302,10 +302,7 @@ public interface IMyAidlInterface extends android.os.IInterface {
                 return _result;
             }
         }
-
-        static final int TRANSACTION_add = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-    }
-
+    //接口
     public int add(int arg1, int arg2) throws android.os.RemoteException;
 }
 ```
