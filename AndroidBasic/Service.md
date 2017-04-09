@@ -408,7 +408,16 @@ public class MusicService extends Service {
  8. 添加退出APP选项
  
 ``` java
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   ...
+    <item
+        android:id="@+id/logout_app"
+        android:title="退出应用" />
+</menu>
+```
 
+``` java
+enter code here
 ```
 
 
