@@ -308,4 +308,4 @@ public interface IMyAidlInterface extends android.os.IInterface {
 ```
 
 
- 2. 
+ 2. 客户端实际拿到的对象起始是Proxy
