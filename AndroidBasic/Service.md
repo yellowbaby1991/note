@@ -442,7 +442,7 @@ public class MyServer extends Service {
 ```
 
 
- 2. 客户端直接发送请求
+ 2. 客户端直接发送请求，这样就实现了不依赖AIDL纯粹使用Binder跨进程通信
  
 ``` java
 public class MainActivity extends AppCompatActivity {
