@@ -215,7 +215,6 @@ public class MusicService extends Service {
         public void callPlayMusic(List<String> filePaths, int postion) {
             playMusic(filePaths, postion);
         }
-
     }
 
     private void playMusic(final List<String> filePaths, int postion) {
@@ -237,6 +236,13 @@ public class MusicService extends Service {
     public IBinder onBind(Intent intent) {
         return new MusicAgent();
     }
+}
+```
+
+``` java
+//暴露给客户端的接口
+public interface IMusicService {
+    public void callPlayMusic(List<String> filePaths, int postion);
 }
 ```
 
