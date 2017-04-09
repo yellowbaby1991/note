@@ -149,7 +149,9 @@ public class MainActivity extends AppCompatActivity {
 #### 音乐播放器
 
  1. 将待播放的音乐导入Genymotion模拟器的mnt/shell/emulated/0/目录下
- 2. 
+ 2. 读取该目录下所有MP3格式的文件名显示在ListView上
+ 
+ 3. 1
 
 ### AIDL
 #### AIDL是什么？
