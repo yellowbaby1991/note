@@ -409,4 +409,6 @@ public interface IMyAidlInterface extends android.os.IInterface {
 　　从上面的分析可以看出整体流程就是：客户端调用Proxy的add方法发送请求，服务端调用onTransact接受请求调用服务端真正的add方法处理结果后发回客户端，我们现在看看不通过ADIL来实现同样的功能
   
   
- 1. 客户端
+ 1. 服务端Service
+ 
+ 2. 1
