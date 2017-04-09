@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
 
 #### AIDL的原理
 
- 1. 看看由AIDL生成的java文件
+ 1. 看看由AIDL生成的java文件，可以发现一共只有三个东西，接口方法，Stub类给服务端用，Proxy给客户端用
  
 ``` java
 public interface IMyAidlInterface extends android.os.IInterface {
@@ -308,4 +308,4 @@ public interface IMyAidlInterface extends android.os.IInterface {
 ```
 
 
- 2. 1
+ 2. 
