@@ -510,4 +510,14 @@ public class MainActivity extends AppCompatActivity {
 
  1. 服务端main/aidl/文件夹下创建IAlipayService.aidl接口文件
  
+``` java
+package app.yellow.alipay;
+
+interface IAlipayService {
+	int callSafePay(String account, String pwd, double money,
+			long currenTimeMiles);
+}
+
+```
+
  2. 1
