@@ -379,6 +379,12 @@ public class MusicService extends Service {
 ``` java
 public class MusicService extends Service {
 
+    private void playMusic(final List<String> filePaths, int postion) {
+          notification(filePaths.get(postion));	
+		  ...
+		  //播放操作
+	}
+	
 }
 ```
 
