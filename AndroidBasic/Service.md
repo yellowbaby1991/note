@@ -405,8 +405,7 @@ public class MusicService extends Service {
 }
 ```
 
-
- 8. 1
+ 8. 
 
 ### AIDL
 #### AIDL是什么？
