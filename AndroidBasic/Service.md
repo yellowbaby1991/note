@@ -404,6 +404,9 @@ public interface IMyAidlInterface extends android.os.IInterface {
 }	
 ```
 
+ 5. 所以AIDL实际上本质就是Binder的跨进程通信，工作流程图如下
+
+
 
 #### 不依赖AIDL实现IPC
 
