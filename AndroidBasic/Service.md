@@ -406,15 +406,6 @@ public class MusicService extends Service {
 ```
 
  8. 添加退出APP选项
- 
-``` java
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-   ...
-    <item
-        android:id="@+id/logout_app"
-        android:title="退出应用" />
-</menu>
-```
 
 ``` java
 public interface IMusicService {
@@ -447,6 +438,46 @@ public class MusicService extends Service {
     }	
 }
 ```
+ 
+``` java
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   ...
+    <item
+        android:id="@+id/logout_app"
+        android:title="退出应用" />
+</menu>
+```
+
+``` java
+public class MainActivity extends AppCompatActivity {
+    ...
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        SharedPreferences sp = getSharedPreferences("music", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        switch (item.getItemId()) {
+            case R.id.stop_when_over:
+                editor.putInt("palyMode", 1);
+                break;
+            case R.id.single_loop:
+                editor.putInt("playMode", 2);
+                break;
+            case R.id.all_loop:
+                editor.putInt("playMode", 3);
+                break;
+            case R.id.logout_app:
+                mMusicService.callStopPlay();
+                unbindService(mConn);
+                Intent intent = new Intent(this,MusicService.class);
+                startService(intent);
+                finish();
+        }
+        editor.commit();
+        return true;
+    }
+}
+```
+
 
 
 
