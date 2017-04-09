@@ -375,4 +375,14 @@ public interface IMyAidlInterface extends android.os.IInterface {
 
  4. 通过mRemote.transact这个方法向服务端发送了请求，服务端的onTransact用来处理请求
  
+``` java
+public interface IMyAidlInterface extends android.os.IInterface {
+    ...
+    public static abstract class Stub extends android.os.Binder implements app.yellow.myaidldemoserver.IMyAidlInterface {
+	
+	}
+}	
+```
+
+
  5. 1
