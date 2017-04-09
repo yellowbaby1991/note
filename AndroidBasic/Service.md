@@ -316,6 +316,36 @@ public class MainActivity extends AppCompatActivity {
 </menu>
 ```
 
+``` java
+public class MainActivity extends AppCompatActivity {
+    ...
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        SharedPreferences sp = getSharedPreferences("music", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        switch (item.getItemId()) {
+            case R.id.stop_when_over:
+                editor.putInt("palyMode", 1);
+                break;
+            case R.id.single_loop:
+                editor.putInt("playMode", 2);
+                break;
+            case R.id.all_loop:
+                editor.putInt("playMode", 3);
+                break;
+            case R.id.logout_app:
+                mMusicService.callStopPlay();
+                unbindService(mConn);
+                Intent intent = new Intent(this,MusicService.class);
+                startService(intent);
+                finish();
+        }
+        editor.commit();
+        return true;
+    }
+}
+```
+
 
  
  7. 1
