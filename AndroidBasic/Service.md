@@ -459,10 +459,9 @@ public class MainActivity extends AppCompatActivity {
                 mMusicService.callStopPlay();//取消音乐播放和通知显示
                 unbindService(mConn);//解绑服务
                 Intent intent = new Intent(this,MusicService.class);
-                stopService(intent);
-                finish();
+                stopService(intent);//结束服务
+                finish();//关闭界面
         }
-        editor.commit();
         return true;
     }
 }
