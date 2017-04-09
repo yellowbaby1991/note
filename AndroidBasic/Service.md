@@ -275,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
         startService(intent);
         bindService(intent, mConn, BIND_AUTO_CREATE);
     }	
+	
 }
 ```
 
