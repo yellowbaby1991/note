@@ -7,6 +7,8 @@
 * [AIDL](#aidl)
 	* [AIDL是什么？](#aidl是什么)
 	* [Android Studio下使用AIDL](#android-studio下使用aidl)
+	* [AIDL调用流程](#aidl调用流程)
+	* [不依赖AIDL实现IPC](#不依赖aidl实现ipc)
 
 ### 服务是什么
 　　服务是Android中实现程序后台运行的解决方案，非常适合去执行那些不需要和用户交互并且还要求长期运行的任务
@@ -241,8 +243,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 8. 然后先启动服务端，再启动客户端就可以实现远程调用了
 
-#### AIDL的原理
-##### AIDL调用流程
+#### AIDL调用流程
 
  1. 看看由AIDL生成的java文件，可以发现一共只有三个东西，接口方法，Stub类给服务端用，Proxy给客户端用
  
@@ -404,7 +405,7 @@ public interface IMyAidlInterface extends android.os.IInterface {
 ```
 
 
-##### 不依赖AIDL实现IPC
+#### 不依赖AIDL实现IPC
 
 　　从上面的分析可以看出整体流程就是：客户端调用Proxy的add方法发送请求，服务端调用onTransact接受请求调用服务端真正的add方法处理结果后发回客户端，我们现在看看不通过ADIL来实现同样的功能
   
