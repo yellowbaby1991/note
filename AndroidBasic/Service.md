@@ -341,3 +341,36 @@ public interface IMyAidlInterface extends android.os.IInterface {
 
 
  3. 所以实际上执行的方法是Proxy中的add方法
+ 
+``` java
+public interface IMyAidlInterface extends android.os.IInterface {
+    ...
+    public static abstract class Stub extends android.os.Binder implements app.yellow.myaidldemoserver.IMyAidlInterface {
+	    ...
+        private static class Proxy implements app.yellow.myaidldemoserver.IMyAidlInterface {	
+		    //这就是客户端实际上执行的代码
+            @Override
+            public int add(int arg1, int arg2) throws android.os.RemoteException {
+                android.os.Parcel _data = android.os.Parcel.obtain();
+                android.os.Parcel _reply = android.os.Parcel.obtain();
+                int _result;
+                try {
+                    _data.writeInterfaceToken(DESCRIPTOR);
+                    _data.writeInt(arg1);
+                    _data.writeInt(arg2);
+                    mRemote.transact(Stub.TRANSACTION_add, _data, _reply, 0);
+                    _reply.readException();
+                    _result = _reply.readInt();
+                } finally {
+                    _reply.recycle();
+                    _data.recycle();
+                }
+                return _result;
+            }		
+		}
+	}
+}
+```
+
+
+ 4. 1
