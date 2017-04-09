@@ -4,6 +4,7 @@
 	* [活动和服务通信](#活动和服务通信)
 	* [startService和bindService的区别](#startservice和bindservice的区别)
 	* [使用Service+okhttp实现后台断点下载](#使用serviceokhttp实现后台断点下载)
+	* [音乐播放器](#音乐播放器)
 * [AIDL](#aidl)
 	* [AIDL是什么？](#aidl是什么)
 	* [Android Studio下使用AIDL](#android-studio下使用aidl)
@@ -466,9 +467,6 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-
-
-
 
 ### AIDL
 #### AIDL是什么？
