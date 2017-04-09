@@ -279,7 +279,6 @@ public interface IMyAidlInterface extends android.os.IInterface {
             return super.onTransact(code, data, reply, flags);
         }
 
-
         //客户端实际上拿到的对象
         private static class Proxy implements app.yellow.myaidldemoserver.IMyAidlInterface {
             private android.os.IBinder mRemote;
