@@ -373,4 +373,4 @@ public interface IMyAidlInterface extends android.os.IInterface {
 ```
 
 
- 4. 1
+ 4. 通过mRemote.transact这个方法向服务端发送了请求
