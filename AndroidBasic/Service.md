@@ -247,6 +247,27 @@ public interface IMusicService {
 ```
 
  4. Activity开启服务后绑定
+ 
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private IMusicService mMusicService;
+    private ServiceConnection mConn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mMusicService = (IMusicService) service;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+	
+	
+}
+```
+
 
 ### AIDL
 #### AIDL是什么？
