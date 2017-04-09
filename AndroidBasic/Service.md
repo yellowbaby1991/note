@@ -270,6 +270,11 @@ public class MainActivity extends AppCompatActivity {
         initMusicService();
     }	
 	
+    private void initMusicService() {
+        Intent intent = new Intent(this, MusicService.class);
+        startService(intent);
+        bindService(intent, mConn, BIND_AUTO_CREATE);
+    }	
 }
 ```
 
