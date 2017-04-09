@@ -343,6 +343,44 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+``` java
+public class MusicService extends Service {
+    
+    private void playMusic(final List<String> filePaths, int postion) {
+        mCurrentPosition = postion;
+        if (mMediaPlayer == null) {
+            mMediaPlayer = new MediaPlayer();
+        }
+        try {
+            String musicName = BaseUtils.getFileName(filePaths.get(postion));
+            notification(musicName);
+            mMediaPlayer.reset();
+            mMediaPlayer.setDataSource(filePaths.get(mCurrentPosition));
+            mMediaPlayer.prepare();
+            mMediaPlayer.start();
+            mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    SharedPreferences sp = getSharedPreferences("music", MODE_PRIVATE);
+                    int playMode = sp.getInt("playMode", 1);
+                    if (playMode == 2) {//单曲循环
+                        playMusic(filePaths, mCurrentPosition);
+                    } else if (playMode == 3) {//列表循环
+                        mCurrentPosition++;
+                        if (mCurrentPosition == filePaths.size()) {
+                            mCurrentPosition = 0;
+                        }
+                        playMusic(filePaths, mCurrentPosition);
+                    }
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
 
  
  7. 1
