@@ -242,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
 8. 然后先启动服务端，再启动客户端就可以实现远程调用了
 
 #### AIDL的原理
+##### AIDL调用流程
 
  1. 看看由AIDL生成的java文件，可以发现一共只有三个东西，接口方法，Stub类给服务端用，Proxy给客户端用
  
