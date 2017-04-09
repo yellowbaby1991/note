@@ -309,3 +309,31 @@ public interface IMyAidlInterface extends android.os.IInterface {
 
 
  2. 客户端实际拿到的对象起始是Proxy
+ 
+``` java
+public class MainActivity extends AppCompatActivity {
+    ...
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mStub = IMyAidlInterface.Stub.asInterface(service);
+            ...
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+}
+```
+
+
+``` java
+public interface IMyAidlInterface extends android.os.IInterface {
+
+}
+```
+
+
+ 3. 1
