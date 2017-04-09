@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
- 6. 添加menu，实现三种播放模式
+ 6. 添加menu，实现三种播放模式，根据SharedPreferences中保存的值来进行不同的播放操作
  
 
 ``` xml
