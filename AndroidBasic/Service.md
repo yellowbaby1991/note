@@ -443,3 +443,62 @@ public class MyServer extends Service {
 
 
  2. 客户端直接发送请求
+ 
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private IBinder mPlusBinder;
+
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mPlusBinder = service;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
+    public void add(View view) {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        int _result;
+        try {
+            _data.writeInterfaceToken("CalcPlusService");
+            _data.writeInt(50);
+            _data.writeInt(12);
+            mPlusBinder.transact(0x110, _data, _reply, 0);
+            _reply.readException();
+            _result = _reply.readInt();
+            Toast.makeText(this, _result + "", Toast.LENGTH_SHORT).show();
+
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } finally {
+            _reply.recycle();
+            _data.recycle();
+        }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Intent intent = new Intent();
+        intent.setAction("MyServer");
+        bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(serviceConnection);
+    }
+}
+```
+
+
+ 3. 1
