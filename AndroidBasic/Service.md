@@ -208,7 +208,7 @@ public class BaseUtils {
 public class MusicService extends Service {
 
     private MediaPlayer mMediaPlayer;
-    private int mCurrentPosition;
+    private int mCurrentPosition;//当前播放的位置
 
     private class MusicAgent extends Binder implements IMusicService {
         @Override
