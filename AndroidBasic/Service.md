@@ -422,7 +422,12 @@ public interface IMusicService {
     public void callStopPlay();
 }
 ```
-1
+
+``` java
+public class MusicService extends Service {
+
+}
+```
 
 
 
