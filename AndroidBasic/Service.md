@@ -348,17 +348,8 @@ public class MainActivity extends AppCompatActivity {
 public class MusicService extends Service {
     
     private void playMusic(final List<String> filePaths, int postion) {
-        mCurrentPosition = postion;
-        if (mMediaPlayer == null) {
-            mMediaPlayer = new MediaPlayer();
-        }
         try {
-            String musicName = BaseUtils.getFileName(filePaths.get(postion));
-            notification(musicName);
-            mMediaPlayer.reset();
-            mMediaPlayer.setDataSource(filePaths.get(mCurrentPosition));
-            mMediaPlayer.prepare();
-            mMediaPlayer.start();
+            ...
             mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
