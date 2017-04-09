@@ -204,6 +204,43 @@ public class BaseUtils {
 
  3. 创建播放服务
  
+``` java
+public class MusicService extends Service {
+
+    private MediaPlayer mMediaPlayer;
+    private int mCurrentPosition;
+
+    private class MusicAgent extends Binder implements IMusicService {
+        @Override
+        public void callPlayMusic(List<String> filePaths, int postion) {
+            playMusic(filePaths, postion);
+        }
+
+    }
+
+    private void playMusic(final List<String> filePaths, int postion) {
+        mCurrentPosition = postion;
+        if (mMediaPlayer == null) {
+            mMediaPlayer = new MediaPlayer();
+        }
+        try {
+            mMediaPlayer.reset();
+            mMediaPlayer.setDataSource(filePaths.get(mCurrentPosition));
+            mMediaPlayer.prepare();
+            mMediaPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return new MusicAgent();
+    }
+}
+```
+
+
  4. 1
 
 ### AIDL
