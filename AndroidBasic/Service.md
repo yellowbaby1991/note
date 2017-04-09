@@ -432,8 +432,20 @@ public class MusicService extends Service {
         public void callStopPlay() {
             stopPlay();
         }
-
     }
+	//关闭音乐播放
+    private void stopPlay() {
+        if (mMediaPlayer != null){
+            if (mMediaPlayer.isPlaying()){
+                mMediaPlayer.stop();
+            }
+            mMediaPlayer.release();
+            mMediaPlayer = null;
+        }
+
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.cancelAll();
+    }	
 }
 ```
 
