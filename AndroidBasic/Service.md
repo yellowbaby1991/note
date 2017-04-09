@@ -146,6 +146,11 @@ public class MainActivity extends AppCompatActivity {
 　　[Service+okhttp实现后台断点下载][2]
 
 
+#### 音乐播放器
+
+ 1. 将待播放的音乐导入Genymotion模拟器的mnt/shell/emulated/0/目录下
+ 2. 
+
 ### AIDL
 #### AIDL是什么？
 　　AIDL是Android的一种IPC（跨进程通信）的方式，内部原理是Binder
