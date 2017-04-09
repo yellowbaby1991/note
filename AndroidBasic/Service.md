@@ -296,7 +296,6 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-
  6. 1
 
 ### AIDL
