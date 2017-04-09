@@ -280,6 +280,23 @@ public class MainActivity extends AppCompatActivity {
 ```
  5. 添加item点击事件调用服务的play方法
  
+``` java
+public class MainActivity extends AppCompatActivity {
+    ...
+    private void initMusicLv() {
+        ...
+        mMusicLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mMusicService.callPlayMusic(mMusicPaths, position);
+            }
+        });
+    }
+	
+}
+```
+
+
  6. 1
 
 ### AIDL
