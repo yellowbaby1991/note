@@ -433,7 +433,7 @@ public class MusicService extends Service {
             stopPlay();
         }
     }
-	//关闭音乐播放
+	//关闭音乐播放以及取消通知
     private void stopPlay() {
         if (mMediaPlayer != null){
             if (mMediaPlayer.isPlaying()){
@@ -442,7 +442,7 @@ public class MusicService extends Service {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
-
+        
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.cancelAll();
     }	
