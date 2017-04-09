@@ -425,7 +425,7 @@ public class MusicService extends Service {
             stopPlay();
         }
     }
-	//关闭音乐播放以及取消通知
+    //关闭音乐播放以及取消通知
     private void stopPlay() {
         if (mMediaPlayer != null){
             if (mMediaPlayer.isPlaying()){
