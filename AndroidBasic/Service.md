@@ -520,4 +520,39 @@ interface IAlipayService {
 
 ```
 
- 2. 1
+ 2. 服务端端创建AlipayService
+
+``` java
+public class AlipayService extends Service {
+
+    public AlipayService() {
+    }
+
+    private class AlipayAgent extends IAlipayService.Stub {
+
+        @Override
+        public int callSafePay(String account, String pwd, double money, long currenTimeMiles) throws RemoteException {
+            return safePay(account, pwd, money, currenTimeMiles);
+        }
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return new AlipayAgent();
+    }
+
+    public int safePay(String account, String pwd, double money, long currentTimeMiles) {
+        if (!account.equals("zhangsan") || !pwd.equals("123")) {
+            return 404;
+        }
+        if (money > 10) {// 如果支付的金额大于10块钱
+            return 500;
+        }
+        return 200;
+    }
+}
+```
+
+ 3. 给AlipayService配置IntentFilter
+ 
+ 4. 1
