@@ -405,7 +405,13 @@ public class MusicService extends Service {
 }
 ```
 
- 8. 
+ 8. 添加退出APP选项
+ 
+``` stylus
+enter code here
+```
+
+
 
 ### AIDL
 #### AIDL是什么？
