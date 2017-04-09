@@ -379,7 +379,25 @@ public interface IMyAidlInterface extends android.os.IInterface {
 public interface IMyAidlInterface extends android.os.IInterface {
     ...
     public static abstract class Stub extends android.os.Binder implements app.yellow.myaidldemoserver.IMyAidlInterface {
-	
+	    ....
+        @Override
+        public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException {
+            switch (code) {
+               ....
+                case TRANSACTION_add: {
+                    data.enforceInterface(DESCRIPTOR);
+                    int _arg0;
+                    _arg0 = data.readInt();
+                    int _arg1;
+                    _arg1 = data.readInt();
+                    int _result = this.add(_arg0, _arg1);//调用服务端的add方法将结果发回
+                    reply.writeNoException();
+                    reply.writeInt(_result);
+                    return true;
+                }
+            }
+            return super.onTransact(code, data, reply, flags);
+        }	
 	}
 }	
 ```
