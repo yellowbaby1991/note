@@ -278,7 +278,9 @@ public class MainActivity extends AppCompatActivity {
 	
 }
 ```
-
+ 5. 添加item点击事件调用服务的play方法
+ 
+ 6. 1
 
 ### AIDL
 #### AIDL是什么？
