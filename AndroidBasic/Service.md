@@ -385,6 +385,23 @@ public class MusicService extends Service {
 		  //播放操作
 	}
 	
+    //安卓16之后显示通知建议采用builder
+    private void notification(String musicName) {
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setSmallIcon(R.mipmap.ic_launcher); //设置图标
+        builder.setContentTitle("音乐播放"); //设置标题
+        builder.setContentText("当前播放:"+musicName); //消息内容
+        builder.setWhen(System.currentTimeMillis()); //发送时间
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        builder.setContentIntent(contentIntent);
+        Notification notification = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            notification = builder.build();
+        }
+        manager.notify(0, notification); // 通过通知管理器发送通知
+    }	
 }
 ```
 
