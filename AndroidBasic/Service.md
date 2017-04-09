@@ -246,8 +246,7 @@ public interface IMusicService {
 }
 ```
 
-
- 4. 1
+ 4. Activity开启服务后绑定
 
 ### AIDL
 #### AIDL是什么？
