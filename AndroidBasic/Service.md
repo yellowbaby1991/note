@@ -282,7 +282,7 @@ public interface IMyAidlInterface extends android.os.IInterface {
         //客户端实际上拿到的对象
         private static class Proxy implements app.yellow.myaidldemoserver.IMyAidlInterface {
             ...
-			//客户端实际执行的add方法
+			//客户端实际执行的add方法，发送请求给客户端
             @Override
             public int add(int arg1, int arg2) throws android.os.RemoteException {
                 android.os.Parcel _data = android.os.Parcel.obtain();
