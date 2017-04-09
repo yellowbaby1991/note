@@ -563,4 +563,5 @@ public class AlipayService extends Service {
 </service>
 ```
 
- 4. 1
+ 4. 客户端同样拷贝aidl文件到相同位置
+ 5. 
