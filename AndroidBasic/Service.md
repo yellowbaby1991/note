@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
- 6. 添加menu，实现三种播放模式和退出应用功能
+ 6. 添加menu，实现三种播放模式
  
 
 ``` xml
@@ -310,9 +310,6 @@ public class MainActivity extends AppCompatActivity {
     <item
         android:id="@+id/all_loop"
         android:title="全部循环" />
-    <item
-        android:id="@+id/logout_app"
-        android:title="退出应用" />
 </menu>
 ```
 
