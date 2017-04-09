@@ -256,7 +256,7 @@ public interface IMyAidlInterface extends android.os.IInterface {
             ...
             return new app.yellow.myaidldemoserver.IMyAidlInterface.Stub.Proxy(obj);
         }
-        //
+        //服务端使用该方法将结果传回客户端
         @Override
         public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException {
             switch (code) {
