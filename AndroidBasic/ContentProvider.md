@@ -321,5 +321,81 @@ public class MainActivity extends AppCompatActivity {
 
 　代码如下：
  
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void insertContact(View view) {
+        ContentResolver cr = getContentResolver();
+        Uri rawContactUir = Uri.parse("content://com.android.contacts/raw_contacts");
+        Cursor rawContactCursor = cr.query(rawContactUir, null, null, null, null);
+        int count = rawContactCursor.getCount();
+
+        ContentValues values = new ContentValues();
+        values.put("contact_id", count + 1);
+        cr.insert(rawContactUir, values);
+
+        Uri dataUri = Uri.parse("content://com.android.contacts/data");
+        ContentValues nameValues = new ContentValues();
+        nameValues.put("mimetype", "vnd.android.cursor.item/name");
+        nameValues.put("data1", "美女小丽");
+        nameValues.put("raw_contact_id", count + 1);
+        cr.insert(dataUri, nameValues);
+
+        ContentValues phoneValues = new ContentValues();
+        phoneValues.put("mimetype", "vnd.android.cursor.item/phone_v2");
+        phoneValues.put("data1", "10086");
+        phoneValues.put("raw_contact_id", count + 1);
+        cr.insert(dataUri, phoneValues);
+
+        ContentValues imValues = new ContentValues();
+        imValues.put("mimetype", "vnd.android.cursor.item/im");
+        imValues.put("data1", "202023");
+        imValues.put("raw_contact_id", count + 1);
+        cr.insert(dataUri, imValues);
+
+        ContentValues emailValues = new ContentValues();
+        emailValues.put("mimetype", "vnd.android.cursor.item/email_v2");
+        emailValues.put("data1", "202023@qq.com");
+        emailValues.put("raw_contact_id", count + 1);
+        cr.insert(dataUri, emailValues);
+
+    }
+
+    public void readContact(View view) {
+        ContentResolver cr = getContentResolver();
+        Uri rawContactUir = Uri.parse("content://com.android.contacts/raw_contacts");
+        Cursor rawContactCursor = cr.query(rawContactUir, new String[]{"contact_id"}, null, null, null);
+        while (rawContactCursor.moveToNext()) {
+            int rowContactId = rawContactCursor.getInt(0);
+            Uri dataUri = Uri.parse("content://com.android.contacts/data");
+            Cursor dataCursor = cr.query(dataUri, new String[]{"mimetype", "data1"}, "raw_contact_id=?", new String[]{rowContactId + ""}, null);
+            while (dataCursor.moveToNext()) {
+                String data1 = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+                String mimetype = dataCursor.getString(dataCursor.getColumnIndex("mimetype"));
+                if (mimetype.equals("vnd.android.cursor.item/name")) {
+                    Log.v("520it", "联系人:" + data1);
+                }
+                if (mimetype.equals("vnd.android.cursor.item/phone_v2")) {
+                    Log.v("520it", "电话号码" + data1);
+                }
+                if (mimetype.equals("vnd.android.cursor.item/im")) {
+                    Log.v("520it", "即时通讯" + data1);
+                }
+                if (mimetype.equals("vnd.android.cursor.item/email_v2")) {
+                    Log.v("520it", "E-mail:" + data1);
+                }
+            }
+        }
+    }
+}
+```
+　需要的权限
+ 
 
   
