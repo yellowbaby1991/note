@@ -306,4 +306,4 @@ public class MainActivity extends AppCompatActivity {
  1. 联系人提供器由ContactsProvider提供，URI为 content://com.android.contacts
  2. 涉及三张表raw_contacts，mimetypes，data表
 
-raw_contacts保存了所有创建过的联系人，一个联系人占一行
+　　raw_contacts保存了所有创建过的联系人，一个联系人占一行
