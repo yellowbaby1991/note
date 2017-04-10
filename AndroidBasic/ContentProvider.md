@@ -316,6 +316,10 @@ public class MainActivity extends AppCompatActivity {
 
 　插入逻辑如下：
  
- 1. List item
+ 1. 通过content://com.android.contacts/raw_contacts 插入raw_contacts表一行新的数据，raw_contacts_id根据当前表的count+1得到
+ 2. 通过content://com.android.contacts/data 依次插入姓名，QQ，号码等信息，当然需要关联raw_contacts_id
+
+　代码如下：
+ 
 
   
