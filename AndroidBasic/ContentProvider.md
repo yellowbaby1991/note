@@ -133,6 +133,6 @@ public class MyProvider extends ContentProvider {
 ```
 
 
- 3. 1
+ 3. 配置AndroidManifest.xml
 
 #### 自定义ContentResolver
