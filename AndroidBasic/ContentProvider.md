@@ -407,4 +407,26 @@ public class MainActivity extends AppCompatActivity {
 
   
   
-### 内容观察器
+### 内容观察者
+　内容观察者用来观察特定Uri引起的数据变化，继而做一些相应的处理，类似数据库中的触发器，注册内容观察者的方式如下
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Uri uri = Uri.parse("content://sms");
+        ContentResolver cr = getContentResolver();
+        cr.registerContentObserver(uri, true, new ContentObserver(new Handler()) {
+            @Override
+            public void onChange(boolean selfChange) {
+                Log.v("520it", "短信数据库发生改变");
+            }
+        });
+    }
+}
+
+```
