@@ -302,3 +302,6 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 #### 联系人提供器
+
+ 1. 联系人提供器由ContactsProvider提供，URI为 content://com.android.contacts
+ 2. 涉及三张表
