@@ -257,4 +257,46 @@ public class MainActivity extends AppCompatActivity {
 #### 短信提供器
 
  1. 同样我们想对短信进行直接操作是不允许的，只能通过SmsProvider才可以操作SmsProvider的URI为 content://mms-sms ，UriMatcher中配置了21种类型，我们这里只用到了默认的SMS_ALL--所有短信
- 2. 下面是使用ContentResolver调用SmsProvider
+ 2. 下面是使用ContentResolver调用SmsProvider的insert和query方法
+ 
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    //安卓4.4之后只有系统应用才具有插入短信的权限
+    public void insertSms(View view) {
+        Uri uri = Uri.parse("content://sms");
+        ContentResolver cr = getContentResolver();
+        ContentValues values = new ContentValues();
+        values.put("address", System.currentTimeMillis());
+        values.put("read", 0);
+        values.put("type", 1);
+        values.put("body", "今晚见");
+        cr.insert(uri, values);
+    }
+
+    public void querySms(View view) {
+        Uri uri = Uri.parse("content://sms");
+        ContentResolver cr = getContentResolver();
+        Cursor cursor = cr.query(uri, null, null, null, null);
+        while (cursor.moveToNext()) {
+            String phone = cursor.getString(cursor.getColumnIndex("address"));
+            long datelong = cursor.getLong(cursor.getColumnIndex("date"));
+            Date date = new Date(datelong);
+            int readType = cursor.getInt(cursor.getColumnIndex("read"));
+            String readTypeStr = (readType == 0 ? "未读" : "已读");
+            int sendType = cursor.getInt(cursor.getColumnIndex("type"));
+            String sendTypeStr = (sendType == 1 ? "接受" : "发送");
+            String smsbody = cursor.getString(cursor.getColumnIndex("body"));
+            Log.v("520it", "电话号码:" + phone + " 读取类型:" + readTypeStr
+                    + " 发送类型:" + sendTypeStr + " 短信内容:" + smsbody
+                    + " 短信时间:" + date);
+        }
+    }
+}
+```
