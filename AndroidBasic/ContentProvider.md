@@ -4,4 +4,4 @@
 ### 自定义内容提供器
 #### 自定义ContentProvider
 
-#### 自定义ContentResolve
+#### 自定义ContentResolver
