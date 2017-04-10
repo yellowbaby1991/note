@@ -430,3 +430,9 @@ public class MainActivity extends AppCompatActivity {
 }
 
 ```
+
+　需要权限
+
+``` xml
+    <uses-permission android:name="android.permission.READ_SMS" />
+```
