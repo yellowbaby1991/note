@@ -158,4 +158,6 @@ public class MyProvider extends ContentProvider {
 ```
 
 
-#### 自定义ContentResolver
+#### 使用ContentResolver
+
+ 1. 客户端使用ContentResolver通过URI访问provider
