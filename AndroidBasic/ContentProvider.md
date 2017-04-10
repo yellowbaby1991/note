@@ -40,6 +40,99 @@ public class DbConst implements BaseColumns {
 
  2. 创建ContentProvider
  
+``` java
+public class MyProvider extends ContentProvider {
+
+    private DBOpenHelper mHelper;
+    private SQLiteDatabase mDb;
+
+    private static final String AUTH0RITY = "com.yellow.cp.contacts";
+    public static final int CONTACT_ALL = 1;
+    public static final int CONTACT_SINGLE = 2;
+
+    private static UriMatcher mUriMatcher;
+
+    //为了安全性使用UriMatcher来匹配数据
+    static {
+        mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+        mUriMatcher.addURI(AUTH0RITY, "contacts", CONTACT_ALL);//匹配全部数据
+        mUriMatcher.addURI(AUTH0RITY, "contacts/*", CONTACT_SINGLE); //匹配单行数据，*代表字符，#代表数字
+    }
+
+    @Override
+    public boolean onCreate() {
+        mHelper = new DBOpenHelper(getContext());
+        mDb = mHelper.getReadableDatabase();
+        return true;
+    }
+
+    @Override
+    public Uri insert(Uri uri, ContentValues values) {
+        switch (mUriMatcher.match(uri)) {
+            case CONTACT_ALL:
+                long id = mDb.insert(DbConst.TABLE_NAME, null, values);
+                return Uri.parse(uri.toString() + "/" + id);
+            case CONTACT_SINGLE:
+                return null;
+        }
+        return null;
+    }
+
+    @Override
+    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        Cursor cursor = null;
+        switch (mUriMatcher.match(uri)) {
+            case CONTACT_ALL:
+                cursor = mDb.query(DbConst.TABLE_NAME, projection, selection, selectionArgs, null, null, null);
+                break;
+            case CONTACT_SINGLE:
+                String name = uri.getPathSegments().get(1);
+                cursor = mDb.query(DbConst.TABLE_NAME, projection, "name=?", new String[]{name}, null, null, null);
+                break;
+        }
+        return cursor;
+    }
+
+
+    @Override
+    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+        switch (mUriMatcher.match(uri)) {
+            case CONTACT_ALL:
+                return mDb.update(DbConst.TABLE_NAME, values, selection, selectionArgs);
+            case CONTACT_SINGLE:
+                String name = uri.getPathSegments().get(1);
+                return mDb.update(DbConst.TABLE_NAME, values, "name=?", new String[]{name});
+        }
+        return 0;
+    }
+
+    @Override
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
+        switch (mUriMatcher.match(uri)) {
+            case CONTACT_ALL:
+                return mDb.delete(DbConst.TABLE_NAME, selection, selectionArgs);
+            case CONTACT_SINGLE:
+                String name = uri.getPathSegments().get(1);
+                return mDb.delete(DbConst.TABLE_NAME, "name=?", new String[]{name});
+        }
+        return 0;
+    }
+
+    //用于告诉调用者返回数据的类型
+    @Override
+    public String getType(Uri uri) {
+        switch (mUriMatcher.match(uri)) {
+            case CONTACT_ALL:
+                return "vnd.android.cursor.dir/vnd.com.yellow.cp.contacts";
+            case CONTACT_SINGLE:
+                return "vnd.android.cursor.item/vnd.com.yellow.cp.contacts";
+        }
+        return "";
+    }
+}
+```
+
+
  3. 1
 
 #### 自定义ContentResolver
