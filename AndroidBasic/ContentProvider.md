@@ -306,6 +306,16 @@ public class MainActivity extends AppCompatActivity {
 　　联系人提供器由ContactsProvider提供，URI为 content://com.android.contacts ，主要涉及下面三张表
  - raw_contacts表：保存了所有创建过的联系人，一个联系人占一行
  - data表：保存了联系人所有其他信息，如QQ，姓名，手机号等，外键关联raw_contact_id和mimetypes_id
- - mimetypes表：保存data表每一行数据类型，是QQ号，姓名还是手机号
- 3. 所以查询逻辑 
+ - mimetypes表：保存data表每一行数据类型，是QQ号，姓名还是手机号，但是该表会在查询的时候做成视图合并在data表中
+
+　所以查询逻辑如下：
+
+ 1. 通过content://com.android.contacts/raw_contacts 查询raw_contacts表得到所有联系人的raw_contact_id
+ 2. 根据raw_contact_id通过content://com.android.contacts/data 查询data表中所有关联当前raw_contact_id的data数据
+ 3. 根据mimetypes的值来判断data数据类型进行输出
+
+　插入逻辑如下：
+ 
+ 1. List item
+
   
