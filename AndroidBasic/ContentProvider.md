@@ -27,7 +27,16 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     }
 }
 ```
-
+ 
+``` java
+public class DbConst implements BaseColumns {
+    public static final int DB_VERSION = 1;
+    public static final String DB_NAME = "contact.db";
+    public static final String TABLE_NAME = "contactinfo";
+    public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_PHONE = "phone";
+}
+```
 
  2. 1
 
