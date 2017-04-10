@@ -256,4 +256,4 @@ public class MainActivity extends AppCompatActivity {
 ### 系统提供的内容提供器
 #### 短信提供器
 
- 1. 同样我们想对短信进行直接操作是不允许的，只能通过SmsProvider才可以
+ 1. 同样我们想对短信进行直接操作是不允许的，只能通过SmsProvider才可以操作SmsProvider的URI为 content://mms-sms ，UriMatcher中配置了21种类型，我们这里只用到了默认的SMS_ALL--所有短信
