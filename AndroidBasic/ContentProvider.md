@@ -160,4 +160,89 @@ public class MyProvider extends ContentProvider {
 
 #### 使用ContentResolver
 
- 1. 客户端使用ContentResolver通过URI访问Provider
+　　客户端使用ContentResolver通过URI访问Provider的增删改查方法
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
+    private ListView mContactsLv;
+    private List<String> mContactsName;
+    private ArrayAdapter<String> mAdapter;
+    private ContentResolver mCr;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        initListView();
+
+        mCr = getContentResolver();
+    }
+
+    private void initListView() {
+        mContactsLv = (ListView) findViewById(R.id.contacts_lv);
+        mContactsName = new ArrayList<>();
+        mAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mContactsName);
+        mContactsLv.setAdapter(mAdapter);
+        mContactsLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Uri uri = Uri.parse("content://com.yellow.cp.contacts/contacts/" + mContactsName.get(position));
+                Cursor cursor = mCr.query(uri, null, null, null, null);
+                while (cursor.moveToNext()) {
+                    String phone = cursor.getString(cursor.getColumnIndex("phone"));
+                    Toast.makeText(MainActivity.this, phone, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        mContactsLv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Uri uri = Uri.parse("content://com.yellow.cp.contacts/contacts/" + mContactsName.get(position));
+                mCr.delete(uri, null, null);
+                query(view);
+                return true;
+            }
+        });
+    }
+
+    public void insert(View view) {
+        ContentValues values = new ContentValues();
+        Uri uri = Uri.parse("content://com.yellow.cp.contacts/contacts");
+        for (int i = 0; i < 10; i++) {
+            values.put("name", "yellowbaby" + i);
+            values.put("phone", i + "");
+            mCr.insert(uri, values);
+        }
+        query(view);
+    }
+
+    public void delete(View view) {
+        Uri uri = Uri.parse("content://com.yellow.cp.contacts/contacts");
+        mCr.delete(uri, null, null);
+        query(view);
+    }
+
+    public void update(View view) {
+        Uri uri = Uri.parse("content://com.yellow.cp.contacts/contacts");
+        ContentValues values = new ContentValues();
+        values.put("phone","111111");
+        mCr.update(uri, values, null, null);
+        query(view);
+    }
+
+    public void query(View view) {
+        mContactsName.clear();
+        Uri uri = Uri.parse("content://com.yellow.cp.contacts/contacts");
+        Cursor cursor = mCr.query(uri, null, null, null, null);
+        while (cursor.moveToNext()) {
+            String name = cursor.getString(cursor.getColumnIndex("name"));
+            mContactsName.add(name);
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+}
+```
