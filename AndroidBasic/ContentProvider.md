@@ -303,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
 
 #### 联系人提供器
 
-　　联系人提供器由ContactsProvider提供，URI为 content://com.android.contacts　，涉及三张表raw_contacts，mimetypes，data表
+　　联系人提供器由ContactsProvider提供，URI为 content://com.android.contacts ，主要涉及下面三张表
  - raw_contacts表：保存了所有创建过的联系人，一个联系人占一行
  - data表：保存了联系人所有其他信息，如QQ，姓名，手机号等，外键关联raw_contact_id和mimetypes_id
  - mimetypes表：保存data表每一行数据类型，是QQ号，姓名还是手机号
