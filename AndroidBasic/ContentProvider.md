@@ -6,6 +6,29 @@
 
  1. 创建DBOpenHelper
  
+``` java
+public class DBOpenHelper extends SQLiteOpenHelper {
+
+    public DBOpenHelper(Context context) {
+        super(context, DbConst.DB_NAME, null, DbConst.DB_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table " + DbConst.TABLE_NAME + " ("
+                + DbConst._ID + " integer primary key autoincrement,"
+                + DbConst.COLUMN_NAME + " varchar(10),"
+                + DbConst.COLUMN_PHONE + " varchar(13));");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+}
+```
+
+
  2. 1
 
 #### 自定义ContentResolver
