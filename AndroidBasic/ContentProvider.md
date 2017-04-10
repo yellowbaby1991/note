@@ -135,4 +135,27 @@ public class MyProvider extends ContentProvider {
 
  3. 配置AndroidManifest.xml
 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.yellow.contentprovider">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        ...
+
+        <provider
+            android:name=".MyProvider"
+            android:authorities="com.yellow.cp.contacts"
+            android:exported="true"></provider>
+    </application>
+
+</manifest>
+```
+
+
 #### 自定义ContentResolver
