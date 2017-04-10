@@ -397,5 +397,14 @@ public class MainActivity extends AppCompatActivity {
 ```
 　需要的权限
  
+``` xml
+    <!-- 读联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 写联系人权限 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+```
+
 
   
+  
+### 内容观察器
