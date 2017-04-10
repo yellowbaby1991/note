@@ -38,6 +38,8 @@ public class DbConst implements BaseColumns {
 }
 ```
 
- 2. 1
+ 2. 创建ContentProvider
+ 
+ 3. 1
 
 #### 自定义ContentResolver
