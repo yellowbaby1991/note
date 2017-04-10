@@ -38,7 +38,7 @@ public class DbConst implements BaseColumns {
 }
 ```
 
- 2. 创建ContentProvider
+ 2. 创建ContentProvider，调用dbhelper访问数据库
  
 ``` java
 public class MyProvider extends ContentProvider {
