@@ -205,7 +205,13 @@ Intent intent = getIntent();
 Student student = (Student) intent.getSerializableExtra("student");
 ```
 
-Intent可传递的数据类型
+　Intent可传递的数据类型
+
+ 1. 8种基本数据类型及其数组
+ 2. String（String实现了Serializable）/CharSequence实例类型的数据及其数组 
+ 3. 实现了Parcelable的对象及其数组 (自己来做, 操作较复杂, 但速度快) 
+ 4. 实现了Serializable的对象及其数组(系统来做, 操作简单, 但速度慢)  
+
 
 #### 使用Bundle传参
 
