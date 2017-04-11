@@ -187,6 +187,7 @@ startActivity(intent);
 ### 数据传递
 #### Intent传参
 
+　使用intent传参步骤如下
  1. 使用putExtra把参数压入intent
 
 ``` java
@@ -203,6 +204,8 @@ startActivity(intent);
 Intent intent = getIntent();
 Student student = (Student) intent.getSerializableExtra("student");
 ```
+
+Intent可传递的数据类型
 
 #### 使用Bundle传参
 
