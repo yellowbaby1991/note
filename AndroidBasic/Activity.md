@@ -175,10 +175,14 @@ startActivity(intent);
  1. 四种启动模式
 	 - standard：默认的活动启动模式，系统不会在乎这个活动是否已经在返回栈中存在，每次启动都会创建一个新的活动实例
 	 - singleTop：当启动活动的时候发现返回栈的栈顶已经是该活动，则认为可以直接使用它，不会再创建新的活动实例，需要注意的是，这个Activity的不会调用onCreate和onStart，会调用onNewIntent，如果活动不在栈顶，还是会创建新实例
-	 - singleTask：每次启动活动时，先判断该Activity是否在栈内，如果不存在则创建，如果存在，就判断该Activity上面是否有其他Activity，如果有，则关闭其他的Activity，也就是cleartop，应用场景：应用的首页
+	 - singleTask：每次启动活动时，先判断该Activity是否在栈内，如果不存在则创建，如果存在，就判断该Activity上面是否有其他Activity，如果有，则关闭其他的Activity，也就是cleartop
 	 - singleInstance：会有一个单独的返回栈来管理这个Activity，不管哪个应用程序来访问这个Activity，都公用的同一个返回栈
 
- 2. 在隐式启动的时候指定启动模式
+ 2. 四种启动模式的应用场景
+	 - singleTop：新闻应用的内容栏，假如收到了10个新闻推送，连续打开10个内容界面是噩梦的，使用该模式可以只在栈顶创建一个唯一的活动
+	 - 
+
+ 3. 在隐式启动的时候指定启动模式
  ```java
 //1. FLAG_ACTIVITY_NEW_TASK 指定singleTask模式
 //2. FLAG_ACTIVITY_SINGLE_TOP 指定singleTop模式
@@ -189,7 +193,7 @@ intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 startActivity(intent);
 ```
 
- 3. 在AndroidMenifest.xml中指定启动模式
+ 4. 在AndroidMenifest.xml中指定启动模式
 
 ``` xml
   <activity
