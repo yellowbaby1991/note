@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
 	 - singleTask：每次启动活动时，先判断该Activity是否在栈内，如果不存在则创建，如果存在，就判断该Activity上面是否有其他Activity，如果有，则关闭其他的Activity，也就是cleartop，应用场景：应用的首页
 	 - singleInstance：会有一个单独的返回栈来管理这个Activity，不管哪个应用程序来访问这个Activity，都公用的同一个返回栈
 
-　　也可以使用activity的Flags指定启动模式
+　也可以使用activity的Flags指定启动模式
  ```java
 Intent intent = new Intent("android.intent.action.APP_A_SECOND_ACTIVITY");
 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
