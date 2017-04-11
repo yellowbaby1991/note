@@ -420,6 +420,10 @@ public class MainActivity extends AppCompatActivity {
 
 　也可以使用activity的Flags指定启动模式
  ```java
+//1. FLAG_ACTIVITY_NEW_TASK 指定singleTask模式
+//2. FLAG_ACTIVITY_SINGLE_TOP 指定singleTop模式
+//3. FLAG_ACTIVITY_CLEAR_TOP 和singleTask配合使用，clear top
+//4. FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS 等同于android:excludeFromRecents="true"，具有这个标记的activity不会出现在历史列表中 
 Intent intent = new Intent("android.intent.action.APP_A_SECOND_ACTIVITY");
 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 startActivity(intent);
