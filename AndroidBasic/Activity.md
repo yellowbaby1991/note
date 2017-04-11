@@ -137,7 +137,7 @@
 </manifest>
 ```
 
-### Activity启动方式
+### Activity的启动方式
 
 #### 显示启动
 
