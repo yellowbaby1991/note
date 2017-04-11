@@ -179,10 +179,11 @@ startActivity(intent);
 	 - singleInstance：会有一个单独的返回栈来管理这个Activity，不管哪个应用程序来访问这个Activity，都公用的同一个返回栈
 
  2. 四种启动模式的应用场景
+ 	 - standard：最常见的就不提了
 	 - singleTop：新闻应用的内容栏，假如收到了10个新闻推送，连续打开10个内容界面是噩梦的，使用该模式可以只在栈顶创建一个唯一的活动
 	 - singleTask：适合做程序的入口，如浏览器的主页，不管从多少个应用启动浏览器，只会启动一次，其他情况都走onNewIntent，并且清空主界面上的其他页面
 	 - singleInstance
-	 - 
+
 
  3. 在隐式启动的时候指定启动模式
  ```java
