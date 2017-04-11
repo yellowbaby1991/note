@@ -188,6 +188,18 @@ Intent intent = new Intent("android.intent.action.APP_A_SECOND_ACTIVITY");
 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 startActivity(intent);
 ```
+
+ 3. 在AndroidMenifest.xml中指定启动模式
+
+``` xml
+  <activity
+	android:name=".SecondActivity"
+	android:label="@string/title_activity_second"
+	android:launchMode="singleTop"
+	android:theme="@style/AppTheme.NoActionBar" />
+```
+
+
 ### 数据传递
 #### Intent传参
 
