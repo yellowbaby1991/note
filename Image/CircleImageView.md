@@ -1,5 +1,6 @@
 ### 简介
 　[CircleImageView][1]一个圆形图片的开源控件
+　![enter description here][2]
 
 ### 配置方法
 
@@ -40,3 +41,4 @@ dependencies {
 
 
   [1]: https://github.com/hdodenhof/CircleImageView
+  [2]: https://camo.githubusercontent.com/e17a2a83e3e205a822d27172cb3736d4f441344d/68747470733a2f2f7261772e6769746875622e636f6d2f68646f64656e686f662f436972636c65496d616765566965772f6d61737465722f73637265656e73686f742e706e67
