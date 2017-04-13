@@ -116,8 +116,34 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+ 6. 绑定监听事件
+ 
+``` java
+public class ButterknifeActivity extends AppCompatActivity {
 
- 6. 1
+    @OnClick(R.id.button1 )   //给 button1 设置一个点击事件
+    public void showToast(){
+        Toast.makeText(this, "is a click", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnLongClick( R.id.button1 )    //给 button1 设置一个长按事件
+    public boolean showToast2(){
+        Toast.makeText(this, "is a long click", Toast.LENGTH_SHORT).show();
+        return true  ;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_butterknife);
+
+        //绑定activity
+        ButterKnife.bind( this ) ;
+
+    }
+}
+```
+
 
   [1]: https://github.com/JakeWharton/butterknife
   [2]: http://jakewharton.github.io/butterknife/
