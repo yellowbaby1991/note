@@ -6,6 +6,14 @@
  3. 运行时不会影响APP效率，使用配置方便
  4. 代码清晰，可读性强
 
+### 配置方法
+
+``` xml
+dependencies {
+  compile 'com.jakewharton:butterknife:8.5.1'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+}
+```
 
 
   [1]: https://github.com/JakeWharton/butterknife
