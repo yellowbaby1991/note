@@ -94,7 +94,30 @@ public class MyAdapter extends BaseAdapter {
 }
 ```
 
- 5. 1
+ 5. 使用BindViews绑定多个Id
+ 
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @BindViews({ R.id.button1  , R.id.button2 ,  R.id.button3 })
+    public List<Button> buttonList ;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+
+        ButterKnife.bind(this);
+
+        buttonList.get( 0 ).setText( "hello 1 ");
+        buttonList.get( 1 ).setText( "hello 2 ");
+        buttonList.get( 2 ).setText( "hello 3 ");
+    }
+}
+```
+
+
+ 6. 1
 
   [1]: https://github.com/JakeWharton/butterknife
   [2]: http://jakewharton.github.io/butterknife/
