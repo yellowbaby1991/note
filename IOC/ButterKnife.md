@@ -5,6 +5,8 @@
  2. 方便的处理Adapter里的ViewHolder绑定问题
  3. 运行时不会影响APP效率，使用配置方便
  4. 代码清晰，可读性强
+ 
+　[官方使用文档][2]
 
 ### 配置方法
 
@@ -19,4 +21,6 @@ dependencies {
 
  1. List item
 
+
   [1]: https://github.com/JakeWharton/butterknife
+  [2]: http://jakewharton.github.io/butterknife/
