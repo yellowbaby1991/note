@@ -107,6 +107,4 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
- 6. 1
-
   [1]: https://github.com/bumptech/glide
