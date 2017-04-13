@@ -17,8 +17,26 @@ dependencies {
 
 ### 使用方法
 　[官方使用文档][2]
- 1. List item
 
+ 1. 使用BindView取代繁琐的findViewById
+
+``` java
+class ExampleActivity extends Activity {
+  @BindView(R.id.title) TextView title;
+  @BindView(R.id.subtitle) TextView subtitle;
+  @BindView(R.id.footer) TextView footer;
+
+  @Override public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.simple_activity);
+    ButterKnife.bind(this);
+    // TODO Use fields...
+  }
+}
+```
+
+
+ 2. 1
 
   [1]: https://github.com/JakeWharton/butterknife
   [2]: http://jakewharton.github.io/butterknife/
