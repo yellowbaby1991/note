@@ -1,8 +1,7 @@
 ### 简介
 　[CircleImageView][1]一个圆形图片的开源控件
  
-　
- ![enter description here][2]
+　 ![enter description here][2]
 
 ### 配置方法
 
