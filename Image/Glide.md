@@ -44,6 +44,14 @@ dependencies {
 }
 ```
 
+### 常用技巧
 
+ 1. 禁止内存缓存
+ 
+``` java
+.skipMemoryCache(true);
+```
+
+ 2. 1
 
   [1]: https://github.com/bumptech/glide
