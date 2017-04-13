@@ -30,8 +30,28 @@ dependencies {
 	app:riv_tile_mode="repeat" />
 ```
 
+ 2. 参数含义
 
- 2. 1
+``` xml
+    <!-- 
+        corner_radius         边缘的弧度数
+        border_width         描边的宽度
+        border_color         描边的颜色
+        mutate_background     背景是否变化
+        oval                 是否为圆形
+        android:scaleType     拉伸的方式
+     -->
+    <declare-styleable name="RoundedImageView">
+        <attr name="corner_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="mutate_background" format="boolean" />
+        <attr name="oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+```
+
+ 3. 在代码中使用
 
   [1]: https://github.com/vinc3m1/RoundedImageView
   [2]: https://camo.githubusercontent.com/ed1e075be6ed97fa9091d3702e9b96d3e85b7a35/68747470733a2f2f7261772e6769746875622e636f6d2f6d616b6572616d656e2f526f756e646564496d616765566965772f6d61737465722f73637265656e73686f742e706e67
