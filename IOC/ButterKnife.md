@@ -49,5 +49,22 @@ class ExampleActivity extends Activity {
 
  3. 在fragment中也可以使用BindView
 
+``` java
+public class FancyFragment extends Fragment {
+  @BindView(R.id.button1) Button button1;
+  @BindView(R.id.button2) Button button2;
+
+  @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    View view = inflater.inflate(R.layout.fancy_fragment, container, false);
+    ButterKnife.bind(this, view);
+    // TODO Use fields...
+    return view;
+  }
+}
+```
+
+
+ 4. 1
+
   [1]: https://github.com/JakeWharton/butterknife
   [2]: http://jakewharton.github.io/butterknife/
