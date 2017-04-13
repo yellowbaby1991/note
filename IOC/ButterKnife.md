@@ -35,8 +35,19 @@ class ExampleActivity extends Activity {
 }
 ```
 
+ 2. 也可以绑定特定的资源，如string，color，drawable等
 
- 2. 1
+``` java
+class ExampleActivity extends Activity {
+  @BindString(R.string.title) String title;
+  @BindDrawable(R.drawable.graphic) Drawable graphic;
+  @BindColor(R.color.red) int red; // int or ColorStateList field
+  @BindDimen(R.dimen.spacer) Float spacer; // int (for pixel size) or float (for exact value) field
+  // ...
+}
+```
+
+ 3. 1
 
   [1]: https://github.com/JakeWharton/butterknife
   [2]: http://jakewharton.github.io/butterknife/
