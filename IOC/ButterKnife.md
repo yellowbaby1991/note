@@ -63,7 +63,38 @@ public class FancyFragment extends Fragment {
 }
 ```
 
- 4. 1
+ 4. 在Adapter的ViewHolder 中使用BindView
+
+``` java
+public class MyAdapter extends BaseAdapter {
+  @Override public View getView(int position, View view, ViewGroup parent) {
+    ViewHolder holder;
+    if (view != null) {
+      holder = (ViewHolder) view.getTag();
+    } else {
+      view = inflater.inflate(R.layout.whatever, parent, false);
+      holder = new ViewHolder(view);
+      view.setTag(holder);
+    }
+
+    holder.name.setText("John Doe");
+    // etc...
+
+    return view;
+  }
+
+  static class ViewHolder {
+    @BindView(R.id.title) TextView name;
+    @BindView(R.id.job_title) TextView jobTitle;
+
+    public ViewHolder(View view) {
+      ButterKnife.bind(this, view);
+    }
+  }
+}
+```
+
+ 5. 1
 
   [1]: https://github.com/JakeWharton/butterknife
   [2]: http://jakewharton.github.io/butterknife/
