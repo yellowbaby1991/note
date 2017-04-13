@@ -52,6 +52,13 @@ dependencies {
 .skipMemoryCache(true);
 ```
 
- 2. 1
+ 2. 清除缓存
+ 
+``` java
+Glide.get(context).clearMemory();
+```
+
+
+ 3. 1
 
   [1]: https://github.com/bumptech/glide
