@@ -94,7 +94,7 @@ public class MyAdapter extends BaseAdapter {
 }
 ```
 
- 5. 使用BindViews绑定多个Id
+ 1. 使用BindViews绑定多个Id
  
 ``` java
 public class MainActivity extends AppCompatActivity {
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
- 6. 绑定监听事件
+ 2. 绑定监听事件
  
 ``` java
 public class ButterknifeActivity extends AppCompatActivity {
@@ -147,3 +147,8 @@ public class ButterknifeActivity extends AppCompatActivity {
 
   [1]: https://github.com/JakeWharton/butterknife
   [2]: http://jakewharton.github.io/butterknife/
+  
+### 使用Zelezny快速生成注解代码
+
+ 1. AS中打开setting-plugin，搜索Zelezny插件加载后重启AS
+ 2. 
