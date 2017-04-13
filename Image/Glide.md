@@ -58,7 +58,12 @@ dependencies {
 Glide.get(context).clearMemory();
 ```
 
+ 3. 禁止磁盘缓存
+ 
+``` java
+.diskCacheStrategy(DiskCacheStrategy.NONE)
+```
 
- 3. 1
+ 4. 先显示缩略图，再显示原图
 
   [1]: https://github.com/bumptech/glide
