@@ -34,7 +34,7 @@ dependencies {
         <attr name="civ_border_width" format="dimension" />//设置边框的宽度，默认为0，即无边框
         <attr name="civ_border_color" format="color" />//设置边框的颜色，默认为黑色
         <attr name="civ_border_overlay" format="boolean" />//设置边框是否覆盖在图片上，默认为false，即边框在图片外圈
-        <attr name="civ_fill_color" format="color" />  
+        <attr name="civ_fill_color" format="color" /> //设置图片的底色，默认透明 
 </declare-styleable> 
 ```
 
