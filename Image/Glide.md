@@ -66,6 +66,11 @@ Glide.get(context).clearMemory();
 
  4. 先显示缩略图，再显示原图
  
+``` java
+enter code here
+```
+
+
  5. 1
 
   [1]: https://github.com/bumptech/glide
