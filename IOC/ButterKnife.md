@@ -63,7 +63,6 @@ public class FancyFragment extends Fragment {
 }
 ```
 
-
  4. 1
 
   [1]: https://github.com/JakeWharton/butterknife
