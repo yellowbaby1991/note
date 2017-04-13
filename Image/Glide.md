@@ -1,5 +1,5 @@
 ### 简介
-　[Ｇlide][1]是Google员工的开源项目，Google I/O上被推荐使用的图片加载框架
+　[Ｇlide][1]是Google员工的开源项目，Google I/O上被推荐使用的图片加载框架，和Picasso对比，支持Gif，并且可以和activity和fragment的生命周期集成，这是其他框架不具备的
  
 ### 配置方法
 
