@@ -47,7 +47,7 @@ class ExampleActivity extends Activity {
 }
 ```
 
- 3. 1
+ 3. 在fragment中也可以使用BindView
 
   [1]: https://github.com/JakeWharton/butterknife
   [2]: http://jakewharton.github.io/butterknife/
