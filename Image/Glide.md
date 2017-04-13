@@ -83,6 +83,31 @@ Glide.get(context).clearMemory();
         .into(iv_0);
 ```
 
- 5. 1
+ 5. 添加监听
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
+    private ImageView iv_0;
+    private LoggingListener mCommonRequestListener;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        iv_0 = (ImageView) findViewById(R.id.iv_0);
+        mCommonRequestListener = new LoggingListener<String, GlideDrawable>();
+        Glide
+                .with(this)
+                .load("http://inthecheesefactory.com/uploads/source/nestedfragment/fragments.png")
+                .listener(mCommonRequestListener)
+                .into(iv_0);
+    }
+}
+```
+
+
+ 6. 1
 
   [1]: https://github.com/bumptech/glide
