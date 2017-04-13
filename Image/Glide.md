@@ -67,7 +67,20 @@ Glide.get(context).clearMemory();
  4. 先显示缩略图，再显示原图
  
 ``` java
-enter code here
+    //用原图的1/10作为缩略图
+    Glide
+        .with(this)
+        .load("http://inthecheesefactory.com/uploads/source/nestedfragment/fragments.png")
+        .thumbnail(0.1f)
+        .into(iv_0);
+    //用其它图片作为缩略图
+    DrawableRequestBuilder<Integer> thumbnailRequest = Glide
+        .with(this)
+        .load(R.drawable.news);
+    Glide.with(this)
+        .load("http://inthecheesefactory.com/uploads/source/nestedfragment/fragments.png")
+        .thumbnail(thumbnailRequest)
+        .into(iv_0);
 ```
 
 
