@@ -145,11 +145,14 @@ public class ButterknifeActivity extends AppCompatActivity {
 ```
 
 
-  [1]: https://github.com/JakeWharton/butterknife
-  [2]: http://jakewharton.github.io/butterknife/
-  
 ### 使用Zelezny快速生成注解代码
 
  1. AS中打开setting-plugin，搜索Zelezny插件加载后重启AS
- 2. 鼠标移到Activity类中的R.layout.activity_main上，然后generate代码
+ 2. 鼠标移到Activity类中的R.layout.activity_main上，然后generate代码，如下图所示
 
+![enter description here][3]
+
+
+  [1]: https://github.com/JakeWharton/butterknife
+  [2]: http://jakewharton.github.io/butterknife/
+  [3]: http://img2.tuicool.com/JfQ73eI.gif
