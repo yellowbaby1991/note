@@ -156,5 +156,4 @@ android:interpolator="@android:anim/accelerate_decelerate_interpolator" />
 ```
 
 
-     
- 2. 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+ 2. AlphaAnimation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
