@@ -46,4 +46,4 @@ iv.startAnimation(animation);
 ```
 
 
- 3. 1
+ 3. AlphaAnimation
