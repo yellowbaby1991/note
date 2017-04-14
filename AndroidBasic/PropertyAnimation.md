@@ -1,3 +1,10 @@
+* [概述](#概述)
+* [ValueAnimator](#valueanimator)
+* [ObjectAnimator](#objectanimator)
+* [属性动画集合AnimatorSet](#属性动画集合animatorset)
+	* [使用xml方式](#使用xml方式)
+	* [使用java代码](#使用java代码)
+
 ### 概述
 　由于逐帧动画和补间动画的一些局限性，如，只能操作View，不能真正改变View的属性，Android3.0之后，系统给我们提供了一种新的动画，属性动画，它可以真正改变目标对象的属性，而不仅仅局限在View
  
