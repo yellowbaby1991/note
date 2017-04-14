@@ -45,3 +45,20 @@
 ```
 
  3. Activity中start
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ImageView iv = (ImageView) findViewById(R.id.iv);
+        AnimationDrawable drawable = (AnimationDrawable) iv.getDrawable();
+        drawable.start();//开始动画
+        //drawable.stop();//停止动画
+
+    }
+	}
+```
