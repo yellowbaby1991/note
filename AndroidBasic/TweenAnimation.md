@@ -10,9 +10,14 @@
    | 透明度动画 |  scale   |    AlphaAnimation    | 改变View的透明度 |
    
    
-### 常用方法
+### 常用API
 
  1. setDuration(2000) - 设置动画时间
  2. setFillAfter(true) - 设置动画停留留在最后一帧
  3. setInterpolator(new AccelerateDecelerateInterpolator()) - 设置加速器器
  4. mIv.startAnimation(animation) - 控件启动动画，注意只要是View都能启动动画
+
+### 使用代码
+
+ 1. TranslateAnimation
+ 2. 
