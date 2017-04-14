@@ -90,3 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 ### 常用API
+
+ 1. void start() - 开始播放动画
+ 2. void stop() - 停止播放动画
+ 3. addFrame(Drawable frame, int duration) - 添加一帧，并设置该帧显示的持续时间
+ 4. void setOneShoe(boolean flag) - false为循环播放，true为仅播放一次
+ 5. boolean isRunning() - 是否正在播放
