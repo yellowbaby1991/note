@@ -64,3 +64,26 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 #### 使用java代码
+
+``` java
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ImageView iv = (ImageView) findViewById(R.id.iv);
+        AnimationDrawable anim = new AnimationDrawable();
+        for (int i = 1; i <= 8; i++) {
+            int id = getResources().getIdentifier("p" + i, "drawable", getPackageName());
+            Drawable drawable = getResources().getDrawable(id);
+            anim.addFrame(drawable, 200);
+        }
+        anim.setOneShot(false);
+        iv.setImageDrawable(anim);
+        anim.start();
+    }
+}
+```
