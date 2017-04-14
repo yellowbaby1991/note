@@ -182,4 +182,20 @@ android:fillAfter="true"
 android:interpolator="@android:anim/accelerate_interpolator" />
 ```
                    
- 4. ScaleAnimation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+ 4. ScaleAnimation
+ 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+android:fromXScale="1.0"
+android:toXScale="2.0"
+android:fromYScale="1.0"
+android:toYScale="2.0"
+android:pivotX="50%"
+android:pivotY="50%"
+android:fillAfter="true"
+android:duration="2000" />
+```
+
+
+ 5. 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
