@@ -4,4 +4,19 @@
 ### ValueAnimator
 　ValueAnimator是属性动画提供给开发者最重要的类，属性动画的运行机制是通过不断对值的操作来实现的，ValueAnimator这个类就负责计算值的变化，我们把初始值和结束值和运行时长告诉ValueAnimator，它会自动帮助我们平滑的从初始值到结束值之间的过渡
 　比如使用ValueAnimator来平滑的改变一个view的alpha值
+
+``` java
+        ValueAnimator animator = ValueAnimator.ofFloat(0, 1.0f);//平滑的从0变化到1
+        animator.setDuration(3000);//3s内
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float values = (float) animation.getAnimatedValue();//平滑变化过程中拿到值
+                iv.setAlpha(values);
+            }
+        });
+        animator.start();
+```
+
+
  
