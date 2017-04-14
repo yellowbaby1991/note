@@ -34,4 +34,16 @@
 ```
 
  2. RotateAnimation
- 3. 
+ 
+``` java
+	//以自身为圆心，从180度旋转到360度
+	Animation animation = new RotateAnimation(180, 360,
+			Animation.RELATIVE_TO_SELF,0.5f,
+			Animation.RELATIVE_TO_SELF,0.5f);
+	animation.setDuration(3000);
+	animation.setFillAfter(true);
+	iv.startAnimation(animation);
+```
+
+
+ 3. 1
