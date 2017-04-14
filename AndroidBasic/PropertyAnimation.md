@@ -18,6 +18,12 @@ animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 });
 animator.start();
 ```
+　其他常用的方法
 
+ - ofInt - 不需要小数过渡，用int过渡
+ - setStartDelay - 设置动画延时时间
+ - setRepeatCount - 重复次数
+ - setRepeatMode - 循环模式
 
+### 
  
