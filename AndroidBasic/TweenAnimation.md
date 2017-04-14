@@ -196,4 +196,29 @@ android:duration="2000" />
 ```
 
  5. AnimationSet
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true">
+    <translate
+        android:fromXDelta="0"
+        android:toXDelta="50%p"
+        android:fromYDelta="0"
+        android:toYDelta="0"
+        android:duration="1000"
+        android:fillAfter="true"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator" ></translate>
+
+    <alpha
+        android:fromAlpha="0.5"
+        android:toAlpha="1.0"
+        android:repeatCount="1"
+        android:repeatMode="reverse"
+        android:duration="1000"
+        android:fillAfter="true"></alpha>
+</set>
+```
+
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
