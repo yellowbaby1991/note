@@ -95,3 +95,6 @@ set.addAnimation(rotateAnim);
 
 iv.startAnimation(set);
 ```
+
+
+### 使用xml
