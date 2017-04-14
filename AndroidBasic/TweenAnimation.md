@@ -20,4 +20,17 @@
 ### 使用代码
 
  1. TranslateAnimation
+ 
+``` java
+	Animation animation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0,
+			Animation.RELATIVE_TO_PARENT, 0.5f,
+			Animation.RELATIVE_TO_SELF, 0,
+			Animation.RELATIVE_TO_SELF, 0);
+	animation.setDuration(3000);
+	animation.setFillAfter(true);
+	animation.setInterpolator(new DecelerateInterpolator());
+	iv.startAnimation(animation);
+```
+
+
  2. 
