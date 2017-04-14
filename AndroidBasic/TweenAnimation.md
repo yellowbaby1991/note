@@ -13,4 +13,5 @@
 ### 常用方法
 
  1. setDuration(2000) 设置动画时间
- 2. 
+ 2. setFillAfter(true) 设置动画停留留在最后⼀一帧
+ 3. 
