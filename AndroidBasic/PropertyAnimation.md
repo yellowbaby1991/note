@@ -25,5 +25,5 @@ animator.start();
  - setRepeatCount - 重复次数
  - setRepeatMode - 循环模式
 
-### 
+### ObjectAnimator
  
