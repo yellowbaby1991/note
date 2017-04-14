@@ -51,3 +51,22 @@ animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 });
 animator.start();
 ```
+
+### 使用xml配置属性动画
+
+ 1. 在res/animator下创建xml
+ 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000"
+    android:propertyName="x"
+    android:valueFrom="0"
+    android:valueTo="100"
+    android:valueType="floatType" >
+</objectAnimator>
+
+```
+
+
+ 2. 1
