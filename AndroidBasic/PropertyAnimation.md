@@ -6,16 +6,16 @@
 　比如使用ValueAnimator来平滑的改变一个view的alpha值
 
 ``` java
-        ValueAnimator animator = ValueAnimator.ofFloat(0, 1.0f);//平滑的从0变化到1
-        animator.setDuration(3000);//3s内
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float values = (float) animation.getAnimatedValue();//平滑变化过程中拿到值
-                iv.setAlpha(values);
-            }
-        });
-        animator.start();
+ValueAnimator animator = ValueAnimator.ofFloat(0, 1.0f);//平滑的从0变化到1
+animator.setDuration(3000);//3s内
+animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+	@Override
+	public void onAnimationUpdate(ValueAnimator animation) {
+		float values = (float) animation.getAnimatedValue();//平滑变化过程中拿到值
+		iv.setAlpha(values);
+	}
+});
+animator.start();
 ```
 
 
