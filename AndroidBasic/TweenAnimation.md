@@ -135,8 +135,19 @@ iv.startAnimation(set);
 
  1. TranslateAnimation  
 
-``` stylus
-enter code here
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+android:fromXDelta="0"
+android:toXDelta="50%p"
+android:fromYDelta="0"
+android:toYDelta="0"
+android:duration="2000"
+android:fillAfter="true"
+android:interpolator="@android:anim/accelerate_decelerate_interpolator" />
+    <!-- 直接写数据代表移动确定的像素，单位为px-->
+    <!-- 如果设置百分比，那就是本身的宽高的倍数 -->
+    <!-- 如果设置百分比p，那就是父控件的宽高的倍数 -->
 ```
 
 
