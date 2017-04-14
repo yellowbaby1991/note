@@ -60,5 +60,5 @@ public class MainActivity extends AppCompatActivity {
         //drawable.stop();//停止动画
 
     }
-	}
+}
 ```
