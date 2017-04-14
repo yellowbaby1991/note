@@ -135,7 +135,6 @@ iv.startAnimation(set);
 
  1. TranslateAnimation  
 
-
 ``` stylus
 enter code here
 ```
