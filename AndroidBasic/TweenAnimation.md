@@ -197,5 +197,4 @@ android:fillAfter="true"
 android:duration="2000" />
 ```
 
-
  5. 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
