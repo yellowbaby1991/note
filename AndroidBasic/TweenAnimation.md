@@ -98,3 +98,39 @@ iv.startAnimation(set);
 
 
 ### 使用xml
+　语法：
+ ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+
+   <set xmlns:android="http://schemas.android.com/apk/res/android"	
+        //set可以表示单个动画也可以是多个动画的集合
+   	android:interpolator="@[package:]anim/interpolator_resource"	//插值器，影响动画速度
+   	android:shareInterpolator=["true" | "false"] 	//是否共享插值器>	
+   	<alpha			//透明度动画
+    	   android:fromAlpha="float"	//透明度起始值
+    	   android:toAlpha="float"		//透明度结束值 />
+   	<scale			//缩放动画
+     	  android:fromXScale="float"	//x的缩放起始值
+     	  android:toXScale="float"		//x的缩放结束值
+     	  android:fromYScale="float"	//y的缩放起始值
+     	  android:toYScale="float"		//y的缩放结束值
+     	  android:pivotX="float"		//缩放轴点的x坐标
+      	  android:pivotY="float" 		//缩放轴点的y坐标/>
+   	<translate  	//平移动画
+      	  android:fromXDelta="float" 	//x的起始值
+         android:toXDelta="float"		//x的结束值
+         android:fromYDelta="float"	//y的起始值
+         android:toYDelta="float" 		//y的结束值/>
+       <rotate			//旋转动画
+         android:fromDegrees="float"	//旋转开始的角度
+         android:toDegrees="float"		//旋转结束的角度
+         android:pivotX="float"		//旋转轴点的x坐标
+         android:pivotY="float" 		//旋转轴点的x坐标/>
+       <set>
+     	  ...
+   	</set>
+   </set>
+ ``` 
+ 
+ 
+ 1. List item
