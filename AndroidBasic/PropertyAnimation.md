@@ -78,7 +78,7 @@ animator.start();
 
 ### 属性动画集合AnimatorSet
 
- 1. xml方式加载
+ 1. 使用xml方式
 
 　同样是在animator文件夹下定义xml
 
@@ -115,4 +115,4 @@ Animator animator = AnimatorInflater.loadAnimator(this, R.animator.anim);
 animator.setTarget(iv);
 animator.start();
 ```
- 1. xml方式加载
+ 2. 使用java代码
