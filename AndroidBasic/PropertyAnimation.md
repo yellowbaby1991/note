@@ -107,7 +107,7 @@ s.playSequentially(anim1,anim2,anim3);
 //同时播放 anim1 anim2 anim3
 s.playTogether(anim1,anim2,anim3)
 ```
-
+　两个示例
  1. 两个动画同时执行
 
 ``` java
