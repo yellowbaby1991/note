@@ -68,4 +68,10 @@ animator.start();
 
 ```
 
- 2. 1
+ 2. java代码中
+
+``` java
+Animator animator = AnimatorInflater.loadAnimator(this, R.animator.anim);
+animator.setTarget(iv);
+animator.start();
+```
