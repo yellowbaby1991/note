@@ -98,7 +98,7 @@ iv.startAnimation(set);
 
 
 ### 使用xml
-　语法：
+　语法：定义在res/anim中的xml文件
  ```xml
    <?xml version="1.0" encoding="utf-8"?>
 
@@ -131,6 +131,8 @@ iv.startAnimation(set);
    	</set>
    </set>
  ``` 
+ 
+ 
  
 
  1. TranslateAnimation  
