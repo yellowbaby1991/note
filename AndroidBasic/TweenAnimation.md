@@ -155,5 +155,31 @@ android:fillAfter="true"
 android:interpolator="@android:anim/accelerate_decelerate_interpolator" />
 ```
 
+ 2. AlphaAnimation 
+ 
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+android:fromAlpha="0.5"
+android:toAlpha="1.0"
+android:repeatCount="1"
+android:repeatMode="reverse"
+android:duration="1000"
+android:fillAfter="true" />
+```
+       
+ 3. RotateAnimation
 
- 2. AlphaAnimation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+android:fromDegrees="0"
+android:toDegrees="270"
+android:pivotX="50%"
+android:pivotY="50%"
+android:duration="3000"
+android:fillAfter="true"
+android:interpolator="@android:anim/accelerate_interpolator" />
+```
+                   
+ 4. 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
