@@ -4,7 +4,7 @@
 ### 分类
    |  名称   |     标签     |          子类          |     效果     |
    | :---: | :--------: | :------------------: | :--------: |
-   | 平移动画  | <tanslate> | TranslationAnimation |   移动View   |
-   | 缩放动画  |  <scale>   |    ScaleAnimation    | 防盗或者缩小View |
-   | 旋转动画  |  <rotate>  |   RotateAnimation    |   旋转View   |
-   | 透明度动画 |  <scale>   |    AlphaAnimation    | 改变View的透明度 |
+   | 平移动画  | tanslate | TranslationAnimation |   移动View   |
+   | 缩放动画  |  scale   |    ScaleAnimation    | 防盗或者缩小View |
+   | 旋转动画  |  rotate  |   RotateAnimation    |   旋转View   |
+   | 透明度动画 |  scale   |    AlphaAnimation    | 改变View的透明度 |
