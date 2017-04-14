@@ -75,3 +75,23 @@ iv.startAnimation(animation);
 ```
 
  5. AnimationSet
+ 
+``` java
+AnimationSet set = new AnimationSet(false);//设置为FALSE，让子动画的Interpolator各自生效
+
+Animation animRight = new TranslateAnimation(
+		Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 3f,
+		Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 3f);
+animRight.setInterpolator(new AccelerateInterpolator());
+animRight.setDuration(2000);
+set.addAnimation(animRight);
+
+Animation rotateAnim = new RotateAnimation(0, 360,
+		Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
+		0.5f);
+rotateAnim.setDuration(2000);
+rotateAnim.setInterpolator(new DecelerateInterpolator());
+set.addAnimation(rotateAnim);
+
+iv.startAnimation(set);
+```
