@@ -22,27 +22,27 @@
  1. TranslateAnimation
  
 ``` java
-	//从(0,0)平移到(parentWith/2,0)
-	Animation animation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0,
-			Animation.RELATIVE_TO_PARENT, 0.5f,
-			Animation.RELATIVE_TO_SELF, 0,
-			Animation.RELATIVE_TO_SELF, 0);
-	animation.setDuration(3000);
-	animation.setFillAfter(true);
-	animation.setInterpolator(new DecelerateInterpolator());
-	iv.startAnimation(animation);
+//从(0,0)平移到(parentWith/2,0)
+Animation animation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0,
+		Animation.RELATIVE_TO_PARENT, 0.5f,
+		Animation.RELATIVE_TO_SELF, 0,
+		Animation.RELATIVE_TO_SELF, 0);
+animation.setDuration(3000);
+animation.setFillAfter(true);
+animation.setInterpolator(new DecelerateInterpolator());
+iv.startAnimation(animation);
 ```
 
  2. RotateAnimation
  
 ``` java
-	//以自身为圆心，从180度旋转到360度
-	Animation animation = new RotateAnimation(180, 360,
-			Animation.RELATIVE_TO_SELF,0.5f,
-			Animation.RELATIVE_TO_SELF,0.5f);
-	animation.setDuration(3000);
-	animation.setFillAfter(true);
-	iv.startAnimation(animation);
+//以自身为圆心，从180度旋转到360度
+Animation animation = new RotateAnimation(180, 360,
+		Animation.RELATIVE_TO_SELF,0.5f,
+		Animation.RELATIVE_TO_SELF,0.5f);
+animation.setDuration(3000);
+animation.setFillAfter(true);
+iv.startAnimation(animation);
 ```
 
 
