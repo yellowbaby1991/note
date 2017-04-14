@@ -22,6 +22,7 @@
  1. TranslateAnimation
  
 ``` java
+	//从(0,0)平移到(parentWith/2,0)
 	Animation animation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0,
 			Animation.RELATIVE_TO_PARENT, 0.5f,
 			Animation.RELATIVE_TO_SELF, 0,
