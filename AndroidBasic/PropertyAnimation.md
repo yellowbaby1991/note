@@ -35,3 +35,19 @@ animator.setRepeatCount(1);
 animator.setRepeatMode(ValueAnimator.REVERSE);
 animator.start();
 ```
+　当然也可以添加监听来同步变化其他属性
+ 
+``` java
+ObjectAnimator animator = ObjectAnimator.ofFloat(iv, "x", 0, 100);
+animator.setDuration(2000);
+animator.setRepeatCount(1);
+animator.setRepeatMode(ValueAnimator.REVERSE);
+animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+	@Override
+	public void onAnimationUpdate(ValueAnimator animation) {
+		float value = (float) animation.getAnimatedValue();
+		iv.setY(value);
+	}
+});
+animator.start();
+```
