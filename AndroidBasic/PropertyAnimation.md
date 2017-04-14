@@ -93,6 +93,22 @@ animator.start();
 ```
 #### 使用java代码
 
+　常用方法如下：
+ 
+``` java
+//anim1 与 anim2 同时播放
+s.play(anim1).with(anim2);
+//anim3 在 anim2 播放完成后开始播放
+s.play(anim2).before(anim3);
+//anim4 在 anim3 播放完成后开始播放
+s.play(anim4).after(anim3);
+//顺序播放 anim1 anim2 anim3
+s.playSequentially(anim1,anim2,anim3);
+//同时播放 anim1 anim2 anim3
+s.playTogether(anim1,anim2,anim3)
+```
+
+
  1. 两个动画同时执行
 
 ``` java
@@ -120,8 +136,8 @@ public void togetherRun(View view)
 
 ``` java
 /**
-* 三个动画执行之后再执行一个动画
-* @param view
+ 1. 三个动画执行之后再执行一个动画
+ 2. @param view
 */
 public void playWithAfter(View view)
 {
@@ -148,3 +164,4 @@ public void playWithAfter(View view)
    animSet.start();
 }
 ```
+
