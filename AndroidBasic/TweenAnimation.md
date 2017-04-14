@@ -132,5 +132,14 @@ iv.startAnimation(set);
    </set>
  ``` 
  
- 
- 1. List item
+
+ 1. TranslateAnimation  
+
+
+``` stylus
+enter code here
+```
+
+
+     
+ 2. 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
