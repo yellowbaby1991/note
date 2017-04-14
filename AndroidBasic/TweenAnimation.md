@@ -131,7 +131,14 @@ iv.startAnimation(set);
    	</set>
    </set>
  ``` 
+　调用方法：
  
+``` java
+Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim);
+iv.startAnimation(animation);
+```
+
+
  
  
 
