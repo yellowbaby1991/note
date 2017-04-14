@@ -62,5 +62,13 @@ iv.startAnimation(animation);
  4. ScaleAnimation
 
 ``` java
-enter code here
+// x缩放到原来的一半，y放大到原来的两倍，以自己中心为轴心
+Animation animation = new ScaleAnimation(
+		1.0f,0.5f,
+		1.0f,2.0f,
+		Animation.RELATIVE_TO_SELF,0.5f,
+		Animation.RELATIVE_TO_SELF,0.5f);
+animation.setDuration(3000);
+animation.setFillAfter(true);
+iv.startAnimation(animation);
 ```
