@@ -74,4 +74,4 @@ animation.setFillAfter(true);
 iv.startAnimation(animation);
 ```
 
- 5. ScaleAnimation
+ 5. AnimationSet
