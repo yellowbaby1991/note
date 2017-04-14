@@ -47,3 +47,16 @@ iv.startAnimation(animation);
 
 
  3. AlphaAnimation
+ 
+``` java
+//动画的透明度从1渐变成0,然后再渐变回去
+Animation animation = new AlphaAnimation(1.0f,0);
+animation.setDuration(3000);
+animation.setFillAfter(true);
+animation.setRepeatCount(1);//重复次数
+animation.setRepeatMode(Animation.REVERSE);//重复效果反过来
+iv.startAnimation(animation);
+```
+
+
+ 4. 1
