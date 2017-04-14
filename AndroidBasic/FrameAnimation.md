@@ -44,7 +44,7 @@
 
 ```
 
- 3. Activity中start
+ 3. Activity中调用start
 
 ``` java
 public class MainActivity extends AppCompatActivity {
