@@ -75,3 +75,5 @@ Animator animator = AnimatorInflater.loadAnimator(this, R.animator.anim);
 animator.setTarget(iv);
 animator.start();
 ```
+
+### 属性动画集合AnimatorSet
