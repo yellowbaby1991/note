@@ -8,6 +8,7 @@
    | 缩放动画  |  scale   |    ScaleAnimation    | 防盗或者缩小View |
    | 旋转动画  |  rotate  |   RotateAnimation    |   旋转View   |
    | 透明度动画 |  scale   |    AlphaAnimation    | 改变View的透明度 |
+   | 动画集合 |  set   |    AnimationSet    | 动画集合 |   
    
    
 ### 常用API
