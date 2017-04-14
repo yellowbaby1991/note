@@ -73,3 +73,5 @@ animation.setDuration(3000);
 animation.setFillAfter(true);
 iv.startAnimation(animation);
 ```
+
+ 5. ScaleAnimation
