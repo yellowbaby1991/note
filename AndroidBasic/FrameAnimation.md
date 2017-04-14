@@ -24,5 +24,4 @@
 </animation-list>
 ```
 
-
  2. 1
