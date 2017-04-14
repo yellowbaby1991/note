@@ -77,3 +77,41 @@ animator.start();
 ```
 
 ### 属性动画集合AnimatorSet
+
+ 1. xml方式加载
+
+　同样是在animator文件夹下定义xml
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together"
+    android:repeatCount="1"
+    android:repeatMode="reverse">
+    <objectAnimator
+        android:duration="1000"
+        android:propertyName="x"
+        android:valueFrom="0"
+        android:valueTo="300"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:duration="2000"
+        android:propertyName="y"
+        android:valueFrom="0"
+        android:valueTo="200"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:duration="3000"
+        android:propertyName="rotationY"
+        android:valueFrom="0"
+        android:valueTo="180"
+        android:valueType="floatType" />
+</set>
+```
+　代码加载和上面一样
+
+``` java
+Animator animator = AnimatorInflater.loadAnimator(this, R.animator.anim);
+animator.setTarget(iv);
+animator.start();
+```
