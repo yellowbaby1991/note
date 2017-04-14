@@ -108,7 +108,6 @@ s.playSequentially(anim1,anim2,anim3);
 s.playTogether(anim1,anim2,anim3)
 ```
 
-
  1. 两个动画同时执行
 
 ``` java
