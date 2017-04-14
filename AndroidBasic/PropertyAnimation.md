@@ -108,10 +108,11 @@ animator.start();
         android:valueType="floatType" />
 </set>
 ```
-　代码加载和上面一样
+　加载方法和上面一样
 
 ``` java
 Animator animator = AnimatorInflater.loadAnimator(this, R.animator.anim);
 animator.setTarget(iv);
 animator.start();
 ```
+ 1. xml方式加载
