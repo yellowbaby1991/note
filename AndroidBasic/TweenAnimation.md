@@ -59,4 +59,5 @@ iv.startAnimation(animation);
 ```
 
 
- 4. 1
+ 4. ScaleAnimation
+ 5. 
