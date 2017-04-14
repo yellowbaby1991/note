@@ -52,35 +52,10 @@ animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 animator.start();
 ```
 
-### 使用xml配置属性动画
-
- 1. 在res/animator下创建xml
- 
-``` xml
-<?xml version="1.0" encoding="utf-8"?>
-<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="1000"
-    android:propertyName="x"
-    android:valueFrom="0"
-    android:valueTo="100"
-    android:valueType="floatType" >
-</objectAnimator>
-
-```
-
- 2. java代码中
-
-``` java
-Animator animator = AnimatorInflater.loadAnimator(this, R.animator.anim);
-animator.setTarget(iv);
-animator.start();
-```
-
 ### 属性动画集合AnimatorSet
+#### 使用xml方式
 
- 1. 使用xml方式
-
-　同样是在animator文件夹下定义xml
+ 1. 同样是在animator文件夹下定义xml
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -108,11 +83,68 @@ animator.start();
         android:valueType="floatType" />
 </set>
 ```
-　加载方法和上面一样
+
+ 2. 加载动画集合
 
 ``` java
 Animator animator = AnimatorInflater.loadAnimator(this, R.animator.anim);
 animator.setTarget(iv);
 animator.start();
 ```
- 2. 使用java代码
+#### 使用java代码
+
+ 1. 两个动画同时执行
+
+``` java
+ /**
+* 两个动画同时执行
+* @param view
+*/
+public void togetherRun(View view)
+{
+   ObjectAnimator anim1 = ObjectAnimator.ofFloat(mBlueBall, "scaleX",
+           1.0f, 2f);
+   ObjectAnimator anim2 = ObjectAnimator.ofFloat(mBlueBall, "scaleY",
+           1.0f, 2f);
+   AnimatorSet animSet = new AnimatorSet();
+   animSet.setDuration(2000);
+   animSet.setInterpolator(new LinearInterpolator());
+   //两个动画同时执行
+   animSet.playTogether(anim1, anim2);
+   animSet.start();
+}
+```
+
+
+ 2. 按照定制顺序执行
+
+``` java
+/**
+* 三个动画执行之后再执行一个动画
+* @param view
+*/
+public void playWithAfter(View view)
+{
+   float cx = mBlueBall.getX();
+
+   ObjectAnimator anim1 = ObjectAnimator.ofFloat(mBlueBall, "scaleX",
+           1.0f, 2f);
+   ObjectAnimator anim2 = ObjectAnimator.ofFloat(mBlueBall, "scaleY",
+           1.0f, 2f);
+   ObjectAnimator anim3 = ObjectAnimator.ofFloat(mBlueBall,
+           "x",  cx ,  0f);
+   ObjectAnimator anim4 = ObjectAnimator.ofFloat(mBlueBall,
+           "x", cx);
+
+   /**
+    * anim1，anim2,anim3同时执行 
+    * anim4接着执行 
+    */
+   AnimatorSet animSet = new AnimatorSet();
+   animSet.play(anim1).with(anim2);
+   animSet.play(anim2).with(anim3);
+   animSet.play(anim4).after(anim3);
+   animSet.setDuration(1000);
+   animSet.start();
+}
+```
