@@ -68,5 +68,4 @@ animator.start();
 
 ```
 
-
  2. 1
