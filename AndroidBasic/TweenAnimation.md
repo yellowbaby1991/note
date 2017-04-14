@@ -138,10 +138,6 @@ Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim);
 iv.startAnimation(animation);
 ```
 
-
- 
- 
-
  1. TranslateAnimation  
 
 ``` xml
