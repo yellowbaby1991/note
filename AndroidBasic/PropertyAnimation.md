@@ -27,4 +27,11 @@ animator.start();
 
 ### ObjectAnimator
 　相比于ValueAnimator，ObjectAnimator可能才是我们最常接触到的类，因为ValueAnimator只不过是对值进行了一个平滑的动画过渡，而ObjectAnimator则就不同了，它是可以直接对任意对象的任意属性进行动画操作的，比如说View的alpha属性
- 
+
+``` java
+ObjectAnimator animator = ObjectAnimator.ofFloat(iv, "alpha", 0, 1.0f);
+animator.setDuration(2000);
+animator.setRepeatCount(1);
+animator.setRepeatMode(ValueAnimator.REVERSE);
+animator.start();
+```
