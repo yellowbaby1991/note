@@ -126,9 +126,7 @@ iv.startAnimation(set);
          android:toDegrees="float"		//旋转结束的角度
          android:pivotX="float"		//旋转轴点的x坐标
          android:pivotY="float" 		//旋转轴点的x坐标/>
-       <set>
      	  ...
-   	</set>
    </set>
  ``` 
 　调用方法：
