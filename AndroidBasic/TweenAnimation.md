@@ -14,4 +14,4 @@
 
  1. setDuration(2000)-设置动画时间
  2. setFillAfter(true)-设置动画停留留在最后一帧
- 3. 
+ 3. setInterpolator(new AccelerateDecelerateInterpolator())-设置加速器器
