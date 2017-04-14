@@ -24,4 +24,25 @@
 </animation-list>
 ```
 
- 2. 1
+ 2. 布局文件src引用
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.yellow.frameanimation.MainActivity">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:src="@drawable/my_animlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+
+```
+
+
+ 3. 1
