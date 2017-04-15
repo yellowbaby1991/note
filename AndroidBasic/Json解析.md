@@ -162,3 +162,7 @@ public static String obj2Json(Object obj) {
  
  
 ### 使用FastJson解析JSON
+　[FastJson][1]是阿里巴巴的一个JSON处理包
+
+
+  [1]: https://github.com/alibaba/fastjson
