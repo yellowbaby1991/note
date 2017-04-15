@@ -170,7 +170,6 @@ public static String obj2Json(Object obj) {
 compile 'com.alibaba:fastjson:1.1.56.android'
 ```
 
-
  2. 1
 
   [1]: https://github.com/alibaba/fastjson
