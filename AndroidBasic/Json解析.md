@@ -10,6 +10,5 @@
 {"firstName":"Brett","lastName":"McLaughlin","email":"aaaa"}
 ```
 
-
  2. 简单队列
 
