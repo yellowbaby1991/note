@@ -41,7 +41,6 @@ Logger.t("App").i(userName);
 Logger.e(userName);
 ```
 
-
  4. 1
 
   [1]: https://github.com/orhanobut/logger
