@@ -176,12 +176,19 @@ UserBean userBean = JSON.parseObject(jsonObjectString,UserBean.class);
 
  2. 解析队列
  
-
 ``` java
 List<UserBean> userBeans = JSON.parseArray(jsonObjectString,UserBean.class);
 ```
 
 
  3. 对象/数组转JSON
+
+``` java
+// 对象/数组 转换成JSON
+public static String obj2Json(Object obj) {
+return JSON.toJSONString(obj);
+}
+```
+
 
   [1]: https://github.com/alibaba/fastjson
