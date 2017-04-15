@@ -99,5 +99,18 @@ dependencies {
 }
 ```
 
+ 1. 解析单个对象
+
+``` json
+{
+  "name": "yellow",
+  "sex": "男",
+  "age": "25"
+}
+```
+1
+
+
+ 2. 1
 
  
