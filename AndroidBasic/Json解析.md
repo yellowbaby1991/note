@@ -2,6 +2,9 @@
 * [JSON的格式](#json的格式)
 * [使用JSONObject解析JSON](#使用jsonobject解析json)
 * [使用Gson解析JSON](#使用gson解析json)
+	* [Gson基本用法](#gson基本用法)
+	* [使用GsonFormat快速生成javabean代码](#使用gsonformat快速生成javabean代码)
+* [使用FastJson解析JSON](#使用fastjson解析json)
 
 ### 什么是JSON
 　JSON(JavaScript Object Notation) 是一种轻量量级的数据交换格式。 其采用完全独立于语言的文本格式，但是也使用了了类似于C语言家族的习惯。这些特性使JSON成为理理想的数据交换语言。 易易于人阅读和编写，同时也易易于机器器解析和生成(一般用于提升网络传输速率)
