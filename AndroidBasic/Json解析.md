@@ -39,10 +39,9 @@
 ``` json
 {
   "userbean": {
-    "Uid": "100196",
-    "Showname": "\u75af\u72c2\u7684\u7334\u5b50",
-    "Avtar": null,
-    "State": 1
+    "name": "yellow",
+    "sex": "男",
+    "age": "25"
   }
 }
 ```
