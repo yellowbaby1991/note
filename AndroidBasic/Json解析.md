@@ -157,6 +157,6 @@ public static String obj2Json(Object obj) {
 #### 使用GsonFormat快速生成javabean代码
 
  1. 安装：setting-plugin-GsonFormat
- 2. 
+ 2. 使用：
  　
  
