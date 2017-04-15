@@ -115,6 +115,31 @@ UserBean userBean = gson.fromJson(jsonObjectString,UserBean.class);
 ```
 
 
- 2. 1
+ 2. 解析队列
+ 
+``` json
+[
+  {
+    "name": "yellow",
+    "sex": "男",
+    "age": "25"
+  },
+  {
+    "name": "baby",
+    "sex": "男",
+    "age": "25"
+  }
+]
+```
+
+``` java
+Gson gson = new Gson();
+List<UserBean> userBeans = gson.fromJson(jsonObjectString, new TypeToken<List<UserBean>>() {
+}.getType());
+Toast.makeText(this, userBeans.toString(), Toast.LENGTH_SHORT).show();
+```
+
+
+ 3. 1
 
  
