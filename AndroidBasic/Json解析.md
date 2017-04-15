@@ -12,3 +12,24 @@
 
  2. 简单队列
 
+``` json
+[
+  {
+    "firstName": "Brett",
+    "lastName": "McLaughlin",
+    "email": "aaaa"
+  },
+  {
+    "firstName": "Jason",
+    "lastName": "Hunter",
+    "email": "bbbb"
+  },
+  {
+    "firstName": "Elliotte",
+    "lastName": "Harold",
+    "email": "cccc"
+  }
+]
+```
+
+
