@@ -48,10 +48,10 @@
 
 
 ``` java
-            JSONObject jsonObject = new JSONObject(jsonObjectString).getJSONObject("userbean");
-            String name = jsonObject.getString("name");
-            String sex = jsonObject.getString("sex");
-            String age = jsonObject.getString("age");
+JSONObject jsonObject = new JSONObject(jsonObjectString).getJSONObject("userbean");
+String name = jsonObject.getString("name");
+String sex = jsonObject.getString("sex");
+String age = jsonObject.getString("age");
 ```
 
 
