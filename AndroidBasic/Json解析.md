@@ -177,7 +177,7 @@ UserBean userBean = JSON.parseObject(jsonObjectString,UserBean.class);
  2. 解析队列
  
 
-``` stylus
+``` java
 List<UserBean> userBeans = JSON.parseArray(jsonObjectString,UserBean.class);
 ```
 
