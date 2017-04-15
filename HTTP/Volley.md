@@ -3,6 +3,7 @@
 * [请求String类型数据](#请求string类型数据)
 * [请求json数据](#请求json数据)
 * [请求图片数据](#请求图片数据)
+* [封装的工具类](#封装的工具类)
 
 ### 简介
 　　在2013年Google I/O大会上推出了一个新的网络通信框架——Volley。Volley可是说是把AsyncHttpClient和Universal-Image-Loader的优点集于了一身，既可以像AsyncHttpClient一样非常简单地进行HTTP通信，也可以像Universal-Image-Loader一样轻松加载网络上的图片
