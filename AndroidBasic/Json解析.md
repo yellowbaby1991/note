@@ -160,3 +160,5 @@ public static String obj2Json(Object obj) {
  2. 使用：创建一个空的JAVA类，然后generate，把json拷贝进去即可
  　
  
+ 
+### 使用FastJson解析JSON
