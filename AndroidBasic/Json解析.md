@@ -48,13 +48,10 @@
 
 
 ``` java
-String jsonObjectString = "{\"userbean\":\n" +
-		"{\"Uid\":\"100196\",\"Showname\":\"\\u75af\\u72c2\\u7684\\u7334\\u5b50\",\"Avtar\":null,\"State\":1}}";
-JSONObject jsonObject = new JSONObject(jsonObjectString).getJSONObject("userbean");
-String Uid = jsonObject.getString("Uid");
-String Showname = jsonObject.getString("Showname");
-String Avtar = jsonObject.getString("Avtar");
-String State = jsonObject.getString("State");
+            JSONObject jsonObject = new JSONObject(jsonObjectString).getJSONObject("userbean");
+            String name = jsonObject.getString("name");
+            String sex = jsonObject.getString("sex");
+            String age = jsonObject.getString("age");
 ```
 
 
