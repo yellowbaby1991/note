@@ -24,6 +24,24 @@ String userName = "Jerry";
 Logger.i(userName);
 ```
 
- 2. 打印变量
+ 2. 设置标签
+ ``` java
+Logger.init("MainActivity");
+String userName = "Jerry";
+Logger.i(userName);
+```
+ 3. 给当前打印的换一个单独的tag名
+ 
+``` java
+Logger.init("MainActivity");
+String userName = "Jerry";
+Logger.i(userName);
+// 给当前打印的换一个单独的tag名
+Logger.t("App").i(userName);
+Logger.e(userName);
+```
+
+
+ 4. 1
 
   [1]: https://github.com/orhanobut/logger
