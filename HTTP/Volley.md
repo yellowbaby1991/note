@@ -91,3 +91,26 @@ ImageRequest imageRequest = new ImageRequest(
  3. 将request压入队列中
 
   [1]: http://download.csdn.net/detail/sinyu890807/7152015
+### 封装的工具类
+
+``` java
+
+public class VolleyUtil {
+
+    public static void requestJson(Context context, String url, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+        RequestQueue mQueue = Volley.newRequestQueue(context);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null,
+                listener,
+                errorListener);
+        mQueue.add(jsonObjectRequest);
+    }
+
+    public static void requestImage(Context context, String url, Response.Listener<Bitmap> listener, Response.ErrorListener errorListener) {
+        RequestQueue mQueue = Volley.newRequestQueue(context);
+        ImageRequest imageRequest = new ImageRequest(url,
+                listener, 0, 0, Bitmap.Config.RGB_565,
+                errorListener);
+        mQueue.add(imageRequest);
+    }
+}
+```
