@@ -57,4 +57,21 @@ String age = jsonObject.getString("age");
 
  2. 解析队列
  
+``` json
+{
+  "userlist": [
+    {
+      "name": "yellow",
+      "sex": "男",
+      "age": "25"
+    },
+    {
+      "name": "baby",
+      "sex": "男",
+      "age": "25"
+    }
+  ]
+}
+```
+
 
