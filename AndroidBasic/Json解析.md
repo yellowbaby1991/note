@@ -90,6 +90,15 @@ for (int i = 0; i < jsonArray.length(); i++) {
 
 
 ### 使用Gson解析JSON
-　Gson是Google提供的一个针对json的开发包，方便Bean和JSON之间的互转
+　Gson是Google提供的一个针对json的开发包，方便Bean和JSON之间的互转，使用需要添加依赖
  
+``` xml
+dependencies {
+ 	...
+    compile 'com.google.code.gson:gson:2.7'
+    ...
+}
+```
+
+
  
