@@ -189,7 +189,7 @@ List<UserBean> userBeans = JSON.parseArray(jsonObjectString,UserBean.class);
 ``` java
 // 对象/数组 转换成JSON
 public static String obj2Json(Object obj) {
-return JSON.toJSONString(obj);
+   return JSON.toJSONString(obj);
 }
 ```
 
