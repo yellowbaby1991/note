@@ -140,6 +140,14 @@ Toast.makeText(this, userBeans.toString(), Toast.LENGTH_SHORT).show();
 ```
 
 
- 3. 1
+ 3. 对象/数组转JSON
+ 
+``` java
+public static String obj2Json(Object obj) {
+Gson gson = new Gson();
+return gson.toJson(obj);
+}
+```
+
 
  
