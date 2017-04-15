@@ -41,6 +41,22 @@ Logger.t("App").i(userName);
 Logger.e(userName);
 ```
 
- 4. 1
+ 4. 打印多种类型数据
+
+``` java
+Logger.d("hello");
+Logger.e("hello");
+Logger.w("hello");
+Logger.v("hello");
+Logger.wtf("hello");
+// 打印json格式
+String json = createJson().toString();
+Logger.json(json);
+// 打印xml格式
+Logger.xml(XML_CONTENT);
+// 打印自定义级别、tag、信息等格式日志
+Logger.log(DEBUG, "tag", "message", throwable);
+```
+
 
   [1]: https://github.com/orhanobut/logger
