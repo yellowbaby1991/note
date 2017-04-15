@@ -57,6 +57,8 @@ Logger.xml(XML_CONTENT);
 // 打印自定义级别、tag、信息等格式日志
 Logger.log(DEBUG, "tag", "message", throwable);
 ```
-
+ 
+ 5. 打印数组、List、map等对象数据
+ 6. 
 
   [1]: https://github.com/orhanobut/logger
