@@ -108,7 +108,6 @@ dependencies {
   "age": "25"
 }
 ```
-1
 
 ``` java
 Gson gson = new Gson();
