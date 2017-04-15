@@ -98,7 +98,7 @@ for (int i = 0; i < jsonArray.length(); i++) {
 
 
 ### 使用Gson解析JSON
-　[Gson][1]是Google提供的一个针对json的开发包，方便Bean和JSON之间的互转，使用需要添加依赖
+　[Gson][1] 是Google提供的一个针对json的开发包，方便Bean和JSON之间的互转，使用需要添加依赖
  
 ``` xml
 dependencies {
@@ -165,7 +165,7 @@ public static String obj2Json(Object obj) {
  
  
 ### 使用FastJson解析JSON
-　[FastJson][2]是阿里巴巴的一个JSON处理包，号称速度最快，无依赖，配置方法如下：
+　[FastJson][2] 是阿里巴巴的一个JSON处理包，号称速度最快，无依赖，配置方法如下：
  
 ``` xml
 compile 'com.alibaba:fastjson:1.1.56.android'
