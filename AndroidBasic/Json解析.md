@@ -110,6 +110,11 @@ dependencies {
 ```
 1
 
+``` java
+Gson gson = new Gson();
+UserBean userBean = gson.fromJson(jsonObjectString,UserBean.class);
+```
+
 
  2. 1
 
