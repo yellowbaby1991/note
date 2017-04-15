@@ -96,7 +96,6 @@ for (int i = 0; i < jsonArray.length(); i++) {
 dependencies {
  	...
     compile 'com.google.code.gson:gson:2.7'
-    ...
 }
 ```
 
