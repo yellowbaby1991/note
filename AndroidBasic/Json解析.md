@@ -149,8 +149,8 @@ Toast.makeText(this, userBeans.toString(), Toast.LENGTH_SHORT).show();
  
 ``` java
 public static String obj2Json(Object obj) {
-Gson gson = new Gson();
-return gson.toJson(obj);
+	Gson gson = new Gson();
+	return gson.toJson(obj);
 }
 ```
 
