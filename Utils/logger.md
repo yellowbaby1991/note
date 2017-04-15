@@ -59,6 +59,17 @@ Logger.log(DEBUG, "tag", "message", throwable);
 ```
  
  5. 打印数组、List、map等对象数据
- 6. 
+ 
+``` java
+String[] names = {"Jerry", "Emily", "小五", "hongyang", "七猫"};
+Logger.d(names);  // 打印字符数组
+List<User> users = new ArrayList<>();
+for (int i = 0; i < names.length; i++) {    
+    User user = new User(names[i], 10 + i);
+    users.add(user);
+}
+Logger.d(users);  // 打印List
+```
+
 
   [1]: https://github.com/orhanobut/logger
