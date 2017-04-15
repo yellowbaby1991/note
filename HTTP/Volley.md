@@ -96,22 +96,39 @@ ImageRequest imageRequest = new ImageRequest(
 
 ``` java
 
-public class VolleyUtil {
+public class NetworkUtil {
 
-    public static void requestJson(Context context, String url, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        RequestQueue mQueue = Volley.newRequestQueue(context);
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null,
-                listener,
-                errorListener);
-        mQueue.add(jsonObjectRequest);
-    }
+	private static RequestQueue sQueue;
 
-    public static void requestImage(Context context, String url, Response.Listener<Bitmap> listener, Response.ErrorListener errorListener) {
-        RequestQueue mQueue = Volley.newRequestQueue(context);
-        ImageRequest imageRequest = new ImageRequest(url,
-                listener, 0, 0, Bitmap.Config.RGB_565,
-                errorListener);
-        mQueue.add(imageRequest);
-    }
+	public NetworkUtil(Context context) {
+		if (sQueue == null) {
+			sQueue = Volley.newRequestQueue(context);
+		}
+	}
+
+	public void doGet(String name, String pwd, Listener<String> listener) {
+		StringRequest request = new StringRequest(url, listener, null);
+		sQueue.add(request);
+	}
+
+	public void loadImg(String url, ImageView iv) {
+		ImageCache cache=new ImageCache() {
+			
+			@Override
+			public void putBitmap(String url, Bitmap bitmap) {
+				
+			}
+			
+			@Override
+			public Bitmap getBitmap(String url) {
+				return null;
+			}
+		};
+		ImageLoader loader = new ImageLoader(sQueue, cache);
+		ImageListener imageListener = loader.getImageListener(iv,
+				R.drawable.ic_launcher, R.drawable.ic_launcher);
+		loader.get(url, imageListener);
+	}
+
 }
 ```
