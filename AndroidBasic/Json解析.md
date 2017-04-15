@@ -75,16 +75,16 @@ String age = jsonObject.getString("age");
 ```
 
 ``` java
-            JSONArray jsonArray = new JSONObject(jsonObjectString).getJSONArray("userlist");
-            List<User> userList = new ArrayList<>();
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject = (JSONObject) jsonArray.opt(i);
-                String name = jsonObject.getString("name");
-                String sex = jsonObject.getString("sex");
-                String age = jsonObject.getString("age");
-                User user = new User(name, sex, age);
-                userList.add(user);
-            }
+JSONArray jsonArray = new JSONObject(jsonObjectString).getJSONArray("userlist");
+List<User> userList = new ArrayList<>();
+for (int i = 0; i < jsonArray.length(); i++) {
+	JSONObject jsonObject = (JSONObject) jsonArray.opt(i);
+	String name = jsonObject.getString("name");
+	String sex = jsonObject.getString("sex");
+	String age = jsonObject.getString("age");
+	User user = new User(name, sex, age);
+	userList.add(user);
+}
 ```
 
 
