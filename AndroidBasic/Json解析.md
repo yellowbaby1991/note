@@ -163,6 +163,14 @@ public static String obj2Json(Object obj) {
  
 ### 使用FastJson解析JSON
 　[FastJson][1]是阿里巴巴的一个JSON处理包，号称速度最快，无依赖
+ 
+ 1. 配置方法
+ 
+``` xml
+compile 'com.alibaba:fastjson:1.1.56.android'
+```
 
+
+ 2. 1
 
   [1]: https://github.com/alibaba/fastjson
