@@ -3,6 +3,12 @@
  
 ### 使用方法
 
- 1. List item
+ 1. 添加依赖
+> build.gradle
+``` gradle
+debugCompile 'im.dino:dbinspector:3.4.1@aar'
+```
+
+ 2. 运行程序后会自动生成一个和应用同名的数据库文件，点击打开后就可以查看
 
   [1]: https://github.com/infinum/android_dbinspector
