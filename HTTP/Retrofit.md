@@ -19,8 +19,21 @@ dependencies {
  3. 发送请求
  4. 处理结果
 
-> Get请求
+> Get请求 
 
- 1. List item
+ 1. 创建接口GitHubApi
+ 
+``` java
+public interface GitHubApi {
+
+    // https://api.github.com/repos/square/retrofit/contributors
+    @GET("repos/{owner}/{repo}/contributors")
+    Call<ResponseBody> contributorsBySimpleGetCall(@Path("owner") String owner, @Path("repo") String repo);
+}
+
+```
+
+
+ 2. 1
 
   [1]: https://github.com/square/retrofit
