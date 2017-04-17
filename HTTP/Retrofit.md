@@ -32,7 +32,6 @@ public interface GitHubApi {
 
 ```
 
-
  2. 1
 
   [1]: https://github.com/square/retrofit
