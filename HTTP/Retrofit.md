@@ -14,6 +14,9 @@ dependencies {
 
 > 基本使用步骤
 
- 1. List item
+ 1. 创建Retrofit对象
+ 2. 创建访问请求
+ 3. 发送请求
+ 4. 处理结果
 
   [1]: https://github.com/square/retrofit
