@@ -35,7 +35,7 @@ public interface GitHubApi {
 ``` java
 public interface GitHubApi {
     // https://api.github.com/repos/square/retrofit/contributors
-    @Post("repos/{owner}/{repo}/contributors")
+    @POST("repos/{owner}/{repo}/contributors")
     Call<ResponseBody> contributorsBySimpleGetCall(@Path("owner") String owner, @Path("repo") String repo);
 }
 
