@@ -25,7 +25,6 @@ dependencies {
  
 ``` java
 public interface GitHubApi {
-
     // https://api.github.com/repos/square/retrofit/contributors
     @GET("repos/{owner}/{repo}/contributors")
     Call<ResponseBody> contributorsBySimpleGetCall(@Path("owner") String owner, @Path("repo") String repo);
