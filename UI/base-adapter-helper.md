@@ -51,6 +51,38 @@ public class ModuleBean {
 </LinearLayout>
 ```
 
- 3. 1
+ 3. 快速创建适配器
+ 
+> MainActivity.java
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private ListView mListView;
+    private List<ModuleBean> mModuleBeanList;
+    private QuickAdapter<ModuleBean> mAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mListView = (ListView) findViewById(R.id.lv);
+
+        mModuleBeanList = DataUtils.getAdapterData();
+
+        if (mAdapter == null) {
+            mAdapter = new QuickAdapter<ModuleBean>(this, R.layout.item, mModuleBeanList) {
+                @Override
+                protected void convert(BaseAdapterHelper helper, ModuleBean item) {
+                    helper.setText(R.id.name_tv, item.getModulename()).setImageUrl(R.id.img_iv, item.getImgurl()).setText(R.id.description_tv, item.getDescription());
+                }
+            };
+        }
+        mListView.setAdapter(mAdapter);
+    }
+}
+```
+
 
   [1]: https://github.com/JoanZapata/base-adapter-helper
