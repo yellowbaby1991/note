@@ -58,7 +58,7 @@ public interface GitHubApi {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
+               //5. 处理结果
             }
 
             @Override
