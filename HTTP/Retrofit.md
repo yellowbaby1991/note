@@ -45,27 +45,27 @@ public interface GitHubApi {
 > 发送请求
 
 ``` java
-        //1. 创建Retrofit对象
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.github.com/").build();
+//1. 创建Retrofit对象
+Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.github.com/").build();
 
-        //2. 创建代理类
-        GitHubApi repo = retrofit.create(GitHubApi.class);
+//2. 创建代理类
+GitHubApi repo = retrofit.create(GitHubApi.class);
 
-        //3. 创建访问请求
-        Call<ResponseBody> call = repo.contributorsBySimpleGetCall("square","retrofit");
+//3. 创建访问请求
+Call<ResponseBody> call = repo.contributorsBySimpleGetCall("square","retrofit");
 
-        //4. 发送请求
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-               //5. 处理结果
-            }
+//4. 发送请求
+call.enqueue(new Callback<ResponseBody>() {
+	@Override
+	public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+	   //5. 处理结果
+	}
 
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+	@Override
+	public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-            }
-        });
+	}
+});
 ```
 
 
