@@ -175,5 +175,50 @@ public interface MovieService {
 }
 ```
 
+> MainActivity.java
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @BindView(R.id.click_me_bt)
+    Button mClickMe;
+    @BindView(R.id.result_tv)
+    TextView mResultTv;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.click_me_bt)
+    public void onClick() {
+        getMovie();
+    }
+
+    //进行网络请求
+    private void getMovie() {
+        String baseUrl = "https://api.douban.com/v2/movie/";
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();
+        MovieService movieService = retrofit.create(MovieService.class);
+        Call<MovieEntity> call = movieService.getTopMovie(0, 10);
+        call.enqueue(new Callback<MovieEntity>() {
+            @Override
+            public void onResponse(Call<MovieEntity> call, Response<MovieEntity> response) {
+                mResultTv.setText(response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<MovieEntity> call, Throwable t) {
+                t.printStackTrace();
+                mResultTv.setText(t.getMessage());
+            }
+        });
+
+    }
+
+```
+
 
   [1]: https://github.com/square/retrofit
