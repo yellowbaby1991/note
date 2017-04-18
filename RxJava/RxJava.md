@@ -264,4 +264,4 @@ Observable.create(new OnSubscribe<Drawable>() {
 > Scheduler常用API
 
  - Schedulers.immediate(): 直接在当前线程运行，相当于不指定线程。这是默认的 Scheduler。
- - 
+ - Schedulers.newThread(): 总是启用新线程，并在新线程执行操作。
