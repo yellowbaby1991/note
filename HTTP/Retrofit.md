@@ -1,3 +1,8 @@
+* [概述](#概述)
+* [配置方法](#配置方法)
+* [使用方法](#使用方法)
+* [Retrofit+GsonConverterFactory](#retrofitgsonconverterfactory)
+
 ### 概述
 　[Retrofit][1]　是现在最流行的网络请求框架，同样出自Square公司，对okhttp做了一层封装。把网络请求都交给给了Okhttp，我们只需要通过简单的配置就能使用retrofit来进行网络请求了，其主要作者是Android大神JakeWharton
 
