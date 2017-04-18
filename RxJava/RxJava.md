@@ -164,6 +164,13 @@ Observable observable = Observable.from(words);
 ```
 
  3. 创建被观察者Observable
+ 
+``` java
+observable.subscribe(observer);
+// 或者：
+observable.subscribe(subscriber);
+```
+
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
