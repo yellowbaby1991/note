@@ -271,13 +271,31 @@ Observable.create(new OnSubscribe<Drawable>() {
 > 举例
 
 ``` java
-Observable.just(1, 2, 3, 4)
-    .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
-    .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
-    .subscribe(new Action1<Integer>() {
-        @Override
-        public void call(Integer number) {
-            Log.d(tag, "number:" + number);
-        }
-    });
+int drawableRes = ...;
+ImageView imageView = ...;
+Observable.create(new OnSubscribe<Drawable>() {
+    @Override
+    public void call(Subscriber<? super Drawable> subscriber) {
+        Drawable drawable = getTheme().getDrawable(drawableRes));
+        subscriber.onNext(drawable);
+        subscriber.onCompleted();
+    }
+})
+.subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+.observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
+.subscribe(new Observer<Drawable>() {
+    @Override
+    public void onNext(Drawable drawable) {
+        imageView.setImageDrawable(drawable);
+    }
+
+    @Override
+    public void onCompleted() {
+    }
+
+    @Override
+    public void onError(Throwable e) {
+        Toast.makeText(activity, "Error!", Toast.LENGTH_SHORT).show();
+    }
+});
 ```
