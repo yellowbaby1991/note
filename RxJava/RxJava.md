@@ -81,7 +81,7 @@ Observable.from(folders)
 
 ### 基本实现
 
- 1. 创建Observer
+ 1. 创建观察者Observer
 
 ``` java
 Observer<String> observer = new Observer<String>() {
@@ -123,7 +123,7 @@ Subscriber<String> subscriber = new Subscriber<String>() {
 ```
 
 
- 2. 创建Observable
+ 2. 创建被观察者Observable
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
