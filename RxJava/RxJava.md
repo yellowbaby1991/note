@@ -155,7 +155,8 @@ Observable observable = Observable.just("Hello", "Hi", "Aloha");
 > 偷懒模式二
 
 ``` java
-Observable observable = Observable.just("Hello", "Hi", "Aloha");
+String[] words = {"Hello", "Hi", "Aloha"};
+Observable observable = Observable.from(words);
 // 将会依次调用：
 // onNext("Hello");
 // onNext("Hi");
