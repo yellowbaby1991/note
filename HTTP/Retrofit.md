@@ -166,5 +166,14 @@ public class MovieEntity {
 }
 ```
 
+> MovieService.java
+
+``` java
+public interface MovieService {
+    @GET("top250")
+    Call<MovieEntity> getTopMovie(@Query("start") int start,@Query("count") int count);
+}
+```
+
 
   [1]: https://github.com/square/retrofit
