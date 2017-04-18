@@ -117,6 +117,43 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
 ```
 
+> activity_main.xml
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+
+    <EditText
+        android:id="@+id/username_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="用户名" />
+
+    <EditText
+        android:id="@+id/password_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="密码" />
+
+    <Button
+        android:id="@+id/login_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登陆" />
+    
+</LinearLayout>
+
+```
+
+
  4. presenter层
 
 > ILoginPresenter.java
