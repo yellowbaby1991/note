@@ -13,4 +13,8 @@
  4. Presenter被抽象成接口，可以有多种具体的实现，所以方便进行单元测试
  5. 把业务逻辑抽到Presenter中去，避免后台线程引用着Activity导致Activity的资源无法被系统回收从而引起内存泄露和OOM
 
+
+### 概述
+
+
   [1]: https://segmentfault.com/image?src=http://7xih5c.com1.z0.glb.clouddn.com/15-10-12/94032090.jpg&objectId=1190000003927200&token=62cb9888184d6fe02a4b3ae814ca17e8
