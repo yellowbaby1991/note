@@ -366,3 +366,15 @@ dependencies {
 }
 ```
  2. 创建retrofit服务接口
+ 
+> MovieService.java
+
+``` java
+public interface MovieService {
+    @GET("top250")
+    Observable<MovieEntity> getTopMovie(@Query("start") int start, @Query("count") int count);
+}
+```
+
+
+ 3. 1
