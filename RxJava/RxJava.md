@@ -67,8 +67,6 @@ Observable.from(folders)
  
 
 
-  [1]: https://github.com/ReactiveX/RxJava
-  
 ### 基本概念
 
  1. Observable：被观察者
@@ -77,3 +75,11 @@ Observable.from(folders)
  4. event：事件
 
 　Observable和Observer通过subscribe()方法来实现订阅关系，从而Observable可以在需要的时候发出事件通知Observer
+
+> 观察者模式图
+
+![enter description here][2]
+
+
+  [1]: https://github.com/ReactiveX/RxJava
+  [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
