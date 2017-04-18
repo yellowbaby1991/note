@@ -74,7 +74,7 @@ call.enqueue(new Callback<ResponseBody>() {
 ```
 
 ### Retrofit+GsonConverterFactory
-
+　使用GsonConverterFactory可以直接将返回的json转换成对象
 > app.build
 
 ``` gradle
