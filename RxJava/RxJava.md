@@ -65,7 +65,7 @@ Observable.from(folders)
 　所以， RxJava 好在哪？就好在简洁，好在那把什么复杂逻辑都能穿成一条线的简洁
 
 
-### 基本概念
+### 观察者模式基本概念
 > 观察者模式四大基本元素
 
  1. Observable：可观察者，即被观察者
@@ -79,7 +79,7 @@ Observable.from(folders)
 
 ![enter description here][2]
 
-### 基本实现
+### 观察者模式基本实现
 
  1. 创建观察者Observer
 
@@ -210,7 +210,7 @@ observable.subscribe(subscriber);
 
 ![enter description here][3]
 
-### 两个简单的例子
+### 观察者模式两个简单的例子
 
  1. 打印字符串数组
  
