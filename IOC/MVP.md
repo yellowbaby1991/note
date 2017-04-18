@@ -125,8 +125,32 @@ public interface ILoginPresenter {
 > LoginPresenterCompl.java
 
 ``` java
-public interface ILoginPresenter {
-    void doLogin(String name,String password);
+public class LoginPresenterCompl implements ILoginPresenter {
+
+    ILoginView mILoginView;
+    Handler mHandler;
+
+    public LoginPresenterCompl(ILoginView iLoginView) {
+        this.mILoginView = iLoginView;
+        mHandler = new Handler(Looper.getMainLooper());
+    }
+
+    private User findFromServer() {
+        return new User("yellowbaby", "123456");
+    }
+
+    @Override
+    public void doLogin(String name, String password) {
+        User user = findFromServer();
+        final boolean result = user.getName().equals(name) && user.getPassword().equals(password);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mILoginView.onLoginResult(result);
+            }
+        }, 1000);
+
+    }
 }
 ```
 
