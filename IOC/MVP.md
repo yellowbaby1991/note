@@ -76,8 +76,39 @@ public interface ILoginView {
 > LoginActivity.java
 
 ``` java
-public interface ILoginView {
-    public void onLoginResult(boolean result);
+public class LoginActivity extends AppCompatActivity implements ILoginView {
+
+    @BindView(R.id.username_et)
+    EditText mUsernameEt;
+    @BindView(R.id.password_et)
+    EditText mPasswordEt;
+    @BindView(R.id.login_bt)
+    Button mLoginBt;
+
+    ILoginPresenter loginPresenter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        loginPresenter = new LoginPresenterCompl(this);
+    }
+
+    @Override
+    public void onLoginResult(boolean result) {
+        if (result) {
+            Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Login Fail", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @OnClick(R.id.login_bt)
+    public void login() {
+        loginPresenter.doLogin(mUsernameEt.getText().toString(), mPasswordEt.getText().toString());
+    }
+
 }
 
 ```
