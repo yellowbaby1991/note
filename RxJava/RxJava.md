@@ -125,6 +125,40 @@ Subscriber<String> subscriber = new Subscriber<String>() {
 };
 ```
 
+> 使用Action实现不完整回调
+
+``` java
+Action1<String> onNextAction = new Action1<String>() {
+    // onNext()
+    @Override
+    public void call(String s) {
+        Log.d(tag, s);
+    }
+};
+Action1<Throwable> onErrorAction = new Action1<Throwable>() {
+    // onError()
+    @Override
+    public void call(Throwable throwable) {
+        // Error handling
+    }
+};
+Action0 onCompletedAction = new Action0() {
+    // onCompleted()
+    @Override
+    public void call() {
+        Log.d(tag, "completed");
+    }
+};
+
+// 自动创建 Subscriber ，并使用 onNextAction 来定义 onNext()
+observable.subscribe(onNextAction);
+// 自动创建 Subscriber ，并使用 onNextAction 和 onErrorAction 来定义 onNext() 和 onError()
+observable.subscribe(onNextAction, onErrorAction);
+// 自动创建 Subscriber ，并使用 onNextAction、 onErrorAction 和 onCompletedAction 来定义 onNext()、 onError() 和 onCompleted()
+observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
+```
+
+
  2. 创建被观察者Observable
  
  > 正常模式
@@ -174,6 +208,9 @@ observable.subscribe(subscriber);
 > 整个过程中对象间的关系如下图
 
 ![enter description here][3]
+
+### 举例
+
 
 
   [1]: https://github.com/ReactiveX/RxJava
