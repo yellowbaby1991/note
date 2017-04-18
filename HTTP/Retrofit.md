@@ -68,7 +68,7 @@ call.enqueue(new Callback<ResponseBody>() {
 });
 ```
 
-### 一个完整的例子
+### Retrofit+GsonConverterFactory
 
 > app.build
 
@@ -81,6 +81,6 @@ dependencies {
 }
 ```
 
-
+> a
 
   [1]: https://github.com/square/retrofit
