@@ -75,3 +75,5 @@ Observable.from(folders)
  2. Observer ：观察者
  3. subscribe：订阅
  4. event：事件
+
+　Observable和Observer通过subscribe()方法来实现订阅关系，从而Observable可以在需要的时候发出事件通知Observer
