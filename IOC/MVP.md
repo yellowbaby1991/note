@@ -22,14 +22,51 @@
 
 ### 一个MVP登陆实现的例子
 
-> 依赖
+ 1. 添加常用工具包，logger，butterknife
+
+> build.gradle
 
 ``` gradle
     compile 'com.orhanobut:logger:1.15'
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 ```
+ 2. model层
 
+> User.java
+
+``` java
+public class User {
+    private String name;
+    private String password;
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
+```
+
+
+
+ 3. view层
+ 4. presenter层
 
 
   [1]: https://segmentfault.com/image?src=http://7xih5c.com1.z0.glb.clouddn.com/15-10-12/94032090.jpg&objectId=1190000003927200&token=62cb9888184d6fe02a4b3ae814ca17e8
