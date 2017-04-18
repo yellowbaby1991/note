@@ -206,13 +206,13 @@ observable.subscribe(subscriber);
 ```
 
 > 整个过程中对象间的关系如下图
-> 
+
 
 ![enter description here][3]
 
-### 举例
+### 两个简单的例子
 
-
+ 1. List item
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
