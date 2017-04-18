@@ -9,6 +9,35 @@
   
 > 正常代码：800个回调
 
+``` java
+new Thread() {
+    @Override
+    public void run() {
+        super.run();
+        for (File folder : folders) {
+            File[] files = folder.listFiles();
+            for (File file : files) {
+                if (file.getName().endsWith(".png")) {
+                    final Bitmap bitmap = getBitmapFromFile(file);
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageCollectorView.addImage(bitmap);
+                        }
+                    });
+                }
+            }
+        }
+    }
+}.start();
+```
+
+> RxJava
+
+``` stylus
+enter code here
+```
+
 
  
 
