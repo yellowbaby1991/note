@@ -378,4 +378,4 @@ public interface MovieService {
 ```
 
 
- 3. 1
+ 3. 封装网络请求类
