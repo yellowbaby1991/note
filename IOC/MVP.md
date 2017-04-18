@@ -63,9 +63,25 @@ public class User {
 }
 ```
 
-
-
  3. view层
+ 
+> ILoginView.java
+
+``` java
+public interface ILoginView {
+    public void onLoginResult(boolean result);
+}
+
+```
+> LoginActivity.java
+
+``` java
+public interface ILoginView {
+    public void onLoginResult(boolean result);
+}
+
+```
+
  4. presenter层
 
 
