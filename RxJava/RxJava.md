@@ -265,5 +265,5 @@ Observable.create(new OnSubscribe<Drawable>() {
 
  - Schedulers.immediate()：直接在当前线程运行，相当于不指定线程。这是默认的 Scheduler
  - Schedulers.newThread()：总是启用新线程，并在新线程执行操作
- - Schedulers.io()：I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的 Scheduler。行为模式和 newThread() 差不多，区别在于 io() 的内部实现是是用一个无数量上限的线程池，可以重用空闲的线程，因此多数情况下 io() 比 newThread() 更有效率。不要把计算工作放在 io() 中，可以避免创建不必要的线程
+ - Schedulers.io()：I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的 Scheduler
  - AndroidSchedulers.mainThread()：在安卓UI线程执行
