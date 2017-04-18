@@ -206,6 +206,7 @@ observable.subscribe(subscriber);
 ```
 
 > 整个过程中对象间的关系如下图
+> 
 
 ![enter description here][3]
 
