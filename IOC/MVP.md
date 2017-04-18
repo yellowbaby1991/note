@@ -115,5 +115,19 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
  4. presenter层
 
+> ILoginPresenter.java
+
+``` java
+public interface ILoginPresenter {
+    void doLogin(String name,String password);
+}
+```
+> LoginPresenterCompl.java
+
+``` java
+public interface ILoginPresenter {
+    void doLogin(String name,String password);
+}
+```
 
   [1]: https://segmentfault.com/image?src=http://7xih5c.com1.z0.glb.clouddn.com/15-10-12/94032090.jpg&objectId=1190000003927200&token=62cb9888184d6fe02a4b3ae814ca17e8
