@@ -377,5 +377,4 @@ public interface MovieService {
 }
 ```
 
-
  3. 封装网络请求类
