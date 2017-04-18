@@ -349,3 +349,20 @@ Observable.from(students)
     })
     .subscribe(subscriber);
 ```
+### RxJava+Retrofit
+
+ 1. 依赖
+ 
+``` java
+dependencies {
+    compile 'io.reactivex:rxjava:1.0.9'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'io.reactivex:rxandroid:0.24.0'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+}
+```
+ 2. 创建retrofit服务接口
