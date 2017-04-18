@@ -225,7 +225,6 @@ Observable.from(names)
     });
 ```
 
-
  2. 1
 
   [1]: https://github.com/ReactiveX/RxJava
