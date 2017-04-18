@@ -69,6 +69,7 @@ Observable.from(folders)
 
 ### 基本概念
 > 观察者模式图
+
  1. Observable：被观察者
  2. Observer ：观察者
  3. subscribe：订阅
