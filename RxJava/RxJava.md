@@ -324,17 +324,20 @@ Observable.just("images/logo.png") // 输入类型 String
 > flatMap
 
 ``` java
-Observable.just("images/logo.png") // 输入类型 String
-    .map(new Func1<String, Bitmap>() {
+Student[] students = ...;
+Subscriber<Course> subscriber = new Subscriber<Course>() {
+    @Override
+    public void onNext(Course course) {
+        Log.d(tag, course.getName());
+    }
+    ...
+};
+Observable.from(students)
+    .flatMap(new Func1<Student, Observable<Course>>() {
         @Override
-        public Bitmap call(String filePath) { // 参数类型 String
-            return getBitmapFromPath(filePath); // 返回类型 Bitmap
+        public Observable<Course> call(Student student) {
+            return Observable.from(student.getCourses());
         }
     })
-    .subscribe(new Action1<Bitmap>() {
-        @Override
-        public void call(Bitmap bitmap) { // 参数类型 Bitmap
-            showBitmap(bitmap);
-        }
-    });
+    .subscribe(subscriber);
 ```
