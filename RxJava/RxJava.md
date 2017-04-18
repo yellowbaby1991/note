@@ -123,7 +123,7 @@ Subscriber<String> subscriber = new Subscriber<String>() {
 ```
 
 
- 2. 1
+ 2. 创建 Observable
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
