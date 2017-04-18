@@ -143,7 +143,7 @@ Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
 
 > 偷懒模式一
 
-``` stylus
+``` java
 enter code here
 ```
 
