@@ -128,6 +128,7 @@ Subscriber<String> subscriber = new Subscriber<String>() {
 
  2. 创建被观察者Observable
  
+ > 正常模式
 ``` java
 Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
     @Override
