@@ -74,21 +74,13 @@ call.enqueue(new Callback<ResponseBody>() {
 
 ``` gradle
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'io.reactivex:rxjava:1.0.9'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
-    compile 'io.reactivex:rxandroid:0.24.0'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.orhanobut:logger:1.15'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    testCompile 'junit:junit:4.12'
 }
 ```
+
 
 
   [1]: https://github.com/square/retrofit
