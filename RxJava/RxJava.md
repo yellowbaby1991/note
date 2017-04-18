@@ -302,3 +302,21 @@ Observable.create(new OnSubscribe<Drawable>() {
 
 ### 变换
 　RxJava 提供了对事件序列进行变换的支持，这是它的核心功能之一，也是大多数人说『RxJava 真是太好用了』的最大原因。所谓变换，就是将事件序列中的对象或整个序列进行加工处理，转换成不同的事件或事件序列
+ 
+> map
+
+``` java
+Observable.just("images/logo.png") // 输入类型 String
+    .map(new Func1<String, Bitmap>() {
+        @Override
+        public Bitmap call(String filePath) { // 参数类型 String
+            return getBitmapFromPath(filePath); // 返回类型 Bitmap
+        }
+    })
+    .subscribe(new Action1<Bitmap>() {
+        @Override
+        public void call(Bitmap bitmap) { // 参数类型 Bitmap
+            showBitmap(bitmap);
+        }
+    });
+```
