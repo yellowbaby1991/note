@@ -66,7 +66,7 @@ Observable.from(folders)
 
 
 ### 基本概念
-> 观察者模式四大基本概念
+> 观察者模式四大基本元素
 
  1. Observable：可观察者，即被观察者
  2. Observer ：观察者
