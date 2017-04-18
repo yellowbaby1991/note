@@ -430,3 +430,47 @@ public class HttpMethods {
 
  4. 在主线程中创建观察者调用方法
  
+> MainActivity.java
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    @BindView(R.id.click_me_bt)
+    Button mClickMe;
+    @BindView(R.id.result_tv)
+    TextView mResultTv;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.click_me_bt)
+    public void onClick() {
+        getMovie();
+    }
+
+    //进行网络请求
+    private void getMovie() {
+        Subscriber<MovieEntity> subscriber = new Subscriber<MovieEntity>() {
+            @Override
+            public void onCompleted() {
+                Toast.makeText(MainActivity.this, "Get Top Movie Completed", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(MovieEntity movieEntity) {
+                mResultTv.setText(movieEntity.toString());
+            }
+        };
+        HttpMethods.getInstance().getTopMovie(subscriber, 0, 10);
+    }
+}
+```
