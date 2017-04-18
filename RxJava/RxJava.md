@@ -212,7 +212,7 @@ observable.subscribe(subscriber);
 
 ### 两个简单的例子
 
- 1. List item
+ 1. 打印字符串数组
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
