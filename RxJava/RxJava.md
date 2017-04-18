@@ -427,3 +427,6 @@ public class HttpMethods {
 
 }
 ```
+
+ 4. 在主线程中创建观察者调用方法
+ 
