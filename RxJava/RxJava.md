@@ -171,6 +171,11 @@ observable.subscribe(observer);
 observable.subscribe(subscriber);
 ```
 
+> 整个过程中对象间的关系如下图
+
+![enter description here][3]
+
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
+  [3]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx4ay0hrg20ig08wk4q.gif
