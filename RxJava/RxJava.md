@@ -226,6 +226,34 @@ Observable.from(names)
 ```
 
  2. 由 id 取得图片并显示
+ 
+``` java
+int drawableRes = ...;
+ImageView imageView = ...;
+Observable.create(new OnSubscribe<Drawable>() {
+    @Override
+    public void call(Subscriber<? super Drawable> subscriber) {
+        Drawable drawable = getTheme().getDrawable(drawableRes));
+        subscriber.onNext(drawable);
+        subscriber.onCompleted();
+    }
+}).subscribe(new Observer<Drawable>() {
+    @Override
+    public void onNext(Drawable drawable) {
+        imageView.setImageDrawable(drawable);
+    }
+
+    @Override
+    public void onCompleted() {
+    }
+
+    @Override
+    public void onError(Throwable e) {
+        Toast.makeText(activity, "Error!", Toast.LENGTH_SHORT).show();
+    }
+});
+```
+
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
