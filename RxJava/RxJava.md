@@ -125,7 +125,6 @@ Subscriber<String> subscriber = new Subscriber<String>() {
 };
 ```
 
-
  2. 创建被观察者Observable
  
  > 正常模式
@@ -163,6 +162,8 @@ Observable observable = Observable.from(words);
 // onNext("Aloha");
 // onCompleted();
 ```
+
+ 3. 创建被观察者Observable
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
