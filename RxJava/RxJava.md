@@ -260,3 +260,5 @@ Observable.create(new OnSubscribe<Drawable>() {
   [3]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx4ay0hrg20ig08wk4q.gif
 ### 异步的实现-Scheduler
 　在不指定线程的情况下， RxJava 遵循的是线程不变的原则，即：在哪个线程调用 subscribe()，就在哪个线程生产事件；在哪个线程生产事件，就在哪个线程消费事件。如果需要切换线程，就需要用到 Scheduler （调度器）
+
+> Scheduler常用API
