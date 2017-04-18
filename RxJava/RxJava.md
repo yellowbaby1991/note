@@ -258,4 +258,5 @@ Observable.create(new OnSubscribe<Drawable>() {
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
   [3]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx4ay0hrg20ig08wk4q.gif
-### 异步的实现
+### 异步的实现-Scheduler
+
