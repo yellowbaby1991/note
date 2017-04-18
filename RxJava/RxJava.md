@@ -144,7 +144,12 @@ Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
 > 偷懒模式一
 
 ``` java
-enter code here
+Observable observable = Observable.just("Hello", "Hi", "Aloha");
+// 将会依次调用：
+// onNext("Hello");
+// onNext("Hi");
+// onNext("Aloha");
+// onCompleted();
 ```
 
 
