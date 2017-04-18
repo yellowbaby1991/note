@@ -267,3 +267,17 @@ Observable.create(new OnSubscribe<Drawable>() {
  - Schedulers.newThread()：总是启用新线程，并在新线程执行操作
  - Schedulers.io()：I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的 Scheduler
  - AndroidSchedulers.mainThread()：在安卓UI线程执行
+
+> 举例
+
+``` java
+Observable.just(1, 2, 3, 4)
+    .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+    .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
+    .subscribe(new Action1<Integer>() {
+        @Override
+        public void call(Integer number) {
+            Log.d(tag, "number:" + number);
+        }
+    });
+```
