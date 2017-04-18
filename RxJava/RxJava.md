@@ -152,7 +152,16 @@ Observable observable = Observable.just("Hello", "Hi", "Aloha");
 // onCompleted();
 ```
 
+> 偷懒模式二
 
+``` java
+Observable observable = Observable.just("Hello", "Hi", "Aloha");
+// 将会依次调用：
+// onNext("Hello");
+// onNext("Hi");
+// onNext("Aloha");
+// onCompleted();
+```
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
