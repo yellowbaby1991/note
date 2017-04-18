@@ -3,5 +3,8 @@
 
 ### RxJava 好在哪
 　一个词，**简洁**。随着程序逻辑变得越来越复杂，它依然能够保持简洁。
+                               ![enter description here][2]
+
 
   [1]: https://github.com/ReactiveX/RxJava
+  [2]: http://ww4.sinaimg.cn/large/52eb2279jw1f2rx409pcnj2044048mx5.jpg
