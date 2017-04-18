@@ -83,5 +83,27 @@ Observable.from(folders)
 
  1. 创建Observer
 
+``` java
+Observer<String> observer = new Observer<String>() {
+    @Override
+    public void onNext(String s) {
+        Log.d(tag, "Item: " + s);
+    }
+
+    @Override
+    public void onCompleted() {
+        Log.d(tag, "Completed!");
+    }
+
+    @Override
+    public void onError(Throwable e) {
+        Log.d(tag, "Error!");
+    }
+};
+```
+
+
+ 2. 1
+
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
