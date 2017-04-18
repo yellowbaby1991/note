@@ -83,6 +83,8 @@ Observable.from(folders)
 
  1. 创建观察者Observer
 
+> 使用Observer
+
 ``` java
 Observer<String> observer = new Observer<String>() {
     @Override
@@ -103,6 +105,7 @@ Observer<String> observer = new Observer<String>() {
 ```
 除了 Observer 接口之外，RxJava 还内置了一个实现了 Observer 的抽象类：Subscriber。 Subscriber 对 Observer 接口进行了一些扩展，但他们的基本使用方式是完全一样的：
 
+> 使用Subscriber
 ``` java
 Subscriber<String> subscriber = new Subscriber<String>() {
     @Override
@@ -138,6 +141,10 @@ Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
 ```
 
 > 偷懒模式一
+
+``` stylus
+enter code here
+```
 
 
 
