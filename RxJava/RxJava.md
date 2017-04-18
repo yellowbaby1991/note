@@ -124,6 +124,22 @@ Subscriber<String> subscriber = new Subscriber<String>() {
 
 
  2. 创建被观察者Observable
+ 
+``` java
+Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
+    @Override
+    public void call(Subscriber<? super String> subscriber) {
+        subscriber.onNext("Hello");
+        subscriber.onNext("Hi");
+        subscriber.onNext("Aloha");
+        subscriber.onCompleted();
+    }
+});
+```
+
+> 偷懒模式一
+
+
 
   [1]: https://github.com/ReactiveX/RxJava
   [2]: http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx46dspqj20gn04qaad.jpg
