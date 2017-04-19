@@ -3,7 +3,7 @@
 * [一个MVP登陆实现的例子](#一个mvp登陆实现的例子)
 
 ### 概述
-　MVP是专门为了优化Android开发的一种设计模式，核心思想是将Activity中的UI逻辑抽象成View接口，把业务逻辑抽象成Presenter接口， Model层用来处理数据，如访问网络和数据库
+　MVP是专门为了优化Android开发的一种设计模式，核心思想是将Activity中的UI逻辑抽象成View接口，把业务逻辑抽象成Presenter接口， Model层用来处理数据，如访问网络和数据库，Presenter用来分发结果，View用来显示数据
 
 > 类图
 
