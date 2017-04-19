@@ -9,7 +9,7 @@
 
 ![enter description here][1]
 
-> MVP的优势
+###  MVP的优势
 
  1. 分离了视图逻辑和业务逻辑，降低了耦合
  2. Activity只处理生命周期的任务，代码变得更加简洁
