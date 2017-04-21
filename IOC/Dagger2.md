@@ -124,6 +124,6 @@ public interface AppComponent {
 ```
 
 
- 5. 1
+ 5. MainActivity中使用自动生成的DaggerAppComponent对象inject我们的MyModule
 
   [1]: https://github.com/google/dagger
