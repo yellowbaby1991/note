@@ -19,6 +19,23 @@ buildscript {
 }
 ```
 
+> app/build.gradle
 
+``` stylus
+apply plugin: 'com.neenbedankt.android-apt'
+
+dependencies {
+    ...
+    // dagger 2 的配置
+    compile 'com.google.dagger:dagger:2.4'
+    apt 'com.google.dagger:dagger-compiler:2.4'
+    compile 'org.glassfish:javax.annotation:10.0-b28'// 添加java 注解库
+}
+```
+
+### 常用注解
+
+ 1. @Inject：告诉Dagger该属性需要注入
+ 2. @Module
 
   [1]: https://github.com/google/dagger
