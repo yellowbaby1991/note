@@ -5,6 +5,20 @@
 
 > build.gradle
 
+``` gradle
+buildscript {
+
+    ....
+
+    dependencies {
+
+        classpath 'com.android.tools.build:gradle:2.1.0'
+        // 添加android-apt 插件
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+```
+
 
 
   [1]: https://github.com/google/dagger
