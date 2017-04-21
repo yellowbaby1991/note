@@ -43,5 +43,37 @@ dependencies {
 
 ### 一个集合MVP使用的例子
 
+ 1. view层
+ 
+
+> IView.java
+
+``` java
+public interface IView {
+    /** 
+     * 更新UI 
+     * @param data 
+     */  
+    void updateUi(String data);  
+}  
+```
+
+
+ 2. presenter层
+ 
+
+> IPresenter.java
+
+``` java
+public interface IPresenter {
+    /** 
+     * 加载数据 
+     */  
+    void loadData();  
+} 
+```
+
+
+ 3. 1
 
   [1]: https://github.com/google/dagger
