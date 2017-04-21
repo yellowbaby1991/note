@@ -91,7 +91,7 @@ public class MyPresenter implements IPresenter {
 ```
 
 
- 3. module层，provide MyPresenter的实现类
+ 3. module层，Provides MyPresenter的实现类
 
 > MyModule.java
 
