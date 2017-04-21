@@ -61,7 +61,6 @@ public interface IView {
 
  2. presenter层
  
-
 > IPresenter.java
 
 ``` java
