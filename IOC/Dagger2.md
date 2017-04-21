@@ -93,6 +93,8 @@ public class MyPresenter implements IPresenter {
 
  3. module层，provide MyPresenter的实现类
 
+> MyModule.java
+
 ``` java
 @Module
 public class MyModule {
