@@ -41,4 +41,7 @@ dependencies {
  - @Component：@Inject和@Module的桥梁，作用是连接这两个部分，一个Component可以对应多个Module
  - @Scope：自定义注解限定注解作用域
 
+### 一个集合MVP使用的例子
+
+
   [1]: https://github.com/google/dagger
