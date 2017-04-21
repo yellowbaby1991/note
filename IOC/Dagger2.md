@@ -72,6 +72,24 @@ public interface IPresenter {
 } 
 ```
 
+> Blockquote
+
+``` java
+public class MyPresenter implements IPresenter {
+    private IView mainView;
+
+    public MyPresenter(IView view) {
+        mainView = view;
+    }
+
+
+    @Override
+    public void loadData() {
+        mainView.updateUi("Mvp Update UI " + System.currentTimeMillis());
+    }
+}  
+```
+
 
  3. 1
 
