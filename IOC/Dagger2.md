@@ -72,7 +72,7 @@ public interface IPresenter {
 } 
 ```
 
-> Blockquote
+> MyPresenter.java
 
 ``` java
 public class MyPresenter implements IPresenter {
@@ -91,6 +91,24 @@ public class MyPresenter implements IPresenter {
 ```
 
 
- 3. 1
+ 3. module层，provide MyPresenter的实现类
+
+``` java
+@Module
+public class MyModule {
+
+    private IView mainView;
+
+    public MyModule(IView mainView) {
+        this.mainView = mainView;
+    }
+
+    @Provides
+    public MyPresenter provideMyPresenter() {
+        return new MyPresenter(mainView);
+    }
+}  
+```
+
 
   [1]: https://github.com/google/dagger
