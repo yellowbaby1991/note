@@ -36,6 +36,7 @@ dependencies {
 ### 常用注解
 
  1. @Inject：告诉Dagger该属性需要注入
- 2. @Module
+ 2. @Module：使用该注解告诉Dagger去哪里找需要的依赖
+ 3. @Provides：
 
   [1]: https://github.com/google/dagger
