@@ -125,5 +125,48 @@ public interface AppComponent {
 
 
  5. MainActivity中使用自动生成的DaggerAppComponent对象inject我们的MyModule
+ 
+> MainActivity.java
+
+``` java
+public class MainActivity extends AppCompatActivity implements IView, View.OnClickListener {
+
+    @Bind(R.id.result)
+    TextView tv_result;
+    @Bind(R.id.btn_update)
+    Button btn_update;
+
+    @Inject
+    MyPresenter myPresenter; //获取依赖的对象
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        btn_update.setOnClickListener(this);
+
+        AppComponent appComponent = DaggerAppComponent.builder()//DaggerAppComponent为编译的时候自动生成，名字对应AppComponent
+                .myModule(new MyModule(this))//myModule对应MyModule类，一个Component可以对应多个Module
+                .build();
+        appComponent.inject(this); //注入
+    }
+
+    @Override
+    public void updateUi(String data) {
+        tv_result.setText(data);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_update:
+                myPresenter.loadData();
+                break;
+        }
+    }
+}
+```
+
 
   [1]: https://github.com/google/dagger
