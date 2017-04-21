@@ -112,5 +112,6 @@ public class MyModule {
 }  
 ```
 
+ 4. component层，关联module层和activity
 
   [1]: https://github.com/google/dagger
