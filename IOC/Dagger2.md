@@ -38,7 +38,7 @@ dependencies {
  - @Inject：告诉Dagger该属性需要注入
  - @Module：定义在类上，使用该注解告诉Dagger去哪里找需要的依赖
  - @Provides：定义在module类的方法上，告诉Dagger我们想构造对象并提供这些依赖
- - @Component：@Inject和@Module的桥梁，作用是连接这两个部分
+ - @Component：@Inject和@Module的桥梁，作用是连接这两个部分，一个Component可以对应多个Module
  - @Scope：自定义注解限定注解作用域
 
   [1]: https://github.com/google/dagger
