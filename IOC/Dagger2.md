@@ -113,5 +113,17 @@ public class MyModule {
 ```
 
  4. component层，关联module层和activity
+ 
+> AppComponent.java
+
+``` java
+@Component(modules = MyModule.class)
+public interface AppComponent {  
+    void inject(MainActivity activity);
+}
+```
+
+
+ 5. 1
 
   [1]: https://github.com/google/dagger
