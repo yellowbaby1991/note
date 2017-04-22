@@ -190,7 +190,12 @@ public class DBManager {
 ```
 
 
- 3. 1
+ 3. MainActivity中调用DBManager增删改查
+
+``` java
+enter code here
+```
+
 
 
   [1]: https://github.com/greenrobot/greenDAO
