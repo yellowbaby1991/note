@@ -4,5 +4,9 @@
  
  1. 性能高，号称Android最快的关系型数据库
  2. 内存占用小
- 3. 
+ 3. 库文件比较小，小于100K，编译时间低，而且可以避免65K方法限制
+ 4. 支持数据库加密  greendao支持SQLCipher进行数据库加密 有关SQLCipher可以参考这篇博客Android数据存储之Sqlite采用SQLCipher数据库加密实战
+ 5. 简洁易用的API
+
+　
 
