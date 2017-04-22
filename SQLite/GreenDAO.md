@@ -193,7 +193,38 @@ public class DBManager {
  3. MainActivity中调用DBManager增删改查
 
 ``` java
-enter code here
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        DBManager dbManager = DBManager.getInstance(this);
+        for (int i = 0; i < 5; i++) {
+            User user = new User();
+            user.setId((long) i);
+            user.setAge(i * 3);
+            user.setName("第" + i + "人");
+            dbManager.insertUser(user);
+        }
+        List<User> userList = dbManager.queryUserList();
+        for (User user : userList) {
+            Log.e("TAG", "queryUserList--before-->" + user.getId() + "--" + user.getName() +"--"+user.getAge());
+            if (user.getId() == 0) {
+                dbManager.deleteUser(user);
+            }
+            if (user.getId() == 3) {
+                user.setAge(10);
+                dbManager.updateUser(user);
+            }
+        }
+        userList = dbManager.queryUserList();
+        for (User user : userList) {
+            Log.e("TAG", "queryUserList--after--->" + user.getId() + "---" + user.getName()+"--"+user.getAge());
+        }
+    }
+}
 ```
 
 
