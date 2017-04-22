@@ -49,3 +49,22 @@ dependencies {
     compile 'org.greenrobot:greendao:3.2.2' // add library
 }
 ```
+
+### 使用方法
+
+ 1. 创建实体类User，编译后自动生成DaoMaster 、DaoSession、Dao
+ 
+``` java
+@Entity
+public class User {
+    @Id
+    private Long id;
+    private String name;
+    private int age;
+
+   //下面省去了 setter/getter
+}
+```
+
+
+ 2. 1
