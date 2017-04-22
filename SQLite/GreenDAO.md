@@ -36,6 +36,14 @@ buildscript {
 // In your app projects build.gradle file:
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
+
+android {
+    greendao{
+        schemaVersion 1                    //数据库 版本号
+        targetGenDir 'src/main/java'    //生成DaoMaster类文件夹
+        daoPackage   'app.yellow.greendao.db'  //生成DaoMaster类包名
+    }
+}
  
 dependencies {
     compile 'org.greenrobot:greendao:3.2.2' // add library
