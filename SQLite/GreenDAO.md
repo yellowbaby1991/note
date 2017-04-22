@@ -11,5 +11,5 @@
 
 > GreenDao3.0的改动
  
-使用过GreenDao的同学都知道，3.0之前需要通过新建GreenDaoGenerator工程生成Java数据对象（实体）和DAO对象，非常的繁琐而且也加大了使用成本，GreenDao  3.0最大的变化就是采用注解的方式通过编译方式生成Java数据对象和DAO对象
+　使用过GreenDao的同学都知道，3.0之前需要通过新建GreenDaoGenerator工程生成Java数据对象（实体）和DAO对象，非常的繁琐而且也加大了使用成本，GreenDao  3.0最大的变化就是采用注解的方式通过编译方式生成Java数据对象和DAO对象
 
