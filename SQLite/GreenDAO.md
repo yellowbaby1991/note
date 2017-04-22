@@ -32,6 +32,12 @@ buildscript {
 
 > app/build.gradle
 
-``` stylus
-enter code here
+``` gradle
+// In your app projects build.gradle file:
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+ 
+dependencies {
+    compile 'org.greenrobot:greendao:3.2.2' // add library
+}
 ```
