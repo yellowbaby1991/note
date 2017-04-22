@@ -1,5 +1,5 @@
 ### 概述
-　GreenDAO号称是最快的ORM框架，能够提供一个接口通过操作对象的方式去操作关系型数据库，它能够让你操作数据库时更简单、更方便
+　[GreenDAO号称是最快的ORM框架][1]，能够提供一个接口通过操作对象的方式去操作关系型数据库，它能够让你操作数据库时更简单、更方便，[参考教程][2]
 
 > 优点
 
@@ -67,3 +67,7 @@ public class User {
 ```
 
  2. 1
+
+
+  [1]: https://github.com/greenrobot/greenDAO
+  [2]: http://www.cnblogs.com/whoislcj/p/5651396.html
