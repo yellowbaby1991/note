@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 protected void convert(BaseAdapterHelper helper, ModuleBean item) {
                     helper.setText(R.id.name_tv, item.getModulename()).setImageUrl(R.id.img_iv, item.getImgurl()).setText(R.id.description_tv, item.getDescription());
+					           helper.setOnClickListener(R.id.iv_delete, new View.OnClickListener() {//添加监听}
                 }
             };
         }
