@@ -44,7 +44,7 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 ```
 
 > ObservableEmitter
-
+ObservableEmitter：
 
 
 
