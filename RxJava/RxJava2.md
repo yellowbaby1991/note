@@ -9,8 +9,36 @@ compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
 ### 基本链式调用
 
-``` stylus
-enter code here
+``` java
+Observable.create(new ObservableOnSubscribe<Integer>() {
+	@Override
+	public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+		e.onNext(1);
+		e.onNext(2);
+		e.onNext(3);
+		e.onComplete();
+	}
+}).subscribe(new Observer<Integer>() {
+	@Override
+	public void onSubscribe(Disposable d) {
+		Logger.d("subscribe");
+	}
+
+	@Override
+	public void onNext(Integer value) {
+		Logger.d(value);
+	}
+
+	@Override
+	public void onError(Throwable e) {
+		Logger.d(e);
+	}
+
+	@Override
+	public void onComplete() {
+		Logger.d("onComplete");
+	}
+});
 ```
 
 
