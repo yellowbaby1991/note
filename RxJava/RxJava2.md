@@ -181,3 +181,4 @@ RxJava内置了以下几种线程选择
  2. Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
  3. Schedulers.newThread() 代表一个常规的新线程
  4. AndroidSchedulers.mainThread() 代表Android的主线程
+
