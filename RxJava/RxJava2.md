@@ -175,4 +175,4 @@ RxJava默认上游和下游会处于同一线程，也就是上游发送的事�
                 .subscribe(consumer);
 ```
 
-
+RxJava内置了以下几种线程选择
