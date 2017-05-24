@@ -85,3 +85,17 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+运行结果为
+
+``` java
+D/MainActivity: subscribe
+D/MainActivity: emit 1
+D/MainActivity: onNext: 1
+D/MainActivity: emit 2
+D/MainActivity: onNext: 2
+D/MainActivity: dispose
+D/MainActivity: isDisposed : true
+D/MainActivity: emit 3
+D/MainActivity: emit complete
+D/MainActivity: emit 4
+```
