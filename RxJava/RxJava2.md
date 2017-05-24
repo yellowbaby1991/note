@@ -102,3 +102,12 @@ D/MainActivity: emit 4
 > subscribe方法
 
 订阅方法有几个重载方法
+
+``` java
+ public final Disposable subscribe() {}
+    public final Disposable subscribe(Consumer<? super T> onNext) {}
+    public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError) {} 
+    public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError, Action onComplete) {}
+    public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError, Action onComplete, Consumer<? super Disposable> onSubscribe) {}
+    public final void subscribe(Observer<? super T> observer) {}
+```
