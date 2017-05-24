@@ -107,7 +107,9 @@ D/MainActivity: emit 4
 public final Disposable subscribe() {}
 //只接受onNext事件
 public final Disposable subscribe(Consumer<? super T> onNext) {}
+//只接受onNext事件和onError事件
 public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError) {} 
+
 public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError, Action onComplete) {}
 public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError, Action onComplete, Consumer<? super Disposable> onSubscribe) {}
 //上面调用过的，最后一个不带参数的上面已经用过，代表下游不关心
