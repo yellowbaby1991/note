@@ -7,7 +7,7 @@ compile 'io.reactivex.rxjava2:rxjava:2.0.1'
 compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 ```
 
-### 基本链式调用
+### 
 
 ``` java
 Observable.create(new ObservableOnSubscribe<Integer>() {
