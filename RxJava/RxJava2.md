@@ -53,4 +53,5 @@ ObservableEmitter可以发送出三种事件onNext(T value)， onComplete()和 o
  4. 上游可以不发送onComplete或onError
  5. 最为关键的是onComplete和onError必须唯一并且互斥
 
+> Disposable
 
