@@ -115,3 +115,4 @@ public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super T
 public final void subscribe(Observer<? super T> observer) {}
 ```
 
+如果只想处理onNext事件写法如下：
