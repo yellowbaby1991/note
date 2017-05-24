@@ -105,13 +105,11 @@ D/MainActivity: emit 4
 
 ``` java
 public final Disposable subscribe() {}
+//只接受onNext事件
 public final Disposable subscribe(Consumer<? super T> onNext) {}
 public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError) {} 
 public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError, Action onComplete) {}
 public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super Throwable> onError, Action onComplete, Consumer<? super Disposable> onSubscribe) {}
-//
+//上面调用过的，最后一个不带参数的上面已经用过，代表下游不关心
 public final void subscribe(Observer<? super T> observer) {}
 ```
-
-最后一个不带参数的上面已经用过，代表下游不关心
-带有一个Consumer参数的方法表示下游只关心onNext事件
