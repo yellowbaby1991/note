@@ -145,3 +145,34 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 
 RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
 
+``` java
+
+        Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                Log.d(TAG, "emit 1");
+                emitter.onNext(1);
+                Log.d(TAG, "emit 2");
+                emitter.onNext(2);
+                Log.d(TAG, "emit 3");
+                emitter.onNext(3);
+                Log.d(TAG, "emit complete");
+                emitter.onComplete();
+                Log.d(TAG, "emit 4");
+                emitter.onNext(4);
+            }
+        });
+
+        Consumer<Integer> consumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) throws Exception {
+                Log.d(TAG, "onNext: " + integer);
+            }
+        };
+
+        observable.subscribeOn(Schedulers.newThread())//指定上游的线程
+                .observeOn(AndroidSchedulers.mainThread())//指定下游的线程
+                .subscribe(consumer);
+```
+
+
