@@ -144,3 +144,4 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 ### 线程控制
 
 RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理
+
