@@ -44,7 +44,7 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 ```
 
 > ObservableEmitter
-ObservableEmitter可以发送出三种事件，分别是
+ObservableEmitter可以发送出三种事件
 
  1. onNext(T value)
  2. onComplete()
