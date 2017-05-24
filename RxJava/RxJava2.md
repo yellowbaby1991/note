@@ -113,3 +113,4 @@ public final void subscribe(Observer<? super T> observer) {}
 ```
 
 最后一个不带参数的上面已经用过，代表下游不关心
+带有一个Consumer参数的方法表示下游只关心onNext事件
