@@ -23,7 +23,6 @@ ObservableEmitter可以发送出三种事件onNext(T value)， onComplete()和 o
 
 Disposable的意思是一次性用品，我们可以把它理解成两根管道之间的一个机关, 当调用它的dispose()方法时, 它就会将两根管道切断, 从而导致下游收不到事件，但是上游仍然可以继续发送事件
 
-> 举个例子
 
 ``` java
 public class MainActivity extends AppCompatActivity {
