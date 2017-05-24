@@ -1,13 +1,12 @@
 # RxJava2
-## 基本用法
-### 配置
+## 配置
 
 ``` glide
 compile 'io.reactivex.rxjava2:rxjava:2.0.1'
 compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 ```
 
-### ObservableEmitter和Disposable
+## ObservableEmitter和Disposable
 
 > ObservableEmitter
 
@@ -141,7 +140,7 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 ```
 
 
-### 线程控制
+## 线程控制
 
 RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
 
