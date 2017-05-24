@@ -143,3 +143,4 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 
 ### 线程控制
 
+RxJava默认上游和下游会处于同一线程，也就是
