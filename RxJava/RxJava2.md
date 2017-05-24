@@ -50,4 +50,6 @@ ObservableEmitter可以发送出三种事件onNext(T value)， onComplete()和 o
  1. 上游可以发送无限个onNext, 下游也可以接收无限个onNext
  2. 当上游发送了一个onComplete后, 上游onComplete之后的事件将会**继续**发送, 而下游收到onComplete事件之后将**不再继续**接收事件
  3. 当上游发送了一个onError后, 上游onError之后的事件将**继续**发送, 而下游收到onError事件之后将**不再继续**接收事件
+ 4. 上游可以不发送onComplete或onError
+ 5. 
 
