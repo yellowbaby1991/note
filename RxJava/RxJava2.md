@@ -55,3 +55,7 @@ ObservableEmitter可以发送出三种事件onNext(T value)， onComplete()和 o
 
 以上几个规则用示意图表示如下:
 
+![enter description here][1]
+
+
+  [1]: http://upload-images.jianshu.io/upload_images/1008453-2526f7824c53a47e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
