@@ -176,3 +176,8 @@ RxJava默认上游和下游会处于同一线程，也就是上游发送的事�
 ```
 
 RxJava内置了以下几种线程选择
+
+Schedulers.io() 代表io操作的线程, 通常用于网络,读写文件等io密集型的操作
+Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
+Schedulers.newThread() 代表一个常规的新线程
+AndroidSchedulers.mainThread() 代表Android的主线程
