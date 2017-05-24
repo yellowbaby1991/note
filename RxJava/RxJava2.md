@@ -9,6 +9,8 @@ compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
 ### HelloWorld
 
+> 一个基本的链式调用
+
 ``` java
 Observable.create(new ObservableOnSubscribe<Integer>() {
 	@Override
