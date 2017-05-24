@@ -98,3 +98,7 @@ D/MainActivity: emit 3
 D/MainActivity: emit complete
 D/MainActivity: emit 4
 ```
+
+> subscribe方法
+
+订阅方法有几个重载方法
