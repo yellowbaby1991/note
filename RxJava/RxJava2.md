@@ -9,40 +9,6 @@ compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
 ### ObservableEmitter和Disposable
 
-> 一个基本的链式调用
-
-``` java
-Observable.create(new ObservableOnSubscribe<Integer>() {
-	@Override
-	public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-		e.onNext(1);
-		e.onNext(2);
-		e.onNext(3);
-		e.onComplete();
-	}
-}).subscribe(new Observer<Integer>() {
-	@Override
-	public void onSubscribe(Disposable d) {
-		Logger.d("subscribe");
-	}
-
-	@Override
-	public void onNext(Integer value) {
-		Logger.d(value);
-	}
-
-	@Override
-	public void onError(Throwable e) {
-		Logger.d(e);
-	}
-
-	@Override
-	public void onComplete() {
-		Logger.d("onComplete");
-	}
-});
-```
-
 > ObservableEmitter
 
 ObservableEmitter可以发送出三种事件onNext(T value)， onComplete()和 onError，但是发送需要满足一定规则
