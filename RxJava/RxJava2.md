@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-运行结果为
+运行结果如下，可见，在调用dispose后，下游已经不处理事件，而上游还在继续发送事件
 
 ``` java
 D/MainActivity: subscribe
