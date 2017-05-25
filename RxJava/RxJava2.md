@@ -257,3 +257,15 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 });
 ```
 运行结果如下：
+
+``` java
+D/MainActivity: I am value 1
+D/MainActivity: I am value 1
+D/MainActivity: I am value 1
+D/MainActivity: I am value 2
+D/MainActivity: I am value 2
+D/MainActivity: I am value 2
+D/MainActivity: I am value 3
+D/MainActivity: I am value 3
+D/MainActivity: I am value 3
+```
