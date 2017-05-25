@@ -184,4 +184,7 @@ RxJava内置了以下几种线程选择
 
 ## Map
 map是RxJava中最简单的一个变换操作符，它的作用就是对上游发送的每一个事件应用一个函数，使得每一个事件都按指定的函数去变化，用事件图表示如下：
+![enter description here][1]
 
+
+  [1]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
