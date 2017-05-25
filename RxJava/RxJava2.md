@@ -269,3 +269,5 @@ D/MainActivity: I am value 3
 D/MainActivity: I am value 3
 D/MainActivity: I am value 3
 ```
+
+上游每发送一个事件，flatMap都将创建一个新的水管，然后发送转换之后的新事件，下游接受到的就是这些新水管的事件，注意，**flatMap并不保证事件的顺序**
