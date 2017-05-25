@@ -275,3 +275,5 @@ D/MainActivity: I am value 3
 
 
 ## filter
+filter负责过滤上游的事件，代码如下：
+
