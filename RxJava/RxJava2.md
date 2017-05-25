@@ -219,7 +219,7 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 05-25 00:47:25.264 1519-1519/app.yellow.rxjava2 D/MainActivity: This is result 3
 ```
 
-## FlatMap
+## flatMap
 FlatMap将上游的一个Observable变换成多个发送事件的Observables，然后将它们发送的事件合并后放入一个单独的Observable里，如图所示
 
 ![enter description here][2]
@@ -272,4 +272,6 @@ D/MainActivity: I am value 3
 
 上游每发送一个事件，flatMap都将创建一个新的水管，然后发送转换之后的新事件，下游接受到的就是这些新水管的事件，注意，**flatMap并不保证事件的顺序**，想保证顺序就使用concatMap
 
-## 
+
+
+## filter
