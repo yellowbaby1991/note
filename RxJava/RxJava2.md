@@ -291,7 +291,15 @@ public class MainActivity extends AppCompatActivity {
 运行结果如下：
 
 ``` java
-
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 一班1
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 一班2
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 一班3
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 二班1
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 二班2
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 二班3
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 三班1
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 三班2
+05-25 05:20:15.105 16892-16892/app.yellow.rxjava2 D/MainActivity: 三班3
 ```
 
 上游每发送一个事件，flatMap都将创建一个新的水管，然后发送转换之后的新事件，下游接受到的就是这些新水管的事件，注意，**flatMap并不保证事件的顺序**，想保证顺序就使用concatMap
