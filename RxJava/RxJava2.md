@@ -279,8 +279,21 @@ filter负责过滤上游的事件，早餐上游发送了包子，馒头，肠�
 
 代码如下：
 
-``` stylus
-enter code here
+``` java
+Observable
+		.just("包子", "馒头", "肠粉", "春卷", "饺子", "炒粉")
+		.filter(new Predicate<String>() {
+			@Override
+			public boolean test(String s) throws Exception {
+				return s.equals("包子");
+			}
+		})
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, "accept: " + s);//这里只能吃上饺子
+			}
+		});
 ```
 
 
