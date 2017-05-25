@@ -212,3 +212,5 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 	}
 });
 ```
+
+运行结果为：
