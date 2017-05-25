@@ -191,5 +191,24 @@ map是RxJava中最简单的一个变换操作符，它的作用就是对上游�
   [1]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
   
  举个例子，将上游的integer对象转换成下游的String对象
- 
- 
+
+``` java
+Observable.create(new ObservableOnSubscribe<Integer>() {
+	@Override
+	public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+		emitter.onNext(1);
+		emitter.onNext(2);
+		emitter.onNext(3);
+	}
+}).map(new Function<Integer, String>() {
+	@Override
+	public String apply(Integer integer) throws Exception {
+		return "This is result " + integer;
+	}
+}).subscribe(new Consumer<String>() {
+	@Override
+	public void accept(String s) throws Exception {
+		Log.d(TAG, s);
+	}
+});
+```
