@@ -229,3 +229,5 @@ FlatMap将上游的一个Observable变换成多个发送事件的Observables，�
   [2]: http://upload-images.jianshu.io/upload_images/1008453-2ccce5cf25e8023a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
   
  中间flatMap的作用是将圆形的事件转换为一个发送矩形事件和三角形事件的新的上游Observable.
+ 
+ 
