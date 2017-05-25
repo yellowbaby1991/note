@@ -222,7 +222,6 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 ## FlatMap
 FlatMap将上游的一个Observable变换成多个发送事件的Observables，然后将它们发送的事件合并后放入一个单独的Observable里，如图所示
 
-
 ![enter description here][2]
 
 
