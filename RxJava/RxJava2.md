@@ -231,5 +231,28 @@ FlatMap将上游的一个Observable变换成多个发送事件的Observables，�
  中间flatMap的作用是将圆形的事件转换为一个发送矩形事件和三角形事件的新的上游Observable.
  
  代码如下：
- 
- 
+
+``` java
+Observable.create(new ObservableOnSubscribe<Integer>() {
+	@Override
+	public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+		emitter.onNext(1);
+		emitter.onNext(2);
+		emitter.onNext(3);
+	}
+}).flatMap(new Function<Integer, ObservableSource<String>>() {
+	@Override
+	public ObservableSource<String> apply(Integer integer) throws Exception {
+		final List<String> list = new ArrayList<String>();
+		for (int i = 0; i < 3; i++) {
+			list.add("I am value " + integer);
+		}
+		return Observable.fromIterable(list).delay(10, TimeUnit.SECONDS);
+	}
+}).subscribe(new Consumer<String>() {
+	@Override
+	public void accept(String s) throws Exception {
+		Log.d(TAG, s);
+	}
+});
+```
