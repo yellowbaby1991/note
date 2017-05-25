@@ -216,5 +216,7 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 运行结果为：
 
 ``` java
-enter code here
+05-25 00:47:25.264 1519-1519/app.yellow.rxjava2 D/MainActivity: This is result 1
+05-25 00:47:25.264 1519-1519/app.yellow.rxjava2 D/MainActivity: This is result 2
+05-25 00:47:25.264 1519-1519/app.yellow.rxjava2 D/MainActivity: This is result 3
 ```
