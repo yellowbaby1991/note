@@ -275,5 +275,7 @@ D/MainActivity: I am value 3
 
 
 ## filter
-filter负责过滤上游的事件，代码如下：
+filter负责过滤上游的事件，早餐上游发送了包子，馒头，肠粉，春卷，饺子，炒粉，等食物，通过filter方法只选择了包子
+
+代码如下：
 
