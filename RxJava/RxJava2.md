@@ -188,8 +188,6 @@ map是RxJava中最简单的一个变换操作符，它的作用就是对上游�
 ![enter description here][1]
 
 
-  [1]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
-  
  举个例子，将上游的integer对象转换成下游的String对象
 
 ``` java
@@ -222,4 +220,11 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 ```
 
 ## FlatMap
-FlatMap将上游的一个Observable变换成多个发送事件的Observables，然后将它们发送的事件合并后放入一个单独的Observable里
+FlatMap将上游的一个Observable变换成多个发送事件的Observables，然后将它们发送的事件合并后放入一个单独的Observable里，如图所示
+
+
+![enter description here][2]
+
+
+  [1]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [2]: http://upload-images.jianshu.io/upload_images/1008453-2ccce5cf25e8023a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
