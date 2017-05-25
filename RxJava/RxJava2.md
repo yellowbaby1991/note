@@ -233,28 +233,60 @@ FlatMap将上游的一个Observable变换成多个发送事件的Observables，�
  举例，得到所有的班级然后输出所有的学生姓名，代码如下：
 
 ``` java
-Observable.create(new ObservableOnSubscribe<Integer>() {
-	@Override
-	public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-		emitter.onNext(1);
-		emitter.onNext(2);
-		emitter.onNext(3);
-	}
-}).flatMap(new Function<Integer, ObservableSource<String>>() {
-	@Override
-	public ObservableSource<String> apply(Integer integer) throws Exception {
-		final List<String> list = new ArrayList<String>();
-		for (int i = 0; i < 3; i++) {
-			list.add("I am value " + integer);
-		}
-		return Observable.fromIterable(list).delay(10, TimeUnit.SECONDS);
-	}
-}).subscribe(new Consumer<String>() {
-	@Override
-	public void accept(String s) throws Exception {
-		Log.d(TAG, s);
-	}
-});
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ArrayList<Class> classes = new ArrayList<>();
+        classes.add(new Class("一班"));
+        classes.add(new Class("二班"));
+        classes.add(new Class("三班"));
+
+        Observable.fromIterable(classes)
+                .flatMap(new Function<Class, ObservableSource<Student>>() {//输入的是班级，输出的是学生
+                    @Override
+                    public ObservableSource<Student> apply(Class aClass) throws Exception {
+                        return Observable.fromIterable(aClass.getStudents());
+                    }
+                })
+                .subscribe(new Consumer<Student>() {
+                    @Override
+                    public void accept(Student student) throws Exception {
+                        Log.d(TAG, student.name);
+                    }
+                });
+
+    }
+
+
+    class Class {
+        ArrayList<Student> students;
+
+        Class(String name) {
+            students = new ArrayList<Student>();
+            students.add(new Student(name + "1"));
+            students.add(new Student(name + "2"));
+            students.add(new Student(name + "3"));
+        }
+
+        ArrayList<Student> getStudents() {
+            return students;
+        }
+    }
+
+    class Student {
+        String name;
+
+        public Student(String nameString) {
+            name = nameString;
+        }
+    }
+}
 ```
 运行结果如下：
 
