@@ -230,9 +230,7 @@ FlatMap将上游的一个Observable变换成多个发送事件的Observables，�
   
  中间flatMap的作用是将圆形的事件转换为一个发送矩形事件和三角形事件的新的上游Observable
  
- 距离，得到所有的班级然后输出所有的学生姓名
- 
- 代码如下：
+ 距离，得到所有的班级然后输出所有的学生姓名，代码如下：
 
 ``` java
 Observable.create(new ObservableOnSubscribe<Integer>() {
