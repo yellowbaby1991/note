@@ -701,6 +701,23 @@ Observable
 ### Merge
 merge(Observable, Observable)将两个Observable发射的事件序列组合并成一个事件序列，就像是一个Observable发射的一样。你可以简单的将它理解为两个Obsrvable合并成了一个Observable，合并后的数据是无序的
 
+``` java
+Observable stringObservable = Observable
+		.just("A", "B", "C", "D", "E");
+
+Observable intObservable = Observable
+		.just(1, 2, 3, 4, 5);
+
+Observable
+		.merge(stringObservable, intObservable)
+		.subscribe(new Consumer() {
+			@Override
+			public void accept(Object o) throws Exception {
+				Log.d(TAG, o.toString());
+			}
+		});
+```
+
 
 
 
