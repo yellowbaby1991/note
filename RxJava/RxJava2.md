@@ -224,6 +224,8 @@ Observable
 		});
 ```
 
+## fromIterable
+fromIterable作用是将一个集合转换成一系列上游事件，代码如下：
 
 
 
