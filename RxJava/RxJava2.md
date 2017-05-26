@@ -546,7 +546,7 @@ Observable
 		});
 ```
 
-### ElementAt
+### elementAt
 elementAt(int)用来获取元素Observable发射的事件序列中的第n项数据，并当做唯一的数据发射出去
 
 ``` java
@@ -620,7 +620,7 @@ Observable
 			}
 		});
 ```
-
+### SkipLast
 
 ## 线程控制
 
