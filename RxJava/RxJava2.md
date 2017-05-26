@@ -542,6 +542,19 @@ Observable
 ## takeLast
 takeLast(int)同样用一个整数n作为参数，只不过它发射的是观测序列中后n个元素
 
+``` java
+Observable
+		.just("A", "B", "C", "D", "E")
+		.takeLast(2)
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, s);
+			}
+		});
+```
+
+
 ## 线程控制
 
 RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
