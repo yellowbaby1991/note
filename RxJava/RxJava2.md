@@ -1,14 +1,4 @@
-* [RxJava2](#rxjava2)
-	* [配置](#配置)
-	* [观察者模式](#观察者模式)
-	* [Consumer](#consumer)
-	* [just](#just)
-	* [fromIterable](#fromiterable)
-	* [filter](#filter)
-	* [map](#map)
-	* [flatMap](#flatmap)
-	* [concatMap](#concatmap)
-	* [线程控制](#线程控制)
+
 
 # RxJava2
 ## 配置
@@ -206,7 +196,8 @@ public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super T
 public final void subscribe(Observer<? super T> observer) {}
 ```
 
-## Consumer
+## 偷懒写法
+### Consumer
 如果下游只关心next事件，可以使用Consumer类取代Observer方法，代码如下：
 ``` java
 Observable.create(new ObservableOnSubscribe<String>() {
@@ -224,7 +215,7 @@ Observable.create(new ObservableOnSubscribe<String>() {
 });
 ```
 
-## just
+### just
 just可以快速的创建几个上游事件，如下：
 
 ``` java
@@ -257,7 +248,7 @@ Observable
 		});
 ```
 
-## fromIterable
+### fromIterable
 fromIterable作用是将一个集合转换成一系列上游事件，代码如下：
 
 ``` java
@@ -275,29 +266,8 @@ Observable
 		});
 ```
 
-## filter
-filter负责过滤上游的事件，早餐上游发送了包子，馒头，肠粉，春卷，饺子，炒粉，等食物，通过filter方法只选择了包子
-
-代码如下：
-
-``` java
-Observable
-		.just("包子", "馒头", "肠粉", "春卷", "饺子", "炒粉")
-		.filter(new Predicate<String>() {
-			@Override
-			public boolean test(String s) throws Exception {
-				return s.equals("包子");
-			}
-		})
-		.subscribe(new Consumer<String>() {
-			@Override
-			public void accept(String s) throws Exception {
-				Log.d(TAG, "accept: " + s);//这里只能吃上饺子
-			}
-		});
-```
-
-## map
+## 转换操作符
+### map
 map的作用就是对上游发送的每一个事件应用一个函数，使得每一个事件都按指定的函数去变化，用事件图表示如下：
 
 ![enter description here][2]
@@ -323,7 +293,7 @@ Observable
 ```
 
 
-## flatMap
+### flatMap
 FlatMap将上游的一个Observable变换成多个发送事件的Observables，然后将它们发送的事件合并后放入一个单独的Observable里，如图所示
 
 ![enter description here][3]
@@ -405,7 +375,7 @@ public class MainActivity extends AppCompatActivity {
 
 上游每发送一个事件，flatMap都将创建一个新的水管，然后发送转换之后的新事件，下游接受到的就是这些新水管的事件，注意，**flatMap并不保证事件的顺序**，想保证顺序就使用concatMap
 
-## concatMap
+### concatMap
 作用和flatMap几乎相同，区别在于concatMap会严格保证事件的顺序
 
 ``` java
@@ -427,7 +397,7 @@ Observable
 
 
 
-## flatMapIterable
+### flatMapIterable
 flatMapIterable()和flatMap()几乎是一样的，不同的是flatMapIterable()它转化的多个Observable是使用Iterable作为源数据的
 
 ``` java
@@ -488,7 +458,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 
-## switchMap
+### switchMap
 switchMap和flatMap，很像，区别在于，每当上游发送一个新的事件，下游会取消之前处理的事件转而处理当前事件，使用场景：当上游发送多个网络请求的时候，只处理最近的一个
 
 ``` java
@@ -525,7 +495,30 @@ Observable
 ```
 
 
-## take
+## 过滤操作符
+### filter
+filter负责过滤上游的事件，早餐上游发送了包子，馒头，肠粉，春卷，饺子，炒粉，等食物，通过filter方法只选择了包子
+
+代码如下：
+
+``` java
+Observable
+		.just("包子", "馒头", "肠粉", "春卷", "饺子", "炒粉")
+		.filter(new Predicate<String>() {
+			@Override
+			public boolean test(String s) throws Exception {
+				return s.equals("包子");
+			}
+		})
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, "accept: " + s);//这里只能吃上饺子
+			}
+		});
+```
+
+### take
 take(int)用一个整数n作为一个参数，从原始的序列中发射前n个元素
 
 ``` java
@@ -539,7 +532,7 @@ Observable
 			}
 		});
 ```
-## takeLast
+### takeLast
 takeLast(int)同样用一个整数n作为参数，只不过它发射的是观测序列中后n个元素
 
 ``` java
@@ -554,7 +547,7 @@ Observable
 		});
 ```
 
-## ElementAt
+### ElementAt
 elementAt(int)用来获取元素Observable发射的事件序列中的第n项数据，并当做唯一的数据发射出去
 
 ``` java
@@ -569,7 +562,7 @@ Observable
 		});
 ```
 
-## Debounce
+### Debounce
 debounce(long, TimeUnit)过滤掉了由Observable发射的速率过快的数据；如果在一个指定的时间间隔过去了仍旧没有发射一个，那么它将发射最后的那个，通常用来防止button被重复点击
 
 ``` java
@@ -587,7 +580,7 @@ Observable
 上面的代码只有E会被下游接受处理
 
 
-## Distinct
+### Distinct
 distinct()的过滤规则是只允许还没有发射过的数据通过，所有重复的数据项都只会发射一次
 
 ``` java
