@@ -196,40 +196,40 @@ RxJava内置了以下几种线程选择
 
 ``` java
 
-        //上游发送事件
-        Observable observable = Observable.create(new ObservableOnSubscribe<String>() {
-            @Override
-            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                emitter.onNext("1");
-                emitter.onNext("2");
-                emitter.onNext("3");
-            }
-        });
+//上游发送事件
+Observable observable = Observable.create(new ObservableOnSubscribe<String>() {
+	@Override
+	public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+		emitter.onNext("1");
+		emitter.onNext("2");
+		emitter.onNext("3");
+	}
+});
 
-        //下游处理事件
-        Observer<String> observer = new Observer<String>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-                Log.d(TAG, "onSubscribe");
-            }
+//下游处理事件
+Observer<String> observer = new Observer<String>() {
+	@Override
+	public void onSubscribe(Disposable d) {
+		Log.d(TAG, "onSubscribe");
+	}
 
-            @Override
-            public void onNext(String value) {
-                Log.d(TAG, value);
-            }
+	@Override
+	public void onNext(String value) {
+		Log.d(TAG, value);
+	}
 
-            @Override
-            public void onError(Throwable e) {
-                Log.d(TAG, "onError");
-            }
+	@Override
+	public void onError(Throwable e) {
+		Log.d(TAG, "onError");
+	}
 
-            @Override
-            public void onComplete() {
-                Log.d(TAG, "onComplete");
-            }
-        };
+	@Override
+	public void onComplete() {
+		Log.d(TAG, "onComplete");
+	}
+};
 
-        observable.subscribe(observer);
+observable.subscribe(observer);
 ```
 
 
