@@ -558,15 +558,15 @@ Observable
 elementAt(int)用来获取元素Observable发射的事件序列中的第n项数据，并当做唯一的数据发射出去
 
 ``` java
-        Observable
-                .just("A", "B", "C", "D", "E")
-                .elementAt(2)
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        Log.d(TAG, s);
-                    }
-                });
+Observable
+		.just("A", "B", "C", "D", "E")
+		.elementAt(2)
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, s);
+			}
+		});
 ```
 
 
