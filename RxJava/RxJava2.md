@@ -234,6 +234,10 @@ Observer<String> observer = new Observer<String>() {
 observable.subscribe(observer);
 ```
 
+写成链式结构如下：
+
+
+
 
 ## just
 just可以快速的创建几个上游事件，如下：
