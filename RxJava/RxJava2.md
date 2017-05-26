@@ -8,10 +8,6 @@ compile 'io.reactivex.rxjava2:rxjava:2.0.1'
 compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 ```
 
-## ObservableEmitter和Disposable
-
-
-
 ## 线程控制
 
 RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
@@ -52,7 +48,6 @@ RxJava内置了以下几种线程选择
  2. Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
  3. Schedulers.newThread() 代表一个常规的新线程
  4. AndroidSchedulers.mainThread() 代表Android的主线程
-
 
 
 ## 观察者模式
