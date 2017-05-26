@@ -609,6 +609,18 @@ Observable
 
 ### Skip
 skip(int)让我们可以忽略Observable发射的前n项数据
+``` java
+Observable
+		.just("A", "B", "C", "D", "E")
+		.skip(2)
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, s);
+			}
+		});
+```
+
 
 ## 线程控制
 
