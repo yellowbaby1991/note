@@ -746,6 +746,33 @@ Zip通过一个函数将多个Observable发送的事件结合到一起，然后�
 
 ![enter description here][4]
 
+代码如下：
+
+``` java
+Observable stringObservable = Observable
+		.just("A", "B", "C", "D", "E");
+
+Observable intObservable = Observable
+		.just(1, 2, 3, 4, 5, 6);
+
+Observable
+		.zip(stringObservable, intObservable, new BiFunction<String, Integer, String>() {
+			@Override
+			public String apply(String s, Integer i) throws Exception {
+				return s + i;
+			}
+		})
+		.subscribe(new Consumer() {
+			@Override
+			public void accept(Object o) throws Exception {
+				Log.d(TAG, o.toString());
+			}
+		});
+```
+
+运行结果为：
+
+
 
   [1]: http://upload-images.jianshu.io/upload_images/1008453-7133ff9a13dd9a59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
   [2]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
