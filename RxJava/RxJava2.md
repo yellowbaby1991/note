@@ -195,14 +195,14 @@ RxJava内置了以下几种线程选择
 just可以快速的创建几个上游事件，如下：
 
 ``` java
-        Observable
-                .just("1", "2")
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        Logger.d(s);
-                    }
-                });
+Observable
+		.just("1", "2")
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Logger.d(s);
+			}
+		});
 ```
 
 
