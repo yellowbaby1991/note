@@ -227,6 +227,21 @@ Observable
 ## fromIterable
 fromIterable作用是将一个集合转换成一系列上游事件，代码如下：
 
+``` java
+ArrayList<String> names = new ArrayList<>();
+names.add("1");
+names.add("2");
+names.add("3");
+Observable
+		.fromIterable(names)
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Logger.d(s);
+			}
+		});
+```
+
 
 
 ## map
