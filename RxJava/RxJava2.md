@@ -721,6 +721,25 @@ Observable
 ### concat
 和Merge类似，但是是按顺序连接多个Observables
 
+``` java
+Observable stringObservable = Observable
+		.just("A", "B", "C", "D", "E");
+
+Observable intObservable = Observable
+		.just(1, 2, 3, 4, 5);
+
+Observable
+		.concat(stringObservable, intObservable)
+		.subscribe(new Consumer() {
+			@Override
+			public void accept(Object o) throws Exception {
+				Log.d(TAG, o.toString());
+			}
+		});
+```
+
+
+
 
 
 
