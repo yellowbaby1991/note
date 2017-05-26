@@ -196,30 +196,6 @@ public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super T
 public final void subscribe(Observer<? super T> observer) {}
 ```
 
-如果只想处理onNext事件写法如下：
-
-``` java
-Observable.create(new ObservableOnSubscribe<Integer>() {
-	@Override
-	public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-		Log.d(TAG, "emit 1");
-		emitter.onNext(1);
-		Log.d(TAG, "emit 2");
-		emitter.onNext(2);
-		Log.d(TAG, "emit 3");
-		emitter.onNext(3);
-		Log.d(TAG, "emit complete");
-		emitter.onComplete();
-		Log.d(TAG, "emit 4");
-		emitter.onNext(4);
-	}
-}).subscribe(new Consumer<Integer>() {
-	@Override
-	public void accept(Integer integer) throws Exception {
-		Log.d(TAG, "onNext: " + integer);
-	}
-});
-```
 
 ## just
 just可以快速的创建几个上游事件，如下：
