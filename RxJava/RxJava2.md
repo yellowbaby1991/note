@@ -7,47 +7,6 @@ compile 'io.reactivex.rxjava2:rxjava:2.0.1'
 compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 ```
 
-## 线程控制
-
-RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
-
-``` java
-Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
-	@Override
-	public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-		Log.d(TAG, "emit 1");
-		emitter.onNext(1);
-		Log.d(TAG, "emit 2");
-		emitter.onNext(2);
-		Log.d(TAG, "emit 3");
-		emitter.onNext(3);
-		Log.d(TAG, "emit complete");
-		emitter.onComplete();
-		Log.d(TAG, "emit 4");
-		emitter.onNext(4);
-	}
-});
-
-Consumer<Integer> consumer = new Consumer<Integer>() {
-	@Override
-	public void accept(Integer integer) throws Exception {
-		Log.d(TAG, "onNext: " + integer);
-	}
-};
-
-observable.subscribeOn(Schedulers.newThread())//指定上游的线程
-		.observeOn(AndroidSchedulers.mainThread())//指定下游的线程
-		.subscribe(consumer);
-```
-
-RxJava内置了以下几种线程选择
-
- 1. Schedulers.io() 代表io操作的线程, 通常用于网络,读写文件等io密集型的操作
- 2. Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
- 3. Schedulers.newThread() 代表一个常规的新线程
- 4. AndroidSchedulers.mainThread() 代表Android的主线程
-
-
 ## 观察者模式
 
 一个经典的观察者模式，上游发送事件，下游处理事件，然后上游监听下游
@@ -450,6 +409,49 @@ public class MainActivity extends AppCompatActivity {
 
 
 ## fromIterable
+
+
+## 线程控制
+
+RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
+
+``` java
+Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
+	@Override
+	public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+		Log.d(TAG, "emit 1");
+		emitter.onNext(1);
+		Log.d(TAG, "emit 2");
+		emitter.onNext(2);
+		Log.d(TAG, "emit 3");
+		emitter.onNext(3);
+		Log.d(TAG, "emit complete");
+		emitter.onComplete();
+		Log.d(TAG, "emit 4");
+		emitter.onNext(4);
+	}
+});
+
+Consumer<Integer> consumer = new Consumer<Integer>() {
+	@Override
+	public void accept(Integer integer) throws Exception {
+		Log.d(TAG, "onNext: " + integer);
+	}
+};
+
+observable.subscribeOn(Schedulers.newThread())//指定上游的线程
+		.observeOn(AndroidSchedulers.mainThread())//指定下游的线程
+		.subscribe(consumer);
+```
+
+RxJava内置了以下几种线程选择
+
+ 1. Schedulers.io() 代表io操作的线程, 通常用于网络,读写文件等io密集型的操作
+ 2. Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
+ 3. Schedulers.newThread() 代表一个常规的新线程
+ 4. AndroidSchedulers.mainThread() 代表Android的主线程
+
+
 
 
   [1]: http://upload-images.jianshu.io/upload_images/1008453-7133ff9a13dd9a59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
