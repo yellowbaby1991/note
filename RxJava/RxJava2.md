@@ -236,6 +236,36 @@ observable.subscribe(observer);
 
 写成链式结构如下：
 
+``` java
+Observable.create(new ObservableOnSubscribe<String>() {
+	@Override
+	public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+		emitter.onNext("1");
+		emitter.onNext("2");
+		emitter.onNext("3");
+	}
+}).subscribe(new Observer<String>() {
+	@Override
+	public void onSubscribe(Disposable d) {
+		Log.d(TAG, "onSubscribe");
+	}
+
+	@Override
+	public void onNext(String value) {
+		Log.d(TAG, value);
+	}
+
+	@Override
+	public void onError(Throwable e) {
+		Log.d(TAG, "onError");
+	}
+
+	@Override
+	public void onComplete() {
+		Log.d(TAG, "onComplete");
+	}
+});
+```
 
 
 
