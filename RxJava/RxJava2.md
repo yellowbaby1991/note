@@ -230,6 +230,7 @@ Observer<String> observer = new Observer<String>() {
 	}
 };
 
+//上游订阅下游
 observable.subscribe(observer);
 ```
 
