@@ -189,6 +189,12 @@ RxJava内置了以下几种线程选择
 
 一个经典的观察者模式，上游发送事件，下游处理事件，然后上游监听下游
 
+如图所示：
+
+![enter description here][1]
+
+代码实现如下：
+
 ``` java
 
 //上游发送事件
@@ -304,7 +310,7 @@ Observable
 ## map
 map的作用就是对上游发送的每一个事件应用一个函数，使得每一个事件都按指定的函数去变化，用事件图表示如下：
 
-![enter description here][1]
+![enter description here][2]
 
 
  举个例子，将上游的integer对象转换成下游的String对象
@@ -330,12 +336,9 @@ Observable
 ## flatMap
 FlatMap将上游的一个Observable变换成多个发送事件的Observables，然后将它们发送的事件合并后放入一个单独的Observable里，如图所示
 
-![enter description here][2]
+![enter description here][3]
 
 
-  [1]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
-  [2]: http://upload-images.jianshu.io/upload_images/1008453-2ccce5cf25e8023a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
-  
  中间flatMap的作用是将圆形的事件转换为一个发送矩形事件和三角形事件的新的上游Observable
  
  举例，得到所有的班级然后输出所有的学生姓名，代码如下：
@@ -420,3 +423,7 @@ public class MainActivity extends AppCompatActivity {
 
 ## fromIterable
 
+
+  [1]: http://upload-images.jianshu.io/upload_images/1008453-7133ff9a13dd9a59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [2]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [3]: http://upload-images.jianshu.io/upload_images/1008453-2ccce5cf25e8023a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
