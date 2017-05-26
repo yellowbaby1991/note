@@ -10,6 +10,134 @@ compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
 ## ObservableEmitter和Disposable
 
+
+
+## 线程控制
+
+RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
+
+``` java
+
+        Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                Log.d(TAG, "emit 1");
+                emitter.onNext(1);
+                Log.d(TAG, "emit 2");
+                emitter.onNext(2);
+                Log.d(TAG, "emit 3");
+                emitter.onNext(3);
+                Log.d(TAG, "emit complete");
+                emitter.onComplete();
+                Log.d(TAG, "emit 4");
+                emitter.onNext(4);
+            }
+        });
+
+        Consumer<Integer> consumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) throws Exception {
+                Log.d(TAG, "onNext: " + integer);
+            }
+        };
+
+        observable.subscribeOn(Schedulers.newThread())//指定上游的线程
+                .observeOn(AndroidSchedulers.mainThread())//指定下游的线程
+                .subscribe(consumer);
+```
+
+RxJava内置了以下几种线程选择
+
+ 1. Schedulers.io() 代表io操作的线程, 通常用于网络,读写文件等io密集型的操作
+ 2. Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
+ 3. Schedulers.newThread() 代表一个常规的新线程
+ 4. AndroidSchedulers.mainThread() 代表Android的主线程
+
+
+
+## 观察者模式
+
+一个经典的观察者模式，上游发送事件，下游处理事件，然后上游监听下游
+
+如图所示：
+
+![enter description here][1]
+
+代码实现如下：
+
+``` java
+
+//上游发送事件
+Observable observable = Observable.create(new ObservableOnSubscribe<String>() {
+	@Override
+	public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+		emitter.onNext("1");
+		emitter.onNext("2");
+		emitter.onNext("3");
+	}
+});
+
+//下游处理事件
+Observer<String> observer = new Observer<String>() {
+	@Override
+	public void onSubscribe(Disposable d) {
+		Log.d(TAG, "onSubscribe");
+	}
+
+	@Override
+	public void onNext(String value) {
+		Log.d(TAG, value);
+	}
+
+	@Override
+	public void onError(Throwable e) {
+		Log.d(TAG, "onError");
+	}
+
+	@Override
+	public void onComplete() {
+		Log.d(TAG, "onComplete");
+	}
+};
+
+//上游订阅下游
+observable.subscribe(observer);
+```
+
+写成链式结构如下：
+
+``` java
+Observable.create(new ObservableOnSubscribe<String>() {
+	@Override
+	public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+		emitter.onNext("1");
+		emitter.onNext("2");
+		emitter.onNext("3");
+	}
+}).subscribe(new Observer<String>() {
+	@Override
+	public void onSubscribe(Disposable d) {
+		Log.d(TAG, "onSubscribe");
+	}
+
+	@Override
+	public void onNext(String value) {
+		Log.d(TAG, value);
+	}
+
+	@Override
+	public void onError(Throwable e) {
+		Log.d(TAG, "onError");
+	}
+
+	@Override
+	public void onComplete() {
+		Log.d(TAG, "onComplete");
+	}
+});
+```
+
+
 > ObservableEmitter
 
 ObservableEmitter可以发送出三种事件onNext(T value)， onComplete()和 onError，但是发送需要满足一定规则
@@ -137,132 +265,6 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 	@Override
 	public void accept(Integer integer) throws Exception {
 		Log.d(TAG, "onNext: " + integer);
-	}
-});
-```
-
-
-## 线程控制
-
-RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
-
-``` java
-
-        Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                Log.d(TAG, "emit 1");
-                emitter.onNext(1);
-                Log.d(TAG, "emit 2");
-                emitter.onNext(2);
-                Log.d(TAG, "emit 3");
-                emitter.onNext(3);
-                Log.d(TAG, "emit complete");
-                emitter.onComplete();
-                Log.d(TAG, "emit 4");
-                emitter.onNext(4);
-            }
-        });
-
-        Consumer<Integer> consumer = new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) throws Exception {
-                Log.d(TAG, "onNext: " + integer);
-            }
-        };
-
-        observable.subscribeOn(Schedulers.newThread())//指定上游的线程
-                .observeOn(AndroidSchedulers.mainThread())//指定下游的线程
-                .subscribe(consumer);
-```
-
-RxJava内置了以下几种线程选择
-
- 1. Schedulers.io() 代表io操作的线程, 通常用于网络,读写文件等io密集型的操作
- 2. Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
- 3. Schedulers.newThread() 代表一个常规的新线程
- 4. AndroidSchedulers.mainThread() 代表Android的主线程
-
-
-
-## 观察者模式
-
-一个经典的观察者模式，上游发送事件，下游处理事件，然后上游监听下游
-
-如图所示：
-
-![enter description here][1]
-
-代码实现如下：
-
-``` java
-
-//上游发送事件
-Observable observable = Observable.create(new ObservableOnSubscribe<String>() {
-	@Override
-	public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-		emitter.onNext("1");
-		emitter.onNext("2");
-		emitter.onNext("3");
-	}
-});
-
-//下游处理事件
-Observer<String> observer = new Observer<String>() {
-	@Override
-	public void onSubscribe(Disposable d) {
-		Log.d(TAG, "onSubscribe");
-	}
-
-	@Override
-	public void onNext(String value) {
-		Log.d(TAG, value);
-	}
-
-	@Override
-	public void onError(Throwable e) {
-		Log.d(TAG, "onError");
-	}
-
-	@Override
-	public void onComplete() {
-		Log.d(TAG, "onComplete");
-	}
-};
-
-//上游订阅下游
-observable.subscribe(observer);
-```
-
-写成链式结构如下：
-
-``` java
-Observable.create(new ObservableOnSubscribe<String>() {
-	@Override
-	public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-		emitter.onNext("1");
-		emitter.onNext("2");
-		emitter.onNext("3");
-	}
-}).subscribe(new Observer<String>() {
-	@Override
-	public void onSubscribe(Disposable d) {
-		Log.d(TAG, "onSubscribe");
-	}
-
-	@Override
-	public void onNext(String value) {
-		Log.d(TAG, value);
-	}
-
-	@Override
-	public void onError(Throwable e) {
-		Log.d(TAG, "onError");
-	}
-
-	@Override
-	public void onComplete() {
-		Log.d(TAG, "onComplete");
 	}
 });
 ```
