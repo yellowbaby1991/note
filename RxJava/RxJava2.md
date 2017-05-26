@@ -561,7 +561,7 @@ Observable
 		});
 ```
 
-### Debounce
+### debounce
 debounce(long, TimeUnit)过滤掉了由Observable发射的速率过快的数据；如果在一个指定的时间间隔过去了仍旧没有发射一个，那么它将发射最后的那个，通常用来防止button被重复点击
 
 ``` java
@@ -579,7 +579,7 @@ Observable
 上面的代码只有E会被下游接受处理
 
 
-### Distinct
+### distinct
 distinct()的过滤规则是只允许还没有发射过的数据通过，所有重复的数据项都只会发射一次
 
 ``` java
@@ -607,7 +607,7 @@ Observable
 
 
 
-### Skip
+### skip
 skip(int)让我们可以忽略Observable发射的前n项数据
 ``` java
 Observable
@@ -620,7 +620,7 @@ Observable
 			}
 		});
 ```
-### SkipLast
+### skipLast
 
 ## 线程控制
 
