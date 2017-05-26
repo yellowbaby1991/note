@@ -304,6 +304,8 @@ public class MainActivity extends AppCompatActivity {
 
 上游每发送一个事件，flatMap都将创建一个新的水管，然后发送转换之后的新事件，下游接受到的就是这些新水管的事件，注意，**flatMap并不保证事件的顺序**，想保证顺序就使用concatMap
 
+## concatMap
+作用和flatMap几乎相同，区别在于concatMap会严格保证事件的顺序
 
 
 ## filter
