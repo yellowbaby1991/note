@@ -431,7 +431,60 @@ Observable
 flatMapIterable()和flatMap()几乎是一样的，不同的是flatMapIterable()它转化的多个Observable是使用Iterable作为源数据的
 
 ``` java
-enter code here
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ArrayList<Class> classes = new ArrayList<>();
+        classes.add(new Class("一班"));
+        classes.add(new Class("二班"));
+        classes.add(new Class("三班"));
+
+        Observable.fromIterable(classes)
+                .flatMapIterable(new Function<Class, Iterable<Student>>() {
+                    @Override
+                    public Iterable<Student> apply(Class aClass) throws Exception {
+                        return aClass.students;
+                    }
+                })
+                .subscribe(new Consumer<Student>() {
+                    @Override
+                    public void accept(Student student) throws Exception {
+                        Log.d(TAG, student.name);
+                    }
+                });
+
+    }
+
+
+    class Class {
+        ArrayList<Student> students;
+
+        Class(String name) {
+            students = new ArrayList<Student>();
+            students.add(new Student(name + "1"));
+            students.add(new Student(name + "2"));
+            students.add(new Student(name + "3"));
+        }
+
+        ArrayList<Student> getStudents() {
+            return students;
+        }
+    }
+
+    class Student {
+        String name;
+
+        public Student(String nameString) {
+            name = nameString;
+        }
+    }
+}
 ```
 
 
