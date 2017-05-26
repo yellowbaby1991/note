@@ -196,7 +196,6 @@ public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super T
 public final void subscribe(Observer<? super T> observer) {}
 ```
 
-## 偷懒写法
 ### Consumer
 如果下游只关心next事件，可以使用Consumer类取代Observer方法，代码如下：
 ``` java
