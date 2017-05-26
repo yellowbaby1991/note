@@ -89,7 +89,6 @@ Observable.create(new ObservableOnSubscribe<String>() {
 });
 ```
 
-
 > ObservableEmitter
 
 ObservableEmitter可以发送出三种事件onNext(T value)， onComplete()和 onError，但是发送需要满足一定规则
@@ -196,7 +195,7 @@ public final Disposable subscribe(Consumer<? super T> onNext, Consumer<? super T
 public final void subscribe(Observer<? super T> observer) {}
 ```
 
-
+## 
 ## just
 just可以快速的创建几个上游事件，如下：
 
