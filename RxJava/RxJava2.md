@@ -698,6 +698,8 @@ Observable
 
 
 ## 组合操作符
+### Merge
+merge(Observable, Observable)将两个Observable发射的事件序列组合并成一个事件序列，就像是一个Observable发射的一样。你可以简单的将它理解为两个Obsrvable合并成了一个Observable，合并后的数据是无序的
 
 
 
