@@ -21,6 +21,10 @@
 		* [skip](#skip)
 		* [skipLast](#skiplast)
 	* [组合操作符](#组合操作符)
+		* [Merge](#merge)
+		* [concat](#concat)
+		* [startWith](#startwith)
+		* [zip](#zip)
 
 # RxJava2
 ## 配置
