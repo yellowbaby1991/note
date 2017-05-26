@@ -489,7 +489,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 ## switchMap
-switchMap和flatMap，很像，区别在于，每当上游发送一个新的事件，下游会取消之前处理的事件转而处理当前事件
+switchMap和flatMap，很像，区别在于，每当上游发送一个新的事件，下游会取消之前处理的事件转而处理当前事件，使用场景：当上游发送多个网络请求的时候，只处理最近的一个
 
 ``` java
 Observable
