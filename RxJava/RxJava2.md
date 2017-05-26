@@ -289,13 +289,6 @@ Observable
 		});
 ```
 
-运行结果为：
-
-``` java
-05-25 00:47:25.264 1519-1519/app.yellow.rxjava2 D/MainActivity: This is result 1
-05-25 00:47:25.264 1519-1519/app.yellow.rxjava2 D/MainActivity: This is result 2
-05-25 00:47:25.264 1519-1519/app.yellow.rxjava2 D/MainActivity: This is result 3
-```
 
 ## flatMap
 FlatMap将上游的一个Observable变换成多个发送事件的Observables，然后将它们发送的事件合并后放入一个单独的Observable里，如图所示
