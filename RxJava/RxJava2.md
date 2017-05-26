@@ -414,9 +414,6 @@ Observable
 		});
 ```
 
-
-
-
 ## fromIterable
 
 
