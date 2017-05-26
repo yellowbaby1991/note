@@ -427,6 +427,14 @@ Observable
 
 
 
+## flatMapIterable
+flatMapIterable()和flatMap()几乎是一样的，不同的是flatMapIterable()它转化的多个Observable是使用Iterable作为源数据的
+
+``` java
+enter code here
+```
+
+
 ## 线程控制
 
 RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
