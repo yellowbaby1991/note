@@ -590,6 +590,20 @@ Observable
 ## Distinct
 distinct()的过滤规则是只允许还没有发射过的数据通过，所有重复的数据项都只会发射一次
 
+``` java
+Observable
+		.just("A", "B", "C", "D", "E", "A", "B", "C", "D", "E")
+		.distinct()
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, s);
+			}
+		});
+```
+
+
+
 
 
 ## 线程控制
