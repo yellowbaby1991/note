@@ -414,7 +414,6 @@ Observable
 		});
 ```
 
-## fromIterable
 
 
 ## 线程控制
