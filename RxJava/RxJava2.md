@@ -191,6 +191,11 @@ RxJava内置了以下几种线程选择
  4. AndroidSchedulers.mainThread() 代表Android的主线程
 
 
+
+## 观察者模式
+
+
+
 ## just
 just可以快速的创建几个上游事件，如下：
 
