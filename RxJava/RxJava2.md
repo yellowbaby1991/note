@@ -267,8 +267,6 @@ Observable.create(new ObservableOnSubscribe<String>() {
 });
 ```
 
-
-
 ## just
 just可以快速的创建几个上游事件，如下：
 
