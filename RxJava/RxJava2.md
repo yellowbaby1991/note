@@ -197,6 +197,23 @@ public final void subscribe(Observer<? super T> observer) {}
 
 ## Consumer
 
+``` java
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+                emitter.onNext("1");
+                emitter.onNext("2");
+                emitter.onNext("3");
+            }
+        }).subscribe(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+                Logger.d(s);
+            }
+        });
+```
+
+
 ## just
 just可以快速的创建几个上游事件，如下：
 
