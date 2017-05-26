@@ -624,15 +624,15 @@ Observable
 skipLast(int)忽略Observable发射的后n项数据
 
 ``` java
-        Observable
-                .just("A", "B", "C", "D", "E")
-                .skipLast(2)
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        Log.d(TAG, s);
-                    }
-                });
+Observable
+		.just("A", "B", "C", "D", "E")
+		.skipLast(2)
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, s);
+			}
+		});
 ```
 
 
