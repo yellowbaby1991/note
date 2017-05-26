@@ -208,20 +208,20 @@ Observable
 上面代码等价于：
 
 ``` java
-        Observable
-                .create(new ObservableOnSubscribe<String>() {
-                    @Override
-                    public void subscribe(ObservableEmitter<String> e) throws Exception {
-                        e.onNext("1");
-                        e.onNext("2");
-                    }
-                })
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        Logger.d(s);
-                    }
-                });
+Observable
+		.create(new ObservableOnSubscribe<String>() {
+			@Override
+			public void subscribe(ObservableEmitter<String> e) throws Exception {
+				e.onNext("1");
+				e.onNext("2");
+			}
+		})
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Logger.d(s);
+			}
+		});
 ```
 
 
