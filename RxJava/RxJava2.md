@@ -490,6 +490,41 @@ public class MainActivity extends AppCompatActivity {
 
 ## switchMap
 switchMap和flatMap，很像，区别在于，每当上游发送一个新的事件，下游会取消之前处理的事件转而处理当前事件
+
+``` java
+Observable
+		.just("A", "B", "C", "D", "E")
+		.switchMap(new Function<String, ObservableSource<String>>() {
+			@Override
+			public ObservableSource<String> apply(String s) throws Exception {
+				return Observable.just(s);
+			}
+		})
+		.subscribe(new Observer<String>() {
+			@Override
+			public void onSubscribe(Disposable d) {
+				Log.d(TAG, "onSubscribe");
+			}
+
+			@Override
+			public void onNext(String value) {
+				Log.d(TAG, value);
+			}
+
+			@Override
+			public void onError(Throwable e) {
+				Log.d(TAG, "onError");
+			}
+
+			@Override
+			public void onComplete() {
+				Log.d(TAG, "onComplete");
+			}
+		});
+}
+```
+
+
 ## 线程控制
 
 RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
