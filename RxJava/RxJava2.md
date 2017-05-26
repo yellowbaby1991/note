@@ -397,6 +397,23 @@ public class MainActivity extends AppCompatActivity {
 ## concatMap
 作用和flatMap几乎相同，区别在于concatMap会严格保证事件的顺序
 
+``` java
+Observable
+		.just(1, 2, 3, 4)
+		.concatMap(new Function<Integer, ObservableSource<String>>() {
+			@Override
+			public ObservableSource<String> apply(Integer integer) throws Exception {
+				return Observable.fromArray("values:" + integer);
+			}
+		})
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Logger.d(s);
+			}
+		});
+```
+
 
 
 
