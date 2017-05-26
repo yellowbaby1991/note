@@ -191,6 +191,9 @@ RxJava内置了以下几种线程选择
  4. AndroidSchedulers.mainThread() 代表Android的主线程
 
 
+## just
+just可以快速的创建几个上游事件，如下：
+
 ## map
 map是RxJava中最简单的一个变换操作符，它的作用就是对上游发送的每一个事件应用一个函数，使得每一个事件都按指定的函数去变化，用事件图表示如下：
 
