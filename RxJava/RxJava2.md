@@ -719,6 +719,7 @@ Observable
 ```
 
 ### concat
+和Merge类似，但是是按顺序连接多个Observables
 
 
 
