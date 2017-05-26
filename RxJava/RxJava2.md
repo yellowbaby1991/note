@@ -569,6 +569,29 @@ Observable
 		});
 ```
 
+## Debounce
+debounce(long, TimeUnit)过滤掉了由Observable发射的速率过快的数据；如果在一个指定的时间间隔过去了仍旧没有发射一个，那么它将发射最后的那个，通常用来防止button被重复点击
+
+``` java
+Observable
+		.just("A", "B", "C", "D", "E")
+		.debounce(1000, TimeUnit.SECONDS)
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, s);
+			}
+		});
+```
+
+上面的代码只有E会被下游接受处理
+
+
+
+
+## Distinct
+
+
 
 ## 线程控制
 
