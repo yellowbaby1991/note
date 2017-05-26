@@ -242,7 +242,27 @@ Observable
 		});
 ```
 
+## filter
+filter负责过滤上游的事件，早餐上游发送了包子，馒头，肠粉，春卷，饺子，炒粉，等食物，通过filter方法只选择了包子
 
+代码如下：
+
+``` java
+Observable
+		.just("包子", "馒头", "肠粉", "春卷", "饺子", "炒粉")
+		.filter(new Predicate<String>() {
+			@Override
+			public boolean test(String s) throws Exception {
+				return s.equals("包子");
+			}
+		})
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Log.d(TAG, "accept: " + s);//这里只能吃上饺子
+			}
+		});
+```
 
 ## map
 map是RxJava中最简单的一个变换操作符，它的作用就是对上游发送的每一个事件应用一个函数，使得每一个事件都按指定的函数去变化，用事件图表示如下：
@@ -370,27 +390,7 @@ public class MainActivity extends AppCompatActivity {
 作用和flatMap几乎相同，区别在于concatMap会严格保证事件的顺序
 
 
-## filter
-filter负责过滤上游的事件，早餐上游发送了包子，馒头，肠粉，春卷，饺子，炒粉，等食物，通过filter方法只选择了包子
 
-代码如下：
-
-``` java
-Observable
-		.just("包子", "馒头", "肠粉", "春卷", "饺子", "炒粉")
-		.filter(new Predicate<String>() {
-			@Override
-			public boolean test(String s) throws Exception {
-				return s.equals("包子");
-			}
-		})
-		.subscribe(new Consumer<String>() {
-			@Override
-			public void accept(String s) throws Exception {
-				Log.d(TAG, "accept: " + s);//这里只能吃上饺子
-			}
-		});
-```
 
 ## fromIterable
 
