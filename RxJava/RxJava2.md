@@ -607,6 +607,9 @@ Observable
 
 
 
+### Skip
+skip(int)让我们可以忽略Observable发射的前n项数据
+
 ## 线程控制
 
 RxJava默认上游和下游会处于同一线程，也就是上游发送的事件在上面线程，下游默认在什么线程处理，想切换线程就要使用subscribeOn和observeOn方法，代码如下
