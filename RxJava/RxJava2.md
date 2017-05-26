@@ -196,21 +196,21 @@ public final void subscribe(Observer<? super T> observer) {}
 ```
 
 ## Consumer
-
+如果下游只关心next事件，可以使用Consumer类取代Observer方法，代码如下：
 ``` java
-        Observable.create(new ObservableOnSubscribe<String>() {
-            @Override
-            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                emitter.onNext("1");
-                emitter.onNext("2");
-                emitter.onNext("3");
-            }
-        }).subscribe(new Consumer<String>() {
-            @Override
-            public void accept(String s) throws Exception {
-                Logger.d(s);
-            }
-        });
+Observable.create(new ObservableOnSubscribe<String>() {
+	@Override
+	public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+		emitter.onNext("1");
+		emitter.onNext("2");
+		emitter.onNext("3");
+	}
+}).subscribe(new Consumer<String>() {
+	@Override
+	public void accept(String s) throws Exception {
+		Logger.d(s);
+	}
+});
 ```
 
 
