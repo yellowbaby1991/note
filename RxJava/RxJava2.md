@@ -273,24 +273,20 @@ map的作用就是对上游发送的每一个事件应用一个函数，使得�
  举个例子，将上游的integer对象转换成下游的String对象
 
 ``` java
-Observable.create(new ObservableOnSubscribe<Integer>() {
-	@Override
-	public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-		emitter.onNext(1);
-		emitter.onNext(2);
-		emitter.onNext(3);
-	}
-}).map(new Function<Integer, String>() {
-	@Override
-	public String apply(Integer integer) throws Exception {
-		return "This is result " + integer;
-	}
-}).subscribe(new Consumer<String>() {
-	@Override
-	public void accept(String s) throws Exception {
-		Log.d(TAG, s);
-	}
-});
+Observable
+		.just(1, 2, 3, 4)
+		.map(new Function<Integer, String>() {
+			@Override
+			public String apply(Integer integer) throws Exception {
+				return "value:" + integer;
+			}
+		})
+		.subscribe(new Consumer<String>() {
+			@Override
+			public void accept(String s) throws Exception {
+				Logger.d(s);
+			}
+		});
 ```
 
 运行结果为：
