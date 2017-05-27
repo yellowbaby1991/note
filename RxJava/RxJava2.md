@@ -1,5 +1,5 @@
 * [RxJava2](#rxjava2)
-	* [配置](#配置)
+	* [概述](#概述)
 	* [观察者模式](#观察者模式)
 		* [Consumer](#consumer)
 		* [just](#just)
@@ -26,6 +26,8 @@
 		* [startWith](#startwith)
 		* [zip](#zip)
 	* [最佳实践一：获得手机上安装的所有用户应用](#最佳实践一获得手机上安装的所有用户应用)
+	* [背压](#背压)
+	* [Flowable](#flowable)
 
 # RxJava2
 ## 概述
