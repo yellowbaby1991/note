@@ -784,6 +784,7 @@ D/MainActivity: D4
 D/MainActivity: E5
 ```
 
+## 最佳实践一：获得手机上安装的所有用户应用
 
 
   [1]: http://upload-images.jianshu.io/upload_images/1008453-7133ff9a13dd9a59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
