@@ -977,6 +977,8 @@ Subscriber<Integer> downStream = new Subscriber<Integer>() {
 upstream.subscribe(downStream);
 ```
 
+BackpressureStrategy.ERROR这种方式会在出现上下游流速不均衡的时候直接抛出一个异常,这个异常就是著名的MissingBackpressureException.
+
 
 
 
