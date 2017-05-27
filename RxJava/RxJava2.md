@@ -794,99 +794,6 @@ D/MainActivity: D4
 D/MainActivity: E5
 ```
 
-## 最佳实践一：获得手机上安装的所有用户应用
-
-> 思路
-
- 1. 上游获得ApplicationInfoList，全部往下游发
- 2. 使用filter过滤掉系统应用得到用户应用
- 3. 使用map将ApplicationInfo转为我们需要的AppInfo
- 4. 使用subscribeOn指定上游线程为IO线程
- 5. 使用observeOn指定下游线程为主线程
- 6. 下游onNext将得到的AppInfo存入列表
- 7. onComplete结束后刷新界面
-
-``` java
-public class MainActivity extends AppCompatActivity {
-
-    private static final String TAG = "MainActivity";
-
-    private ListView mLvAppinfos;
-    private List<AppInfo> mAppInfos;
-    private QuickAdapter<AppInfo> mAppInfosAdapter;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initView();
-        loadAppInfos();
-    }
-
-    private void loadAppInfos() {
-        final PackageManager pm = MainActivity.this.getPackageManager();
-        Observable
-                .fromIterable(getApplicationInfoList(pm))
-                .filter(new Predicate<ApplicationInfo>() {//过滤出非系统应用
-                    @Override
-                    public boolean test(ApplicationInfo applicationInfo) throws Exception {
-                        return (applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) <= 0;
-                    }
-                })
-                .map(new Function<ApplicationInfo, AppInfo>() {//将ApplicationInfo转为我们需要的AppInfo
-                    @Override
-                    public AppInfo apply(ApplicationInfo applicationInfo) throws Exception {
-                        AppInfo appInfo = new AppInfo();
-                        appInfo.setAppIcon(applicationInfo.loadIcon(pm));
-                        appInfo.setAppName(applicationInfo.loadLabel(pm).toString());
-                        return appInfo;
-                    }
-                })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<AppInfo>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(AppInfo appInfo) {
-                        mAppInfos.add(appInfo);
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        mAppInfosAdapter.replaceAll(mAppInfos);
-                        mAppInfosAdapter.notifyDataSetChanged();
-                    }
-                });
-    }
-
-    private void initView() {
-        mAppInfos = new ArrayList<>();
-        mAppInfosAdapter = new QuickAdapter<AppInfo>(this, R.layout.app_list_item, mAppInfos) {
-            @Override
-            protected void convert(BaseAdapterHelper helper, AppInfo item) {
-                helper.setText(R.id.textView, item.getAppName());
-                helper.setImageDrawable(R.id.imageView, item.getAppIcon());
-            }
-        };
-        mLvAppinfos = (ListView) findViewById(R.id.lv_appinfos);
-        mLvAppinfos.setAdapter(mAppInfosAdapter);
-    }
-
-    private List<ApplicationInfo> getApplicationInfoList(final PackageManager pm) {
-        return pm.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
-    }
-}
-```
-
 ## 背压
 
 先看一段代码：
@@ -999,3 +906,101 @@ s.request(long num);的意思是下游可以处理num个事件，上游看着发
   [4]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
   [5]: http://upload-images.jianshu.io/upload_images/1008453-2ccce5cf25e8023a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
   [6]: http://upload-images.jianshu.io/upload_images/1008453-e11e9d75b1775e4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+## 最佳实践一：获得手机上安装的所有用户应用
+
+> 思路
+
+ 1. 上游获得ApplicationInfoList，全部往下游发
+ 2. 使用filter过滤掉系统应用得到用户应用
+ 3. 使用map将ApplicationInfo转为我们需要的AppInfo
+ 4. 使用subscribeOn指定上游线程为IO线程
+ 5. 使用observeOn指定下游线程为主线程
+ 6. 下游onNext将得到的AppInfo存入列表
+ 7. onComplete结束后刷新界面
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
+    private ListView mLvAppinfos;
+    private List<AppInfo> mAppInfos;
+    private QuickAdapter<AppInfo> mAppInfosAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initView();
+        loadAppInfos();
+    }
+
+    private void loadAppInfos() {
+        final PackageManager pm = MainActivity.this.getPackageManager();
+        Observable
+                .fromIterable(getApplicationInfoList(pm))
+                .filter(new Predicate<ApplicationInfo>() {//过滤出非系统应用
+                    @Override
+                    public boolean test(ApplicationInfo applicationInfo) throws Exception {
+                        return (applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) <= 0;
+                    }
+                })
+                .map(new Function<ApplicationInfo, AppInfo>() {//将ApplicationInfo转为我们需要的AppInfo
+                    @Override
+                    public AppInfo apply(ApplicationInfo applicationInfo) throws Exception {
+                        AppInfo appInfo = new AppInfo();
+                        appInfo.setAppIcon(applicationInfo.loadIcon(pm));
+                        appInfo.setAppName(applicationInfo.loadLabel(pm).toString());
+                        return appInfo;
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<AppInfo>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(AppInfo appInfo) {
+                        mAppInfos.add(appInfo);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        mAppInfosAdapter.replaceAll(mAppInfos);
+                        mAppInfosAdapter.notifyDataSetChanged();
+                    }
+                });
+    }
+
+    private void initView() {
+        mAppInfos = new ArrayList<>();
+        mAppInfosAdapter = new QuickAdapter<AppInfo>(this, R.layout.app_list_item, mAppInfos) {
+            @Override
+            protected void convert(BaseAdapterHelper helper, AppInfo item) {
+                helper.setText(R.id.textView, item.getAppName());
+                helper.setImageDrawable(R.id.imageView, item.getAppIcon());
+            }
+        };
+        mLvAppinfos = (ListView) findViewById(R.id.lv_appinfos);
+        mLvAppinfos.setAdapter(mAppInfosAdapter);
+    }
+
+    private List<ApplicationInfo> getApplicationInfoList(final PackageManager pm) {
+        return pm.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
+    }
+}
+```
+
+## 最佳事件二：rxjava2+retrofit2实现网络请求
+
+``` java
+enter code here
+```
