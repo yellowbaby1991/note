@@ -1002,5 +1002,41 @@ public class MainActivity extends AppCompatActivity {
 ## 最佳事件二：rxjava2+retrofit2实现网络请求
 
 ``` java
-enter code here
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
+    private Retrofit mRetrofit;
+    private WashService mWashService;
+    private Observable<WashInfo> mObservable;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mRetrofit = new Retrofit.Builder()
+                .baseUrl("http://cloud.bmob.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+
+        mWashService = mRetrofit.create(WashService.class);
+
+        mObservable = mWashService.washCall();
+
+        mObservable
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<WashInfo>() {
+                    @Override
+                    public void accept(WashInfo washInfo) throws Exception {
+                        Logger.d(washInfo);
+                    }
+                });
+
+    }
+
+}
 ```
