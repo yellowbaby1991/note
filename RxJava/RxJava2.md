@@ -981,7 +981,7 @@ BackpressureStrategy.ERROR这种方式会在出现上下游流速不均衡的时
 
 > request方法
 
-s.request(long num);的意思是下游可以处理num个事件，上游看着发，
+s.request(long num);的意思是下游可以处理num个事件，上游看着发，代表了下游处理事件的能力，如果不设置或者设置的值过小，也会抛出MissingBackpressureException
 
 
 
