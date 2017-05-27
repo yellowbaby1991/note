@@ -789,7 +789,12 @@ D/MainActivity: E5
 > 思路
 
  1. 上游获得ApplicationInfoList，全部往下游发
- 2. 
+ 2. 使用filter过滤掉系统应用得到用户应用
+ 3. 使用map将ApplicationInfo转为我们需要的AppInfo
+ 4. 使用subscribeOn指定上游线程为IO线程
+ 5. 使用observeOn指定下游线程为主线程
+ 6. 下游onNext将得到的AppInfo存入列表
+ 7. onComplete结束后刷新界面
 
 ``` java
 public class MainActivity extends AppCompatActivity {
