@@ -930,6 +930,8 @@ Observable
 		});
 ```
 
+为了处理背压我们引出了RxJava特有的Flowable
+
 
 
 
