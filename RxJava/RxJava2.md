@@ -28,7 +28,13 @@
 	* [最佳实践一：获得手机上安装的所有用户应用](#最佳实践一获得手机上安装的所有用户应用)
 
 # RxJava2
-## 配置
+## 概述
+
+> 相关参考
+[API][1]
+[GitHub][2]
+
+> 配置
 
 ``` glide
 compile 'io.reactivex.rxjava2:rxjava:2.0.1'
@@ -41,7 +47,7 @@ compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
 如图所示：
 
-![enter description here][1]
+![enter description here][3]
 
 代码实现如下：
 
@@ -335,7 +341,7 @@ RxJava内置了以下几种线程选择
 ### map
 map的作用就是对上游发送的每一个事件应用一个函数，使得每一个事件都按指定的函数去变化，用事件图表示如下：
 
-![enter description here][2]
+![enter description here][4]
 
 
  举个例子，将上游的integer对象转换成下游的String对象
@@ -361,7 +367,7 @@ Observable
 ### flatMap
 FlatMap将上游的一个Observable变换成多个发送事件的Observables，然后将它们发送的事件合并后放入一个单独的Observable里，如图所示
 
-![enter description here][3]
+![enter description here][5]
 
 
  中间flatMap的作用是将圆形的事件转换为一个发送矩形事件和三角形事件的新的上游Observable
@@ -749,7 +755,7 @@ Observable
 ### zip
 Zip通过一个函数将多个Observable发送的事件结合到一起，然后发送这些组合到一起的事件. 它按照严格的顺序应用这个函数。它只发射与发射数据项最少的那个Observable一样多的数据，如下图所示
 
-![enter description here][4]
+![enter description here][6]
 
 代码如下：
 
@@ -984,10 +990,9 @@ BackpressureStrategy.ERROR这种方式会在出现上下游流速不均衡的时
 s.request(long num);的意思是下游可以处理num个事件，上游看着发，代表了下游处理事件的能力，如果不设置或者设置的值过小，也会抛出MissingBackpressureException
 
 
-
-
-
-  [1]: http://upload-images.jianshu.io/upload_images/1008453-7133ff9a13dd9a59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
-  [2]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
-  [3]: http://upload-images.jianshu.io/upload_images/1008453-2ccce5cf25e8023a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
-  [4]: http://upload-images.jianshu.io/upload_images/1008453-e11e9d75b1775e4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [1]: http://reactivex.io/RxJava/2.x/javadoc/
+  [2]: https://github.com/ReactiveX/RxJava
+  [3]: http://upload-images.jianshu.io/upload_images/1008453-7133ff9a13dd9a59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [4]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [5]: http://upload-images.jianshu.io/upload_images/1008453-2ccce5cf25e8023a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [6]: http://upload-images.jianshu.io/upload_images/1008453-e11e9d75b1775e4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
