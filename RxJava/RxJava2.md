@@ -979,7 +979,9 @@ upstream.subscribe(downStream);
 
 BackpressureStrategy.ERROR这种方式会在出现上下游流速不均衡的时候直接抛出一个异常,这个异常就是著名的MissingBackpressureException.
 
+> request方法
 
+s.request(long num);的意思是下游可以处理num个事件，上游看着发，
 
 
 
