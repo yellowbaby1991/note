@@ -889,6 +889,7 @@ Observable
 			public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
 				for (int i = 0; ; i++) {  //无限循环发送事件
 					emitter.onNext(i);
+					Log.d(TAG, "emitter" + i);
 				}
 			}
 		})
