@@ -786,6 +786,92 @@ D/MainActivity: E5
 
 ## 最佳实践一：获得手机上安装的所有用户应用
 
+> 思路
+
+ 1. 上游获得ApplicationInfoList，全部往下游发
+ 2. 
+
+``` java
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
+    private ListView mLvAppinfos;
+    private List<AppInfo> mAppInfos;
+    private QuickAdapter<AppInfo> mAppInfosAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initView();
+        loadAppInfos();
+    }
+
+    private void loadAppInfos() {
+        final PackageManager pm = MainActivity.this.getPackageManager();
+        Observable
+                .fromIterable(getApplicationInfoList(pm))
+                .filter(new Predicate<ApplicationInfo>() {//过滤出非系统应用
+                    @Override
+                    public boolean test(ApplicationInfo applicationInfo) throws Exception {
+                        return (applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) <= 0;
+                    }
+                })
+                .map(new Function<ApplicationInfo, AppInfo>() {//将ApplicationInfo转为我们需要的AppInfo
+                    @Override
+                    public AppInfo apply(ApplicationInfo applicationInfo) throws Exception {
+                        AppInfo appInfo = new AppInfo();
+                        appInfo.setAppIcon(applicationInfo.loadIcon(pm));
+                        appInfo.setAppName(applicationInfo.loadLabel(pm).toString());
+                        return appInfo;
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<AppInfo>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(AppInfo appInfo) {
+                        mAppInfos.add(appInfo);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        mAppInfosAdapter.replaceAll(mAppInfos);
+                        mAppInfosAdapter.notifyDataSetChanged();
+                    }
+                });
+    }
+
+    private void initView() {
+        mAppInfos = new ArrayList<>();
+        mAppInfosAdapter = new QuickAdapter<AppInfo>(this, R.layout.app_list_item, mAppInfos) {
+            @Override
+            protected void convert(BaseAdapterHelper helper, AppInfo item) {
+                helper.setText(R.id.textView, item.getAppName());
+                helper.setImageDrawable(R.id.imageView, item.getAppIcon());
+            }
+        };
+        mLvAppinfos = (ListView) findViewById(R.id.lv_appinfos);
+        mLvAppinfos.setAdapter(mAppInfosAdapter);
+    }
+
+    private List<ApplicationInfo> getApplicationInfoList(final PackageManager pm) {
+        return pm.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
+    }
+}
+```
+
 
   [1]: http://upload-images.jianshu.io/upload_images/1008453-7133ff9a13dd9a59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
   [2]: http://upload-images.jianshu.io/upload_images/1008453-2a068dc6b726568a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
