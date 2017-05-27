@@ -880,8 +880,31 @@ public class MainActivity extends AppCompatActivity {
 
 ## 背压
 
-首先要介绍什么是同步订阅，什么是异步订阅
 先看一段代码：
+
+``` java
+Observable
+		.create(new ObservableOnSubscribe<Integer>() {
+			@Override
+			public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+				for (int i = 0; ; i++) {  //无限循环发送事件
+					emitter.onNext(i);
+				}
+			}
+		})
+		.subscribeOn(Schedulers.io())
+		.observeOn(AndroidSchedulers.mainThread())
+		.subscribe(new Consumer<Integer>() {
+			@Override
+			public void accept(Integer integer) throws Exception {
+				Thread.sleep(2000);
+				Log.d(TAG, "" + integer);
+			}
+		});
+```
+
+
+
 
 
 
