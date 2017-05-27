@@ -880,7 +880,7 @@ public class MainActivity extends AppCompatActivity {
 
 ## 背压
 
-> 背压之前首先要介绍什么是同步订阅，什么是异步订阅
+首先要介绍什么是同步订阅，什么是异步订阅
 先看一段代码：
 
 
