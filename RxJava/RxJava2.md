@@ -907,7 +907,28 @@ Observable
 
 注意这是上下游不在同一个线程的时候，此时的订阅为异步订阅，上游就会不断的发送事件，从而形成了背压
 
-如果在同一线程，上游会等待下游处理完之后才继续发送
+如果在同一线程，上游会等待下游处理完之后才继续发送，如下代码所示：
+
+``` java
+Observable
+		.create(new ObservableOnSubscribe<Integer>() {
+			@Override
+			public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+				for (int i = 0; ; i++) {  //无限循环发送事件
+					emitter.onNext(i);
+					Log.d(TAG, "emitter" + i);
+				}
+			}
+		})
+		.subscribe(new Consumer<Integer>() {
+			@Override
+			public void accept(Integer integer) throws Exception {
+				Thread.sleep(2000);
+				Log.d(TAG, "" + integer);
+			}
+		});
+```
+
 
 
 
