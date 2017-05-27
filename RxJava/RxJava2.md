@@ -25,9 +25,10 @@
 		* [concat](#concat)
 		* [startWith](#startwith)
 		* [zip](#zip)
-	* [最佳实践一：获得手机上安装的所有用户应用](#最佳实践一获得手机上安装的所有用户应用)
 	* [背压](#背压)
 	* [Flowable](#flowable)
+	* [最佳实践一：获得手机上安装的所有用户应用](#最佳实践一获得手机上安装的所有用户应用)
+	* [最佳事件二：rxjava2+retrofit2实现网络请求](#最佳事件二rxjava2retrofit2实现网络请求)
 
 # RxJava2
 ## 概述
