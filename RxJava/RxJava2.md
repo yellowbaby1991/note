@@ -934,6 +934,8 @@ Observable
 
 
 ## Flowable
+之前我们所的上游和下游分别是Observable和Observer, 这次不一样的是上游变成了Flowable, 下游变成了Subscriber, 但是水管之间的连接还是通过subscribe(), 我们来看看最基本的用法吧
+
 
 
 
