@@ -1052,3 +1052,65 @@ public class MainActivity extends AppCompatActivity {
 
 }
 ```
+
+> WashService.java
+
+``` java
+public interface WashService {
+    @GET("d9f6840be6bb07cf/wash_test?clive=wash")
+    Observable<WashInfo> washCall();
+}
+```
+
+> WashInfo.java
+
+``` java
+public class WashInfo {
+
+    private List<WashInfoBean> washInfo;
+
+    public List<WashInfoBean> getWashInfo() {
+        return washInfo;
+    }
+
+    public void setWashInfo(List<WashInfoBean> washInfo) {
+        this.washInfo = washInfo;
+    }
+
+    public static class WashInfoBean {
+        /**
+         * WashHead : http://file.bmob.cn/M02/9A/D2/oYYBAFbD7M2Aa_YKAABfpRaTgOg207.png
+         * WashName : 帽子
+         * Amount : ￥5
+         */
+
+        private String WashHead;
+        private String WashName;
+        private String Amount;
+
+        public String getWashHead() {
+            return WashHead;
+        }
+
+        public void setWashHead(String WashHead) {
+            this.WashHead = WashHead;
+        }
+
+        public String getWashName() {
+            return WashName;
+        }
+
+        public void setWashName(String WashName) {
+            this.WashName = WashName;
+        }
+
+        public String getAmount() {
+            return Amount;
+        }
+
+        public void setAmount(String Amount) {
+            this.Amount = Amount;
+        }
+    }
+}
+```
