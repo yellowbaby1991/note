@@ -1019,7 +1019,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    private Retrofit mRetrofit;
     private WashService mWashService;
     private Observable<WashInfo> mObservable;
 
@@ -1029,17 +1028,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mRetrofit = new Retrofit.Builder()
-                .baseUrl("http://cloud.bmob.cn/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
+        mWashService = RetrofitUtil.getWashService();
 
-        mWashService = mRetrofit.create(WashService.class);
-
-        mObservable = mWashService.washCall();
-
-        mObservable
+        mWashService.washCall()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<WashInfo>() {
@@ -1112,6 +1103,39 @@ public class WashInfo {
         public void setAmount(String Amount) {
             this.Amount = Amount;
         }
+    }
+}
+```
+
+> RetrofitUtil.java
+
+``` java
+public class RetrofitUtil {
+
+    private Retrofit mRetrofit;
+    private static RetrofitUtil mInstance;
+
+    private RetrofitUtil() {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        mRetrofit = new Retrofit.Builder()
+                .client(builder.build())
+                .baseUrl("http://cloud.bmob.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+    }
+
+    public static RetrofitUtil getInstance() {
+        if (mInstance == null) {
+            synchronized (RetrofitUtil.class) {
+                mInstance = new RetrofitUtil();
+            }
+        }
+        return mInstance;
+    }
+
+    public static WashService getWashService() {
+        return getInstance().mRetrofit.create(WashService.class);
     }
 }
 ```
