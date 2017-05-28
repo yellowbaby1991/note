@@ -1031,8 +1031,7 @@ public class MainActivity extends AppCompatActivity {
         mWashService = RetrofitUtil.getWashService();
 
         mWashService.washCall()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .compose(RxSchedulers.io_main())
                 .subscribe(new Consumer<WashInfo>() {
                     @Override
                     public void accept(WashInfo washInfo) throws Exception {
