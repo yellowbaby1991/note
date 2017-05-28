@@ -1046,8 +1046,19 @@ public class MainActivity extends AppCompatActivity {
 
 > RxSchedulers.java
 
-``` stylus
-enter code here
+``` java
+public class RxSchedulers {
+    public static ObservableTransformer io_main() {
+        return new ObservableTransformer() {
+            @Override
+            public ObservableSource apply(Observable upstream) {
+                return upstream
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread());
+            }
+        };
+    }
+}
 ```
 
 
