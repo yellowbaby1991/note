@@ -1044,6 +1044,13 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+> RxSchedulers.java
+
+``` stylus
+enter code here
+```
+
+
 > WashService.java
 
 ``` java
