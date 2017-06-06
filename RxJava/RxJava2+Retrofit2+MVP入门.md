@@ -153,7 +153,7 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 
 ## 使用RxJava+Retrofit来请求数据
 
- 1. 暂时在P层进行网络请求，创建RetrofitUtil
+ 1. 创建RetrofitUtil
  
 ``` java
 public class RetrofitUtil {
@@ -187,7 +187,17 @@ public class RetrofitUtil {
 ```
 
 
- 2. 1
+ 2. 创建CityService
+ 
+``` java
+public interface CityService {
+    @GET("http://guolin.tech/api/china")
+    Observable<List<CityData>> getCityData();
+}
+```
+
+
+ 3. 1
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
