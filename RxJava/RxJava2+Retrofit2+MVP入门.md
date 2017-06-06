@@ -23,8 +23,8 @@ compile 'com.squareup.retrofit2:retrofit:2.2.0'
 compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
 compile 'com.squareup.retrofit2:converter-gson:2.2.0'
 
-//著名的butterknife
-compile 'com.jakewharton:butterknife:8.5.1'
+//一个漂亮的三方log库
+compile 'com.orhanobut:logger:1.15'
 
 //快速实现mvp的三方库
 compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
