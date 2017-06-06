@@ -10,8 +10,6 @@
 > 本文目的：
 
 实战一个完整的天气查询demo来实现RxJava2+Retrofit2+MVP架构，效果图如下
-
-
 ![enter description here][3]
 
 ## 依赖
