@@ -226,7 +226,7 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 ```
 
 
- 4. 1
+ 4. 将P层数据获取代码抽到M层
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
