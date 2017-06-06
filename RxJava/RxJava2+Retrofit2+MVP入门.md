@@ -121,7 +121,7 @@ public class MainActivity extends MvpActivity<CityView, CityPresenter> implement
     }
 
     @Override
-    public void showWeather(List<CityData> cityDatas) {
+    public void showCitys(List<CityData> cityDatas) {
 
     }
 }
