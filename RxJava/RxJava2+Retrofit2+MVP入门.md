@@ -153,7 +153,7 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 
 ## 使用RxJava+Retrofit来请求数据
 
- 1. List item
+ 1. 暂时在P层进行网络请求
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
