@@ -196,7 +196,7 @@ public interface CityService {
 }
 ```
 
- 3. 1
+ 3. 暂时在P层进行网络请求
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
