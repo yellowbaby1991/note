@@ -67,7 +67,6 @@ public class CityData {
 
  1. 首先创建View层，只用来显示数据
  
-
 ``` stylus
 enter code here
 ```
