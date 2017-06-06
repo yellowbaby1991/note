@@ -154,6 +154,40 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 ## 使用RxJava+Retrofit来请求数据
 
  1. 暂时在P层进行网络请求，创建RetrofitUtil
+ 
+``` java
+public class RetrofitUtil {
+
+    private Retrofit mRetrofit;
+    private static RetrofitUtil mInstance;
+
+    private RetrofitUtil() {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        mRetrofit = new Retrofit.Builder()
+                .client(builder.build())
+                .baseUrl("http://guolin.tech")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+    }
+
+    public static RetrofitUtil getInstance() {
+        if (mInstance == null) {
+            synchronized (RetrofitUtil.class) {
+                mInstance = new RetrofitUtil();
+            }
+        }
+        return mInstance;
+    }
+
+    public static CityService getCityService() {
+        return getInstance().mRetrofit.create(CityService.class);
+    }
+}
+```
+
+
+ 2. 1
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
