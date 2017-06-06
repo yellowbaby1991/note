@@ -93,6 +93,43 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 
  3. 所以Activity现在的状态应该是这样
 
+``` java
+public class MainActivity extends MvpActivity<CityView, CityPresenter> implements CityView {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        presenter.loadCity();
+
+    }
+
+    @Override
+    public CityPresenter createPresenter() {
+        return new CityPresenter();
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void loadWeather(CityData cityData) {
+
+    }
+}
+```
+
+
+
+
 返回的json：
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
