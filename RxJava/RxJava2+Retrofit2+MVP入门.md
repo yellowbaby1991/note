@@ -79,6 +79,20 @@ public interface CityView extends MvpView {
 ```
 
  2. 然后创建P层，用来负责逻辑跳转
+ 
+
+``` java
+public class CityPresenter extends MvpBasePresenter<CityView> {
+
+    public void loadCity() {
+
+    }
+	
+}
+```
+
+
+ 3. 1
 
 返回的json：
 
