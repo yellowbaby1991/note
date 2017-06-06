@@ -91,7 +91,6 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 }
 ```
 
-
  3. 1
 
 返回的json：
