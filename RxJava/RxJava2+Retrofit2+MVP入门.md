@@ -65,6 +65,15 @@ public class CityData {
 
 ## 搭建MVP框架
 
+ 1. 首先创建View层，只用来显示数据
+ 
+
+``` stylus
+enter code here
+```
+
+
+ 2. 然后创建P层，用来负责逻辑跳转
 
 返回的json：
 
