@@ -28,8 +28,9 @@ compile 'com.jakewharton:butterknife:8.5.1'
 
 //快速实现mvp的三方库
 compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
-compile 'com.hannesdorfmann.mosby:viewstate:2.0.1' 
+compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
 ```
+
 
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
