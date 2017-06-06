@@ -15,20 +15,20 @@
 ## 依赖
 
 ``` java
-    //rxjava2
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+//rxjava2
+compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
-    //retrofit2
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+//retrofit2
+compile 'com.squareup.retrofit2:retrofit:2.2.0'
+compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+compile 'com.squareup.retrofit2:converter-gson:2.2.0'
 
-    //著名的butterknife
-    compile 'com.jakewharton:butterknife:8.5.1'
+//著名的butterknife
+compile 'com.jakewharton:butterknife:8.5.1'
 
-    //快速实现mvp的三方库
-    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
-    compile 'com.hannesdorfmann.mosby:viewstate:2.0.1' // optional viewstate feature
+//快速实现mvp的三方库
+compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+compile 'com.hannesdorfmann.mosby:viewstate:2.0.1' 
 ```
 
 
