@@ -140,7 +140,7 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
         List<CityData> cityDatas = new ArrayList();
 
         //主线程
-        getView().loadWeather(cityDatas);
+        getView().showCitys(cityDatas);
 
         //主线程
         getView().hideProgress();
