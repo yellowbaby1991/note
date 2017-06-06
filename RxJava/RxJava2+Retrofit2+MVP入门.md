@@ -127,7 +127,29 @@ public class MainActivity extends MvpActivity<CityView, CityPresenter> implement
 }
 ```
 
+ 4. 然后完善P层的逻辑
 
+``` java
+public class CityPresenter extends MvpBasePresenter<CityView> {
+
+    public void loadCity() {
+        //主线程
+        getView().showProgress();
+
+        //I/Ox线程,从网络获取
+        CityData cityData = new new CityData();
+
+        //主线程
+        getView().loadWeather(cityData);
+
+        //主线程
+        getView().hideProgress();
+    }
+}
+```
+
+
+ 5. 1
 
 
 返回的json：
