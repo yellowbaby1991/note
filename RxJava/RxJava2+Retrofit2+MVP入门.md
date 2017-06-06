@@ -31,8 +31,41 @@ compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
 compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
 ```
 
-## 准备网络接口
-### 
+## 网络接口
+
+> API
+
+http://guolin.tech/api/china
+
+> 根据网络接口生成bean类
+
+``` java
+public class CityData {
+
+    private int id;
+    private String name;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+```
+
+
+
+返回的json：
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
