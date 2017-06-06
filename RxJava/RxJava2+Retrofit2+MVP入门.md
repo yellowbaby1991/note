@@ -149,7 +149,7 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 ```
 
 
- 5. 至此为止，MVP的设计思路：Activity实现V接口，调用P层逻辑，P层从M层拿到数据后分发给V层
+ 5. 至此为止，基本框架搭建完毕，MVP的设计思路：Activity实现V接口，调用P层逻辑，P层从M层拿到数据后分发给V层
 
 
 返回的json：
