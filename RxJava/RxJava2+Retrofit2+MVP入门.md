@@ -241,7 +241,7 @@ public class CityModel {
 }
 ```
 
- 5. 1
+ 5. P层代码精简为如下
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
