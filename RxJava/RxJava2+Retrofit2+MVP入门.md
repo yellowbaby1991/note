@@ -242,6 +242,36 @@ public class CityModel {
 ```
 
  5. P层代码精简为如下
+ 
+``` java
+public class CityPresenter extends MvpBasePresenter<CityView> {
+
+    private CityModel mCityModel;
+
+    public CityPresenter() {
+        mCityModel = new CityModel();
+    }
+
+    public void loadCity() {
+
+        //主线程
+        getView().showProgress();
+
+        mCityModel.getCityDatas()
+                .subscribe(new Consumer<List<CityData>>() {//切到主线程
+                    @Override
+                    public void accept(List<CityData> cityDatas) throws Exception {
+                        Logger.d(cityDatas);
+                        getView().showWeather(cityDatas);
+                        getView().hideProgress();
+                    }
+                });
+
+
+    }
+}
+```
+
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
