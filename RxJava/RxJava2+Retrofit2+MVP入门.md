@@ -91,7 +91,7 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 }
 ```
 
- 3. 1
+ 3. 所以Activity现在的状态应该是这样
 
 返回的json：
 
