@@ -149,7 +149,9 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
 ```
 
 
- 5. 1
+ 5. 至此为止，MVP全部逻辑如下
+
+
 
 
 返回的json：
