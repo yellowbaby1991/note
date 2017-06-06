@@ -74,7 +74,7 @@ public interface CityView extends MvpView {
 
     public void hideProgress();
 
-    public void showWeather(List<CityData> cityDatas);
+    public void showCitys(List<CityData> cityDatas);
 }
 ```
 
@@ -137,10 +137,10 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
         getView().showProgress();
 
         //I/Ox线程,从网络获取，交给M层去处理
-        List<CityData> cityData = new ArrayList();
+        List<CityData> cityDatas = new ArrayList();
 
         //主线程
-        getView().loadWeather(cityData);
+        getView().loadWeather(cityDatas);
 
         //主线程
         getView().hideProgress();
