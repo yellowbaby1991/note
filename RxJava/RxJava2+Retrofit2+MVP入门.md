@@ -9,8 +9,8 @@
 
 > 本文目的：
 
-实战一个完整的天气查询demo来实现RxJava2+Retrofit2+MVP架构，效果图如下
-![enter description here][3]
+实战一个完整的全国城市查询demo来实现RxJava2+Retrofit2+MVP架构
+
 
 ## 依赖
 
@@ -31,8 +31,8 @@ compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
 compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
 ```
 
-
+## 准备网络接口
+### 
 
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
-  [3]: http://img.dmc.csdn.net/922009CA5F319ECAD9EAADC7D8F53F6F.net/20160302165822191
