@@ -37,7 +37,7 @@ compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
 
 http://guolin.tech/api/china
 
-> 根据网络接口生成bean类
+> 根据json生成bean类
 
 ``` java
 public class CityData {
