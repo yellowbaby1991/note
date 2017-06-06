@@ -198,5 +198,35 @@ public interface CityService {
 
  3. 暂时在P层进行网络请求
 
+``` java
+public class CityPresenter extends MvpBasePresenter<CityView> {
+
+    public void loadCity() {
+
+        //主线程
+        getView().showProgress();
+
+        RetrofitUtil
+                .getCityService()
+                .getCityData()//IO线程得到数据
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<List<CityData>>() {//切到主线程
+                    @Override
+                    public void accept(List<CityData> cityDatas) throws Exception {
+                        Logger.d(cityDatas);
+                        getView().showWeather(cityDatas);
+                        getView().hideProgress();
+                    }
+                });
+
+
+    }
+}
+```
+
+
+ 4. 1
+
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
