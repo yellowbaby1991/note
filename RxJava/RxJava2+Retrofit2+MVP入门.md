@@ -74,7 +74,7 @@ public interface CityView extends MvpView {
 
     public void hideProgress();
 
-    public void loadWeather(CityData cityData);
+    public void showWeather(CityData cityData);
 }
 ```
 
