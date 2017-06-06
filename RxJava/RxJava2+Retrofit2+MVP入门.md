@@ -136,8 +136,8 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
         //主线程
         getView().showProgress();
 
-        //I/Ox线程,从网络获取
-        CityData cityData = new new CityData();
+        //I/Ox线程,从网络获取，交给M层去处理
+        CityData cityData = new CityData();
 
         //主线程
         getView().loadWeather(cityData);
