@@ -11,5 +11,9 @@
 
 实战一个完整的网络请求demo来实现RxJava2+Retrofit2+MVP架构
 
+## 依赖
+
+
+
   [1]: http://gank.io/post/560e15be2dca930e00da1083
   [2]: https://github.com/square/retrofit
