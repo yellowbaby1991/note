@@ -68,9 +68,15 @@ public class CityData {
  1. 首先创建View层，只用来显示数据
  
 ``` java
-enter code here
-```
+public interface CityView extends MvpView {
 
+    public void showProgress();
+
+    public void hideProgress();
+
+    public void loadWeather(CityData cityData);
+}
+```
 
  2. 然后创建P层，用来负责逻辑跳转
 
