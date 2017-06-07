@@ -215,7 +215,7 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
                     @Override
                     public void accept(List<CityData> cityDatas) throws Exception {
                         Logger.d(cityDatas);
-                        getView().showCity(cityDatas);
+                        getView().showCitys(cityDatas);
                         getView().hideProgress();
                     }
                 });
@@ -262,7 +262,7 @@ public class CityPresenter extends MvpBasePresenter<CityView> {
                     @Override
                     public void accept(List<CityData> cityDatas) throws Exception {
                         Logger.d(cityDatas);
-                        getView().showCity(cityDatas);
+                        getView().showCitys(cityDatas);
                         getView().hideProgress();
                     }
                 });
