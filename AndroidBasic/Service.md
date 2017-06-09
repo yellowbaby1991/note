@@ -1040,7 +1040,21 @@ public abstract class IntentService extends Service {
  
 
 ``` java
-
+public abstract class Service
+  	...
+    //和stopSelf()不同，这个方法会等最近启动的所有服务都关闭才关闭，startId就是次数
+    public final void stopSelf(int startId) {
+        if (mActivityManager == null) {
+            return;
+        }
+        try {
+            mActivityManager.stopServiceToken(
+                    new ComponentName(this, mClassName), mToken, startId);
+        } catch (RemoteException ex) {
+        }
+    }
+	...
+}
 ```
 
 
