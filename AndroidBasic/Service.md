@@ -1015,6 +1015,27 @@ public abstract class IntentService extends Service {
 }
 ```
 
+ 3. 在子线程中执行任务
+ 
+``` java
+public abstract class IntentService extends Service {
+	...
+    private final class ServiceHandler extends Handler {
+        public ServiceHandler(Looper looper) {
+            super(looper);
+        }
 
- 3. 1
+        @Override
+        public void handleMessage(Message msg) {
+            onHandleIntent((Intent)msg.obj);//子类实现
+            stopSelf(msg.arg1);
+        }
+    }
+    protected abstract void onHandleIntent(@Nullable Intent intent);
+    ...
+}
+```
+
+
+ 4. 1
 
