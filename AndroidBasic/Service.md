@@ -1040,7 +1040,7 @@ public abstract class IntentService extends Service {
  
 
 ``` java
-enter code here
+
 ```
 
 
