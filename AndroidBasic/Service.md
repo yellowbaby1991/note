@@ -979,4 +979,25 @@ startService(intent);
 ### IntentService的原理
 
  1. 先看onCreate方法，内部创建了一个HandlerThread，用它的Looper对象构造一个mServiceHandler
+ 
+``` java
+public abstract class IntentService extends Service {
+	...
+    //第一次启动的时候调用
+    @Override
+    public void onCreate() {
+
+        super.onCreate();
+        HandlerThread thread = new HandlerThread("IntentService[" + mName + "]");
+        thread.start();
+
+        mServiceLooper = thread.getLooper();
+        mServiceHandler = new ServiceHandler(mServiceLooper);
+    }
+  	...
+}
+```
+
+
+ 2. 1
 
