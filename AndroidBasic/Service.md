@@ -928,4 +928,13 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-## 
+## IntentService
+### 什么是IntentService
+
+ 1. IntentService是一种特殊的Service，它可以执行多个后台任务
+ 2. IntentService的任务默认在子线程执行
+ 3. IntentService完成任务后会自动关闭
+ 
+### IntentService的用法
+
+
