@@ -1,22 +1,9 @@
-* [服务是什么](#服务是什么)
-* [服务的基本用法](#服务的基本用法)
-	* [创建和销毁服务](#创建和销毁服务)
-	* [活动和服务通信](#活动和服务通信)
-	* [startService和bindService的区别](#startservice和bindservice的区别)
-	* [使用Service+okhttp实现后台断点下载](#使用serviceokhttp实现后台断点下载)
-	* [音乐播放器](#音乐播放器)
-* [AIDL](#aidl)
-	* [AIDL是什么？](#aidl是什么)
-	* [Android Studio下使用AIDL](#android-studio下使用aidl)
-	* [AIDL调用流程](#aidl调用流程)
-	* [不依赖AIDL实现IPC](#不依赖aidl实现ipc)
-	* [模拟远程支付业务](#模拟远程支付业务)
-
-### 服务是什么
+# 服务
+## 服务是什么
 　　服务是Android中实现程序后台运行的解决方案，非常适合去执行那些不需要和用户交互并且还要求长期运行的任务
   
-### 服务的基本用法 
-#### 创建和销毁服务
+## 服务的基本用法 
+### 创建和销毁服务
 
  1. 创建一个Service的子类，重写下面几个方法
  
@@ -468,10 +455,10 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### AIDL
-#### AIDL是什么？
+## AIDL
+### AIDL是什么？
 　　AIDL是Android的一种IPC（跨进程通信）的方式，内部原理是Binder
-#### Android Studio下使用AIDL  
+### Android Studio下使用AIDL  
 
  1. 新建一个Server项目作为服务端，在main下建立一个文件夹aidl，然后建立一个IMyAidlInterface.aidl文件
  
@@ -564,7 +551,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 8. 然后先启动服务端，再启动客户端就可以实现远程调用了
 
-#### AIDL调用流程
+### AIDL调用流程
 
  1. 看看由AIDL生成的java文件，可以发现一共只有三个东西，接口方法，Stub类给服务端用，Proxy给客户端用
  
@@ -729,7 +716,7 @@ public interface IMyAidlInterface extends android.os.IInterface {
 
 ![enter description here][3]
 
-#### 不依赖AIDL实现IPC
+### 不依赖AIDL实现IPC
 
 　　从上面的分析可以看出整体流程就是：客户端调用Proxy的add方法发送请求，服务端调用onTransact接受请求调用服务端真正的add方法处理结果后发回客户端，我们现在看看不通过ADIL来实现同样的功能
   
@@ -829,7 +816,7 @@ public class MainActivity extends AppCompatActivity {
   [1]: ./images/Service%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE.jpg "Service生命周期图"
   [2]: https://github.com/yellowbaby1991/note/blob/master/HTTP/OkHttp%E5%AE%9E%E7%8E%B0%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD.md
   [3]: ./images/Binder%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png "Binder工作流程图"
-#### 模拟远程支付业务
+### 模拟远程支付业务
 
  1. 服务端main/aidl/文件夹下创建IAlipayService.aidl接口文件
  
@@ -940,3 +927,4 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+
