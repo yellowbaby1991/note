@@ -976,4 +976,5 @@ startService(intent);
 会等到所有任务都执行完之后该服务自动onDestroy
 
 
+### IntentService的原理
 
