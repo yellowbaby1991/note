@@ -937,4 +937,31 @@ public class MainActivity extends AppCompatActivity {
  
 ### IntentService的用法
 
+``` java
+public class MyIntentService extends IntentService {
+
+    final static String TAG = "MyIntentService";
+
+    public MyIntentService() {
+        super("service");
+    }
+
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        Log.i(TAG, "begin onHandleIntent() in " + this);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Log.i(TAG, "end onHandleIntent() in " + this);
+    }
+
+    public void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, this + " is destroy");
+    }
+}
+```
+
 
