@@ -978,3 +978,5 @@ startService(intent);
 
 ### IntentService的原理
 
+ 1. 先看onCreate方法，内部创建了一个HandlerThread
+
