@@ -1039,7 +1039,7 @@ public abstract class IntentService extends Service {
  4. 执行完了之后，自动杀死服务
  
 
-``` stylus
+``` java
 enter code here
 ```
 
