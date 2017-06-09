@@ -999,5 +999,22 @@ public abstract class IntentService extends Service {
 ```
 
 
- 2. 1
+ 2. 启动的时候调用onStart，调用mServiceHandler对象sendMessage
+ 
+``` java
+public abstract class IntentService extends Service {
+	...
+    @Override
+    public void onStart(@Nullable Intent intent, int startId) {
+        Message msg = mServiceHandler.obtainMessage();
+        msg.arg1 = startId;
+        msg.obj = intent;
+        mServiceHandler.sendMessage(msg);
+    }
+  	...
+}
+```
+
+
+ 3. 1
 
