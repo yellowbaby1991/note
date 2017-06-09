@@ -964,4 +964,16 @@ public class MyIntentService extends IntentService {
 }
 ```
 
+启动方式和普通service一样
+
+``` java
+Intent intent=new Intent(this,MyIntentService.class);
+startService(intent);
+startService(intent);
+startService(intent);
+```
+
+会等到所有任务都执行完之后该服务自动onDestroy
+
+
 
