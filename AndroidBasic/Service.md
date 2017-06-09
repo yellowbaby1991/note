@@ -1015,7 +1015,7 @@ public abstract class IntentService extends Service {
 }
 ```
 
- 3. 在子线程中执行任务
+ 3. 接受后，在子线程中执行任务
  
 ``` java
 public abstract class IntentService extends Service {
